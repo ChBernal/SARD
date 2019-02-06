@@ -1,0 +1,203 @@
+// $Primary: rgb(39,174,96)
+// $LightPrimary: rgb(220,237,200);
+// $White: rgb(255,255,255);
+// $Divider: rgb(189,189,189);
+// $Error: rgb(211,47,47);
+// $Borde: 2px;
+// $font-family: "Nunito";
+
+.Wrap {
+	width: 90%;
+	max-width: 500px;
+	padding: 40px;
+	margin: auto;
+	background: rgb(255,255,255);
+}
+
+.Contenedor-Formulario {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contenedor-Formulario .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"],
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"],
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"]:active,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"]:active,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"].error,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"].error,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"].error,
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"].error + label,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"].error + label,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"].error + label,
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group label.label {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group label.label.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label,
+.Contenedor-Formulario .Formulario .Input-Group.Radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: rgb(39,174,96);
+	position: relative;
+	padding: 5px 15px 5px 51px;
+	font-size: 1em;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label:hover,
+.Contenedor-Formulario .Formulario .Input-Group.Radio label:hover {
+	background: rgba(220,237,200,1);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group span{
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio input[type="radio"],
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio input[type="radio"]:checked + label:before,
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox input[type="checkbox"]:checked + label:before {
+	display: none;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio input[type="radio"]:checked + label,
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox input[type="checkbox"]:checked + label {
+	padding: 5px 15px;
+	background: rgb(39,174,96);
+	border-radius: 2px;
+	color: rgb(255,255,255);
+}
+
+.Contenedor-Formulario .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}

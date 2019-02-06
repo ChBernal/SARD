@@ -1,0 +1,902 @@
+/* Estilos para todo */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: rgb(220,237,200) url("../Imagenes/Fondo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Nunito Sans', sans-serif arial;
+	font-size: 16px;
+	padding-top: 55px;
+}
+
+
+/* Aca terminan los estilos generales */
+
+ /* aca va todo sobre el menu */
+
+header {
+	background: rgb(39,174,96);
+	position: fixed;
+	width: 100%;
+	min-width: 350px;
+	top: 0;
+}
+.Menu {
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Menu .Usuario {
+	display: inline-block;
+	margin-right: 1em;
+	text-align: center;
+}
+
+.Menu .btn-menu{
+	display: none;
+	color: rgb(255,255,255);
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.Menu .Usuario .Perfil {
+	color: rgb(255,255,255);
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	width: 200px;
+	text-align: center;
+	font-size: 1em;
+	margin: auto;
+	padding: 0.3em;
+}
+
+.Menu .Usuario .Perfil a{
+	padding: .6em ;
+	display: inline-block;
+	text-decoration: none;
+	color: rgb(255,255,255);
+	text-align: center;
+	margin: auto;
+}
+
+.Menu .Usuario .Perfil img{
+	margin: auto;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	border: 1px solid rgb(255,255,255);
+}
+
+.Menu .Usuario .Perfil:hover {
+	background: rgb(39,230,130);
+}
+
+.Menu .Enlaces {
+	background: rgb(39,174,96);
+	display: inline-block;
+	text-align: left;
+}
+
+.Menu .Enlaces a {
+	color: rgb(255,255,255);
+	text-decoration: none;
+	display: inline-block;
+	padding: 1em;
+	text-align: left;
+	font-size: 1em;
+}
+
+.Menu .Enlaces i {
+	margin-right: 5px;
+}
+
+.Menu .Enlaces a:hover {
+	background: rgb(254,249,231);
+	color: rgb(39,174,96);
+	border-right: 1px solid rgb(39,174,96);
+}
+
+/* Efectos del menu */
+
+.headroom {
+	transition: transform .3s ease;
+}
+
+.headroom--pinned {
+	transform: translateY(0%);
+}
+
+.headroom--unpinned {
+	transform:  translateY(-100%);
+}
+
+.headroom--bottom {
+	transform: translateY(0%);
+}
+
+/* Finalizamos los efectos del menu */
+
+/* Aca termina todo del menu */
+
+/* Aca va lo relacionado con articulos y contenido dentro del body */
+
+.Contenedor {
+	width: 100%;
+}
+
+main article {
+	width: 100%;
+	height: 100vh;
+	min-width: 350px;
+	margin: 0px auto;
+	padding: 20px;
+}
+
+main .Cabezera{
+	width: 100%;
+	height: 150px;
+	display: flex;
+	margin: -50px auto 0px auto;
+	padding-top: 25px;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255,255,255,.5);
+}
+
+main article h1 {
+	font-weight: normal;
+	margin-bottom: .5em;
+}
+
+main article hr {
+	margin-bottom: 1em;
+	background: rgb(39,174,96);
+	border: none;
+}
+
+main article p {
+	margin-bottom: 1em;
+}
+
+.Denuncias {
+	width: 100%;
+	height: 100vh;
+	margin: 0x auto;
+	background: rgba(255,249,196,.8);
+	background-attachment: fixed;
+}
+
+.Denuncias .Contenido-Denuncias{
+	display: flex;
+	justify-content: space-between;
+}
+
+.Denuncias .Informacion {
+	padding-top:55px;
+	width: 70%;
+}
+
+.Adopcion {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	background: rgba(248,255,178,.8);
+	background-attachment: fixed;	
+}
+
+.Eventos {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	background: rgba(209,255,178,.8);
+	background-attachment: fixed;
+}
+
+.Tips {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	background: rgba(178,255,186,.8);
+	background-attachment: fixed;
+}
+
+.Usuarios {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	background: rgb(39,174,96);
+	background-attachment: fixed;
+}
+
+.Usuarios .Ciudadanos,
+.Usuarios .Veterinarias,
+.Usuarios .SASS,
+.Usuarios .Administrador,
+.Usuarios .Listas {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px auto;
+	background: rgb(255,255,255);
+	color: rgb(39,174,96);
+	width: 100%;
+	height: 50px;
+	border-radius: 10px 0px 0px 0px;
+	max-width: 1000px;
+	cursor: pointer;
+}
+
+.Footer-Button {
+	display: flex;
+	justify-content: center;
+	color: rgb(255,255,255);
+	background: rgb(39,174,96);
+	font-size: 16px;
+}
+
+
+/* Fin de Estilos dentro del body  */
+
+/* Aca va el estilo de los formularios*/
+
+/* Formulario Denuncia */
+
+.Wrap-Denuncia {
+	width: 90%;
+	max-width: 500px;
+	padding: 40px;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Denuncia {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"],
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"],
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 13px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"]:focus,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"]:active,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"]:focus,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"]:active,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"]:focus,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"].error,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"].error,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"].error + label,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"].error + label,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"].error + label{
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia label.label-Denuncia {
+	position: absolute;
+	top: 14px;
+	left: 0px;
+	font-size: 14px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia label.label-Denuncia.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia span{
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:hover,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:before,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin de formulario Denuncia */
+
+/* Inicio Formulario Adopcion */
+
+.Wrap-Adopcion {
+	width: 90%;
+	max-width: 1000px;
+	padding: 40px;
+	margin: auto;
+	background: rgb(255,255,255);
+}
+
+.Posicion-Adopcion {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Left-Adopcion, .Rigth-Adopcion{
+	width: 48%;
+}
+
+.Contenedor-Formulario-Adopcion {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"],
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"],
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"]:active,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"]:active,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"].error,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"].error,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"].error,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"].error + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"].error + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"].error + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Opcional {
+	display: none;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion label.label-Mascota {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion label.label-Mascota.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: rgb(39,174,96);
+	position: relative;
+	padding: 5px 15px 5px 51px;
+	font-size: 1em;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio label:hover,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox label:hover {
+	background: rgba(220,237,200,1);
+}
+ 
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion span{
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:hover,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:before,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio input[type="radio"],
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio input[type="radio"]:checked + label:before,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox input[type="checkbox"]:checked + label:before {
+	display: none;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio input[type="radio"]:checked + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox input[type="checkbox"]:checked + label {
+	padding: 5px 15px;
+	background: rgb(39,174,96);
+	border-radius: 2px;
+	color: rgb(255,255,255);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin formulario Adopcion */
+
+/* Formulario Ciudadano */
+
+.Wrap-Ciudadanos,
+.Wrap-Veterinaria,
+.Wrap-SASS,
+.Wrap-Administrador,
+.Wrap-Listas {
+	width: 100%;
+	max-width: 1000px;
+	padding: 20px;
+	border-radius: 0px 0px 20px;
+	margin: -10px auto;
+	background: rgb(255,255,255);
+}
+
+.Posicion-Usuarios {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Left-Usuarios, .Rigth-Usuarios {
+	width: 48%;
+}
+
+
+.Contenedor-Formulario-Usuarios {
+	width: 100%;
+	color: #fff;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios {
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"],
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"],
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"] {
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"]:focus,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"]:active,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"]:focus,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"]:active,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"]:focus,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"]:focus,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"].error,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"].error,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"].error,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"].error + label,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"].error + label,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"].error + label,
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios label.label-Usuarios {
+	position: absolute;
+	top: 13px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios label.label-Usuarios.active {
+	top: -11px;
+	font-size: 11px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios span{
+	cursor: pointer;
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: rgb(39,174,96);
+	position: relative;
+	padding: 1px 15px 1px 51px;
+	font-size: 16px;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio label:hover {
+	background: rgba(220,237,200,1);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio label:before {
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio input[type="radio"]{
+	display: none;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio input[type="radio"]:checked + label:before {
+	display: none;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio input[type="radio"]:checked + label{
+	padding: 5px 15px;
+	background: rgb(39,174,96);
+	border-radius: 2px;
+	color: rgb(255,255,255);
+}
+
+.Contenedor-Formulario-Usuarios .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Usuarios .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin de formulario Ciudadano */
+
+/* Fin de estilo de formularios*/
+
+/* Inicio de Responsive */
+
+@media screen and (max-width: 990px){
+
+	header {
+		background: none;
+	}
+
+	header .Menu {
+		width: 100%;
+		display: flex;
+		align-items: initial;
+		flex-direction: column-reverse;
+	}
+	header .Menu .Usuario {
+		background: rgb(39,174,96);
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	header .Menu .Usuario .btn-menu {
+		display: inline-block;
+		padding: 1em;
+	}
+
+	header .Menu .Enlaces {
+		background: rgb(39,174,96);
+		width: 50%;
+		height: 40vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Contenido-Modal {
+		width: 60%;
+	}
+
+	.Denuncias,.Adopcion,.Eventos,.Tips,.Contactenos {
+		height: 100%;
+	}
+
+	main .Denuncias .Contenido-Denuncias {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	main .Denuncias .Contenido-Denuncias .Informacion {
+		display: flex;
+		flex-direction: column-reverse;
+		height: 100%;
+		width: 100%;
+	}
+
+	main .Contactenos .Contenido-Contactenos {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+	}
+
+	main article {
+		height: 100%;
+	}
+
+}
+
+@media screen and (max-width: 550px){
+	.Contenido-Modal {
+		width: 90%;
+		min-width: 350px;
+	}
+
+	header .Menu .Enlaces {
+		background: rgb(39,174,96);
+		width: 90%;
+		height: 40vh;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+/* Fin de Responsive */
