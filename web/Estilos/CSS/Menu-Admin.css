@@ -179,14 +179,24 @@ main article p {
 	background-attachment: fixed;
 }
 
-.Denuncias .Contenido-Denuncias{
-	display: flex;
-	justify-content: space-between;
-}
 
-.Denuncias .Informacion {
-	padding-top:55px;
-	width: 70%;
+.Denuncias .Denuncia_Anonima,
+.Denuncias .Denuncia_Cliente{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px auto;
+	background: rgb(255,255,255);
+	color: rgb(39,174,96);
+	width: 100%;
+	height: 50px;
+	border-radius: 10px 0px 0px 0px;
+	max-width: 1000px;
+	cursor: pointer;
+}
+.Denuncias.Datos_Denuncia_Anonima .Datos_Anonima{
+    display: inline-block;
+    background: pink;
 }
 
 .Adopcion {
