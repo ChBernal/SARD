@@ -615,6 +615,40 @@ main article p {
 
 /* Fin de formulario Denuncia*/
 
+.Wrap-Adopcion {
+	width: 100%;
+        height: 500px;
+	max-width: 1000px;
+	padding: 40px;
+	margin: auto;
+        overflow: auto;
+}
+
+.Wrap-Adopcion .Posicion-Adopcion{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.Wrap-Adopcion .Posicion-Adopcion .InfoMascota{
+    width: 200px;
+    height: 200px;
+    background: rgba(0,0,0,0.8);
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: rgb(0,0,0,0.3) 10px 10px 10px 0px;
+    margin: 10px 10px;
+}
+
+.Contenedor-Formulario-Adopcion {
+    width: 100%;
+    color: rgb(39,174,96);
+    padding: 50px;
+}
+
 /*  Formulario Contactenos */
 
 .Wrap-Contactenos {

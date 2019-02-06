@@ -1,3 +1,7 @@
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="Modelo.GS_Mascota"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.Mascota_M"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -130,8 +134,34 @@
                     </article>
 
                     <article id="Adopcion" class="Adopcion">
-                            <h1>Adopcion</h1>
-                            <hr>
+                        <h1>Adopcion</h1>
+                        <hr>
+                        <div class="Contenido-Adopcion">
+                            <div class="Contenedor-Formulario-Adopcion">
+                                <div class="Wrap-Adopcion">
+                                    <div class="Posicion-Adopcion Abrir" id="Abrir">
+                                    <%
+                                        Mascota_M MM = new Mascota_M();
+                                        ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();    
+                                        GS_Mascota GSM = new GS_Mascota();
+                                        Tabla_mascota = MM.Todo_Mascota();
+
+                                        for (int i = 0; i < Tabla_mascota.size();i++){
+                                            GSM = Tabla_mascota.get(i);
+                                    %>
+                                        <div class="InfoMascota">
+                                            <h1><%=GSM.getNombre()%></h1>
+                                            <img src="<%=GSM.getFoto()%>">
+                                        </div>
+                                    <%
+                                        }    
+                                    %>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                            
                     </article>
 
                     <article id="Eventos" class="Eventos">
