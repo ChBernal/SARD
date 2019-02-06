@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="Estilos/CSS/Index.css">
     <link rel="stylesheet" href="Estilos/Iconos/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Estilos/alertifyjs/css/alertify.css">
+    <script src="Estilos/alertifyjs/alertify.js"></script>
     <title>MAppets</title>
 </head>
 <body>
@@ -139,7 +141,7 @@
                         <div class="Contenido-Adopcion">
                             <div class="Contenedor-Formulario-Adopcion">
                                 <div class="Wrap-Adopcion">
-                                    <div class="Posicion-Adopcion Abrir" id="Abrir">
+                                    <div class="Posicion-Adopcion">
                                     <%
                                         Mascota_M MM = new Mascota_M();
                                         ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();    
@@ -149,9 +151,13 @@
                                         for (int i = 0; i < Tabla_mascota.size();i++){
                                             GSM = Tabla_mascota.get(i);
                                     %>
-                                        <div class="InfoMascota">
-                                            <h1><%=GSM.getNombre()%></h1>
-                                            <img src="<%=GSM.getFoto()%>">
+                                        <div class="InfoMascota" name="InfoMascota">                                    
+                                            <div class="Nombre" >
+                                                <h1><%=GSM.getNombre()%></h1>
+                                            </div>
+                                            <div class="Imagen-Mascota">
+                                                <img src="Uploads/Úsuario.jpg">
+                                            </div>
                                         </div>
                                     <%
                                         }    

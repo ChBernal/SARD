@@ -115,6 +115,15 @@ $(function(){
 
 //Todas las opciones del contenido modal
 
+$(document).ready(function(){
+    $(".InfoMascota").click(function(){
+        alertify.alert ("Recuerda que para realizar adopciones debes estar registrado y haber iniciado secion");
+        var Pos = $(".Nombre").index(this);
+        var Asi = $(".Imagen-Mascota").eq(Pos);
+        modal.style.display = 'block'; 
+    });
+});
+
 let modal = document.getElementById('Modal');
 let flex = document.getElementById('flex');
 let Abrir = document.getElementById('Abrir');
