@@ -118,8 +118,8 @@ $(function(){
 $(document).ready(function(){
     $(".InfoMascota").click(function(){
         alertify.alert ("Recuerda que para realizar adopciones debes estar registrado y haber iniciado secion");
-        var Pos = $(".Nombre").index(this);
-        var Asi = $(".Imagen-Mascota").eq(Pos);
+        var Pos = $(".Imagen_Mascota").index(this);
+        var Asi = $(".Datos-Mascota").eq(Pos);
         modal.style.display = 'block'; 
     });
 });

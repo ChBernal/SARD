@@ -151,12 +151,16 @@
                                         for (int i = 0; i < Tabla_mascota.size();i++){
                                             GSM = Tabla_mascota.get(i);
                                     %>
-                                        <div class="InfoMascota" name="InfoMascota">                                    
-                                            <div class="Nombre" >
-                                                <h1><%=GSM.getNombre()%></h1>
-                                            </div>
+                                        <div class="InfoMascota" name="InfoMascota">
                                             <div class="Imagen-Mascota">
-                                                <img src="Uploads/Úsuario.jpg">
+                                                <img src="<%= GSM.getFoto() %>">
+                                            </div>
+                                            <div class="Datos_Mascota" >
+                                                <h1><%=GSM.getNombre()%></h1>
+                                                <label>Edad</label>
+                                                <label><%= GSM.getGenero() %></label>
+                                                <label><%= GSM.getRaza() %></label>
+                                                <label><%= GSM.getColor() %></label>
                                             </div>
                                         </div>
                                     <%
