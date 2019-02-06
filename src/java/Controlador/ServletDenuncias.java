@@ -1,6 +1,11 @@
 package Controlador;
 
+import Modelo.Denuncias_M;
+import Modelo.GS_Denuncias;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -8,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 @MultipartConfig
 @WebServlet(name = "ServletDenuncias", urlPatterns = {"/ServletDenuncias"})
@@ -18,8 +24,43 @@ public class ServletDenuncias extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         if (request.getParameter("DenunciaNN") != null){
-            
+            this.Ingreso_Denuncias(request, response);
         }
+    }
+    
+    protected void Ingreso_Denuncias(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Direccion,Descripcion,Correo;
+        
+        Direccion= request.getParameter("Direccion");
+        Descripcion= request.getParameter("Descripcion");
+        Part Evidencia= request.getPart("Evidencia");
+        Correo= request.getParameter("Email");
+        String NameFoto= Evidencia.getSubmittedFileName();
+        int i = NameFoto.lastIndexOf("\\");
+        String nuevo_nom = NameFoto.substring(i+1);
+        String Name= Direccion+"_"+nuevo_nom;
+        
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+        String url2= "Uploads/"+Name;
+        
+        InputStream file= Evidencia.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        GS_Denuncias GSD = new GS_Denuncias(Direccion, Descripcion, url2, Correo);
+        Denuncias_M  DM = new Denuncias_M();
+        DM.InsertarDenuncias(GSD);
+        request.getRequestDispatcher("index.jsp").forward(request, response);    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
