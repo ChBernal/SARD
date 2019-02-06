@@ -177,26 +177,50 @@ main article p {
 	margin: 0x auto;
 	background: rgba(255,249,196,.8);
 	background-attachment: fixed;
+        isplay: flex;
+        align-items: center;
+        justify-content: center;
 }
 
 
 .Denuncias .Denuncia_Anonima,
 .Denuncias .Denuncia_Cliente{
     display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 10px auto;
-	background: rgb(255,255,255);
-	color: rgb(39,174,96);
-	width: 100%;
-	height: 50px;
-	border-radius: 10px 0px 0px 0px;
-	max-width: 1000px;
-	cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    background: rgb(255,255,255);
+    color: rgb(39,174,96);
+    width: 100%;
+    height: 50px;
+    border-radius: 10px 0px 0px 0px;
+    max-width: 1000px;
+    cursor: pointer;
 }
-.Denuncias.Datos_Denuncia_Anonima .Datos_Anonima{
-    display: inline-block;
+.Denuncias .Datos_Denuncia_Anonima {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    padding: 20px;
+    margin: 10px auto;
+    color: rgb(39,174,96);
+    width: 100%;
+    height: 500px;
+    max-width: 1000px;
+    cursor: pointer;
     background: pink;
+}
+.Denuncias .Datos_Denuncia_Anonima .Datos_Anonima{
+    border-bottom: 1px solid green;
+    width: 90%;
+    max-width: 1000px;
+    background: red;
+}
+.Denuncias .Datos_Denuncia_Anonima .Datos_Anonima div{
+    display: inline-block;
+    width: 200px;
+    border-right: 2px solid black;
 }
 
 .Adopcion {

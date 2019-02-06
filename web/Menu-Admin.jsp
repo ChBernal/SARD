@@ -1,4 +1,5 @@
-<%@page import="Modelo.GS_Denuncia"%>
+<%@page import="Modelo.GS_Denuncias"%>
+<%@page import="Modelo.GS_Denuncias"%>
 <%@page import="Modelo.Denuncias_M"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -50,10 +51,10 @@
                 </div>
                 <div class="Datos_Denuncia_Anonima">
                      <%
-                        ArrayList<GS_Denuncia> datos = new ArrayList<>();
+                        ArrayList<GS_Denuncias> datos = new ArrayList<>();
                         Denuncias_M con = new Denuncias_M();
                         datos = con.Tabla_Denuncias();
-                        GS_Denuncia Datt = new GS_Denuncia();
+                        GS_Denuncias Datt = new GS_Denuncias();
 
                         for(int i=0; i<datos.size(); i++){
                             Datt = datos.get(i);

@@ -50,7 +50,16 @@ $(function(){
 
 });
 
+
 //Finalizacion de menu
+
+// Acordeon Denuncias 
+$(".Datos_Denuncia_Anonima").hide();
+$(".Denuncia_Cliente").hide();
+$(".Denuncia_Anonima").click(function (){
+ $(".Datos_Denuncia_Anonima").slideToggle();
+});
+
 
 //Opciones de acordeon
 
