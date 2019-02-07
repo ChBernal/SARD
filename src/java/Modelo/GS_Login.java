@@ -13,7 +13,7 @@ public class GS_Login {
         this.Clave = Clave;
         this.Rol = Rol;
     }
-
+    
     public int getRol() {
         return Rol;
     }

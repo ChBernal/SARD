@@ -4,6 +4,8 @@
     Author     : User
 --%>
 
+<%@page import="Modelo.Login_M"%>
+<%@page import="Modelo.GS_Login"%>
 <%@page import="Modelo.Ciudadano_M"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.GS_Ciudadano"%>
@@ -72,7 +74,7 @@
                     <input class="Mo" type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%= inggs.getCorreo()%>" required>
                     <div class="btn-Act">
                         <input class="btn-Actualizar" type="submit" name="Actualizar" value="Actualizar">
-                        <input class="btn-Cambiar" type="submit" name="Cambiar" value="Cambiar Contraseña?">
+                        <a href="#Mostrar-Cuenta" class="btn-Cambiar">Cambiar Contraseña?</a>
                     </div>
                 </div>
             </form>
@@ -81,9 +83,22 @@
                 <%
                     }
                 %>
-            <div class="Mostrar-Cuenta">
+            <div id="Mostrar-Cuenta">
                 <div class="Cuenta">
-                    <%%>
+                    <label class="titulo">Usuario</label>
+                    <%
+                        ArrayList<GS_Login> datos2 = new ArrayList<>();
+                        Login_M con2 = new Login_M();
+                        datos2 = con2.Uno_Usuario(Documento);
+                        GS_Login ing = new GS_Login();
+
+                        for(int i=0; i<datos2.size(); i++){
+                            ing = datos2.get(i);
+                    %>
+                    <label><%= ing.getUsuario()%></label>
+                    <input type="password" name="Contraseña" value="<%= ing.getClave()%>">
+                    <input type="submit" name="Act-Contraseña" value="Cambiar?">
+                    <% } %>
                 </div>
             </div>
         </div>
