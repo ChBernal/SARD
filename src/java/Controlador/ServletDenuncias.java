@@ -44,7 +44,7 @@ public class ServletDenuncias extends HttpServlet {
         
         Descripcion= request.getParameter("Descripcion_RA");
         if (Descripcion.equalsIgnoreCase("")) {
-            Descripcion="aQUI HAY QUE PONER LA RESPUESTA PREDETERMINADA ";
+            Descripcion="Su denuncia ha sido recibida, en los próximos 15 dias se le estará notificando el estado y los procesos a realizar. ";
         }
         Codigo = Integer.parseInt(request.getParameter("Codigo_RA"));
          GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);

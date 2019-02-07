@@ -1,3 +1,4 @@
+<%@page import="Modelo.GS_Denuncia_Cliente"%>
 <%@page import="Modelo.GS_Denuncias"%>
 <%@page import="Modelo.GS_Denuncias"%>
 <%@page import="Modelo.Denuncias_M"%>
@@ -51,20 +52,84 @@
                 </div>
                 <div class="Datos_Denuncia_Anonima">
                      <%
-                        ArrayList<GS_Denuncias> datos = new ArrayList<>();
+                        ArrayList<GS_Denuncias> Dato_Anonima = new ArrayList<>();
                         Denuncias_M con = new Denuncias_M();
-                        datos = con.Tabla_Denuncias();
-                        GS_Denuncias Datt = new GS_Denuncias();
+                        Dato_Anonima = con.Tabla_Denuncias();
+                        GS_Denuncias Dat_Anonima = new GS_Denuncias();
 
-                        for(int i=0; i<datos.size(); i++){
-                            Datt = datos.get(i);
+                        for(int i=0; i<Dato_Anonima.size(); i++){
+                            Dat_Anonima = Dato_Anonima.get(i);
                     %>
                     <div class="Datos_Anonima">
                         <div class="Fecha">
-                                <label><%=Datt.getFecha()%></label>
+                                <label><%=Dat_Anonima.getFecha()%></label>
                         </div>
                         <div class="Direccion">
-                                <label><%=Datt.getDireccion()%></label>
+                                <label><%=Dat_Anonima.getDireccion()%></label>
+                        </div>
+                        <div class="Evidencia">
+                            <img src="<%=Dat_Anonima.getEvidencia()%>">
+                        </div>
+                        <div class="Correo">
+                                <label><%=Dat_Anonima.getCorreo()%></label>
+                        </div>
+                        <div class="icono-observar">
+                                <label class=" fa fa-eye Prueba-Anonima"></label>
+                        </div>
+                    </div>
+                    <div class="Datos_DAnonima">
+                        <div class="Datos_DAnonima2">
+                            <label class="fa fa-close cerrar_anonima"></label>
+                            <h1>Respuesta</h1>
+                            <input type="hidden" class="Codigo_D" value="<%=Dat_Anonima.getCodigo()%>">
+                            <img class="img-Denuncia_A1" src="<%=Dat_Anonima.getEvidencia()%>">
+                                <div class="Datos">
+                                    <label class="dat">Fecha:</label>
+                                    <label><%=Dat_Anonima.getFecha()%></label>
+                                    <label class="dat">Dirección:</label>
+                                    <label><%=Dat_Anonima.getDireccion()%></label>
+                                    <label class="dat">Correo:</label>
+                                    <label><%=Dat_Anonima.getCorreo()%></label>
+                                </div>  
+                                <div class="Descrip">
+                                    <b><label class=""> Descripcion:</label></b>
+                                    <label><%=Dat_Anonima.getDescripcion()%></label>
+                                </div>
+                                <div class="respuestas">
+                                    <label><input type="radio" class="btn-Responder" name="Respuesta" value="Respuesta" />
+                                    Responder</label>
+                                    <label><input type="radio" class="btn-Predeterminada" name="Predeterminada" value="Respuesta" />
+                                    Predeterminada</label>
+                                </div>
+                                <textarea class="Respuesta" name="Respuesta" ></textarea>
+                                <input class="Res_Anonima" type="submit" name="Res_Anonima" value="Enviar">
+                        </div>
+                        <div class="img-Denuncia_A2">
+                            <label class="fa fa-close Cerrar_img_Anonima"></label>
+                            <img   src="<%=Dat_Anonima.getEvidencia()%>">
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+                <div class="Denuncia_Cliente">
+                    <h1>Cliente</h1>
+                </div>
+                <div class="Datos_Denuncia_Cliente">
+                     <%
+                        ArrayList<GS_Denuncia_Cliente> Dato_Cliente = new ArrayList<>();
+                        Denuncias_M D_Cliente = new Denuncias_M();
+                        Dato_Cliente = D_Cliente.Tabla_Denuncias2();
+                        GS_Denuncia_Cliente Dat_Cliente = new GS_Denuncia_Cliente();
+
+                        for(int i=0; i<Dato_Cliente.size(); i++){
+                            Dat_Cliente = Dato_Cliente.get(i);
+                    %>
+                    <div class="Datos_Anonima">
+                        <div class="Fecha">
+                                <label><%=Dat_Cliente.getFecha()%></label>
+                        </div>
+                        <div class="Direccion">
+                                <label><%=Dat_Cliente.getDireccion()%></label>
                         </div>
                         <div class="Evidencia">
                             <img src="<%=Datt.getEvidencia()%>">
@@ -110,9 +175,7 @@
                     </div>
                     <%}%>
                 </div>
-                <div class="Denuncia_Cliente">
-                    <h1>Cliente</h1>
-                </div>
+                
             </article>
 
                 <article id="Mascotas" class="Adopcion">
