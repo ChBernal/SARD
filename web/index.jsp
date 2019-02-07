@@ -146,7 +146,7 @@
                                         Mascota_M MM = new Mascota_M();
                                         ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();    
                                         GS_Mascota GSM = new GS_Mascota();
-                                        Tabla_mascota = MM.Todo_Mascota();
+                                        Tabla_mascota = MM.Mascota_Disponible();
 
                                         for (int i = 0; i < Tabla_mascota.size();i++){
                                             GSM = Tabla_mascota.get(i);
@@ -157,7 +157,7 @@
                                             </div>
                                             <div class="Datos_Mascota" >
                                                 <h1><%=GSM.getNombre()%></h1>
-                                                <label>Edad</label>
+                                                <label><%= GSM.getFecha_Nacimiento() %></label>
                                                 <label><%= GSM.getGenero() %></label>
                                                 <label><%= GSM.getRaza() %></label>
                                                 <label><%= GSM.getColor() %></label>
