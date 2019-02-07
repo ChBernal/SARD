@@ -28,7 +28,6 @@ public class ServletLogin extends HttpServlet {
         
         if (request.getParameter("Ingresar") != null){
             Rol = this.Login(request, response);
-            JOptionPane.showMessageDialog(null, Rol);
             switch (Rol){
                 case 1:
                     this.Datos_Admin(request, response);
@@ -45,6 +44,8 @@ public class ServletLogin extends HttpServlet {
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Datos incorrectos");
+                    response.sendRedirect("index.jsp");
+                    
             }
         }
     }
