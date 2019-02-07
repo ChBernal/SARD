@@ -1,0 +1,996 @@
+/* Estilos para todo */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: rgb(220,237,200) url("../Imagenes/Fondo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Nunito Sans', sans-serif arial;
+	font-size: 16px;
+	padding-top: 55px;
+}
+
+
+/* Aca terminan los estilos generales */
+
+ /* aca va todo sobre el menu */
+
+header {
+	background: rgb(39,174,96);
+	position: fixed;
+	width: 100%;
+	min-width: 350px;
+	top: 0;
+}
+.Menu {
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Menu .Usuario {
+	display: inline-block;
+	margin-right: 1em;
+	text-align: center;
+}
+
+.Menu .btn-menu{
+	display: none;
+	color: rgb(255,255,255);
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.Menu .Usuario .Abrir {
+	color: rgb(255,255,255);
+	text-decoration: none;
+	display: inline-block;
+	padding: 1em;
+	text-align: center;
+	font-size: 1em;
+}
+
+.Menu .Usuario .Abrir:hover {
+	background: rgb(254,249,231); 
+	color: rgb(39,174,96);
+}
+
+.Menu .Enlaces {
+	background: rgb(39,174,96);
+	display: inline-block;
+	text-align: left;
+}
+
+.Menu .Enlaces a {
+	color: rgb(255,255,255);
+	text-decoration: none;
+	display: inline-block;
+	padding: 1em;
+	text-align: left;
+	font-size: 1em;
+}
+
+.Menu .Enlaces i {
+	margin-right: 5px;
+}
+
+.Menu .Enlaces a:hover {
+	background: rgb(254,249,231);
+	color: rgb(39,174,96);
+	border-right: 1px solid rgb(39,174,96);
+}
+
+/* Efectos del menu */
+
+.headroom {
+	transition: transform .3s ease;
+}
+
+.headroom--pinned {
+	transform: translateY(0%);
+}
+
+.headroom--unpinned {
+	transform:  translateY(-100%);
+}
+
+.headroom--bottom {
+	transform: translateY(0%);
+}
+
+/* Finalizamos los efectos del menu */
+
+/* Aca termina todo del menu */
+/* todo lo de ventana modal */
+
+.flex {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+}
+
+.Contenido-Modal{
+	background: rgb(255,255,255);
+	position: relative;
+	margin: auto;
+	width: 100%;
+	max-width: 1000px;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
+	animation-name: modal;
+	animation-duration: 1s;
+}
+
+/*  Creacion de animacion */
+
+@keyframes modal{
+	from{
+		top: -100%; 
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* Terminamos de crear la animacion */
+
+.close {
+	color: rgb(255,255,255);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.close:hover {
+	color: rgb(117,117,117);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.Header-Modal, .Footer-Modal {
+	padding: 8px 16px;
+	background: rgb(39,174,96);
+	color: rgb(255,255,255);
+}
+
+.Footer-Modal a{
+	cursor: pointer;
+}
+
+.Body-Modal {
+	text-align: justify;
+	padding: 20px 16px;
+}
+
+/* Terminamos todo lo relacionado con la ventana modal */
+
+/* Aca va lo relacionado con articulos y contenido dentro del body */
+
+.Contenedor {
+	width: 100%;
+}
+
+main article {
+	width: 100%;
+	height: 100vh;
+	min-width: 350px;
+	margin: 0px auto;
+	padding: 20px;
+}
+
+main .Cabezera{
+	width: 100%;
+	height: 150px;
+	display: flex;
+	box-shadow: 0 0 10px 0;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255,255,255,.5);
+}
+
+main article h1 {
+	font-weight: normal;
+	margin-bottom: .5em;
+}
+
+main article hr {
+	margin-bottom: 1em;
+	background: rgb(39,174,96);
+	border: none;
+}
+
+main article p {
+	margin-bottom: 1em;
+}
+
+.Inicio {
+	margin-top: -50px;
+	width: 100%;
+	height: 100vh;
+}
+
+.Denuncias {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	background: rgb(255,249,196);
+	background-attachment: fixed;
+}
+
+.Denuncias .Contenido-Denuncias{
+	display: flex;
+	justify-content: space-between;
+}
+
+.Denuncias .Informacion {
+	padding-top:55px;
+	width: 70%;
+}
+
+.Adopcion {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	background: rgb(248,255,178);
+	background-attachment: fixed;	
+}
+
+.Eventos {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	background: rgb(209,255,178);
+	background-attachment: fixed;
+}
+
+.Tips {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	background: rgb(178,255,186);
+	background-attachment: fixed;
+}
+
+.Contactenos {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	background-attachment: fixed;
+	background: rgb(39,174,96);
+}
+
+.Contenido-Contactenos {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Footer-Button {
+	display: flex;
+	justify-content: center;
+	color: rgb(255,255,255);
+	background: rgb(39,174,96);
+	font-size: 16px;
+}
+
+
+/* Fin de Estilos dentro del body  */
+
+/* Aca va el estilo de los formularios*/
+
+/* Formulario Login */
+
+.Wrap {
+	width: 90%;
+	max-width: 500px;
+	padding: 40px;
+	margin: auto;
+	background: rgb(255,255,255);
+}
+
+.Contenedor-Formulario {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contenedor-Formulario .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"],
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"],
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"]:active,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"]:active,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"].error,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"].error,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"].error + label,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"].error + label,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"].error + label{
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group label.label {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group label.label.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label,
+.Contenedor-Formulario .Formulario .Input-Group.Radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: rgb(39,174,96);
+	position: relative;
+	padding: 5px 15px 5px 51px;
+	font-size: 1em;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label:hover,
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label:hover {
+	background: rgba(220,237,200,1);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 20%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.error label,
+.Contenedor-Formulario .Formulario .Input-Group.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.error label:hover,
+.Contenedor-Formulario .Formulario .Input-Group.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.error label:before,
+.Contenedor-Formulario .Formulario .Input-Group.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio input[type="radio"],
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio input[type="radio"]:checked + label:before,
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox input[type="checkbox"]:checked + label:before {
+	display: none;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio input[type="radio"]:checked + label,
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox input[type="checkbox"]:checked + label {
+	padding: 5px 15px;
+	background: rgb(39,174,96);
+	border-radius: 2px;
+	color: rgb(255,255,255);
+}
+
+.Contenedor-Formulario .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin de formulario login*/
+
+/* Formulario Denuncia */
+
+.Wrap-Denuncia {
+	width: 90%;
+	max-width: 500px;
+	padding: 40px;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Denuncia {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"],
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"],
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 13px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"]:focus,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"]:active,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"]:focus,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"]:active,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"]:focus,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"].error,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"].error,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"].error + label,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"].error + label,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"].error + label{
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia label.label-Denuncia {
+	position: absolute;
+	top: 14px;
+	left: 0px;
+	font-size: 14px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia label.label-Denuncia.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia span{
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:hover,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:before,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Denuncia .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Denuncia .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin de formulario Denuncia*/
+
+/* Formulario Adopcion */
+
+.Wrap-Adopcion {
+	width: 100%;
+       height: 500px;
+	max-width: 1000px;
+	padding: 40px;
+	margin: auto;
+        overflow: auto;
+}
+
+.Wrap-Adopcion .Posicion-Adopcion{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.Wrap-Adopcion .Posicion-Adopcion .InfoMascota{
+    width: 350px;
+    height: 200px;
+    border: 1px solid black;
+    background: rgb(255,255,255);
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: rgb(0,0,0,0.3) 10px 10px 10px 0px;
+    margin: 5px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Wrap-Adopcion .Posicion-Adopcion .InfoMascota img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px 5px 5px 5px ;
+}
+
+.Wrap-Adopcion .Posicion-Adopcion .InfoMascota .Datos_Mascota{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.Contenedor-Formulario-Adopcion {
+    width: 100%;
+    color: rgb(39,174,96);
+    padding: 50px;
+}
+
+.Posicion-Postulacion {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.Lefth-Postulacion {
+	width: 30%;
+	height: 100%;
+	margin: auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.Lefth-Postulacion .Datos_Mascota {
+	width: 60%;
+	height: 100%;
+	margin: auto;
+	color: rgb(39,174,96);
+	align-items: baseline;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.Lefth-Postulacion  img {
+	width: 160px;
+	height: 160px;
+	margin: auto;
+	border-radius: 50%;
+	border: 1px solid rgb(39,174,96);
+}
+
+.Rigth-Postulacion {
+	width: 70%;
+	height: 100%;
+	border-left: 1px solid rgb(39,174,96);
+}
+
+.Siguiente1 {
+	width: 90%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: rgb(255,255,255);
+	border: 2px solid rgb(255,255,255);
+	background: rgb(39,174,96);
+	text-align: center;
+	margin: auto;
+	border-radius: 5px;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Siguiente2,
+.Siguiente3,
+.Siguiente4,
+.btn-Postulacion {
+	width: 90%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: rgb(255,255,255);
+	border: 2px solid rgb(255,255,255);
+	background: rgb(39,174,96);
+	text-align: center;
+	margin: auto;
+	border-radius: 5px;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Anterior1,
+.Anterior2,
+.Anterior3,
+.Anterior4 {
+	width: 90%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: 2px solid rgb(255,255,255);
+	background: rgb(39,174,96);
+	text-align: center;
+	margin: auto;
+	border-radius: 5px;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    color: rgb(255,255,255);
+}
+
+/*  Finaliza Adopcion */
+
+/*  Formulario Contactenos */
+
+.Wrap-Contactenos {
+	width: 90%;
+	max-width: 500px;
+	padding: 40px;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Contactenos {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contenedor-Formulario-Contactenos .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="text"],
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="email"],
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="text"]:focus,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="text"]:active,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="email"]:focus,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="email"]:active,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="password"]:focus,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="text"].error,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="email"].error,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="password"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="text"].error + label,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="email"].error + label,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos input[type="password"].error + label{
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos label {
+	color: rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos label.label-Contactenos {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos label.label-Contactenos.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos.error label,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos.error label:hover,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos.error label:before,
+.Contenedor-Formulario-Contactenos .Formulario .Input-Group-Contactenos.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contactenos .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Contactenos .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin de formulario Contactenos */
+
+/* Fin de estilo de formularios*/
+
+/* Inicio de Responsive */
+
+@media screen and (max-width: 990px){
+
+	header {
+		background: none;
+	}
+
+	header .Menu {
+		width: 100%;
+		display: flex;
+		align-items: initial;
+		flex-direction: column-reverse;
+	}
+	header .Menu .Usuario {
+		background: rgb(39,174,96);
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	header .Menu .Usuario .btn-menu {
+		display: inline-block;
+		padding: 1em;
+	}
+
+	header .Menu .Enlaces {
+		background: rgb(39,174,96);
+		width: 50%;
+		height: 40vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Contenido-Modal {
+		width: 60%;
+	}
+
+	.Denuncias,.Adopcion,.Eventos,.Tips,.Contactenos {
+		height: 100%;
+	}
+
+	.Lefth-Postulacion  {
+		min-width: 300px;
+	}
+
+	.Rigth-Postulacion {
+		width: 100%;
+	}
+
+	main .Denuncias .Contenido-Denuncias {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	main .Denuncias .Contenido-Denuncias .Informacion {
+		display: flex;
+		flex-direction: column-reverse;
+		height: 100%;
+		width: 100%;
+	}
+
+	main .Contactenos .Contenido-Contactenos {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+	}
+
+	main article {
+		height: 100%;
+	}
+
+	main .Contactenos {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 550px){
+	.Contenido-Modal {
+		width: 90%;
+		min-width: 350px;
+	}
+
+	header .Menu .Enlaces {
+		background: rgb(39,174,96);
+		width: 90%;
+		height: 40vh;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+/* Fin de Responsive */
