@@ -59,7 +59,24 @@ $(".Denuncia_Cliente").hide();
 $(".Denuncia_Anonima").click(function (){
  $(".Datos_Denuncia_Anonima").slideToggle();
 });
-
+// Modal denuncias anonimas
+$(".Datos_DAnonima").hide();
+    $(".Prueba-Anonima").click(function (){
+        var Index = $(".Prueba-Anonima").index(this);
+        var Cod = $(".Datos_DAnonima").eq(Index);
+        Cod.show();
+    });
+    $(".cerrar_anonima").click(function (){
+        $(".Datos_DAnonima").hide()
+    });
+// opcion respuesta 
+$(".Respuesta").hide();
+$(".btn-Responder").click(function (){
+    $(".Respuesta").show();
+});
+$(".btn-Predeterminada").click(function (){
+    $(".Respuesta").hide();
+});
 
 //Opciones de acordeon
 

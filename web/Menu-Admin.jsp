@@ -72,8 +72,36 @@
                         <div class="Correo">
                                 <label><%=Datt.getCorreo()%></label>
                         </div>
-                        <div class="">
-                                <label class="icon-eye Prueba-Anonima"></label>
+                        <div class="icono-observar">
+                                <label class=" fa fa-eye Prueba-Anonima"></label>
+                        </div>
+                    </div>
+                    <div class="Datos_DAnonima">
+                        <div class="Datos_DAnonima2">
+                            <label class="fa fa-close cerrar_anonima"></label>
+                            <h1>Respuesta</h1>
+                            <input type="hidden" class="Codigo_D" value="<%=Datt.getCodigo()%>">
+                                <img src="<%=Datt.getEvidencia()%>">
+                                <div class="Datos">
+                                    <label class="dat">Fecha</label>
+                                    <label><%=Datt.getFecha()%></label>
+                                    <label class="dat">Direccion</label>
+                                    <label><%=Datt.getDireccion()%></label>
+                                    <label class="dat">Correo</label>
+                                    <label><%=Datt.getCorreo()%></label>
+                                </div>  
+                                <div class="Descrip">
+                                    <label>Descripcion</label>
+                                    <label><%=Datt.getDescripcion()%></label>
+                                </div>
+                                <div class="respuestas">
+                                    <label>Responder</label>
+                                    <input type="radio" class="btn-Responder" name="Respuesta" value="Respuesta"/>
+                                    <label>Predeterminada</label>
+                                    <input type="radio" class="btn-Predeterminada" name="Respuesta" value="Respuesta"/>
+                                </div>
+                                <textarea class="Respuesta" name="Respuesta" >Escribe tu respuesta</textarea>
+                                <input class="Res_Anonima" type="submit" name="Res_Anonima" value="Enviar">
                         </div>
                     </div>
                     <%}%>
