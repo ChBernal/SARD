@@ -55,9 +55,13 @@ $(function(){
 
 // Acordeon Denuncias 
 $(".Datos_Denuncia_Anonima").hide();
-$(".Denuncia_Cliente").hide();
+
 $(".Denuncia_Anonima").click(function (){
  $(".Datos_Denuncia_Anonima").slideToggle();
+ $(".Denuncia_Cliente").slideToggle(); 
+});
+$(".Denuncia_Cliente").click(function (){
+ $(".Denuncia_Anonima").slideToggle(); 
 });
 // Modal denuncias anonimas
 $(".Datos_DAnonima").hide();
@@ -67,16 +71,60 @@ $(".Datos_DAnonima").hide();
         Cod.show();
     });
     $(".cerrar_anonima").click(function (){
-        $(".Datos_DAnonima").hide()
+        $(".Datos_DAnonima").hide();
+        $(".Respuesta").val("");
+        $(".Respuesta").hide();
     });
-// opcion respuesta 
+// opcion respuesta
+$(".img-Denuncia_A1").mouseenter(function (){
+    $(".img-Denuncia_A1").css("cursor","zoom-in");
+});
+$(".img-Denuncia_A2").hide();
+$(".img-Denuncia_A1").click(function (){
+    $(".Datos_DAnonima2").hide();
+    $(".img-Denuncia_A2").show();
+});
+$(".Cerrar_img_Anonima").click(function (){
+     $(".img-Denuncia_A2").hide();
+     $(".Datos_DAnonima2").show();
+     
+});
+document.querySelectorAll('[name=Respuesta]').forEach((x) => x.checked = false);
+document.querySelectorAll('[name=Predeterminada]').forEach((x) => x.checked = false);
+
 $(".Respuesta").hide();
+
 $(".btn-Responder").click(function (){
     $(".Respuesta").show();
+    document.querySelectorAll('[name=Predeterminada]').forEach((x) => x.checked = false);
 });
+
 $(".btn-Predeterminada").click(function (){
-    $(".Respuesta").hide();
+    $(".Respuesta").hide();document.querySelectorAll('[name=Respuesta]').forEach((x) => x.checked = false);
+    $(".Respuesta").val("");
 });
+
+// envio de respuesta denuncia anonima 
+$(".Res_Anonima").click(function (){
+        var Index = $(".Res_Anonima").index(this);
+        var Cod = $(".Codigo_D").eq(Index);
+        var Des = $(".Respuesta").eq(Index);
+        var Codigo = Cod.val();
+        var Descripcion = Des.val();
+        var btn = "Anonima";
+        
+        $.ajax({
+            url: "ServletDenuncias",
+            data: {
+              Boton : btn,
+              Codigo_RA: Codigo,
+              Descripcion_RA: Descripcion
+            },
+            success: function( result ) {
+              $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+            }
+          });
+    });
 
 //Opciones de acordeon
 

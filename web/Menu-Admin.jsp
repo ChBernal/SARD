@@ -81,27 +81,31 @@
                             <label class="fa fa-close cerrar_anonima"></label>
                             <h1>Respuesta</h1>
                             <input type="hidden" class="Codigo_D" value="<%=Datt.getCodigo()%>">
-                                <img src="<%=Datt.getEvidencia()%>">
+                            <img class="img-Denuncia_A1" src="<%=Datt.getEvidencia()%>">
                                 <div class="Datos">
-                                    <label class="dat">Fecha</label>
+                                    <label class="dat">Fecha:</label>
                                     <label><%=Datt.getFecha()%></label>
-                                    <label class="dat">Direccion</label>
+                                    <label class="dat">Dirección:</label>
                                     <label><%=Datt.getDireccion()%></label>
-                                    <label class="dat">Correo</label>
+                                    <label class="dat">Correo:</label>
                                     <label><%=Datt.getCorreo()%></label>
                                 </div>  
                                 <div class="Descrip">
-                                    <label>Descripcion</label>
+                                    <b><label class=""> Descripcion:</label></b>
                                     <label><%=Datt.getDescripcion()%></label>
                                 </div>
                                 <div class="respuestas">
-                                    <label>Responder</label>
-                                    <input type="radio" class="btn-Responder" name="Respuesta" value="Respuesta"/>
-                                    <label>Predeterminada</label>
-                                    <input type="radio" class="btn-Predeterminada" name="Respuesta" value="Respuesta"/>
+                                    <label><input type="radio" class="btn-Responder" name="Respuesta" value="Respuesta" />
+                                    Responder</label>
+                                    <label><input type="radio" class="btn-Predeterminada" name="Predeterminada" value="Respuesta" />
+                                    Predeterminada</label>
                                 </div>
-                                <textarea class="Respuesta" name="Respuesta" >Escribe tu respuesta</textarea>
+                                <textarea class="Respuesta" name="Respuesta" ></textarea>
                                 <input class="Res_Anonima" type="submit" name="Res_Anonima" value="Enviar">
+                        </div>
+                        <div class="img-Denuncia_A2">
+                            <label class="fa fa-close Cerrar_img_Anonima"></label>
+                            <img   src="<%=Datt.getEvidencia()%>">
                         </div>
                     </div>
                     <%}%>

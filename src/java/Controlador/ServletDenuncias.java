@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.Denuncias_M;
 import Modelo.GS_Denuncias;
+import Modelo.GS_Respuesta;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,7 +14,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 @MultipartConfig
 @WebServlet(name = "ServletDenuncias", urlPatterns = {"/ServletDenuncias"})
@@ -26,8 +29,30 @@ public class ServletDenuncias extends HttpServlet {
         if (request.getParameter("DenunciaNN") != null){
             this.Ingreso_Denuncias(request, response);
         }
+        if (request.getParameter("Boton").equalsIgnoreCase("Anonima")) {
+            this.Respuesta_Anonima(request, response);
+        }
     }
-    
+    protected void Respuesta_Anonima(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+        HttpSession datt = request.getSession();
+        
+        String Descripcion;
+        int Codigo ;
+        
+        Descripcion= request.getParameter("Descripcion_RA");
+        if (Descripcion.equalsIgnoreCase("")) {
+            Descripcion="aQUI HAY QUE PONER LA RESPUESTA PREDETERMINADA ";
+        }
+        Codigo = Integer.parseInt(request.getParameter("Codigo_RA"));
+         GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
+        Denuncias_M  Den= new Denuncias_M();
+        Den.Respuesta_Denuncia(GS_R);        
+        
+                
+     }
     protected void Ingreso_Denuncias(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
