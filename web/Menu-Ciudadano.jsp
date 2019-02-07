@@ -29,7 +29,7 @@
                                     <a href="#" class="Abrir" id="Abrir"><%=(String)Dat.getAttribute("NombreSession")%></a>
 					<img src="<?=$_SESSION['Img']?>">
 				</div>
-				
+                                <a href="Perfil_Ciudadano.jsp"><span class="fa fa-user"></span></a>
 			</div>
 		</nav>
 	</header>
@@ -64,10 +64,8 @@
 									<input type="file" id="Evidencia" name="Evidencia" accept="image/jpeg, image/png, image/gif">
 									<label class="label-Denuncia" for="Evidencia"><span class="fa fa-camera Evidencia-Denuncia"></span> Adjunte evidencia (en caso de poseerla)</label>
 								</div>
-								<div class="Input-Group-Denuncia">
-									<input type="email" id="Email" name="Email">
-									<label class="label-Denuncia" for="Email">Email</label>
-								</div>
+								<% String Documento=(String)Dat.getAttribute("DocumentoSession"); %>
+                                                                <input type="hidden" name="Documento" value="<%=Documento%>">
 								<input type="submit" name="DenunciaNN" value="Denunciar">
 							</form>
 						</div>	
