@@ -30,7 +30,7 @@ public class Mascota_M {
     public ArrayList<GS_Mascota> Mascota_Disponible() {
         ArrayList<GS_Mascota> Todo_Mascota = new ArrayList<>();
         try {
-            ps = cnn.prepareStatement("Mas_Disponibles()");
+            ps = cnn.prepareStatement("Call Mas_Disponibles()");
             rs = ps.executeQuery();
             while (rs.next()){
                 GS_Mascota GSM = new GS_Mascota(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
