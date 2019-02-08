@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Admin_M {
     Conexion conexion = new Conexion();
@@ -26,5 +27,21 @@ public class Admin_M {
         }
         
         return Uno_Admin;
+    }
+    public int Act_Administrador (GS_Admin GS){
+         int Actualizar=0;
+        try{
+            ps= cnn.prepareStatement("call A_Admin(?,?,?,?,?)");
+            ps.setString(1, GS.getDocumento());
+            ps.setString(2, GS.getDireccion());
+            ps.setString(3, GS.getTelefono());
+            ps.setString(4, GS.getCorreo());
+            ps.setString(5, GS.getFoto());
+            Actualizar=ps.executeUpdate();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+    }
+        return Actualizar;
     }    
 }

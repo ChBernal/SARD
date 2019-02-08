@@ -44,20 +44,20 @@
                         
                 %>
             <div class="Perfil-C">
-                <form action="ServletUsuario" method="post" enctype="multipart/form-data">
+                <form action="Servlet_Administrador" method="post" enctype="multipart/form-data">
                 <div class="Imagen">
                     <div id="Vista_Previa">
                         <img src="<%= inggs.getFoto()%>">
                     </div>
                     <label  class="fa fa-camera">
                         <input type="hidden" class="Foto1" value="<%= inggs.getFoto()%>">
-                        <input  class="Foto" id="Foto" type="file" name="Foto_C" accept="image/jpg, image/jpeg, image/png">
+                        <input  class="Foto" id="Foto" type="file" name="Foto_A" accept="image/jpg, image/jpeg, image/png">
                     </label>
                 </div>
                 <div class="Datos">
                     <label>Documento </label>
-                    <input type="text" class="Documento" id="Documento" name="Documento_C" value="<%= inggs.getDocumento()%>" readonly >
-                    <input type="hidden" id="Nombre"  name="Nombre_C" value="<%=inggs.getNombre()%>">
+                    <input type="text" class="Documento" id="Documento" name="Documento_A" value="<%= inggs.getDocumento()%>" readonly >
+                    <input type="hidden" id="Nombre"  name="Nombre_A" value="<%=inggs.getNombre()%>">
                     <label>Tipo de Documento </label>
                     <input type="text" name="Tipo" value="<%= inggs.getTipo_Documento()%>" readonly>
                     <label>Genero </label>
@@ -65,13 +65,13 @@
                     <label>Fecha de Nacimiento </label>	
                     <input type="text" name="Fecha" value="<%= inggs.getNacimiento()%>" readonly>
                     <label>Direccion</label>
-                    <input class="Mo" id="Direccion" type="text" name="Direccion_C" value="<%= inggs.getDireccion()%>" required>
+                    <input class="Mo" id="Direccion" type="text" name="Direccion_A" value="<%= inggs.getDireccion()%>" required>
                     <label>Telefono</label>
-                    <input class="Mo" id="Telefono2" type="text" name="Telefono2_C" value="<%= inggs.getTelefono()%>" required>
+                    <input class="Mo" id="Telefono2" type="text" name="Telefono2_A" value="<%= inggs.getTelefono()%>" required>
                     <label>Correo</label>
-                    <input class="Mo" id="Correo" type="email" name="Correo_C" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%= inggs.getCorreo()%>" required>
+                    <input class="Mo" id="Correo" type="email" name="Correo_A" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%= inggs.getCorreo()%>" required>
                     <div class="btn-Act">
-                        <input class="btn-Actualizar" type="submit" name="Actualizar" value="Actualizar">
+                        <input class="btn-Actualizar" type="submit" name="Actualizar_A" value="Actualizar">
                         <a href="#Mostrar-Cuenta" class="btn-Cambiar">Cambiar Contraseña?</a>
                     </div>
                 </div>

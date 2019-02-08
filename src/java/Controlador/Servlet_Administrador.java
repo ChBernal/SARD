@@ -5,23 +5,29 @@
  */
 package Controlador;
 
-import Modelo.GS_Login;
-import Modelo.Login_M;
+import Modelo.Admin_M;
+import Modelo.GS_Admin;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Usuario
+ * @author User
  */
-@WebServlet(name = "ServletCiudadano", urlPatterns = {"/ServletCiudadano"})
-public class ServletCiudadano extends HttpServlet {
+@MultipartConfig
+@WebServlet(name = "Servlet_Administrador", urlPatterns = {"/Servlet_Administrador"})
+public class Servlet_Administrador extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,24 +43,51 @@ public class ServletCiudadano extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        JOptionPane.showMessageDialog(null, "esta en el metodo");
-        String Documento,Clave, Actual, Nueva;
-        Documento = request.getParameter("Documento_C");
-        Clave = request.getParameter("Clave_C");
-        Actual = request.getParameter("Actual_C");
-        Nueva = request.getParameter("Nueva_C");
+        if (request.getParameter("Actualizar_A") != null){
+            JOptionPane.showMessageDialog(null, "Entra");
+            this.Actualizar_Admin(request, response);
+        }
+    }
+    protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
         
-         if (Actual.equals(Clave)) {
-             GS_Login GS_L = new GS_Login(Documento, Nueva);
-             Login_M M_LG = new Login_M();
-             int Actualizar = M_LG.Actualizar_Contraseña(GS_L);
-             if (Actualizar>0) {
-                 JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
-             }
-             else{
-                 JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR LOS DATOS");
-             }  
-         }
+        
+        String Documento,Nombre,Direccion,Telefono,Correo;
+        Nombre =request.getParameter("Nombre_A");
+        Documento = request.getParameter("Documento_A");
+        Direccion = request.getParameter("Direccion_A");
+        Telefono = request.getParameter("Telefono2_A");
+        Correo = request.getParameter("Correo_A");
+        Part Foto = request.getPart("Foto_A");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        GS_Admin GSA = new GS_Admin(Documento, Direccion, Telefono, Correo, url2);
+        Admin_M Admin = new Admin_M();
+        int Consulta;
+        Consulta=Admin.Act_Administrador(GSA);
+        if (Consulta>0) {
+            JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+        }       
+        response.sendRedirect("Perfil_Administrador.jsp");
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
