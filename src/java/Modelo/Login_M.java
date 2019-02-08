@@ -37,11 +37,25 @@ public class Login_M {
             rs = ps.executeQuery();
             while (rs.next()){
                 GS_Login Gsl = new GS_Login(rs.getString(1), rs.getString(2), rs.getInt(3));
+                JOptionPane.showMessageDialog(null, rs.getString(1)+rs.getString(2));
                 Usuario.add(Gsl);
             }
         } catch (Exception e) {
         }
         
         return Usuario;
+    }
+    public int Actualizar_Contraseña(GS_Login GS){
+         int Actualizar=0;
+        try{
+            ps=cnn.prepareStatement("call A_Login(?,?)");
+            ps.setString(1, GS.getUsuario());
+            ps.setString(2, GS.getClave());
+            Actualizar=ps.executeUpdate();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+    }
+        return Actualizar;
     }
 }

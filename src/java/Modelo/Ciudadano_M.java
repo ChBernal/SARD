@@ -8,19 +8,19 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Ciudadano_M {
-    Conexion conexion = new Conexion();
-    Connection cnn = conexion.Conectando();
-    PreparedStatement ps = null;
-    ResultSet rs = null;
+    Conexion Conex = new Conexion();
+    Connection BaseDatos = Conex.Conectando();
+    PreparedStatement PreSta = null;
+    ResultSet Reset = null;
     
     public ArrayList<GS_Ciudadano> Uno_Ciudadano (GS_Ciudadano GSC){
         ArrayList<GS_Ciudadano> Uno_Ciudadano = new ArrayList<>();
         try {
-            ps = cnn.prepareStatement("Call Uno_Cliente(?)");
-            ps.setString(1, GSC.getDocumento());
-            rs = ps.executeQuery();
-            while (rs.next()){
-                GS_Ciudadano GSCi = new GS_Ciudadano(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14));
+            PreSta = BaseDatos.prepareStatement("Call Uno_Cliente(?)");
+            PreSta.setString(1, GSC.getDocumento());
+            Reset = PreSta.executeQuery();
+            while (Reset.next()){
+                GS_Ciudadano GSCi = new GS_Ciudadano(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10), Reset.getString(11), Reset.getString(12), Reset.getString(13), Reset.getString(14));
                 Uno_Ciudadano.add(GSCi);
             }
         } catch (Exception e) {
@@ -31,10 +31,10 @@ public class Ciudadano_M {
     public ArrayList<GS_Ciudadano> Todo_Cliente() {
         ArrayList<GS_Ciudadano> Todo_Cliente = new ArrayList<>();
         try {
-            ps = cnn.prepareStatement("call Todo_Cliente()");
-            rs = ps.executeQuery();
-            while (rs.next()){
-                GS_Ciudadano GSCi = new GS_Ciudadano(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14));
+            PreSta = BaseDatos.prepareStatement("call Todo_Cliente()");
+            Reset = PreSta.executeQuery();
+            while (Reset.next()){
+                GS_Ciudadano GSCi = new GS_Ciudadano(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10), Reset.getString(11), Reset.getString(12), Reset.getString(13), Reset.getString(14));
                 Todo_Cliente.add(GSCi);
             }
         } catch (Exception e) {
@@ -42,4 +42,25 @@ public class Ciudadano_M {
         }
         return Todo_Cliente;
     }
+    
+    public int Actualizar_Ciudadano (GS_Ciudadano GS){
+         int Actualizar=0;
+        try{
+            PreSta=BaseDatos.prepareStatement("call A_Cliente(?,?,?,?,?,?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(2, GS.getDireccion());
+            PreSta.setString(3, GS.getBarrio());
+            PreSta.setString(4, GS.getCelular());
+            PreSta.setString(5, GS.getFijo());
+            PreSta.setString(6, GS.getCorreo());
+            PreSta.setString(7, GS.getOcupacion());
+            PreSta.setString(8, GS.getFoto());
+            Actualizar=PreSta.executeUpdate();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+    }
+        return Actualizar;
+    }
+    
 }

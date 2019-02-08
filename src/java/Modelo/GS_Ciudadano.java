@@ -59,6 +59,17 @@ public class GS_Ciudadano {
         this.Foto = Foto;
     }
 
+    public GS_Ciudadano(String Documento, String Direccion, String Barrio, String Celular, String Fijo, String Correo, String Ocupacion, String Foto) {
+        this.Documento = Documento;
+        this.Direccion = Direccion;
+        this.Barrio = Barrio;
+        this.Celular = Celular;
+        this.Fijo = Fijo;
+        this.Correo = Correo;
+        this.Ocupacion = Ocupacion;
+        this.Foto = Foto;
+    }
+    
     public String getDocumento() {
         return Documento;
     }
