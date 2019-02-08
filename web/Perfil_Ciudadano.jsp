@@ -44,7 +44,7 @@
                 <form action="ServletUsuario" method="post" enctype="multipart/form-data">
                 <div class="Imagen">
                     <div id="Vista_Previa">
-                        <img src="Estilos/Imagenes/Perfil.png<%-- <%= inggs.getFoto()%> --%>">
+                        <img src="<%= inggs.getFoto()%>">
                     </div>
                     <label  class="fa fa-camera">
                         <input type="hidden" class="Foto1" value="<%= inggs.getFoto()%>">
@@ -90,24 +90,24 @@
                     <h2>Usuario</h2>
                     <label class="Advertencia">Recuerda que solo puedes cambiar tu contraseña, porque el usuario siempre sera tu documento de identidad.</label>
                     <div class="Inputs">
-                        <%
-                            ArrayList<GS_Login> Datos_Login = new ArrayList<>();
-                            Login_M  M_Lg = new Login_M();
-                            Datos_Login = M_Lg.Uno_Usuario(Documento);
-                            GS_Login GS_LG = new GS_Login();
-
-                            for(int i=0; i<Datos_Login.size(); i++){
-                                GS_LG = Datos_Login.get(i);
-                        %>
-                        <input type="hidden" class="Usuario_Cliente" value="<%=GS_LG.getUsuario()%>"
-                        <input type="hidden" class="Clave_Cliente" value="<%=GS_LG.getClave()%>"
-                        <%}%>
                         <label>Contraseña Actual:</label>
                         <input type="password" class="Contraseña_Actual" name="Contraseña">
                         <label>Nueva Contraseña:</label>
                         <input type="password" class="Contraseña_Nueva" name="Contraseña">
                         <input class="Boton-Act" type="submit" name="Act-Contraseña" value="Cambiar?">
                     </div>
+                    <%
+                        ArrayList<GS_Login> Datos_Login = new ArrayList<>();
+                        Login_M  M_Lg = new Login_M();
+                        Datos_Login = M_Lg.Uno_Usuario(Documento);
+                        GS_Login GS_LG = new GS_Login();
+
+                        for(int i=0; i<Datos_Login.size(); i++){
+                            GS_LG = Datos_Login.get(i);
+                    %>
+                    <input type="hidden" class="Usuario_Cliente" value="<%=GS_LG.getUsuario()%>"
+                    <input type="hidden" class="Clave_Cliente" value="<%=GS_LG.getClave()%>"
+                    <% } %>
                 </div>
             </div>
         </div>

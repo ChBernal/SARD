@@ -37,7 +37,6 @@ public class Login_M {
             rs = ps.executeQuery();
             while (rs.next()){
                 GS_Login Gsl = new GS_Login(rs.getString(1), rs.getString(2), rs.getInt(3));
-                JOptionPane.showMessageDialog(null, rs.getString(1)+rs.getString(2));
                 Usuario.add(Gsl);
             }
         } catch (Exception e) {

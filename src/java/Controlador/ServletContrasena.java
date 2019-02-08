@@ -5,31 +5,23 @@
  */
 package Controlador;
 
-import Modelo.Ciudadano_M;
-import Modelo.GS_Ciudadano;
 import Modelo.GS_Login;
 import Modelo.Login_M;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Usuario
+ * @author User
  */
-@MultipartConfig
-@WebServlet(name = "ServletUsuario", urlPatterns = {"/ServletUsuario"})
-public class ServletUsuario extends HttpServlet {
+@WebServlet(name = "ServletContraseña", urlPatterns = {"/ServletContrase_a"})
+public class ServletContrasena extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -45,51 +37,26 @@ public class ServletUsuario extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        if (request.getParameter("Actualizar") != null){
-            this.Actualizar_Cliente_Perfil(request, response);
+        String Documento,Clave,Actual,Nueva;
+        JOptionPane.showMessageDialog(null, "Entra");
+        Documento = request.getParameter("Documento_C");
+        Clave = request.getParameter("Clave_C");
+        Actual = request.getParameter("Actual_C");
+        Nueva = request.getParameter("Nueva_C");
+        if (Clave.equals(Actual)) {
+            GS_Login lg=new GS_Login(Documento, Nueva);
+            Login_M act=new Login_M();
+            int X= act.Actualizar_Contraseña(lg);
+            if(X>0){
+                JOptionPane.showMessageDialog(null,"Sus datos fueron actualizados");
+            }else{
+                JOptionPane.showMessageDialog(null,"Error al actualizar");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Contraseña actual no coincide con la Anterior");
         }
     }
-    protected void Actualizar_Cliente_Perfil (HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        JOptionPane.showMessageDialog(null, "entra funciom");
-        String Documento,Nombre,Direccion,Barrio,Telefono1,Telefono2,Correo, Ocupacion;
-        Documento = request.getParameter("Documento_C");
-        Nombre = request.getParameter("Nombre_C");
-        Direccion = request.getParameter("Direccion_C");
-        Barrio = request.getParameter("Barrio_C");
-        Telefono1 = request.getParameter("Telefono1_C");
-        Telefono2 = request.getParameter("Telefono2_C");
-        Correo = request.getParameter("Correo_C");
-        Ocupacion = request.getParameter("Ocupacion_C");
-        Part Foto = request.getPart("Foto_C");
-        String Nombre_F = Foto.getSubmittedFileName();
-        String Name = Nombre+"_"+Nombre_F;
-        
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
-        String url2 = "Uploads\\"+Name;
-        
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
-        }
-        GS_Ciudadano GSC = new GS_Ciudadano(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
-        Ciudadano_M Cliente = new Ciudadano_M();
-        int Consulta =Cliente.Actualizar_Ciudadano(GSC);
-            if (Consulta>0) {
-                JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
-            }
-        response.sendRedirect("Perfil_Ciudadano.jsp");
-        }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

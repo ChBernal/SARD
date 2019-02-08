@@ -33,7 +33,7 @@ $(document).ready(function (){
         var Btn = "Actualizar";
         alert(Documento+Contraseña+Actual+Nueva+Btn);
         $.ajax({
-            url: "Servlet_Ciudadano",
+            url: "ServletContrasena",
             data: {
                 Boton_C: Btn,
                 Documento_C: Documento,
