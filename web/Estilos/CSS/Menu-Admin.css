@@ -207,15 +207,37 @@ main article p {
     overflow: scroll;
     overflow-x: hidden;
 }
+.Denuncias .Datos_Denuncia_Cliente{
+    justify-content: center;
+    padding: 20px;
+    margin: 10px auto;
+    color: rgb(39,174,96);
+    width: 100%;
+    height: 520px;
+    max-width: 1000px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
 .Denuncias .Datos_Denuncia_Anonima .Datos_Anonima{
     border-bottom: 1px solid green;
     width: 100%;
     max-width: 1000px;
     background: rgba(178,255,186,0.6);
-    color: black;
-    
+    color: black;   
+}
+.Denuncias .Datos_Denuncia_Cliente .Datos_Cliente{
+    border-bottom: 1px solid green;
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(178,255,186,0.6);
+    color: black;   
 }
 .Denuncias .Datos_Denuncia_Anonima .Datos_Anonima div{
+    display: inline-block;
+    width: 180px;
+    padding: 10px;
+}
+.Denuncias .Datos_Denuncia_Cliente .Datos_Cliente div{
     display: inline-block;
     width: 180px;
     padding: 10px;
@@ -238,7 +260,26 @@ main article p {
     justify-content: center;
     align-items: center;
 }
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima  label{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente label{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -257,6 +298,20 @@ main article p {
     -moz-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.75);
 }
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .Datos_DCliente2{
+    width: 400px;
+    overflow: auto;
+    padding-top: 20px;
+    background-color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+    -webkit-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.75);
+}
+
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima .Datos_DAnonima2 h1{
     text-align: center;
     font-size: 40px;
@@ -265,7 +320,23 @@ main article p {
     color: rgb(39,174,96);
     padding: 2px;
 }
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .Datos_DCliente2 h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    color: rgb(39,174,96);
+    padding: 2px;
+}
+
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima .Datos_DAnonima2 img{
+    width: 150px;   
+    height: 150px;
+    margin-bottom: 16px;
+    border-radius: 10%;
+    background: gray;
+}
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .Datos_DCliente2 img{
     width: 150px;   
     height: 150px;
     margin-bottom: 16px;
@@ -279,12 +350,26 @@ main article p {
     justify-content: center;
     text-align: left;
 }
-
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .Datos_DCliente2 .Datos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+}
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima .Datos_DAnonima2 .respuestas label{
   display: inline-block;
   color: rgb(39,174,96);
 }
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .Datos_DCliente2 .respuestas label{
+  display: inline-block;
+  color: rgb(39,174,96);
+}
+
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima .Datos_DAnonima2 .Respuesta{
+    max-width: 200px;
+}
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .Datos_DCliente2 .Respuesta{
     max-width: 200px;
 }
 
@@ -294,11 +379,27 @@ main article p {
     font-size: 17px;
     font-weight: bold;
 }
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .Datos_DCliente2 .Datos .dat{
+    width: 150px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+}
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima .Datos_DAnonima2 .Datos label{
     width: 150px;
     font-size: 17px;
 }
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .Datos_DCliente2 .Datos label{
+    width: 150px;
+    font-size: 17px;
+}
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima .Datos_DAnonima2 .Descrip{
+    padding: 10px;
+    font-size: 17px;
+    text-align: left;
+    margin-left: 20px;
+}
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .Datos_DCliente2 .Descrip{
     padding: 10px;
     font-size: 17px;
     text-align: left;
@@ -310,14 +411,31 @@ main article p {
     float: right;
     font-size: 30px;
 }
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .cerrar_anonima{
+    margin-top: -20px;
+    margin-right: -15px;
+    float: right;
+    font-size: 30px;
+}
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima .img-Denuncia_A2{
+    width: 600px;
+}
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .img-Denuncia_C22{
     width: 600px;
 }
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima .img-Denuncia_A2 .Cerrar_img_Anonima{
     font-size: 30px;
     float: right
 }
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .img-Denuncia_C2 .Cerrar_img_Cliente{
+    font-size: 30px;
+    float: right
+}
 .Denuncias .Datos_Denuncia_Anonima .Datos_DAnonima .img-Denuncia_A2 img{
+    width: 100%;
+    background: gray;
+}
+.Denuncias .Datos_Denuncia_Cliente .Datos_DCliente .img-Denuncia_C2 img{
     width: 100%;
     background: gray;
 }
@@ -331,7 +449,7 @@ main article p {
     max-height: 200px;
     min-width: 300px;
 }
-.Res_Anonima{
+.Enviar_Respuesta{
     margin: 10px;
     padding: 4px 7px;
     background: rgba(178,255,186,0.6);
