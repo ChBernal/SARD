@@ -69,7 +69,7 @@ public class Servlet_Mascota extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
         JOptionPane.showMessageDialog(null, TipoMascota);
-        String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Foto_Name;
+        String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Foto_Name;
         String url2 = "Uploads\\"+Foto_Name;
 
         InputStream file= Foto.getInputStream();
