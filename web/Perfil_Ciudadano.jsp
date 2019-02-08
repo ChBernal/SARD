@@ -28,8 +28,9 @@
         </div>
         <div class="Caja-Perfil">
                 <%
-                    HttpSession Doc=request.getSession();
-                    String Documento=(String)Doc.getAttribute("DocumentoSession");
+                    HttpSession Doc2=request.getSession();
+                    String Documento=(String)Doc2.getAttribute("DocumentoSession");
+                    String Clave=(String)Doc2.getAttribute("ClaveSession");
                     GS_Ciudadano inggs = new GS_Ciudadano(Documento);
                     ArrayList<GS_Ciudadano> datos = new ArrayList<>();
                     Ciudadano_M con = new Ciudadano_M();
@@ -86,28 +87,22 @@
                 %>
             <div id="Mostrar-Cuenta">
                 <div class="Cuenta">
-                    <div class="icons"><span class="fa fa-close"></span></div>
+                    <div class="icons"><a href="Perfil_Ciudadano.jsp"><span class="fa fa-close"></a></span></div>
                     <h2>Usuario</h2>
                     <label class="Advertencia">Recuerda que solo puedes cambiar tu contraseña, porque el usuario siempre sera tu documento de identidad.</label>
-                    <div class="Inputs">
-                        <label>Contraseña Actual:</label>
-                        <input type="password" class="Contraseña_Actual" name="Contraseña">
-                        <label>Nueva Contraseña:</label>
-                        <input type="password" class="Contraseña_Nueva" name="Contraseña">
-                        <input class="Boton-Act" type="submit" name="Act-Contraseña" value="Cambiar?">
-                    </div>
-                    <%
-                        ArrayList<GS_Login> Datos_Login = new ArrayList<>();
-                        Login_M  M_Lg = new Login_M();
-                        Datos_Login = M_Lg.Uno_Usuario(Documento);
-                        GS_Login GS_LG = new GS_Login();
-
-                        for(int i=0; i<Datos_Login.size(); i++){
-                            GS_LG = Datos_Login.get(i);
-                    %>
-                    <input type="hidden" class="Usuario_Cliente" value="<%=GS_LG.getUsuario()%>"
-                    <input type="hidden" class="Clave_Cliente" value="<%=GS_LG.getClave()%>"
-                    <% } %>
+                    <form action="Servlet_Contrasena" method="post">
+                        <div class="Inputs">
+                            <input type="hidden" name="Usuario_Cliente" value="<%= Documento%>">
+                            <input type="hidden" name="Clave_Cliente" value="<%= Clave%>">
+                            <label>Contraseña Actual:</label>
+                            <input type="password" name="Contrasena_Actual">
+                            <label>Nueva Contraseña:</label>
+                            <input type="password" name="Contrasena_Nueva">
+                            <label>Repetir Contraseña:</label>
+                            <input type="password" name="Contrasena_Nueva2">
+                            <input class="Boton-Act" type="submit" name="Act-Contrasena" value="Cambiar">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

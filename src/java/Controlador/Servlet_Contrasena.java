@@ -20,8 +20,8 @@ import javax.swing.JOptionPane;
  *
  * @author User
  */
-@WebServlet(name = "ServletContraseña", urlPatterns = {"/ServletContrase_a"})
-public class ServletContrasena extends HttpServlet {
+@WebServlet(name = "Servlet_Contrasena", urlPatterns = {"/Servlet_Contrasena"})
+public class Servlet_Contrasena extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,24 +37,44 @@ public class ServletContrasena extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Documento,Clave,Actual,Nueva;
+        if (request.getParameter("Act-Contrasena") != null){
+            JOptionPane.showMessageDialog(null, "Le entro completo");
+            this.Actualizar_Login(request, response);
+        }
+    }
+    protected void Actualizar_Login(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento,Clave,Actual,Nueva,Nueva2;
         JOptionPane.showMessageDialog(null, "Entra");
-        Documento = request.getParameter("Documento_C");
-        Clave = request.getParameter("Clave_C");
-        Actual = request.getParameter("Actual_C");
-        Nueva = request.getParameter("Nueva_C");
+        Documento = request.getParameter("Usuario_Cliente");
+        Clave = request.getParameter("Clave_Cliente");
+        Actual = request.getParameter("Contrasena_Actual");
+        Nueva = request.getParameter("Contrasena_Nueva");
+        Nueva2 = request.getParameter("Contrasena_Nueva2");
         if (Clave.equals(Actual)) {
-            GS_Login lg=new GS_Login(Documento, Nueva);
-            Login_M act=new Login_M();
-            int X= act.Actualizar_Contraseña(lg);
-            if(X>0){
-                JOptionPane.showMessageDialog(null,"Sus datos fueron actualizados");
-            }else{
-                JOptionPane.showMessageDialog(null,"Error al actualizar");
+            
+            if (Nueva.equals(Nueva2)) {
+                GS_Login lg=new GS_Login(Documento, Nueva);
+                Login_M act=new Login_M();
+                int X= act.Actualizar_Contraseña(lg);
+                if(X>0){
+                    JOptionPane.showMessageDialog(null,"Sus datos fueron actualizados");
+                    request.getRequestDispatcher("Perfil_Ciudadano.jsp").forward(request, response);
+                }else{
+                    JOptionPane.showMessageDialog(null,"Error al actualizar");
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Contraseña nueva no coincide con la Anterior");
+                request.getRequestDispatcher("Perfil_Ciudadano.jsp").forward(request, response);
             }
         }
         else{
             JOptionPane.showMessageDialog(null, "Contraseña actual no coincide con la Anterior");
+            request.getRequestDispatcher("Perfil_Ciudadano.jsp").forward(request, response);
         }
     }
 

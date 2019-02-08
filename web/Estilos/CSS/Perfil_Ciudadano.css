@@ -111,7 +111,6 @@
 .Cuenta{
     padding: 10px;
     width: 370px;
-    height: 300px;
     border: 2px solid rgb(39,174,96);
     text-align: center;
     background: rgb(220,237,200);
@@ -159,6 +158,7 @@
     border: 1px solid rgb(39,174,96);
     font-family: 'Acme', cursive;
     font-size: 15px;
+    cursor: pointer;
 }
 .Cuenta .icons{
     float: right;
@@ -167,4 +167,8 @@
     color: red;
     font-size: 25px;
     cursor: pointer;
+}
+.Cuenta .icons a{
+    color: red;
+    text-decoration: none;
 }

@@ -49,7 +49,6 @@ public class ServletLogin extends HttpServlet {
             }
         }
     }
-    
     protected int Login(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -60,7 +59,9 @@ public class ServletLogin extends HttpServlet {
         GS_Login GSL = new GS_Login(Usuario, Clave);
         Login_M LM = new Login_M();
         Rol = LM.Rol(GSL);
-        
+        HttpSession Datos1 = request.getSession();
+        Datos1.setAttribute("DocumentoSession", Usuario);
+        Datos1.setAttribute("ClaveSession", Clave);
         return Rol;
     }
     

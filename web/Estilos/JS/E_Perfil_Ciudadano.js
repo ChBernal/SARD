@@ -22,30 +22,6 @@ $(document).ready(function (){
             $(".fa-camera").show();
             $(".Datos .Mo").css("background","rgba( 39, 174, 96, 0.2)");
     });
-    //ACTUALIZAR CONTRASEÑA
-    $(".Boton-Act").click(function (){
-        var Index = $(".Boton-Act").index(this);
-        
-        var Documento = $(".Usuario_Cliente").val();
-        var Contraseña = $(".Clave_Cliente").val();
-        var Actual = $(".Contraseña_Actual").val();
-        var Nueva = $(".Contraseña_Nueva").val();
-        var Btn = "Actualizar";
-        alert(Documento+Contraseña+Actual+Nueva+Btn);
-        $.ajax({
-            url: "ServletContrasena",
-            data: {
-                Boton_C: Btn,
-                Documento_C: Documento,
-                Clave_C:Contraseña,
-                Actual_C: Actual,
-                Nueva_C: Nueva  
-            },
-            success: function( result ) {
-              $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
-            }
-        });
-    });
     
     //ACTUALIZAR DATOS CIUDADANO
     /*
