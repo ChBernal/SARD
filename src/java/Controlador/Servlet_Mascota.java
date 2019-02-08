@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Modelo.GS_Estado_Mascota;
+import Modelo.GS_Existente;
 import Modelo.GS_Mascota;
 import Modelo.Mascota_M;
 import java.io.File;
@@ -12,7 +14,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,8 +29,8 @@ import javax.swing.JOptionPane;
  * @author Usuario
  */
 @MultipartConfig
-@WebServlet(name = "Servlet_Masota", urlPatterns = {"/Servlet_Masota"})
-public class Servlet_Masota extends HttpServlet {
+@WebServlet(name = "Servlet_Mascota", urlPatterns = {"/Servlet_Mascota"})
+public class Servlet_Mascota extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -50,28 +54,20 @@ public class Servlet_Masota extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno;
-        int Estado, Codigo;
-
-        Estado_M EM = new Estado_M();
-        Mascota_M MM = new Mascota_M();
+        String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno,Documento,Estado;
+        int  Codigo ;
         
-        Codigo = MM.CodigoMascota();
         TipoMascota = request.getParameter("Tipo_Mascota");
         Nombre = request.getParameter("Nombre-Mascota");
         FechaNacimiento = request.getParameter("Nacimiento-Mascota");
         Color = request.getParameter("Color-Mascota");
         Raza = request.getParameter("Raza-Mascota");
         Sexo = request.getParameter("Genero-Mascota");
-        Dueno = request.getParameter("Estado-Mascota");
-        if (Dueno.equalsIgnoreCase("0")){
-            Estado = 1;
-        }else {
-            Estado = 2;
-        }
+        Estado = request.getParameter("Estado-Mascota");
+        Documento = request.getParameter("Documento-Duenno");
         Part Foto = request.getPart("Foto-Mascota");
         String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Dueno+"_"+Nombre+"_"+Nombre_F;
+        String Foto_Name = Nombre+"_"+Nombre_F;
 
         String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Foto_Name;
         String url2 = "Uploads\\"+Foto_Name;
@@ -85,22 +81,51 @@ public class Servlet_Masota extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        GS_Estado GSE = new GS_Estado(Estado,Codigo,Dueno);
-        GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
         
-        int Resultado = EM.Existente(GSE, GSM);
-
-        if (Resultado == 1){
-            JOptionPane.showMessageDialog(null, "La mascota ya fue registrada");
-        }else{
-            MM.In_Mascota(GSM);
-            Codigo = MM.CodigoMascota();
-            GSE = new GS_Estado(Estado,Codigo,Dueno);
-            EM.In_Estado(GSE);
-            request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
-        }
+        Mascota_M MM = new Mascota_M();
+        GS_Existente GS_E =new GS_Existente(Nombre, Documento, FechaNacimiento, TipoMascota);
         
-        request.getRequestDispatcher("Mascota.jsp").forward(request,response);
+        int Existe =MM.Existente(GS_E);
+         if (Existe==0) {
+             GS_Mascota GS_M = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
+             MM.In_Mascota(GS_M);
+             
+            ArrayList<GS_Mascota> Dato_Mascota = new ArrayList<>();
+            GS_Mascota GS_MA = new GS_Mascota(Nombre, FechaNacimiento, Raza);
+            Dato_Mascota = MM.Ultima_Mascota(GS_MA);
+            GS_Mascota GS_MAS = new GS_Mascota();   
+            
+            int Codigo_Mascota =0;
+                    
+            for(int i=0; i<Dato_Mascota.size(); i++){
+                GS_MAS = Dato_Mascota.get(i);
+                 Codigo_Mascota= GS_MAS.getDocumento();
+            }
+             int Valor_Estado;
+             if(Estado.equalsIgnoreCase("Adoptado")){
+                 Valor_Estado=1;
+                 Documento = "0";
+                 GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota,Documento );
+             }
+             else if(Estado.equalsIgnoreCase("Con Propietario")){
+                 Valor_Estado=2;
+                 GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota, Documento);
+             }
+             if (Estado.equalsIgnoreCase("Disponible")) {
+                 Valor_Estado=3;
+                 Documento = "0";
+                 GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota, Documento);
+             }
+             else if(Estado.equalsIgnoreCase("En Proceso")){
+                 Valor_Estado=4;
+                 Documento = "0";
+                 GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota, Documento);
+             }
+         }
+         else{
+            JOptionPane.showMessageDialog(null,"La mascota ya esta registrada");
+         }
+        request.getRequestDispatcher("Menu-Admin.jsp").forward(request,response);
         
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
