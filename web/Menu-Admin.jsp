@@ -102,7 +102,7 @@
                                     Predeterminada</label>
                                 </div>
                                 <textarea class="Respuesta" name="Respuesta" ></textarea>
-                                <input class="Res_Anonima" type="submit" name="Res_Anonima" value="Enviar">
+                                <input class="Enviar_Respuesta" type="submit" name="Res_Anonima" value="Enviar">
                         </div>
                         <div class="img-Denuncia_A2">
                             <label class="fa fa-close Cerrar_img_Anonima"></label>
@@ -124,7 +124,7 @@
                         for(int i=0; i<Dato_Cliente.size(); i++){
                             Dat_Cliente = Dato_Cliente.get(i);
                     %>
-                    <div class="Datos_Anonima">
+                    <div class="Datos_Cliente">
                         <div class="Fecha">
                                 <label><%=Dat_Cliente.getFecha()%></label>
                         </div>
@@ -132,32 +132,27 @@
                                 <label><%=Dat_Cliente.getDireccion()%></label>
                         </div>
                         <div class="Evidencia">
-                            <img src="<%=Datt.getEvidencia()%>">
-                        </div>
-                        <div class="Correo">
-                                <label><%=Datt.getCorreo()%></label>
+                            <img src="<%=Dat_Cliente.getEvidencia()%>">
                         </div>
                         <div class="icono-observar">
-                                <label class=" fa fa-eye Prueba-Anonima"></label>
+                                <label class=" fa fa-eye Prueba-Cliente"></label>
                         </div>
                     </div>
-                    <div class="Datos_DAnonima">
-                        <div class="Datos_DAnonima2">
-                            <label class="fa fa-close cerrar_anonima"></label>
+                    <div class="Datos_DCliente">
+                        <div class="Datos_DCliente2">
+                            <label class="fa fa-close cerrar_Cliente"></label>
                             <h1>Respuesta</h1>
-                            <input type="hidden" class="Codigo_D" value="<%=Datt.getCodigo()%>">
-                            <img class="img-Denuncia_A1" src="<%=Datt.getEvidencia()%>">
+                            <input type="hidden" class="Codigo_D" value="<%=Dat_Cliente.getCodigo()%>">
+                            <img class="img-Denuncia_C1" src="<%=Dat_Cliente.getEvidencia()%>">
                                 <div class="Datos">
                                     <label class="dat">Fecha:</label>
-                                    <label><%=Datt.getFecha()%></label>
+                                    <label><%=Dat_Cliente.getFecha()%></label>
                                     <label class="dat">Dirección:</label>
-                                    <label><%=Datt.getDireccion()%></label>
-                                    <label class="dat">Correo:</label>
-                                    <label><%=Datt.getCorreo()%></label>
+                                    <label><%=Dat_Cliente.getDireccion()%></label>
                                 </div>  
                                 <div class="Descrip">
                                     <b><label class=""> Descripcion:</label></b>
-                                    <label><%=Datt.getDescripcion()%></label>
+                                    <label><%=Dat_Cliente.getDescripcion()%></label>
                                 </div>
                                 <div class="respuestas">
                                     <label><input type="radio" class="btn-Responder" name="Respuesta" value="Respuesta" />
@@ -166,11 +161,11 @@
                                     Predeterminada</label>
                                 </div>
                                 <textarea class="Respuesta" name="Respuesta" ></textarea>
-                                <input class="Res_Anonima" type="submit" name="Res_Anonima" value="Enviar">
+                                <input class="Enviar_Respuesta" type="submit" name="Res_Anonima" value="Enviar">
                         </div>
-                        <div class="img-Denuncia_A2">
-                            <label class="fa fa-close Cerrar_img_Anonima"></label>
-                            <img   src="<%=Datt.getEvidencia()%>">
+                        <div class="img-Denuncia_C2">
+                            <label class="fa fa-close Cerrar_img_Cliente"></label>
+                            <img   src="<%=Dat_Cliente.getEvidencia()%>">
                         </div>
                     </div>
                     <%}%>

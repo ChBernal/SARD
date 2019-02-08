@@ -55,39 +55,66 @@ $(function(){
 
 // Acordeon Denuncias 
 $(".Datos_Denuncia_Anonima").hide();
+$(".Datos_Denuncia_Cliente").hide();
 
 $(".Denuncia_Anonima").click(function (){
- $(".Datos_Denuncia_Anonima").slideToggle();
- $(".Denuncia_Cliente").slideToggle(); 
+    $(".Datos_Denuncia_Anonima").slideToggle();
+    $(".Denuncia_Cliente").slideToggle(); 
 });
+
 $(".Denuncia_Cliente").click(function (){
- $(".Denuncia_Anonima").slideToggle(); 
+    $(".Datos_Denuncia_Cliente").slideToggle();
+    $(".Denuncia_Anonima").slideToggle(); 
 });
+
 // Modal denuncias anonimas
 $(".Datos_DAnonima").hide();
-    $(".Prueba-Anonima").click(function (){
-        var Index = $(".Prueba-Anonima").index(this);
-        var Cod = $(".Datos_DAnonima").eq(Index);
-        Cod.show();
-    });
-    $(".cerrar_anonima").click(function (){
-        $(".Datos_DAnonima").hide();
-        $(".Respuesta").val("");
-        $(".Respuesta").hide();
-    });
+$(".Prueba-Anonima").click(function (){
+    var Index = $(".Prueba-Anonima").index(this);
+    var Cod = $(".Datos_DAnonima").eq(Index);
+    Cod.show();
+});
+$(".Datos_DCliente").hide();
+$(".Prueba-Cliente").click(function (){
+    var Index = $(".Prueba-Cliente").index(this);
+    var Cod = $(".Datos_DCliente").eq(Index);
+    Cod.show();
+});
+
+$(".cerrar_anonima").click(function (){
+    $(".Datos_DAnonima").hide();
+    $(".Respuesta").val("");
+    $(".Respuesta").hide();
+});
+$(".cerrar_Cliente").click(function (){
+    $(".Datos_DCliente").hide();
+    $(".Respuesta").val("");
+    $(".Respuesta").hide();
+});
 // opcion respuesta
 $(".img-Denuncia_A1").mouseenter(function (){
     $(".img-Denuncia_A1").css("cursor","zoom-in");
+});
+$(".img-Denuncia_C1").mouseenter(function (){
+    $(".img-Denuncia_C1").css("cursor","zoom-in");
 });
 $(".img-Denuncia_A2").hide();
 $(".img-Denuncia_A1").click(function (){
     $(".Datos_DAnonima2").hide();
     $(".img-Denuncia_A2").show();
 });
+$(".img-Denuncia_C2").hide();
+$(".img-Denuncia_C1").click(function (){
+    $(".Datos_DCliente2").hide();
+    $(".img-Denuncia_C2").show();
+});
 $(".Cerrar_img_Anonima").click(function (){
      $(".img-Denuncia_A2").hide();
      $(".Datos_DAnonima2").show();
-     
+});
+$(".Cerrar_img_Cliente").click(function (){
+     $(".img-Denuncia_C2").hide();
+     $(".Datos_DCliente2").show();
 });
 document.querySelectorAll('[name=Respuesta]').forEach((x) => x.checked = false);
 document.querySelectorAll('[name=Predeterminada]').forEach((x) => x.checked = false);
@@ -105,7 +132,7 @@ $(".btn-Predeterminada").click(function (){
 });
 
 // envio de respuesta denuncia anonima 
-$(".Res_Anonima").click(function (){
+$(".Enviar_Respuesta").click(function (){
         var Index = $(".Res_Anonima").index(this);
         var Cod = $(".Codigo_D").eq(Index);
         var Des = $(".Respuesta").eq(Index);
