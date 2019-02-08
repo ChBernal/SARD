@@ -41,10 +41,22 @@ public class Denuncias_M {
             JOptionPane.showMessageDialog(null, "Error Denuncias cliente");
         }
     }
-    public void Respuesta_Denuncia (GS_Respuesta GS_R){
+    public void Respuesta_Denuncia_Anonima (GS_Respuesta GS_R){
         
         try {
-            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia(?,?)");
+            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia_Anonima(?,?)");
+            PreSta.setString(1, GS_R.getDescripcion());
+            PreSta.setInt(2, GS_R.getCod_Denuncia());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al enviar denuncia");
+        }
+    }
+    public void Respuesta_Denuncia_Cliente (GS_Respuesta GS_R){
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia_Cliente(?,?)");
             PreSta.setString(1, GS_R.getDescripcion());
             PreSta.setInt(2, GS_R.getCod_Denuncia());
             PreSta.executeUpdate();

@@ -35,7 +35,30 @@ public class ServletDenuncias extends HttpServlet {
         if (request.getParameter("Boton").equalsIgnoreCase("Anonima")) {
             this.Respuesta_Anonima(request, response);
         }
+        if (request.getParameter("Boton").equalsIgnoreCase("Cliente")) {
+            this.Respuesta_Cliente(request, response);
+        }
     }
+    protected void Respuesta_Cliente(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+        HttpSession datt = request.getSession();
+        
+        String Descripcion;
+        int Codigo ;
+        
+        Descripcion= request.getParameter("Descripcion_RA");
+        if (Descripcion.equalsIgnoreCase("")) {
+            Descripcion="Su denuncia ha sido recibida, en los próximos 15 dias se le estará notificando el estado y los procesos a realizar. ";
+        }
+        Codigo = Integer.parseInt(request.getParameter("Codigo_RA"));
+         GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
+        Denuncias_M  Den= new Denuncias_M();
+        Den.Respuesta_Denuncia_Cliente(GS_R);        
+        
+                
+     }
     protected void Respuesta_Anonima(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -52,7 +75,7 @@ public class ServletDenuncias extends HttpServlet {
         Codigo = Integer.parseInt(request.getParameter("Codigo_RA"));
          GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
         Denuncias_M  Den= new Denuncias_M();
-        Den.Respuesta_Denuncia(GS_R);        
+        Den.Respuesta_Denuncia_Anonima(GS_R);        
         
                 
      }

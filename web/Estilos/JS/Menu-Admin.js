@@ -135,14 +135,34 @@ $(".btn-Predeterminada").click(function (){
 });
 
 // envio de respuesta denuncia anonima 
-$(".Enviar_Respuesta").click(function (){
-        var Index = $(".Res_Anonima").index(this);
+$(".Enviar_Respuesta_Anonima").click(function (){
+        var Index = $(".Enviar_Respuesta_Anonima").index(this);
         var Cod = $(".Codigo_D").eq(Index);
         var Des = $(".Respuesta").eq(Index);
         var Codigo = Cod.val();
         var Descripcion = Des.val();
         var btn = "Anonima";
         
+        $.ajax({
+            url: "ServletDenuncias",
+            data: {
+              Boton : btn,
+              Codigo_RA: Codigo,
+              Descripcion_RA: Descripcion
+            },
+            success: function( result ) {
+              $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+            }
+          });
+    });
+ // envio de respuesta denuncia Cliente
+$(".Enviar_Respuesta_Cliente").click(function (){
+        var Index = $(".Enviar_Respuesta_Cliente").index(this);
+        var Cod = $(".Codigo_D").eq(Index);
+        var Des = $(".Respuesta").eq(Index);
+        var Codigo = Cod.val();
+        var Descripcion = Des.val();
+        var btn = "Cliente";
         $.ajax({
             url: "ServletDenuncias",
             data: {

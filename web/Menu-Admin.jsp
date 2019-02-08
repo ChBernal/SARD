@@ -107,7 +107,7 @@
                                     Predeterminada</label>
                                 </div>
                                 <textarea class="Respuesta" name="Respuesta" ></textarea>
-                                <input class="Enviar_Respuesta" type="submit" name="Res_Anonima" value="Enviar">
+                                <input class="Enviar_Respuesta_Anonima" type="submit" name="Res_Anonima" value="Enviar">
                         </div>
                         <div class="img-Denuncia_A2">
                             <label class="fa fa-close Cerrar_img_Anonima"></label>
@@ -166,7 +166,7 @@
                                     Predeterminada</label>
                                 </div>
                                 <textarea class="Respuesta" name="Respuesta" ></textarea>
-                                <input class="Enviar_Respuesta" type="submit" name="Res_Anonima" value="Enviar">
+                                <input class="Enviar_Respuesta_Cliente" type="submit" name="Res_Anonima" value="Enviar">
                         </div>
                         <div class="img-Denuncia_C2">
                             <label class="fa fa-close Cerrar_img_Cliente"></label>
