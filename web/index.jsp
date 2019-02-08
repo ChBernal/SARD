@@ -1,3 +1,5 @@
+<%@page import="Modelo.GS_Eventos"%>
+<%@page import="Modelo.Eventos_M"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.GS_Mascota"%>
 <%@page import="java.util.ArrayList"%>
@@ -175,18 +177,43 @@
             <article id="Eventos" class="Eventos">
                 <h1>Eventos</h1>
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
+                <div class="Contenido-Eventos">
+                    <div class="Contenedor-Formulario-Eventos">
+                        <div class="Wrap-Eventos">
+                            <div class="Posicion-Eventos">
+                                <%
+                                    Eventos_M EM = new Eventos_M();
+                                    ArrayList<GS_Eventos> Todo_Eventos = new ArrayList<>();    
+                                    GS_Eventos GSE = new GS_Eventos();
+                                    Todo_Eventos = EM.Todo_Eventos();
 
+                                    for (int i = 0; i < Todo_Eventos.size();i++){
+                                        GSE = Todo_Eventos.get(i);
+                                %>
+                                <div class="CuadroEventos">
+                                    <div class="Nombre_Eventos">
+                                        <h2><%= GSE.getNombre() %></h2>
+                                    </div>
+                                    <div class="Imagen-Eventos">
+                                        <img src="<%= GSE.getImagen()%>">
+                                    </div>
+                                    
+                                    
+                                </div>
+                                <div class="Fondo">
+                                    <div class="Datos_Evento">
+                                        <label>Fecha: <%= GSE.getFecha() %></label>
+                                        <label>Tipo: <%= GSE.getTipoEvento() %></label>
+                                        <label class="Descripcion"><%= GSE.getDescripcion()%></label>
+                                    </div>
+                                </div>
+                                <%
+                                    }
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </article>
 
             <article id="Tips" class="Tips">

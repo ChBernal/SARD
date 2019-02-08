@@ -207,6 +207,34 @@ window.addEventListener('click',function(e){
 
 //Finalizacion de denuncias
 
+//Eventos
+
+$(document).ready(function(){
+    $(".Fondo").hide();
+    $(".CuadroEventos").mouseenter(function(){
+        var pos = $(".CuadroEventos").index();
+        var asig = $(".Fondo").eq(pos);
+        $(asig).show(0);
+    });
+    $(".CuadroEventos").mouseout(function(){
+        var pos = $(".CuadroEventos").index();
+        var asig = $(".Fondo").eq(pos);
+        $(asig).hide(0);
+    });
+    $(".Fondo").mouseenter(function(){
+        var pos = $(".CuadroEventos").index();
+        var asig = $(".Fondo").eq(pos);
+        $(asig).show(0);
+    });
+    $(".Fondo").mouseout(function(){
+        var pos = $(".CuadroEventos").index();
+        var asig = $(".Fondo").eq(pos);
+        $(asig).hide(0);
+    });
+});
+
+//Finaliza Eventos
+
 //Todas las opciones del formulario Contactenos
 
 (function(){
