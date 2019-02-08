@@ -85,20 +85,16 @@
                 %>
             <div id="Mostrar-Cuenta">
                 <div class="Cuenta">
-                    <label class="titulo">Usuario</label>
-                    <%
-                        ArrayList<GS_Login> datos2 = new ArrayList<>();
-                        Login_M con2 = new Login_M();
-                        datos2 = con2.Uno_Usuario(Documento);
-                        GS_Login ing = new GS_Login();
-
-                        for(int i=0; i<datos2.size(); i++){
-                            ing = datos2.get(i);
-                    %>
-                    <label><%= ing.getUsuario()%></label>
-                    <input type="password" name="Contraseña" value="<%= ing.getClave()%>">
-                    <input type="submit" name="Act-Contraseña" value="Cambiar?">
-                    <% } %>
+                    <div class="icons"><span class="fa fa-close"></span></div>
+                    <h2>Usuario</h2>
+                    <label class="Advertencia">Recuerda que solo puedes cambiar tu contraseña, porque el usuario siempre sera tu documento de identida.</label>
+                    <div class="Inputs">
+                        <label>Contraseña Actual:</label>
+                        <input type="password" name="Contraseña">
+                        <label>Nueva Contraseña:</label>
+                        <input type="password" name="Contraseña">
+                        <input class="Boton-Act" type="submit" name="Act-Contraseña" value="Cambiar?">
+                    </div>
                 </div>
             </div>
         </div>
