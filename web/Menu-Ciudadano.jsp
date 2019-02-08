@@ -23,17 +23,22 @@
                 <a href="#Tips"><i class="fa fa-tag" aria-hidden="true"></i> Tips</a>
                 <a href="#Contactenos"><i class="fa fa-map-o" aria-hidden="true"></i> Contactanos</a>
             </div>
-                <div class="Usuario">
-                    <a href="#" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
-                    <div class="Perfil">
-                        <a href="#" class="Abrir" id="Abrir"><%=(String)Dat.getAttribute("NombreSession")%></a>
-                        <img src="<?=$_SESSION['Img']?>">
-                    </div>
-                    <a href="Perfil_Ciudadano.jsp"><span class="fa fa-user"></span></a>
-                    </div>
+            <div class="Usuario">
+                <a href="#" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
+                <div class="Perfil">
+                    <a href="#" class="Abrir" id="Abrir"><%=(String)Dat.getAttribute("NombreSession")%></a>
+                    <img src="<?=$_SESSION['Img']?>">
+                </div>
+            </div>
         </nav>
     </header>
-
+    <div class="Contenedor-Perfil">
+        <div class="Datos-Usuario">
+            <a href="Perfil_Ciudadano.jsp"><span class="fa fa-user"></span>Perfil</a>
+            <a href="Mascotas.jsp"><span class="fa fa-paw"></span>Mascotas</a>
+            <a href="index.jsp"><span class="fa fa-circle-o"></span>Cerrar Session</a>
+        </div>
+    </div>                    
     <div class="Contenedor">
         <main>
             <div id="Inicio" class="Inicio">
@@ -51,7 +56,7 @@
                 <div class="Contenido-Denuncias">
                     <div class="Contenedor-Formulario-Denuncia">
                         <div class="Wrap-Denuncia">
-                            <form action="../Controlador/Denuncias-C.php" class="Formulario" method="POST" name="Formulario_Denuncias" enctype="multipart/form-data">
+                            <form action="ServletDenuncias" class="Formulario" method="POST" name="Formulario_Denuncias" enctype="multipart/form-data">
                                 <div class="Input-Group-Denuncia">
                                     <input type="text" id="Direccion" name="Direccion">
                                     <label class="label-Denuncia" for="Direccion">Direccion donde se evidencio el maltrato</label>
@@ -66,7 +71,7 @@
                                 </div>
                                 <% String Documento=(String)Dat.getAttribute("DocumentoSession"); %>
                                 <input type="hidden" name="Documento" value="<%=Documento%>">
-                                <input type="submit" name="DenunciaNN" value="Denunciar">
+                                <input type="submit" name="DenunciaCC" value="Denunciar">
                             </form>
                         </div>	
                     </div>

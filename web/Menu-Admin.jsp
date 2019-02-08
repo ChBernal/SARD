@@ -31,7 +31,7 @@
                 <a href="#Usuarios"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
             </div>
             <div class="Usuario">
-                <a href="#" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
+                <a href="" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
                 <div class="Perfil">
                     <a href="#" class="Abrir" id="Abrir"><%=(String)Dat.getAttribute("NombreSession")%></a>
                     <img src="">
@@ -39,7 +39,12 @@
             </div>
         </nav>
     </header>
-	
+    <div class="Contenedor-Perfil">
+        <div class="Datos-Usuario">
+            <a href="Perfil_Administrador.jsp"><span class="fa fa-user"></span>Perfil</a>
+            <a href="index.jsp"><span class="fa fa-circle-o"></span>Cerrar Session</a>
+        </div>
+    </div>
     <div class="Contenedor">
         <main>
             <div id="Cabezera" class="Cabezera">

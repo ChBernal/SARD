@@ -49,7 +49,10 @@ $(function(){
 	});
 
 });
-
+$(".Contenedor-Perfil .Datos-Usuario").hide();
+$(".Usuario").click(function (){
+        $(".Contenedor-Perfil .Datos-Usuario").animate({width:'toggle',opacity:'toggle'});
+});
 
 //Finalizacion de menu
 
