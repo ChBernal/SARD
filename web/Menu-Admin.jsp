@@ -165,7 +165,7 @@
                                     <label><input type="radio" class="btn-Predeterminada" name="Predeterminada" value="Respuesta" />
                                     Predeterminada</label>
                                 </div>
-                                <textarea class="Respuesta" name="Respuesta" ></textarea>
+                                <textarea class="Respuesta_Cliente" name="Respuesta" ></textarea>
                                 <input class="Enviar_Respuesta_Cliente" type="submit" name="Res_Anonima" value="Enviar">
                         </div>
                         <div class="img-Denuncia_C2">
@@ -184,7 +184,7 @@
                     <div class="Contenido-Adopcion">
                         <div class="Contenedor-Formulario-Adopcion">
                             <div class="Wrap-Adopcion">
-                                <form action="../Controlador/Mascota-C.php" class="Formulario" name="Formulario_Adopcion" method="POST" enctype="multipart/form-data">
+                                <form action="Servlet_Mascota" class="Formulario" name="Formulario_Adopcion" method="POST" enctype="multipart/form-data">
                                     <div class="Posicion-Adopcion">
                                         <div class="Left-Adopcion">
                                             <div class="Input-Group-Adopcion">

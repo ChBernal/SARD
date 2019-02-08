@@ -48,11 +48,11 @@ public class ServletDenuncias extends HttpServlet {
         String Descripcion;
         int Codigo ;
         
-        Descripcion= request.getParameter("Descripcion_RA");
+        Descripcion= request.getParameter("Descripcion_RC");
         if (Descripcion.equalsIgnoreCase("")) {
             Descripcion="Su denuncia ha sido recibida, en los próximos 15 dias se le estará notificando el estado y los procesos a realizar. ";
         }
-        Codigo = Integer.parseInt(request.getParameter("Codigo_RA"));
+        Codigo = Integer.parseInt(request.getParameter("Codigo_RC"));
          GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
         Denuncias_M  Den= new Denuncias_M();
         Den.Respuesta_Denuncia_Cliente(GS_R);        

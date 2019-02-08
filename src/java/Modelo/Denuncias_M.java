@@ -50,7 +50,7 @@ public class Denuncias_M {
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Respuesta Enviada");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al enviar denuncia");
+            JOptionPane.showMessageDialog(null, e+"Error al enviar denuncia");
         }
     }
     public void Respuesta_Denuncia_Cliente (GS_Respuesta GS_R){
@@ -62,7 +62,7 @@ public class Denuncias_M {
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Respuesta Enviada");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al enviar denuncia");
+            JOptionPane.showMessageDialog(null,e+ "Error al enviar denuncia");
         }
     }
     public ArrayList<GS_Denuncias> Tabla_Denuncias (){

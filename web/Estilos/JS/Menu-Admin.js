@@ -91,8 +91,8 @@ $(".cerrar_anonima").click(function (){
 });
 $(".cerrar_Cliente").click(function (){
     $(".Datos_DCliente").hide();
-    $(".Respuesta").val("");
-    $(".Respuesta").hide();
+    $(".Respuesta_Cliente").val("");
+    $(".Respuesta_Cliente").hide();
 });
 // opcion respuesta
 $(".img-Denuncia_A1").mouseenter(function (){
@@ -123,15 +123,20 @@ document.querySelectorAll('[name=Respuesta]').forEach((x) => x.checked = false);
 document.querySelectorAll('[name=Predeterminada]').forEach((x) => x.checked = false);
 
 $(".Respuesta").hide();
+$(".Respuesta_Cliente").hide();
 
 $(".btn-Responder").click(function (){
     $(".Respuesta").show();
+    $(".Respuesta_Cliente").show();
     document.querySelectorAll('[name=Predeterminada]').forEach((x) => x.checked = false);
 });
 
 $(".btn-Predeterminada").click(function (){
-    $(".Respuesta").hide();document.querySelectorAll('[name=Respuesta]').forEach((x) => x.checked = false);
+    document.querySelectorAll('[name=Respuesta]').forEach((x) => x.checked = false);
+    $(".Respuesta").hide();
+    $(".Respuesta_Cliente").hide();
     $(".Respuesta").val("");
+    $(".Respuesta_Cliente").val("");
 });
 
 // envio de respuesta denuncia anonima 
@@ -159,7 +164,7 @@ $(".Enviar_Respuesta_Anonima").click(function (){
 $(".Enviar_Respuesta_Cliente").click(function (){
         var Index = $(".Enviar_Respuesta_Cliente").index(this);
         var Cod = $(".Codigo_D").eq(Index);
-        var Des = $(".Respuesta").eq(Index);
+        var Des = $(".Respuesta_Cliente").eq(Index);
         var Codigo = Cod.val();
         var Descripcion = Des.val();
         var btn = "Cliente";
@@ -167,8 +172,8 @@ $(".Enviar_Respuesta_Cliente").click(function (){
             url: "ServletDenuncias",
             data: {
               Boton : btn,
-              Codigo_RA: Codigo,
-              Descripcion_RA: Descripcion
+              Codigo_RC: Codigo,
+              Descripcion_RC: Descripcion
             },
             success: function( result ) {
               $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
@@ -270,68 +275,6 @@ $(document).ready(function(){
 //Finaliza acordeon
 
 //Todos los formularios
-
-//Todas las opciones del formulario denuncias
-
-(function(){
-	var formulario = document.Formulario_Denuncias,
-		elementos = formulario.elements;
-
-	//Funciones
-
-	var ValidarInputs = function(){
-		for (var i = 0; i < elementos.length; i++) {
-			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
-				if (elementos[i].value == 0) {
-					console.log('El Campo ' + elementos[i].name + ' esta incompleto');
-					elementos[i].className = elementos[i].className + " error";
-					return false;
-				} else {
-					elementos[i].className = elementos[i].className.replace(" error", "");
-				}
-			}
-		}
-
-		return true;
-	};
-
-	var enviar = function(e){
-		if (!ValidarInputs()) {
-			console.log('Falto validar los Input');
-			e.preventDefault();
-		}else {
-			console.log('Envia correctamente');
-			//e.preventDefault();
-		}
-	};
-
-	//Funciones blur y focus
-
-	var focusInputs = function(){
-		this.parentElement.children[1].className = "label-Denuncia active";
-		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
-	};
-
-	var blurInputs = function(){
-		if (this.value <= 0) {
-			this.parentElement.children[1].className = "label-Denuncia";
-			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
-		}
-	};
-
-	//Eventos
-	formulario.addEventListener("submit", enviar);
-
-	for (var i = 0; i < elementos.length; i++) {
-		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
-			elementos[i].addEventListener("focus", focusInputs);
-			elementos[i].addEventListener("blur", blurInputs);
-		}
-	}
-
-}());
-
-//Finalizacion de denuncias
 
 //Todo formulario Mascota
 
