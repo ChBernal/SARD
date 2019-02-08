@@ -57,8 +57,8 @@ public class Mascota_M {
         }
         return Todo_Mascota;
     }
-    public ArrayList<GS_Mascota> Ultima_Mascota(GS_Mascota GS_M) {
-        ArrayList<GS_Mascota> Mascota = new ArrayList<>();
+    public int Ultima_Mascota(GS_Mascota GS_M) {
+        int Codigo_Mascota =0;
         try {
             ps = cnn.prepareStatement("Call Ultima_Mascota (?,?,?)");
             ps.setString(1,GS_M.getNombre());
@@ -66,14 +66,13 @@ public class Mascota_M {
             ps.setString(3,GS_M.getFecha_Nacimiento());
             rs = ps.executeQuery();
             
-            while (rs.next()){
-                GS_Mascota GSM = new GS_Mascota(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
-                Mascota.add(GSM);
-            }
+            Codigo_Mascota=rs.getInt(1);
+            
             
         } catch (Exception e) {
         }
-        return Mascota;
+        JOptionPane.showConfirmDialog(null, Codigo_Mascota);
+        return Codigo_Mascota;
     }
     public int Existente (GS_Existente GSM){
         int Existe=0;

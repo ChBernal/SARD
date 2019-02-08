@@ -57,7 +57,7 @@ public class Servlet_Mascota extends HttpServlet {
         String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno,Documento,Estado;
         int  Codigo ;
         
-        TipoMascota = request.getParameter("Tipo_Mascota");
+        TipoMascota = request.getParameter("Tipo-Mascota");
         Nombre = request.getParameter("Nombre-Mascota");
         FechaNacimiento = request.getParameter("Nacimiento-Mascota");
         Color = request.getParameter("Color-Mascota");
@@ -68,7 +68,7 @@ public class Servlet_Mascota extends HttpServlet {
         Part Foto = request.getPart("Foto-Mascota");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
-
+        JOptionPane.showMessageDialog(null, TipoMascota);
         String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Foto_Name;
         String url2 = "Uploads\\"+Foto_Name;
 
@@ -90,18 +90,13 @@ public class Servlet_Mascota extends HttpServlet {
              GS_Mascota GS_M = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
              MM.In_Mascota(GS_M);
              
-            ArrayList<GS_Mascota> Dato_Mascota = new ArrayList<>();
-            GS_Mascota GS_MA = new GS_Mascota(Nombre, FechaNacimiento, Raza);
-            Dato_Mascota = MM.Ultima_Mascota(GS_MA);
-            GS_Mascota GS_MAS = new GS_Mascota();   
-            
             int Codigo_Mascota =0;
-                    
-            for(int i=0; i<Dato_Mascota.size(); i++){
-                GS_MAS = Dato_Mascota.get(i);
-                 Codigo_Mascota= GS_MAS.getDocumento();
-            }
-             int Valor_Estado;
+            GS_Mascota GS_MA = new GS_Mascota(Nombre,Raza, FechaNacimiento);
+            Codigo_Mascota = MM.Ultima_Mascota(GS_MA);
+            GS_Mascota GS_MAS = new GS_Mascota();   
+            JOptionPane.showMessageDialog(null, Codigo_Mascota);
+             
+            int Valor_Estado;
              if(Estado.equalsIgnoreCase("Adoptado")){
                  Valor_Estado=1;
                  Documento = "0";
@@ -125,7 +120,7 @@ public class Servlet_Mascota extends HttpServlet {
          else{
             JOptionPane.showMessageDialog(null,"La mascota ya esta registrada");
          }
-        request.getRequestDispatcher("Menu-Admin.jsp").forward(request,response);
+        response.sendRedirect("Menu-Admin.jsp");
         
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
