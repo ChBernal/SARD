@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.GS_Mascota"%>
+<%@page import="Modelo.Mascota_M"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -36,7 +39,7 @@
         <div class="Datos-Usuario">
             <a href="Perfil_Ciudadano.jsp"><span class="fa fa-user"></span>Perfil</a>
             <a href="Mascotas.jsp"><span class="fa fa-paw"></span>Mascotas</a>
-            <a href="index.jsp"><span class="fa fa-circle-o"></span>Cerrar Session</a>
+            <a href="index.jsp"><span class="fa fa-times-circle-o"></span>Cerrar Session</a>
         </div>
     </div>                    
     <div class="Contenedor">
@@ -107,25 +110,37 @@
                     <h1>Adopcion</h1>
                     <hr>
                     <div class="Contenido-Adopcion">
-                            <div class="Contenedor-Formulario-Adopcion">
-                                    <div class="Wrap-Adopcion">
-                                            <div class="Posicion-Adopcion">
-                                                    <div class="InfoMascota">
-                                                            <div class="Imagen-Mascota">
-                                                                    <img src="foto">
-                                                            </div>
-                                                            <div class="Datos_Mascota">
-                                                                    <h2>Nombre</h2>
-                                                                    <label>Edad</label>
-                                                                    <label>Genero</label>
-                                                                    <label>Raza</label>
-                                                                    <label>Color</label>
-                                                            </div>
-                                                    </div>
-                                            </div>
+                    <div class="Contenedor-Formulario-Adopcion">
+                        <div class="Wrap-Adopcion">
+                            <div class="Posicion-Adopcion">
+                            <%
+                                Mascota_M MM = new Mascota_M();
+                                ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();    
+                                GS_Mascota GSM = new GS_Mascota();
+                                Tabla_mascota = MM.Mascota_Disponible();
+
+                                for (int i = 0; i < Tabla_mascota.size();i++){
+                                    GSM = Tabla_mascota.get(i);
+                            %>
+                                <div class="InfoMascota" name="InfoMascota">
+                                    <div class="Imagen-Mascota">
+                                        <img src="<%= GSM.getFoto() %>">
                                     </div>
+                                    <div class="Datos_Mascota" >
+                                        <h1><%=GSM.getNombre()%></h1>
+                                        <label><%= GSM.getFecha_Nacimiento() %></label>
+                                        <label><%= GSM.getGenero() %></label>
+                                        <label><%= GSM.getRaza() %></label>
+                                        <label><%= GSM.getColor() %></label>
+                                    </div>
+                                </div>
+                            <%
+                                }    
+                            %>
                             </div>
+                        </div>
                     </div>
+                </div>
                 <div class="Modal" id="Modal">
                     <div class="flex" id="flex">
                         <div class="Contenido-Modal">
