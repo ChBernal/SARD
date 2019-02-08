@@ -1,3 +1,5 @@
+<%@page import="Modelo.GS_Tips"%>
+<%@page import="Modelo.Tips_M"%>
 <%@page import="Modelo.GS_Eventos"%>
 <%@page import="Modelo.Eventos_M"%>
 <%@page import="javax.swing.JOptionPane"%>
@@ -66,7 +68,7 @@
                 <div class="Footer-Modal">
                     <a>Olvide la contraseña</a>
                     <BR>
-                    <a>Registrate</a>
+                    <a href="Registro_Ciudadano.jsp">Registrate</a>
                 </div>
             </div>
         </div>
@@ -217,7 +219,35 @@
             </article>
 
             <article id="Tips" class="Tips">
+                 <div class="Contenido-Tips">
+                    <div class="Contenedor-Formulario-Tips">
+                        <div class="Wrap-Tips">
+                            <div class="Posicion-Tips">
+                                <%
+                                    Tips_M TM = new Tips_M();
+                                    ArrayList<GS_Tips> Todo_Tips = new ArrayList<>();    
+                                    GS_Tips GST = new GS_Tips();
+                                    Todo_Tips = TM.Todo_Tips();
 
+                                    for (int i = 0; i < Todo_Tips.size();i++){
+                                        GST = Todo_Tips.get(i);
+                                %>
+                                <div class="CuadroTips">
+                                    <div class="Nombre_Tips">
+                                        <h2><%= GST.getNombre() %></h2>
+                                    </div>                                   
+                                    <div class="Datos_Tips">
+                                        <label></label>
+                                        <label>Tipo: <%= GST.getTip() %></label>
+                                    </div>
+                                </div>
+                                <%
+                                    }
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </article>
 
             <article id="Contactenos" class="Contactenos">
