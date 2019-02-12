@@ -64,14 +64,14 @@ public class Mascota_M {
             ps.setString(1,GS_M.getNombre());
             ps.setString(2,GS_M.getRaza());
             ps.setString(3,GS_M.getFecha_Nacimiento());
+            JOptionPane.showMessageDialog(null, GS_M.getRaza());
             rs = ps.executeQuery();
-            
-            Codigo_Mascota=rs.getInt(1);
-            
+            while(rs.next()){
+                Codigo_Mascota = rs.getInt(1);
+            }
             
         } catch (Exception e) {
         }
-        JOptionPane.showConfirmDialog(null, Codigo_Mascota);
         return Codigo_Mascota;
     }
     public int Existente (GS_Existente GSM){

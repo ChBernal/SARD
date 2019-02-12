@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import Modelo.GS_Estado_Mascota;
@@ -24,23 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Usuario
- */
 @MultipartConfig
 @WebServlet(name = "Servlet_Mascota", urlPatterns = {"/Servlet_Mascota"})
 public class Servlet_Mascota extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -50,7 +32,8 @@ public class Servlet_Mascota extends HttpServlet {
             this.InsertarMascota(request, response);
         }
     }
-     protected void InsertarMascota(HttpServletRequest request, HttpServletResponse response)
+    
+    protected void InsertarMascota(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -68,7 +51,6 @@ public class Servlet_Mascota extends HttpServlet {
         Part Foto = request.getPart("Foto-Mascota");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
-        JOptionPane.showMessageDialog(null, TipoMascota);
         String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Foto_Name;
         String url2 = "Uploads\\"+Foto_Name;
 
@@ -76,7 +58,7 @@ public class Servlet_Mascota extends HttpServlet {
         File img=new File(url);
         FileOutputStream sal=new FileOutputStream(img);
         int num= file.read();
-
+        
         while (num !=-1) {            
             sal.write(num);
             num= file.read();
@@ -85,21 +67,19 @@ public class Servlet_Mascota extends HttpServlet {
         Mascota_M MM = new Mascota_M();
         GS_Existente GS_E =new GS_Existente(Nombre, Documento, FechaNacimiento, TipoMascota);
         
-        int Existe =MM.Existente(GS_E);
+        int Existe = MM.Existente(GS_E);
          if (Existe==0) {
              GS_Mascota GS_M = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
              MM.In_Mascota(GS_M);
              
-            int Codigo_Mascota =0;
-            GS_Mascota GS_MA = new GS_Mascota(Nombre,Raza, FechaNacimiento);
+            int Codigo_Mascota;
+            GS_Mascota GS_MA = new GS_Mascota(Nombre,FechaNacimiento,Raza);
             Codigo_Mascota = MM.Ultima_Mascota(GS_MA);
             GS_Mascota GS_MAS = new GS_Mascota();   
-            JOptionPane.showMessageDialog(null, Codigo_Mascota);
-             
+             JOptionPane.showMessageDialog(null, Codigo_Mascota);
             int Valor_Estado;
              if(Estado.equalsIgnoreCase("Adoptado")){
                  Valor_Estado=1;
-                 Documento = "0";
                  GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota,Documento );
              }
              else if(Estado.equalsIgnoreCase("Con Propietario")){
@@ -108,16 +88,13 @@ public class Servlet_Mascota extends HttpServlet {
              }
              if (Estado.equalsIgnoreCase("Disponible")) {
                  Valor_Estado=3;
-                 Documento = "0";
                  GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota, Documento);
              }
              else if(Estado.equalsIgnoreCase("En Proceso")){
                  Valor_Estado=4;
-                 Documento = "0";
                  GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota, Documento);
              }
-         }
-         else{
+         }else{
             JOptionPane.showMessageDialog(null,"La mascota ya esta registrada");
          }
         response.sendRedirect("Menu-Admin.jsp");
