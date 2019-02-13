@@ -275,17 +275,46 @@
                 <article id="Eventos" class="Eventos">
                     <h1>Eventos</h1>
                     <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
+                    <div class="Contenedor-Formulario-Eventos">
+                        <div class="Wrap-Eventos">
+                            <form action="ServletEventos" class="Formulario" method="POST" name="Formulario_Eventos" enctype="multipart/form-data">
+                                <div class="Posicion-Eventos">
+                                    <div class="Lefth-Eventos">
+                                        <div class="Input-Group-Eventos">
+                                            <input type="text" id="NombreEvento" name="NombreEvento" pattern="[0-9]{4,11}">
+                                            <label for="NombreEvento" class="label-Eventos">Nombre del Evento</label>
+                                        </div>
+                                        <div class="Input-Group-Eventos">
+                                            <input type="text" name="TipoEvento" list="Eventos_Tipo">
+                                            <label for="Tipo_Evento" class="label-Eventos">Tipo de evento</label>
+                                            <datalist id="Eventos_Tipo">
+                                                <select>
+                                                    <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                                                    <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+                                                    <option value="Pasaporte">Pasaporte</option>
+                                                </select>
+                                            </datalist>
+                                        </div>
+                                        <div class="Input-Group-Eventos">
+                                            <input type="date" id="Fecha_Evento" name="Fecha_Evento" pattern="[A-Z,a-z ]{1,50}">
+                                            <label for="Fecha_Evento" class="label-Eventos">Fecha del Evento</label>
+                                        </div>
+                                        <div class="Input-Group-Eventos">
+                                            <input type="text" id="Descripcion" name="Descripcion" pattern="[A-Z,a-z ]{1,50}">
+                                            <label for="Descripcion" class="label-Eventos">Descripcion del evento</label>
+                                        </div>
+                                    </div>
+                                    <div class="Rigth-Eventos">
+                                        <div class="Input-Group-Eventos">
+                                            <input type="file" id="Imagen" name="Imagen">
+                                            <label class="label-Eventos" for= "Imagen"><span class="fa fa-camera Img-Ciudadano"></span>Foto</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" name="Registro-Ciudadano" value="Registrar">
+                            </form>
+                        </div>
+                    </div>
                 </article>
 
                 <article id="Tips" class="Tips">
@@ -598,13 +627,13 @@
                             <form action="" class="Formulario" method="POST" name="Formulario_Listas" enctype="multipart/form-data">
                                 <div class="Input-Group-Usuarios Radio">
                                     <input type="Radio" id="Ciudadanos" name="Listas-Usuarios" value="ciudadanos">
-                                    <label for="Lista-Usuarios">Ciudadanos</label>
+                                    <label for="Ciudadanos">Ciudadanos</label>
                                     <input type="Radio" id="Veterinaria" name="Listas-Usuarios" value="veterinaria"> 
-                                    <label for="Listas-Usuarios">Veterinaria</label>
+                                    <label for="Veterinaria">Veterinaria</label>
                                     <input type="Radio" id="SASS" name="Listas-Usuarios" value="sass"> 
-                                    <label for="Listas-Usuarios">Secretaria de Ambiente y Salud</label>
+                                    <label for="SASS">Secretaria de Ambiente y Salud</label>
                                     <input type="Radio" id="Administradores" name="Listas-Usuarios" value="administradores"> 
-                                    <label for="Listas-Usuarios">Administradores</label>
+                                    <label for="Administradores">Administradores</label>
                                 </div>
                                 <input type="submit" name="Consultar" value="Listar">
                             </form>

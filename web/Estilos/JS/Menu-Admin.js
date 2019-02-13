@@ -387,6 +387,68 @@ $(document).ready(function(){
 
 //Finalizacion de Mascota
 
+//Todo formulario Eventos
+
+(function(){
+	var formulario = document.Formulario_Eventos,
+		elementos = formulario.elements;
+
+	//Funciones
+
+	var ValidarInputs = function(){
+		for (var i = 0; i < elementos.length; i++) {
+			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" || elementos[i].type == "date" ) {
+				if (elementos[i].value == 0) {
+					console.log('El Campo ' + elementos[i].name + ' esta incompleto');
+					elementos[i].className = elementos[i].className + " error";
+					return false;
+				} else {
+					elementos[i].className = elementos[i].className.replace(" error", "");
+				}
+			}
+		}
+
+		return true;
+	};
+
+	var enviar = function(e){
+		if (!ValidarInputs()) {
+			console.log('Falto validar los Input');
+			e.preventDefault();
+		}else {
+			console.log('Envia correctamente');
+			//e.preventDefault();
+		}
+	};
+
+	//Funciones blur y focus
+
+	var focusInputs = function(){
+		this.parentElement.children[1].className = "label-Eventos active";
+		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
+	};
+
+	var blurInputs = function(){
+		if (this.value <= 0) {
+			this.parentElement.children[1].className = "label-Eventos";
+			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
+		}
+	};
+
+	//Eventos
+	formulario.addEventListener("submit", enviar);
+
+	for (var i = 0; i < elementos.length; i++) {
+		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" || elementos[i].type == "date") {
+			elementos[i].addEventListener("focus", focusInputs);
+			elementos[i].addEventListener("blur", blurInputs);
+		}
+	}
+
+}());
+
+//Finalizacion de Eventos
+
 //Todo formulario Ciudadano
 
 (function(){
@@ -722,7 +784,7 @@ $(document).ready(function(){
 
 //Finalizacion de Administrador
 
-//Formulario Administrador
+//Formulario Listas
 
 (function(){
 	var formulario = document.Formulario_Listas,
@@ -757,10 +819,7 @@ $(document).ready(function(){
 	};
 
 	var enviar = function(e){
-		if (!ValidarInputs()) {
-			console.log('Falto validar los Input');
-			e.preventDefault();
-		}else if (!ValidarRadio()) {
+		if (!ValidarRadio()) {
 			console.log('Falto validar los Radio');
 			e.preventDefault();
 		}else {
@@ -786,16 +845,9 @@ $(document).ready(function(){
 	//Eventos
 	formulario.addEventListener("submit", enviar);
 
-	for (var i = 0; i < elementos.length; i++) {
-		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" || elementos[i].type == "date") {
-			elementos[i].addEventListener("focus", focusInputs);
-			elementos[i].addEventListener("blur", blurInputs);
-		}
-	}
-
 }());
 
-//Finalizacion de Administrador
+//Finalizacion de Listas
 
 
 //Finaliza formularios

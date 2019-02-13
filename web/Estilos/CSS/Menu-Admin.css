@@ -896,113 +896,76 @@ main article p {
 
 /* Fin formulario Adopcion */
 
-/* Formulario Ciudadano */
+/* Formulario Denuncia */
 
-.Wrap-Ciudadanos,
-.Wrap-Veterinaria,
-.Wrap-SASS,
-.Wrap-Administrador,
-.Wrap-Listas {
-	width: 100%;
-	max-width: 1000px;
-	padding: 20px;
-	border-radius: 0px 0px 20px;
-	margin: -10px auto;
-	background: rgb(255,255,255);
+.Wrap-Denuncia {
+	width: 90%;
+	max-width: 500px;
+	padding: 40px;
+	margin: auto;
 }
 
-.Posicion-Usuarios {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.Left-Usuarios, .Rigth-Usuarios {
-	width: 48%;
-}
-
-
-.Contenedor-Formulario-Usuarios {
+.Contenedor-Formulario-Denuncia {
 	width: 100%;
 	color: #fff;
+	padding: 50px;
 }
 
-.Contenedor-Formulario-Usuarios .Formulario{
+.Contenedor-Formulario-Denuncia .Formulario{
 	width: 100%;
 	margin: auto;
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios {
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia{
 	position: relative;
 	margin-bottom: 32px;
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"],
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"],
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"] {
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"],
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"],
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"]{
 	font-family: "Nunito";
 	font-size: 16px;
 	color: rgb(39,174,96);
 	width: 100%;
 	outline: none;
-	padding: 7px;
+	padding: 13px;
 	background: none;
 	border: none;
 	border-bottom: 2px solid rgb(220,237,200);
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"]{
-	font-family: "Nunito";
-	font-size: 16px;
-	color: rgba(255,255,255,.9);
-	width: 100%;
-	outline: none;
-	padding: 7px;
-	background: none;
-	border: none;
-	border-bottom: 2px solid rgb(220,237,200);	
-}
-
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"]:focus,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"]:active,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"]:focus,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"]:active,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"]:focus,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"]:active {
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"]:focus,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"]:active,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"]:focus,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"]:active,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"]:focus,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"]:active {
 	outline: none;
 	border-bottom: 2px solid rgb(39,174,96);
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"]:focus,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"]:active{
-	color: rgb(39,174,96);
-	outline: none;
-	border-bottom: 2px solid rgb(39,174,96);	
-}
-
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"].error,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"].error,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"].error,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"].error{
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"].error,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"].error,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"].error{
 	border-bottom: 2px solid rgb(211,47,47);
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="text"].error + label,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="email"].error + label,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="password"].error + label,
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="date"].error + label {
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="text"].error + label,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="email"].error + label,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="password"].error + label{
 	color: rgb(211,47,47);
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios label {
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia label {
 	color: rgb(39,174,96);
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios label.label-Usuarios {
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia label.label-Denuncia {
 	position: absolute;
-	top: 13px;
+	top: 14px;
 	left: 0px;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 16px;
 	margin-left: 15px;
 	-webkit-transition: all 0.3s ease;
@@ -1010,82 +973,40 @@ main article p {
     transition: all 0.3s ease;
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios label.label-Usuarios.active {
-	top: -11px;
-	font-size: 11px;
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia label.label-Denuncia.active {
+	top: -12px;
+	font-size: 12px;
 	line-height: 12px;
 	color: rgb(189,189,189);
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios input[type="file"]{
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia input[type="file"]{
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios span{
-	cursor: pointer;
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia span{
 	color: rgb(39,174,96);
 	padding-right: 15px;
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio label {
-	display: inline-block;
-	cursor: pointer;
-	color: rgb(39,174,96);
-	position: relative;
-	padding: 1px 15px 1px 51px;
-	font-size: 16px;
-	border-radius: 3px;
-	-webkit-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio label:hover {
-	background: rgba(220,237,200,1);
-}
-
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio label:before {
-	content: "";
-	display: inline-block;
-	width: 16px;
-	height: 16px;
-	position: absolute;
-	left: 15px;
-	border-radius: 50%;
-	background: none;
-	border: 2px solid rgb(39,174,96);
-}
-
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.error label {
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label {
 	color: rgb(211,47,47);
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.error label:hover {
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:hover,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:hover {
 	background: rgba(211,47,47,.2);
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.error label:before {
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:before,
+.Contenedor-Formulario-Denuncia .Formulario .Input-Group-Denuncia.error label:before {
 	border: 2px solid rgb(211,47,47);
 }
 
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio input[type="radio"]{
-	display: none;
-}
-
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio input[type="radio"]:checked + label:before {
-	display: none;
-}
-
-.Contenedor-Formulario-Usuarios .Formulario .Input-Group-Usuarios.Radio input[type="radio"]:checked + label{
-	padding: 5px 15px;
-	background: rgb(39,174,96);
-	border-radius: 2px;
-	color: rgb(255,255,255);
-}
-
-.Contenedor-Formulario-Usuarios .Formulario input[type="Submit"]{
+.Contenedor-Formulario-Denuncia .Formulario input[type="Submit"]{
 	background: rgb(39,174,96);
 	border-radius: 10px;
 	border: 2px solid rgb(255,255,255);
@@ -1101,11 +1022,172 @@ main article p {
     transition: all 0.3s ease;
 }
 
-.Contenedor-Formulario-Usuarios .Formulario input[type="Submit"]:hover {
+.Contenedor-Formulario-Denuncia .Formulario input[type="Submit"]:hover {
 	background: rgb(35,200,104);
 }
 
-/* Fin de formulario Ciudadano */
+/* Fin de formulario Denuncia */
+
+/* Formulario Eventos */
+
+.Wrap-Eventos {
+	width: 90%;
+	max-width: 1000px;
+	padding: 40px;
+	margin: auto;
+	background: rgb(255,255,255);
+}
+
+.Posicion-Eventos {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Lefth-Eventos, .Rigth-Eventos {
+    width: 50%;
+}
+
+.Contenedor-Formulario-Eventos {
+	width: 100%;
+	color: #fff;
+}
+
+.Contenedor-Formulario-Eventos .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos {
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="text"],
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="email"],
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="password"] {
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="text"]:focus,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="text"]:active,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="email"]:focus,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="email"]:active,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="password"]:focus,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="date"]:focus,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="text"].error,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="email"].error,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="password"].error,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="text"].error + label,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="email"].error + label,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="password"].error + label,
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos label.label-Eventos {
+	position: absolute;
+	top: 13px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos label.label-Eventos.active {
+	top: -11px;
+	font-size: 11px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos span{
+	cursor: pointer;
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Eventos .Formulario .Input-Group-Eventos.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Eventos .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Eventos .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin de formulario Eventos */
 
 /* Fin de estilo de formularios*/
 
