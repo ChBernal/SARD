@@ -6,7 +6,9 @@
 package Controlador;
 
 import Modelo.Admin_M;
+import Modelo.Administrador_M;
 import Modelo.GS_Admin;
+import Modelo.GS_Administrador;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -43,11 +45,54 @@ public class Servlet_Administrador extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
+        if (request.getParameter("Registro-Administrador") != null){
+            this.Insertar_Admin(request, response);
+        }
         if (request.getParameter("Actualizar_A") != null){
-            JOptionPane.showMessageDialog(null, "Entra");
             this.Actualizar_Admin(request, response);
         }
     }
+    protected void Insertar_Admin(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento-Administrador");
+        Tipo= request.getParameter("Tipo-Documento-Administrador");
+        Nombre = request.getParameter("Nombre-Administrador");
+        Apellido = request.getParameter("Apellido-Administrador");
+        Genero = request.getParameter("Genero-Administrador");
+        Fecha = request.getParameter("Nacimiento-Administrador");
+        Direccion = request.getParameter("Direccion-Administrador");
+        Telefono = request.getParameter("Telefono-Administrador");
+        Correo = request.getParameter("Email-Administrador");
+        Part Foto = request.getPart("Foto-Administrador");
+        String url2;
+       
+            String Nombre_F = Foto.getSubmittedFileName();
+            String Name = Nombre+"_"+Nombre_F;
+
+            String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+             url2 = "Uploads/"+Name;
+
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+        
+        
+        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
+        Administrador_M Admin = new Administrador_M();
+        Admin.In_Administrador(GSA);
+        Admin.Login_Admin(GSA);        
+        response.sendRedirect("Menu-Admin.jsp");
+
+        }
     protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

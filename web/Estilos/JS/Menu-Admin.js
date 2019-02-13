@@ -3,7 +3,7 @@
 $(document).ready(function(){
 	$(window).scroll(function(){
 		var Barra = $(window).scrollTop();
-		var posicion = Barra * 0.04;
+		var posicion = Barra * 0.07;
 
 		$('body').css({
 			'background-position': '0 -' + posicion +'px'
@@ -721,5 +721,81 @@ $(document).ready(function(){
 }());
 
 //Finalizacion de Administrador
+
+//Formulario Administrador
+
+(function(){
+	var formulario = document.Formulario_Listas,
+		elementos = formulario.elements;
+
+	//Funciones
+
+	var ValidarRadio = function(){
+		var opciones = document.getElementsByName("Listas-Usuarios");
+		resultado = false;
+
+		for (var i = 0; i < elementos.length; i++){
+			if (elementos[i].type == "radio" && elementos[i].name == "Listas-Usuarios") {
+				for (var j = 0; j < opciones.length; j++) {
+					if (opciones[j].checked){
+						resultado = true;
+						break;
+					}
+				}
+
+				if (resultado == false){
+					elementos[i].parentNode.className = elementos[i].parentNode.className + " error";
+					console.log('El campo radio esta incompleto');
+					return false;
+				}else {
+					elementos[i].parentNode.className = elementos[i].parentNode.className.replace (" error", "");
+					return true;
+				}
+			}
+		}
+
+	};
+
+	var enviar = function(e){
+		if (!ValidarInputs()) {
+			console.log('Falto validar los Input');
+			e.preventDefault();
+		}else if (!ValidarRadio()) {
+			console.log('Falto validar los Radio');
+			e.preventDefault();
+		}else {
+			console.log('Envia correctamente');
+			//e.preventDefault();
+		}
+	};
+
+	//Funciones blur y focus
+
+	var focusInputs = function(){
+		this.parentElement.children[1].className = "label-Usuarios active";
+		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
+	};
+
+	var blurInputs = function(){
+		if (this.value <= 0) {
+			this.parentElement.children[1].className = "label-Usuarios";
+			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
+		}
+	};
+
+	//Eventos
+	formulario.addEventListener("submit", enviar);
+
+	for (var i = 0; i < elementos.length; i++) {
+		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" || elementos[i].type == "date") {
+			elementos[i].addEventListener("focus", focusInputs);
+			elementos[i].addEventListener("blur", blurInputs);
+		}
+	}
+
+}());
+
+//Finalizacion de Administrador
+
 
 //Finaliza formularios

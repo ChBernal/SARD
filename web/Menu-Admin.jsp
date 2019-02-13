@@ -435,8 +435,8 @@
                                             <label for="Estado-Veterinaria" class="label-Usuarios">Estado de Veterinaria</label>
                                             <datalist id="Veterinaria-Estado">
                                                     <select>
-                                                            <option value=4>Activo</option>
-                                                            <option value=0>Inactivo</option>
+                                                            <option value="Activo">Activo</option>
+                                                            <option value="Inactivo">Inactivo</option>
                                                     </select>
                                             </datalist>
                                         </div>
@@ -455,11 +455,11 @@
                     </div>
                     <div class="Contenedor-Formulario-Usuarios">
                         <div class="Wrap-SASS">
-                            <form action="../Controlador/SASS-C.php" class="Formulario" method="POST" name="Formulario_SASS" enctype="multipart/form-data">
+                            <form action="Servlet_Ambiente_Salud" class="Formulario" method="POST" name="Formulario_SASS" enctype="multipart/form-data">
                                 <div class="Posicion-Usuarios">
                                     <div class="Left-Usuarios">
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Documento-SASS" name="Documento-SASS">
+                                            <input type="text" id="Documento-SASS" name="Documento-SASS" pattern="[0-9]{4,15}">
                                             <label for="Documento-SASS" class="label-Usuarios">Numero de Documento</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
@@ -474,11 +474,11 @@
                                             </datalist>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Nombre-SASS" name="Nombre-SASS">
+                                            <input type="text" id="Nombre-SASS" name="Nombre-SASS" pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Nombre-SASS" class="label-Usuarios">Nombre</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Apellido-SASS" name="Apellido-SASS">
+                                            <input type="text" id="Apellido-SASS" name="Apellido-SASS" pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Apellido-SASS" class="label-Usuarios">Apellido</label>
                                         </div>
                                         <div class="Input-Group-Usuarios Radio">
@@ -498,11 +498,11 @@
                                             <label for="Direccion-SASS" class="label-Usuarios">Direccion de recidencia</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Telefono-SASS" name="Telefono-SASS">
+                                            <input type="text" id="Telefono-SASS" name="Telefono-SASS" pattern="[0-9]{4,15}">
                                             <label for="Telefono-SASS" class="label-Usuarios">Telefono</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Email-SASS" name="Email-SASS">
+                                            <input type="text" id="Email-SASS" name="Email-SASS" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                                             <label for="Email-SASS" class="label-Usuarios">Email</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
@@ -530,11 +530,11 @@
                     </div>
                     <div class="Contenedor-Formulario-Usuarios">
                         <div class="Wrap-Administrador">
-                            <form action="../Controlador/Administrador-C.php" class="Formulario" method="POST" name="Formulario_Administrador" enctype="multipart/form-data">
+                            <form action="Servlet_Administrador" class="Formulario" method="POST" name="Formulario_Administrador" enctype="multipart/form-data">
                                 <div class="Posicion-Usuarios">
                                     <div class="Left-Usuarios">
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Documento-Administrador" name="Documento-Administrador">
+                                            <input type="text" id="Documento-Administrador" name="Documento-Administrador" pattern="[0-9]{4,15}">
                                             <label for="Documento-Administrador" class="label-Usuarios">Numero de Documento</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
@@ -549,11 +549,11 @@
                                             </datalist>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Nombre-Administrador" name="Nombre-Administrador">
+                                            <input type="text" id="Nombre-Administrador" name="Nombre-Administrador" pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Nombre-Administrador" class="label-Usuarios">Nombre</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Apellido-Administrador" name="Apellido-Administrador">
+                                            <input type="text" id="Apellido-Administrador" name="Apellido-Administrador" pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Apellido-Administrador" class="label-Usuarios">Apellido</label>
                                         </div>
                                         <div class="Input-Group-Usuarios Radio">
@@ -565,7 +565,7 @@
                                     </div>
                                     <div class="Rigth-Usuarios">
                                         <div class="Input-Group-Usuarios">
-                                            <input type="date" id="Nacimiento-Administrador" name="Nacimiento-Administrador">
+                                            <input type="date" id="Nacimiento-Administrador" name="Nacimiento-Administrador" >
                                             <label for="Nacimiento-Administrador" class="label-Usuarios">Fecha de nacimiento</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
@@ -573,11 +573,11 @@
                                             <label for="Direccion-Administrador" class="label-Usuarios">Direccion de recidencia</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Telefono-Administrador" name="Telefono-Administrador">
+                                            <input type="text" id="Telefono-Administrador" name="Telefono-Administrador" pattern="[0-9]{4,15}">
                                             <label for="Telefono-Administrador" class="label-Usuarios">Telefono</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Email-Administrador" name="Email-Administrador">
+                                            <input type="text" id="Email-Administrador" name="Email-Administrador" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                                             <label for="Email-Administrador" class="label-Usuarios">Email</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">

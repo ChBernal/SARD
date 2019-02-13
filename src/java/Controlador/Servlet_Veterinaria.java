@@ -63,8 +63,8 @@ public class Servlet_Veterinaria extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        int Rol;
-        String Nit,Nombre,Representante,Tipo,Fecha,Direccion,Barrio,Telefono,Correo;
+        int Rol=0;
+        String Nit,Nombre,Representante,Tipo,Fecha,Direccion,Barrio,Telefono,Correo,RolNombre;
         Nit = request.getParameter("Nit");
         Nombre = request.getParameter("Nombre-Veterinaria");
         Representante= request.getParameter("Representante-Veterinaria");
@@ -74,7 +74,13 @@ public class Servlet_Veterinaria extends HttpServlet {
         Barrio = request.getParameter("Barrio-Veterinaria");
         Telefono = request.getParameter("Telefono-Veterinaria");
         Correo = request.getParameter("Email-Veterinaria");
-        Rol= Integer.parseInt(request.getParameter("Estado-Veterinaria"));
+        RolNombre= request.getParameter("Estado-Veterinaria");
+            if (RolNombre.equalsIgnoreCase("Activo")) {
+             Rol=4;
+            }
+            else if (RolNombre.equalsIgnoreCase("Inactivo")) {
+             Rol=0;
+            }
         Part Foto = request.getPart("Foto-Veterinaria"); 
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
