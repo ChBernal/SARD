@@ -51,6 +51,9 @@ public class ServletUsuario extends HttpServlet {
         if (request.getParameter("Registro-Ciudadano") != null){
             this.Insertar_Cliente(request, response);
         }
+        if (request.getParameter("Registrarme") != null){
+            this.Insertar_Ciudadano(request, response);
+        }
     }
     
     protected void Insertar_Cliente(HttpServletRequest request, HttpServletResponse response)
@@ -137,6 +140,51 @@ public class ServletUsuario extends HttpServlet {
                 JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
             }
         response.sendRedirect("Perfil_Ciudadano.jsp");
+        }
+    
+    protected void Insertar_Ciudadano(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento,Tipo,Lugar,Nombre,Apellido,Genero,Fecha,Direccion,Barrio,Telefono1,Telefono2,Correo,Ocupacion;
+        Documento = request.getParameter("Documento-Ciudadano");
+        Tipo= request.getParameter("Tipo-Documento-Ciudadano");
+        Lugar= request.getParameter("Expedicion-Ciudadano");
+        Nombre = request.getParameter("Nombre-Ciudadano");
+        Apellido = request.getParameter("Apellido-Ciudadano");
+        Genero = request.getParameter("Genero-Ciudadano");
+        Fecha = request.getParameter("Nacimiento-Ciudadano");
+        Direccion = request.getParameter("Direccion-Ciudadano");
+        Barrio = request.getParameter("Barrio-Ciudadano");
+        Telefono1 = request.getParameter("Telefono-Ciudadano");
+        Telefono2 = request.getParameter("Celular-Ciudadano");
+        Correo = request.getParameter("Email-Ciudadano");
+        Ocupacion = request.getParameter("Ocupacion-Ciudadano");
+        Part Foto = request.getPart("Foto-Ciudadano");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        GS_Ciudadano GSC = new GS_Ciudadano(Documento, Tipo, Lugar, Nombre, Apellido, Genero, Fecha, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
+        Ciudadano_M Ciudadano = new Ciudadano_M();
+        Ciudadano.In_Ciudadano(GSC);
+        Login_M M_LG =new Login_M();
+        M_LG.Login_Cliente(GSC);
+        
+         response.sendRedirect("index.jsp");
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

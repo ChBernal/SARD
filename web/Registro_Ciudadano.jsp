@@ -64,7 +64,7 @@
         <div class="Contenido-Ciudadano">
             <div class="Contenedor-Formulario-Usuarios">
                 <div class="Wrap-Ciudadano">
-                    <form action="ServletCiudadano" class="Formulario" method="POST" name="Formulario_Registro" enctype="multipart/form-data">
+                    <form action="ServletUsuario" class="Formulario" method="POST" name="Formulario_Registro" enctype="multipart/form-data">
                         <div class="Posicion-Usuarios">
                             <div class="Left-Usuarios">
                                 <div class="Input-Group-Usuarios">
@@ -136,7 +136,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" name="Registro-Ciudadano" value="Registrarme">
+                        <input type="submit" name="Registrarme" value="Registrarme">
                     </form>
                 </div>	
             </div>
