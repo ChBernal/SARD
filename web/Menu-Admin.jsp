@@ -258,7 +258,7 @@
                                                         for(int i=0; i<Docu_Cliente.size(); i++){
                                                             GS_Ciudadano = Docu_Cliente.get(i);
                                                     %>
-                                                    <option value="<%=GS_Ciudadano.getDocumento()%>"><%=GS_Ciudadano.getDocumento()%></option>
+                                                    <option value="<%=GS_Ciudadano.getDocumento()%>"><%=GS_Ciudadano.getNombre()%> <%=GS_Ciudadano.getApellido()%></option>
                                                     
                                                    <%}%>
                                                 </datalist>
