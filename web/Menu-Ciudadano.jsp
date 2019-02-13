@@ -1,3 +1,8 @@
+<%@page import="Modelo.Ciudadano_M"%>
+<%@page import="Modelo.GS_Ciudadano"%>
+<%@page import="Modelo.GS_Denuncia_Cliente"%>
+<%@page import="Modelo.GS_Eventos"%>
+<%@page import="Modelo.Eventos_M"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.GS_Mascota"%>
 <%@page import="Modelo.Mascota_M"%>
@@ -5,6 +10,7 @@
 <!DOCTYPE html>
 <%
     HttpSession Dat = request.getSession();
+    String Doc=(String)Dat.getAttribute("DocumentoSession");
 %>
 <html lang="en">
 <head>
@@ -30,7 +36,19 @@
                 <a href="#" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
                 <div class="Perfil">
                     <a href="#" class="Abrir" id="Abrir"><%=(String)Dat.getAttribute("NombreSession")%></a>
-                    <img src="<?=$_SESSION['Img']?>">
+                    <%
+                        Ciudadano_M con = new Ciudadano_M();
+                        GS_Ciudadano Dato = new GS_Ciudadano(Doc);
+                        ArrayList<GS_Ciudadano> datos = new ArrayList<>();
+                        datos = con.Uno_Ciudadano(Dato);
+
+                        for(int i=0; i<datos.size(); i++){
+                            Dato= datos.get(i);
+                    %>
+                    <img width="40px" height="40px" src="<%= Dato.getFoto()%>">
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </nav>
@@ -305,18 +323,35 @@
             <article id="Eventos" class="Eventos">
                 <h1>Eventos</h1>
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium deserunt necessitatibus atque placeat veniam iusto sed, quae voluptas, impedit unde quo suscipit neque tenetur pariatur harum repudiandae esse earum quod?</p>
+                <div class="Posicion-Eventos">
+                    <%
+                        Eventos_M EM = new Eventos_M();
+                        ArrayList<GS_Eventos> Todo_Eventos = new ArrayList<>();    
+                        GS_Eventos GSE = new GS_Eventos();
+                        Todo_Eventos = EM.Todo_Eventos();
 
+                        for (int i = 0; i < Todo_Eventos.size();i++){
+                            GSE = Todo_Eventos.get(i);
+                    %>
+                    <div class="CuadroEventos">
+                        <div class="Nombre_Eventos">
+                            <h2><%= GSE.getNombre() %></h2>
+                        </div>
+                        <div class="Imagen-Eventos">
+                            <img src="<%= GSE.getImagen()%>">
+                        </div> 
+                    </div>
+                    <div class="Fondo">
+                        <div class="Datos_Evento">
+                            <label>Fecha: <%= GSE.getFecha() %></label>
+                            <label>Tipo: <%= GSE.getTipoEvento() %></label>
+                            <label class="Descripcion"><%= GSE.getDescripcion()%></label>
+                        </div>
+                    </div>
+                    <%
+                        }
+                    %>
+                </div>
             </article>
 
             <article id="Tips" class="Tips">

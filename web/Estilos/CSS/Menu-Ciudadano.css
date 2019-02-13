@@ -288,6 +288,8 @@ main article p {
 	width: 100%;
 	height: 100vh;
 	margin: 0 auto;
+        overflow: scroll;
+        overflow-x: hidden;
 	background: rgb(209,255,178);
 	background-attachment: fixed;
 }
@@ -800,6 +802,60 @@ main article p {
 
 /*  Finaliza Adopcion */
 
+.Posicion-Eventos {
+    width: 100%;
+    margin: auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Posicion-Eventos .CuadroEventos{
+    background: rgb(39,174,96);
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.Posicion-Eventos .CuadroEventos .Nombre_Eventos{
+    padding: 10px;
+    color: rgb(255,255,255);
+    font-family: "Nunito";
+}
+
+.Posicion-Eventos .CuadroEventos .Imagen-Eventos img{
+    object-fit: cover;
+    width: 100%;
+    height: 349px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.Fondo {
+    position: relative;
+    left: -400px;
+    top: 252px;;
+}
+
+.Fondo .Datos_Evento{
+    width: 400px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    font-family: "Nunito";
+    color: rgb(255,255,255);
+    font-size: 30px;
+}
+
+.Fondo .Datos_Evento .Descripcion{
+    font-size: 16px;
+}
 /*  Formulario Contactenos */
 
 .Wrap-Contactenos {
