@@ -57,4 +57,17 @@ public class Login_M {
     }
         return Actualizar;
     }
+    
+        public void Login_Cliente (GS_Ciudadano GS){
+        try{
+            ps=cnn.prepareStatement("call In_Login(?,?,?)");
+            ps.setString(1, GS.getDocumento());
+            ps.setString(2, GS.getDocumento());
+            ps.setInt(3, 5);
+            ps.executeUpdate();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
 }

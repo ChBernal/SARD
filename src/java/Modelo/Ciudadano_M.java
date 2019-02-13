@@ -13,6 +13,30 @@ public class Ciudadano_M {
     PreparedStatement PreSta = null;
     ResultSet Reset = null;
     
+    public void In_Ciudadano (GS_Ciudadano GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("call In_Cliente (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(2, GS.getTipo_Documento());
+            PreSta.setString(3, GS.getExpedicion());
+            PreSta.setString(4, GS.getNombre());
+            PreSta.setString(5, GS.getApellido());
+            PreSta.setString(6, GS.getGenero());
+            PreSta.setString(7, GS.getNacimiento());
+            PreSta.setString(8, GS.getDireccion());
+            PreSta.setString(9, GS.getBarrio());
+            PreSta.setString(10, GS.getCelular());
+            PreSta.setString(11, GS.getFijo());
+            PreSta.setString(12, GS.getCorreo());
+            PreSta.setString(13, GS.getOcupacion());
+            PreSta.setString(14, GS.getFoto());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
     public ArrayList<GS_Ciudadano> Uno_Ciudadano (GS_Ciudadano GSC){
         ArrayList<GS_Ciudadano> Uno_Ciudadano = new ArrayList<>();
         try {
@@ -28,7 +52,7 @@ public class Ciudadano_M {
         
         return Uno_Ciudadano;
     }
-    public ArrayList<GS_Ciudadano> Todo_Cliente() {
+    public ArrayList<GS_Ciudadano> Todo_Ciudadano() {
         ArrayList<GS_Ciudadano> Todo_Cliente = new ArrayList<>();
         try {
             PreSta = BaseDatos.prepareStatement("call Todo_Cliente()");

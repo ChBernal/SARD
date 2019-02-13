@@ -252,7 +252,7 @@
                                                      <%
                                                         ArrayList<GS_Ciudadano> Docu_Cliente = new ArrayList<>();
                                                         Ciudadano_M M_Ciudadano = new Ciudadano_M();
-                                                        Docu_Cliente =  M_Ciudadano.Todo_Cliente();
+                                                        Docu_Cliente =  M_Ciudadano.Todo_Ciudadano();
                                                         GS_Ciudadano GS_Ciudadano = new GS_Ciudadano();
 
                                                         for(int i=0; i<Docu_Cliente.size(); i++){
@@ -260,7 +260,7 @@
                                                     %>
                                                     <option value="<%=GS_Ciudadano.getDocumento()%>"><%=GS_Ciudadano.getDocumento()%></option>
                                                     
-                                                    <% JOptionPane.showMessageDialog(null, GS_Ciudadano.getDocumento());}%>
+                                                   <%}%>
                                                 </datalist>
                                             </div>
                                         </div>
@@ -300,11 +300,11 @@
                     </div>
                     <div class="Contenedor-Formulario-Usuarios">
                         <div class="Wrap-Ciudadanos">
-                            <form action="../Controlador/Ciudadano-C.php" class="Formulario" method="POST" name="Formulario_Ciudadano" enctype="multipart/form-data">
+                            <form action="ServletUsuario" class="Formulario" method="POST" name="Formulario_Ciudadano" enctype="multipart/form-data">
                                 <div class="Posicion-Usuarios">
                                     <div class="Left-Usuarios">
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Documento-Ciudadano" name="Documento-Ciudadano">
+                                            <input type="text" id="Documento-Ciudadano" name="Documento-Ciudadano" pattern="[0-9]{4,11}">
                                             <label for="Documento-Ciudadano" class="label-Usuarios">Numero de Documento</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
@@ -319,15 +319,15 @@
                                             </datalist>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Expedicion-Ciudadano" name="Expedicion-Ciudadano">
+                                            <input type="text" id="Expedicion-Ciudadano" name="Expedicion-Ciudadano" pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Expedicion-Ciudadano" class="label-Usuarios">Lugar de expedicion</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Nombre-Ciudadano" name="Nombre-Ciudadano">
+                                            <input type="text" id="Nombre-Ciudadano" name="Nombre-Ciudadano" pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Nombre-Ciudadano" class="label-Usuarios">Nombre</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Apellido-Ciudadano" name="Apellido-Ciudadano">
+                                            <input type="text" id="Apellido-Ciudadano" name="Apellido-Ciudadano" pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Apellido-Ciudadano" class="label-Usuarios">Apellido</label>
                                         </div>
                                         <div class="Input-Group-Usuarios Radio">
@@ -347,23 +347,23 @@
                                             <label for="Direccion-Ciudadano" class="label-Usuarios">Direccion de recidencia</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Barrio-Ciudadano" name="Barrio-Ciudadano">
+                                            <input type="text" id="Barrio-Ciudadano" name="Barrio-Ciudadano" pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Barrio-Ciudadano" class="label-Usuarios">Barrio</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Telefono-Ciudadano" name="Telefono-Ciudadano">
+                                            <input type="text" id="Telefono-Ciudadano" name="Telefono-Ciudadano" pattern="[0-9]{5,10}">
                                             <label for="Telefono-Ciudadano" class="label-Usuarios">Telefono</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Celular-Ciudadano" name="Celular-Ciudadano">
+                                            <input type="text" id="Celular-Ciudadano" name="Celular-Ciudadano" pattern="[0-9]{5,10}">
                                             <label for="Celular-Ciudadano" class="label-Usuarios">Celular</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Email-Ciudadano" name="Email-Ciudadano">
+                                            <input type="text" id="Email-Ciudadano" name="Email-Ciudadano"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                                             <label for="Email-Ciudadano" class="label-Usuarios">Email</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Ocupacion-Ciudadano" name="Ocupacion-Ciudadano">
+                                            <input type="text" id="Ocupacion-Ciudadano" name="Ocupacion-Ciudadano"pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Ocupacion-Ciudadano" class="label-Usuarios">Ocupacion</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
@@ -382,19 +382,19 @@
                     </div>
                     <div class="Contenedor-Formulario-Usuarios">
                         <div class="Wrap-Veterinaria">
-                            <form action="../Controlador/Veterinaria-C.php" class="Formulario" method="POST" name="Formulario_Veterinaria" enctype="multipart/form-data">
+                            <form action="Servlet_Veterinaria" class="Formulario" method="POST" name="Formulario_Veterinaria" enctype="multipart/form-data">
                                 <div class="Posicion-Usuarios">
                                     <div class="Left-Usuarios">
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Nit" name="Nit">
+                                            <input type="text" id="Nit" name="Nit" pattern="[0-9]{4,15}">
                                             <label for="Nit" class="label-Usuarios">NIT</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Nombre-Veterinaria" name="Nombre-Veterinaria">
+                                            <input type="text" id="Nombre-Veterinaria" name="Nombre-Veterinaria"  pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Nombre-Veterinaria" class="label-Usuarios">Nombre de la veterinaria</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Representante-Veterinaria" name="Representante-Veterinaria">
+                                                <input type="text" id="Representante-Veterinaria" name="Representante-Veterinaria"  pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Representante-Veterinaria" class="label-Usuarios">Representante legal</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
@@ -419,16 +419,26 @@
                                             <label for="Direccion-Veterinaria" class="label-Usuarios">Direccion de la veterinaria</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Barrio-Veterinaria" name="Barrio-Veterinaria">
+                                            <input type="text" id="Barrio-Veterinaria" name="Barrio-Veterinaria"  pattern="[A-Z,a-z ]{1,50}">
                                             <label for="Barrio-Veterinaria" class="label-Usuarios">Barrio</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Telefono-Veterinaria" name="Telefono-Veterinaria">
+                                            <input type="text" id="Telefono-Veterinaria" name="Telefono-Veterinaria" pattern="[0-9]{4,15}">
                                             <label for="Telefono-Veterinaria" class="label-Usuarios">Telefono</label>
                                         </div>
                                         <div class="Input-Group-Usuarios">
-                                            <input type="text" id="Email-Veterinaria" name="Email-Veterinaria">
+                                            <input type="text" id="Email-Veterinaria" name="Email-Veterinaria"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                                             <label for="Email-Veterinaria" class="label-Usuarios">Email</label>
+                                        </div>
+                                        <div class="Input-Group-Usuarios">
+                                            <input type="text" name="Estado-Veterinaria" list="Veterinaria-Estado">
+                                            <label for="Estado-Veterinaria" class="label-Usuarios">Estado de Veterinaria</label>
+                                            <datalist id="Veterinaria-Estado">
+                                                    <select>
+                                                            <option value=4>Activo</option>
+                                                            <option value=0>Inactivo</option>
+                                                    </select>
+                                            </datalist>
                                         </div>
                                         <div class="Input-Group-Usuarios">
                                             <input type="file" id="Foto-Veterinaria" name="Foto-Veterinaria">
