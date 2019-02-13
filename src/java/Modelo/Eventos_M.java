@@ -29,7 +29,7 @@ public class Eventos_M {
     
     public void In_Eventos (GS_Eventos GSE){
         try {
-            ps = cnn.prepareStatement("Call In_Eventos");
+            ps = cnn.prepareStatement("Call In_Eventos(?,?,?,?,?)");
             ps.setString(1, GSE.getNombre());
             ps.setString(2, GSE.getTipoEvento());
             ps.setString(3, GSE.getFecha());
