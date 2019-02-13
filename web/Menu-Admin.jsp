@@ -310,7 +310,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input type="submit" name="Registro-Ciudadano" value="Registrar">
+                                <input type="submit" name="Registro-Evento" value="Registrar">
                             </form>
                         </div>
                     </div>

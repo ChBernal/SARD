@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
-@MultipartConfig
+
 @WebServlet(name = "Servlet_Eventos", urlPatterns = {"/Servlet_Eventos"})
+@MultipartConfig
 public class Servlet_Eventos extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +26,8 @@ public class Servlet_Eventos extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        if (request.getParameter("Enviar") != null){
+        if (request.getParameter("Registro-Evento") != null){
+            JOptionPane.showMessageDialog(null, "entra al if de boton");
             this.InsertarEvento(request, response);
         }
 
@@ -35,7 +38,7 @@ public class Servlet_Eventos extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String NombreEvento, TipoEvento, FechaEvento, DescripcionEvento;
-        
+        JOptionPane.showMessageDialog(null, "entra al metodo");
         NombreEvento = request.getParameter("NombreEvento");
         TipoEvento = request.getParameter("Tipo_Evento");
         FechaEvento = request.getParameter("Fecha_Evento");
