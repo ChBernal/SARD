@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Eventos_M {
     Conexion conexion = new Conexion();
@@ -24,6 +25,21 @@ public class Eventos_M {
         } catch (Exception e) {
         }
         return Todo_Eventos;
+    }
+    
+    public void In_Eventos (GS_Eventos GSE){
+        try {
+            ps = cnn.prepareStatement("Call In_Eventos");
+            ps.setString(1, GSE.getNombre());
+            ps.setString(2, GSE.getTipoEvento());
+            ps.setString(3, GSE.getFecha());
+            ps.setString(4, GSE.getDescripcion());
+            ps.setString(5, GSE.getImagen());
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Evento creado correctamente");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Erro al crear el evento \n"+e);
+        }
     }
             
 }

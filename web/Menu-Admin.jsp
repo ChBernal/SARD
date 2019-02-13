@@ -277,11 +277,11 @@
                     <hr>
                     <div class="Contenedor-Formulario-Eventos">
                         <div class="Wrap-Eventos">
-                            <form action="ServletEventos" class="Formulario" method="POST" name="Formulario_Eventos" enctype="multipart/form-data">
+                            <form action="Servlet_Eventos" class="Formulario" method="POST" name="Formulario_Eventos" enctype="multipart/form-data">
                                 <div class="Posicion-Eventos">
                                     <div class="Lefth-Eventos">
                                         <div class="Input-Group-Eventos">
-                                            <input type="text" id="NombreEvento" name="NombreEvento" pattern="[0-9]{4,11}">
+                                            <input type="text" id="NombreEvento" name="NombreEvento">
                                             <label for="NombreEvento" class="label-Eventos">Nombre del Evento</label>
                                         </div>
                                         <div class="Input-Group-Eventos">
@@ -289,18 +289,17 @@
                                             <label for="Tipo_Evento" class="label-Eventos">Tipo de evento</label>
                                             <datalist id="Eventos_Tipo">
                                                 <select>
-                                                    <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-                                                    <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                                                    <option value="Pasaporte">Pasaporte</option>
+                                                    <option value="Vacunacion">Vacunacion</option>
+                                                    <option value="Adopcion">Adopcion</option>
                                                 </select>
                                             </datalist>
                                         </div>
                                         <div class="Input-Group-Eventos">
-                                            <input type="date" id="Fecha_Evento" name="Fecha_Evento" pattern="[A-Z,a-z ]{1,50}">
+                                            <input type="date" id="Fecha_Evento" name="Fecha_Evento">
                                             <label for="Fecha_Evento" class="label-Eventos">Fecha del Evento</label>
                                         </div>
                                         <div class="Input-Group-Eventos">
-                                            <input type="text" id="Descripcion" name="Descripcion" pattern="[A-Z,a-z ]{1,50}">
+                                            <input type="text" id="Descripcion" name="Descripcion">
                                             <label for="Descripcion" class="label-Eventos">Descripcion del evento</label>
                                         </div>
                                     </div>
