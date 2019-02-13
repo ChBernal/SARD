@@ -48,6 +48,21 @@ public class Servlet_Administrador extends HttpServlet {
         if (request.getParameter("Registro-Administrador") != null){
             this.Insertar_Admin(request, response);
         }
+        if (request.getParameter("Consultar") != null){
+            String Lista = request.getParameter("Listas-Usuarios");
+            if (Lista.equalsIgnoreCase("ciudadanos")) {
+                response.sendRedirect("");
+            }
+            else if (Lista.equalsIgnoreCase("veterinaria")) {
+                response.sendRedirect("");
+            }
+            else if (Lista.equalsIgnoreCase("sass")) {
+                response.sendRedirect("");
+            }
+            else if (Lista.equalsIgnoreCase("administradores")) {
+                response.sendRedirect("");
+            }
+        }
         if (request.getParameter("Actualizar_A") != null){
             this.Actualizar_Admin(request, response);
         }
