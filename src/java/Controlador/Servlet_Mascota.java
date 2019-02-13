@@ -69,6 +69,7 @@ public class Servlet_Mascota extends HttpServlet {
         
         int Existe = MM.Existente(GS_E);
          if (Existe==0) {
+             
              GS_Mascota GS_M = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
              MM.In_Mascota(GS_M);
              
@@ -81,18 +82,24 @@ public class Servlet_Mascota extends HttpServlet {
              if(Estado.equalsIgnoreCase("Adoptado")){
                  Valor_Estado=1;
                  GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota,Documento );
+                 MM.Registro_Estado(GS_EM);
              }
              else if(Estado.equalsIgnoreCase("Con Propietario")){
                  Valor_Estado=2;
                  GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota, Documento);
+                 MM.Registro_Estado(GS_EM);
              }
              if (Estado.equalsIgnoreCase("Disponible")) {
                  Valor_Estado=3;
+                 Documento = "0";
                  GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota, Documento);
+                 MM.Registro_Estado(GS_EM);
              }
              else if(Estado.equalsIgnoreCase("En Proceso")){
                  Valor_Estado=4;
+                 Documento = "0";
                  GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(Valor_Estado,Codigo_Mascota, Documento);
+                 MM.Registro_Estado(GS_EM);
              }
          }else{
             JOptionPane.showMessageDialog(null,"La mascota ya esta registrada");

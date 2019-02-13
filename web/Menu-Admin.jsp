@@ -1,3 +1,6 @@
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="Modelo.GS_Ciudadano"%>
+<%@page import="Modelo.Ciudadano_M"%>
 <%@page import="Modelo.GS_Denuncia_Cliente"%>
 <%@page import="Modelo.GS_Denuncias"%>
 <%@page import="Modelo.GS_Denuncias"%>
@@ -246,7 +249,18 @@
                                                 <input type="text" name="Documento-Duenno" list="Numero-Documento">
                                                 <label for="Documento-Duenno" class="label-Mascota">Documento</label>
                                                 <datalist id="Numero-Documento">
+                                                     <%
+                                                        ArrayList<GS_Ciudadano> Docu_Cliente = new ArrayList<>();
+                                                        Ciudadano_M M_Ciudadano = new Ciudadano_M();
+                                                        Docu_Cliente =  M_Ciudadano.Todo_Cliente();
+                                                        GS_Ciudadano GS_Ciudadano = new GS_Ciudadano();
 
+                                                        for(int i=0; i<Docu_Cliente.size(); i++){
+                                                            GS_Ciudadano = Docu_Cliente.get(i);
+                                                    %>
+                                                    <option value="<%=GS_Ciudadano.getDocumento()%>"><%=GS_Ciudadano.getDocumento()%></option>
+                                                    
+                                                    <% JOptionPane.showMessageDialog(null, GS_Ciudadano.getDocumento());}%>
                                                 </datalist>
                                             </div>
                                         </div>
