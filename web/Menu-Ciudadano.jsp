@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Ciudadano_M"%>
 <%@page import="Modelo.GS_Ciudadano"%>
 <%@page import="Modelo.GS_Denuncia_Cliente"%>
@@ -145,6 +146,7 @@
                                         <img src="<%= GSM.getFoto() %>">
                                     </div>
                                     <div class="Datos_Mascota" >
+                                        <input type="hidden" class="Docu" value="<%= GSM.getDocumento()%>">
                                         <h1><%=GSM.getNombre()%></h1>
                                         <label><%= GSM.getFecha_Nacimiento() %></label>
                                         <label><%= GSM.getGenero() %></label>
@@ -169,21 +171,34 @@
                             <div class="Body-Modal">
                                 <div class="Posicion-Postulacion">
                                     <div class="Lefth-Postulacion">
-                                            <!-- espacio para hacer la consulta -->
+                                        <input type="text" id="Documento1" name="Documento1">
+                                        <%
+                                            
+                                            int Docu= Integer.parseInt(request.getParameter("Documento1"));
+                                            JOptionPane.showMessageDialog(null, Docu);
+                                            ArrayList<GS_Mascota> datos1 = new ArrayList<>();
+                                            Mascota_M con1 = new Mascota_M();
+                                            datos1 = con1.Uno_Mascota(Docu);
+                                            GS_Mascota Dat1 = new GS_Mascota();
+
+                                            for(int i=0; i<datos1.size(); i++){
+                                                Dat1 = datos1.get(i);
+                                        %>
                                         <div class="InfoMascota">
                                             <div class="Imagen-Mascota">
-                                                <img src="Imagen">
+                                                <img src="<%= Dat1.getFoto() %>">
                                             </div>
                                             <div class="Datos_Mascota">
-                                                <h2>Nombre</h2>
-                                                <label>Documento</label>
-                                                <label>Fecha Nacimiento</label>
-                                                <label>Tipo Mascota</label>
-                                                <label>Genero</label>
-                                                <label>Raza</label>
-                                                <label>Color</label>
+                                                <h2><%=Dat1.getNombre()%></h2>
+                                                <label><%= Dat1.getDocumento()%></label>
+                                                <label><%= Dat1.getFecha_Nacimiento() %></label>
+                                                <label><%= Dat1.getTipo_Mascota()%></label>
+                                                <label><%= Dat1.getGenero() %></label>
+                                                <label><%= Dat1.getRaza() %></label>
+                                                <label><%= Dat1.getColor() %></label>
                                             </div>
                                         </div>
+                                        <% }  } %>
                                     </div>
                                     <div class="Rigth-Postulacion">
                                         <div class="Contenedor-Formulario">

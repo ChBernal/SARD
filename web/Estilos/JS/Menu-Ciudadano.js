@@ -119,9 +119,15 @@ $(".Usuario").click(function (){
 //Todas las opciones del contenido modal
 
 $(document).ready(function(){
+    $(".Docu");
     $(".InfoMascota").click(function(){
         var Pos = $(".Imagen_Mascota").index(this);
+        var x = $(".InfoMascota").index(this);
         var Asi = $(".Datos-Mascota").eq(Pos);
+        var Doc1= $(".Docu").eq(x);
+        var Doc2= (Doc1).val();
+        alert(Doc2);
+        document.getElementById('Documento1').value= Doc2+1;
         modal.style.display = 'block'; 
     });
 });

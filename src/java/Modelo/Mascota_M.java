@@ -13,6 +13,24 @@ public class Mascota_M {
     PreparedStatement ps = null;
     ResultSet rs = null;
     
+    public ArrayList<GS_Mascota> Uno_Mascota (int ID){
+        ArrayList<GS_Mascota> Tabla=new ArrayList<>();
+        
+        try {
+            ps= cnn.prepareStatement("call Uno_Mascota(?)");
+            ps.setInt(1, ID);
+            rs= ps.executeQuery();
+            
+            while (rs.next()) {   
+                GS_Mascota ing=new GS_Mascota(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
+                Tabla.add(ing);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+" Error en Uno Cliente");
+        }
+        return Tabla;
+    }
     public ArrayList<GS_Mascota> Todo_Mascota() {
         ArrayList<GS_Mascota> Todo_Mascota = new ArrayList<>();
         try {
