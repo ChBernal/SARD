@@ -127,7 +127,7 @@ $(document).ready(function(){
         var Doc1= $(".Docu").eq(x);
         var Doc2= (Doc1).val();
         alert(Doc2);
-        document.getElementById('Documento1').value= Doc2+1;
+        document.getElementById('Documento1').value= Doc2;
         modal.style.display = 'block'; 
     });
 });

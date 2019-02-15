@@ -57,7 +57,7 @@
     <div class="Contenedor-Perfil">
         <div class="Datos-Usuario">
             <a href="Perfil_Ciudadano.jsp"><span class="fa fa-user"></span>Perfil</a>
-            <a href="Mascotas.jsp"><span class="fa fa-paw"></span>Mascotas</a>
+            <a href="Mascotas_Ciudadano.jsp"><span class="fa fa-paw"></span>Mascotas</a>
             <a href="index.jsp"><span class="fa fa-times-circle-o"></span>Cerrar Session</a>
         </div>
     </div>                    
@@ -99,7 +99,7 @@
                     </div>
                         <div class="Informacion">
                             <div class="Tipo-Maltrato">
-                                <h2>5Libertades</h2>
+                                <h2>5 Libertades</h2>
                                 <p>Recuerda que para que tu denuncia sea tomada en cuenta la mascota debe ser carente de alguno de
                                 sus 5 libertades:</p>
                                 <p>Libre de sed, hambre y malnutricion.</p>
@@ -131,6 +131,7 @@
                     <div class="Contenido-Adopcion">
                     <div class="Contenedor-Formulario-Adopcion">
                         <div class="Wrap-Adopcion">
+                            
                             <div class="Posicion-Adopcion">
                             <%
                                 Mascota_M MM = new Mascota_M();
@@ -142,6 +143,9 @@
                                     GSM = Tabla_mascota.get(i);
                             %>
                                 <div class="InfoMascota" name="InfoMascota">
+                                    <form action="">
+                                    <input type="submit" name="btnp">
+                                    </form>
                                     <div class="Imagen-Mascota">
                                         <img src="<%= GSM.getFoto() %>">
                                     </div>
@@ -173,9 +177,7 @@
                                     <div class="Lefth-Postulacion">
                                         <input type="text" id="Documento1" name="Documento1">
                                         <%
-                                            
-                                            int Docu= Integer.parseInt(request.getParameter("Documento1"));
-                                            JOptionPane.showMessageDialog(null, Docu);
+                                            int Docu = 1;
                                             ArrayList<GS_Mascota> datos1 = new ArrayList<>();
                                             Mascota_M con1 = new Mascota_M();
                                             datos1 = con1.Uno_Mascota(Docu);
@@ -198,7 +200,7 @@
                                                 <label><%= Dat1.getColor() %></label>
                                             </div>
                                         </div>
-                                        <% }  } %>
+                                        <%  }  %>
                                     </div>
                                     <div class="Rigth-Postulacion">
                                         <div class="Contenedor-Formulario">
@@ -408,7 +410,7 @@
         </main>
 
         <div class="Footer-Button">
-            <label>Creado por Christian Bernal &copy 2019 | Todos los derechos reservados</label>
+            <label>Creado por SARD &copy 2019 | Todos los derechos reservados</label>
         </div>
     </div>
     <script src="Estilos/JS/jquery.min.js"></script>

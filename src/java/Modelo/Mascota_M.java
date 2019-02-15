@@ -15,7 +15,7 @@ public class Mascota_M {
     
     public ArrayList<GS_Mascota> Uno_Mascota (int ID){
         ArrayList<GS_Mascota> Tabla=new ArrayList<>();
-        
+        JOptionPane.showMessageDialog(null,ID);
         try {
             ps= cnn.prepareStatement("call Uno_Mascota(?)");
             ps.setInt(1, ID);

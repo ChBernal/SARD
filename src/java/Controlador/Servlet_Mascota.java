@@ -31,6 +31,9 @@ public class Servlet_Mascota extends HttpServlet {
          if (request.getParameter("Registro-Mascota") != null){
             this.InsertarMascota(request, response);
         }
+         if (request.getParameter("Registro-Mascota-C") != null){
+            this.InsertarMascotaC(request, response);
+        }
     }
     
     protected void InsertarMascota(HttpServletRequest request, HttpServletResponse response)
@@ -105,6 +108,58 @@ public class Servlet_Mascota extends HttpServlet {
             JOptionPane.showMessageDialog(null,"La mascota ya esta registrada");
          }
         response.sendRedirect("Menu-Admin.jsp");
+        
+    }
+    protected void InsertarMascotaC(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno,Documento,Estado;
+        int  Codigo ;
+        
+        TipoMascota = request.getParameter("Tipo-Mascota");
+        Nombre = request.getParameter("Nombre-Mascota");
+        FechaNacimiento = request.getParameter("Nacimiento-Mascota");
+        Color = request.getParameter("Color-Mascota");
+        Raza = request.getParameter("Raza-Mascota");
+        Sexo = request.getParameter("Genero-Mascota");
+        Documento = request.getParameter("Documento-Duenno");
+        Part Foto = request.getPart("Foto-Mascota");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Nombre+"_"+Nombre_F;
+        String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Foto_Name;
+        String url2 = "Uploads\\"+Foto_Name;
+
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        Mascota_M MM = new Mascota_M();
+        GS_Existente GS_E =new GS_Existente(Nombre, Documento, FechaNacimiento, TipoMascota);
+        
+        int Existe = MM.Existente(GS_E);
+         if (Existe==0) {
+             
+             GS_Mascota GS_M = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
+             MM.In_Mascota(GS_M);
+             
+            int Codigo_Mascota;
+            GS_Mascota GS_MA = new GS_Mascota(Nombre,FechaNacimiento,Raza);
+            Codigo_Mascota = MM.Ultima_Mascota(GS_MA);
+            GS_Mascota GS_MAS = new GS_Mascota();   
+             JOptionPane.showMessageDialog(null, Codigo_Mascota);
+            GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(2,Codigo_Mascota, Documento);
+            MM.Registro_Estado(GS_EM);
+         }else{
+            JOptionPane.showMessageDialog(null,"La mascota ya esta registrada");
+         }
+        response.sendRedirect("Mascotas_Ciudadano.jsp");
         
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
