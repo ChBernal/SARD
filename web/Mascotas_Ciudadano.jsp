@@ -18,7 +18,6 @@
 	<link rel="stylesheet" href="Estilos/Iconos/css/font-awesome.min.css">
         <link rel="stylesheet" href="Estilos/CSS/Mascota_Ciudadano.css">
         <script type="text/javascript" src="Estilos/JS/jquery.js"></script>
-        <script type="text/javascript" src="Estilos/JS/"></script>
     </head>
     <body>
         <div class="Barra">
@@ -87,5 +86,6 @@
                 </div>
             </div>
         </div>
+    <script type="text/javascript" src="Estilos/JS/Mascotas_Ciudadano.js"></script>
     </body>
 </html>
