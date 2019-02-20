@@ -623,7 +623,7 @@
                     </div>
                     <div class="Contenedor-Formulario-Usuarios">
                         <div class="Wrap-Listas">
-                            <form action="Servlet_Administradorr" class="Formulario" method="POST" name="Formulario_Listas" enctype="multipart/form-data">
+                            <form action="Servlet_Administrador" class="Formulario" method="POST" name="Formulario_Listas" enctype="multipart/form-data">
                                 <div class="Input-Group-Usuarios Radio">
                                     <input type="Radio" id="Ciudadanos" name="Listas-Usuarios" value="ciudadanos">
                                     <label for="Ciudadanos">Ciudadanos</label>

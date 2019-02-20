@@ -51,7 +51,7 @@ public class Servlet_Administrador extends HttpServlet {
         if (request.getParameter("Consultar") != null){
             String Lista = request.getParameter("Listas-Usuarios");
             if (Lista.equalsIgnoreCase("ciudadanos")) {
-                response.sendRedirect("");
+                response.sendRedirect("Lista_Ciudadano.jsp");
             }
             else if (Lista.equalsIgnoreCase("veterinaria")) {
                 response.sendRedirect("");

@@ -13,3 +13,115 @@ body {
 	font-size: 16px;
 	padding-top: 55px;
 }
+
+.Contenedor {
+	width: 100%;
+}
+.Lista_Ciudadano {
+	width: 100%;
+        height: auto;
+	margin: 0x auto;
+        padding-bottom: 128px;
+	background: rgba(255,249,196,.8);
+	background-attachment: fixed;
+        align-items: center;
+        justify-content: center;
+}
+header {
+        height: 55px;
+	background: rgb(39,174,96);
+	position: fixed;
+	width: 100%;
+	min-width: 350px;
+	top: 0;
+}
+.Menu {
+        padding: 5px 0px;
+	max-width: 1250px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.Menu .fa-home{
+    font-size: 38px;
+    color: white;
+}
+
+main .Lista_Ciudadano{    
+    color: rgb(39,174,96);
+}
+main .Cabezera{
+	width: 100%;
+	height: 150px;
+	display: flex;
+	margin: -50px auto 0px auto;
+	padding-top: 25px;
+	align-items: center;
+	justify-content: center;
+        font-family: 'Nunito Sans', sans-serif arial;
+        font-size: 16px;
+}
+main .Cabezera h1{
+        font-family: 'Nunito Sans', sans-serif arial;
+        font-size: 250%;
+}
+.Nombre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    background: rgb(255,255,255);
+    width: 100%;
+    height: 50px;
+    border-radius: 10px 0px 0px 0px;
+    max-width: 1000px;
+    cursor: pointer;
+}
+.Datos_Ciudadano{
+    width: 100%;
+    height: 400px;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 0px 0px 20px;
+    margin: -10px auto;
+    background: rgb(255,255,255);
+}
+
+.Left_Ciudadano{
+        width: 30%; 
+	padding: 9px;
+	text-align: center;
+	align-items: center;
+        float: left;
+}
+.icon-camera{
+	cursor: pointer;
+}
+#Vista_Previa img{
+	width: 150px;
+	height: 150px;
+	border-radius: 10%;
+}
+#Foto{
+	background: transparent;
+	width: 0%;
+}
+.Rigth_Ciudadano{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    float: right;
+}
+.Rigth_Ciudadano label{
+    display: block; 
+}
+.Rigth_Ciudadano .Datos1{
+    float: left;
+    padding: 20px;
+}
+.Rigth_Ciudadano .Datos2{
+    float: right;
+}
