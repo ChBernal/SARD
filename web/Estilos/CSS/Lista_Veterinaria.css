@@ -17,7 +17,7 @@ body {
 .Contenedor {
 	width: 100%;
 }
-.Lista_Ciudadano {
+.Lista_Veterinaria{
 	width: 100%;
         height: 100vh;
 	margin: 0x auto;
@@ -27,7 +27,7 @@ body {
         align-items: center;
         justify-content: center;
 }
-.Scroll_Lista{
+.Scroll_Activas{
     height: 500px;
     overflow: auto;
 }
@@ -53,15 +53,15 @@ header {
     color: white;
 }
 
-main .Lista_Ciudadano{    
+main .Lista_Veterinaria{    
     color: rgb(39,174,96);
 }
 main .Cabezera{
 	width: 100%;
-	height: 150px;
+        height: auto;
 	display: flex;
-	margin: -50px auto 0px auto;
-	padding-top: 25px;
+	margin: -50px auto auto;
+	padding-top: 70px;
 	align-items: center;
 	justify-content: center;
         font-family: 'Nunito Sans', sans-serif ;
@@ -70,6 +70,9 @@ main .Cabezera{
 main .Cabezera h1{
         font-family: 'Nunito Sans', sans-serif ;
         font-size: 250%;
+}
+.Opciones_Veterinaria{
+    text-align: center;
 }
 .Nombre{
     display: flex;
@@ -83,7 +86,7 @@ main .Cabezera h1{
     max-width: 1000px;
     cursor: pointer;
 }
-.Datos_Ciudadano{
+.Datos_Activas{
     width: 100%;
     height: 300px;
     max-width: 1000px;
@@ -94,9 +97,10 @@ main .Cabezera h1{
     border-radius: 0px 0px 20px;
     margin: -10px auto;
     background: rgb(255,255,255);
+    border-top: 1px solid rgb(39,174,96);
 }
 
-.Left_Ciudadano{
+.Left_Veterinaria{
     width: 40%; 
     padding: 0;
     text-align: center;
@@ -117,7 +121,7 @@ main .Cabezera h1{
     background: transparent;
     width: 0%;
 }
-.Rigth_Ciudadano{
+.Rigth_Veterinaria{
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -125,11 +129,11 @@ main .Cabezera h1{
     width: 60%;
     float: right;
 }
-.Rigth_Ciudadano label {
+.Rigth_Veterinaria label {
     display: block;
     margin-top: 4px;
 }
-.Rigth_Ciudadano input{
+.Rigth_Veterinaria input{
     font-size:16px;
     display: block; 
     background: transparent;
@@ -137,11 +141,11 @@ main .Cabezera h1{
     color: rgb(39,174,96);
     margin-top: 4px;
 }
-.Rigth_Ciudadano .Datos1{
+.Rigth_Veterinaria .Datos1{
     padding-right: 40px;
     font-family: 'Nunito Sans', sans-serif ;
 }
-.Rigth_Ciudadano .Datos2{
+.Rigth_Veterinaria .Datos2{
     padding-left: 40px;
 }
 .Botones{

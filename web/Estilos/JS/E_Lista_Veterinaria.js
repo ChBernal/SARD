@@ -1,9 +1,10 @@
 $(document).ready(function(){
-    $(".Datos_Ciudadano").hide();
+    
+    $(".Datos_Activas").hide();
     
     $(".Nombre").click(function (){
         var Index = $(".Nombre").index(this);
-        var Datos = $(".Datos_Ciudadano").eq(Index);
+        var Datos = $(".Datos_Activas").eq(Index);
         var Nombre = $(".Nombre").eq(Index);
         Datos.slideToggle();
         Nombre.show();
@@ -32,6 +33,7 @@ $(document).ready(function(){
         $(".Datos1 input").css("border-bottom","transparent");
         $(".btn-Cancelar").hide();
         $(".btn-Actualizar").hide();
+        $(".fa-camera").hide();
         $(".btn-Editar").show();
         $(".btn-Eliminar").show();
     });

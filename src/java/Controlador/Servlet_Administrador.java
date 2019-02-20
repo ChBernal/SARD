@@ -54,7 +54,7 @@ public class Servlet_Administrador extends HttpServlet {
                 response.sendRedirect("Lista_Ciudadano.jsp");
             }
             else if (Lista.equalsIgnoreCase("veterinaria")) {
-                response.sendRedirect("");
+                response.sendRedirect("Lista_Veterinaria.jsp");
             }
             else if (Lista.equalsIgnoreCase("sass")) {
                 response.sendRedirect("");
