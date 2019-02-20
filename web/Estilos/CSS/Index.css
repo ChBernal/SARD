@@ -27,6 +27,7 @@ header {
         width: 100%;
         min-width: 350px;
         top: 0;
+        z-index: 1;
 }
 .Menu {
         width: 90%;
@@ -671,7 +672,7 @@ main article p {
 
 .Wrap-Eventos {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1050px;
     padding: 40px;
     margin: auto;
 }
@@ -683,50 +684,59 @@ main article p {
 }
 
 .Posicion-Eventos .CuadroEventos{
-    background: rgb(39,174,96);
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     display: flex;
     text-align: center;
     flex-direction: column;
     box-sizing: border-box;
     border-radius: 10px;
+    margin: 10px;
+}
+
+.Posicion-Eventos .CuadroEventos .ImagenEvento{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    position: absolute;
 }
 
 .Posicion-Eventos .CuadroEventos .Nombre_Eventos{
-    padding: 10px;
     color: rgb(255,255,255);
-    font-family: "Nunito";
-}
-
-.Posicion-Eventos .CuadroEventos .Imagen-Eventos img{
-    object-fit: cover;
-    width: 100%;
-    height: 349px;
-    border-radius: 0px 0px 10px 10px;
-}
-
-.Fondo {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px 10px 0 0;
     position: relative;
-    left: -400px;
-    top: 252px;;
+    background: rgba(0,0,0,0.6);
 }
 
-.Fondo .Datos_Evento{
-    width: 400px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 0px 0px 10px 10px;
+.Posicion-Eventos .CuadroEventos .Datos_Evento{
     display: flex;
-    align-items: baseline;
     flex-direction: column;
-    font-family: "Nunito";
+    text-align: left;
     color: rgb(255,255,255);
-    font-size: 30px;
+    font-size: 1em;
+    font-family: "Nunito";
+    margin-top: 150px;
+    width: 300px;
+    height: 200px;
+    border-radius: 0px 0px 10px 10px;
+    position: relative;
+    background: rgba(0,0,0,0.6);
 }
 
-.Fondo .Datos_Evento .Descripcion{
-    font-size: 16px;
+.Posicion-Eventos .CuadroEventos .Datos_Evento .VerMasEventos{
+    display: inline-block;
+    color: rgb(255,255,255);
+    font-size: 1em;
+    font-family: "Nunito";
+    text-decoration: none;
+    font-weight: bold;
+    
 }
+
+
 
 /*  Formulario Contactenos */
 

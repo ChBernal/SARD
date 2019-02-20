@@ -188,30 +188,38 @@
                                     ArrayList<GS_Eventos> Todo_Eventos = new ArrayList<>();    
                                     GS_Eventos GSE = new GS_Eventos();
                                     Todo_Eventos = EM.Todo_Eventos();
-
-                                    for (int i = 0; i < Todo_Eventos.size();i++){
+                                    if (Todo_Eventos.size()>0){
+                                    for (int i = 0; i < 3;i++){
                                         GSE = Todo_Eventos.get(i);
                                 %>
                                 <div class="CuadroEventos">
+                                    <img src="<%=GSE.getImagen()%>" class="ImagenEvento">
                                     <div class="Nombre_Eventos">
                                         <h2><%= GSE.getNombre() %></h2>
                                     </div>
-                                    <div class="Imagen-Eventos">
-                                        <img src="<%= GSE.getImagen()%>">
-                                    </div>
-                                    
-                                    
-                                </div>
-                                <div class="Fondo">
                                     <div class="Datos_Evento">
                                         <label>Fecha: <%= GSE.getFecha() %></label>
                                         <label>Tipo: <%= GSE.getTipoEvento() %></label>
-                                        <label class="Descripcion"><%= GSE.getDescripcion()%></label>
+                                        <label class="Descripcion"><%=GSE.getDescripcion().substring(0,80)%>...                                             <%
+                                            if (GSE.getDescripcion().length()>80){        
+                                            %>
+                                            <a class="VerMasEventos" href="#"> Ver Mas</a>
+                                            <%
+                                            }
+                                            %>
+                                        </label>
                                     </div>
+                                    
                                 </div>
                                 <%
                                     }
+                                    }else {
+                                    %>
+                                    <label>No existen eventos en el momento</label>
+                                    <%
+                                    }
                                 %>
+                                <a>Ver todos los eventos</a>
                             </div>
                         </div>
                     </div>
