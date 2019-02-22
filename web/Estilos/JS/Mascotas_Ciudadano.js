@@ -106,5 +106,15 @@
 	}
 
 }());
-
 //Finalizacion de Mascota
+$(document).ready(function (){
+    $(".Contenido-Adopcion").hide();
+    $(".btn").click(function(){
+        $(".Contenido-Adopcion").fadeIn(1000);
+        $(".Contenido-Mascotas").hide();
+    });
+    $(".Contenido-Adopcion").click(function(){
+        $(".Contenido-Mascotas").fadeIn(1000);
+        $(".Contenido-Adopcion").hide();
+    });
+});

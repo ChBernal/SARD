@@ -4,6 +4,9 @@
     Author     : User
 --%>
 
+<%@page import="Modelo.Mascota_M"%>
+<%@page import="Modelo.GS_Mascota"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -24,10 +27,43 @@
             <a href="Menu-Ciudadano.jsp"><span class="fa fa-home"></span></a>
         </div>
         <div class="Contenedor-Mascotas">
+            <div class="Contenido-Mascotas">
+                <div class="titulo">
+                    <label>Mis Mascotas</label>
+                </div>
+                <button class="btn"><span class="fa fa-paw"></span> Nueva Mascota</button>
+                <div class="Contenedor-MascotasCli">
+                    <%
+                        String Documento=(String)Dat.getAttribute("DocumentoSession");
+                        ArrayList<GS_Mascota> datos=new ArrayList<>();
+                        Mascota_M dat=new Mascota_M();
+                        datos= dat.Mascota_Cliente(Documento);
+                        GS_Mascota Mas=new GS_Mascota();
+                        
+                        for (int i = 0; i < datos.size(); i++) {
+                            Mas= datos.get(i);
+                        
+                    %>
+                    <div class="Mascotas">
+                        <div class="ImagenM">
+                            <img src="<%= Mas.getFoto()%>">
+                        </div>
+                        <div class="DatosM">
+                            <h2><%= Mas.getNombre()%></h2>
+                            <label><%= Mas.getFecha_Nacimiento()%></label>
+                            <label><%= Mas.getGenero()%></label>
+                            <label><%= Mas.getRaza()%></label>
+                            <label><%= Mas.getColor()%></label>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
             <div class="Contenido-Adopcion">
                 <div class="Contenedor-Formulario-Adopcion">
                     <div class="Wrap-Adopcion">
-                                <h1>Resgistra tu mascota</h1>
+                        <span class="fa fa-close"></span>
+                        <h1>Resgistra tu mascota</h1>
                         <form action="Servlet_Mascota" class="Formulario" name="Formulario_Adopcion" method="POST" enctype="multipart/form-data">
                             <div class="Posicion-Adopcion">
                                 <div class="Left-Adopcion">
@@ -76,7 +112,6 @@
                                         <input type="file" id="Foto-Mascota" name="Foto-Mascota">
                                         <label class="label-Mascota" for= "Foto-Mascota"><span class="fa fa-camera Img-Mascota"></span>Foto</label>
                                     </div>
-                                    <% String Documento=(String)Dat.getAttribute("DocumentoSession"); %>
                                     <input type="hidden" name="Documento-Duenno" value="<%=Documento%>">
                                 </div>
                             </div>

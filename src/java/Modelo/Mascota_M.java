@@ -13,12 +13,30 @@ public class Mascota_M {
     PreparedStatement ps = null;
     ResultSet rs = null;
     
-    public ArrayList<GS_Mascota> Uno_Mascota (int ID){
+    public ArrayList<GS_Mascota> Uno_Mascota (GS_Mascota GSM){
         ArrayList<GS_Mascota> Tabla=new ArrayList<>();
-        JOptionPane.showMessageDialog(null,ID);
         try {
             ps= cnn.prepareStatement("call Uno_Mascota(?)");
-            ps.setInt(1, ID);
+            ps.setInt(1, GSM.getDocumento());
+            rs= ps.executeQuery();
+            int zz=GSM.getDocumento();
+              JOptionPane.showMessageDialog(null, "Documento "+zz);
+            while (rs.next()) {  
+                JOptionPane.showMessageDialog(null, "Entra While");
+                GS_Mascota ing=new GS_Mascota(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
+                Tabla.add(ing);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+" Error en Uno Cliente");
+        }
+        return Tabla;
+    }
+    public ArrayList<GS_Mascota> Mascota_Cliente (String Docu){
+        ArrayList<GS_Mascota> Tabla=new ArrayList<>();
+        try {
+            ps= cnn.prepareStatement("call Mascota_Cliente(?)");
+            ps.setString(1, Docu);
             rs= ps.executeQuery();
             
             while (rs.next()) {   
@@ -27,7 +45,7 @@ public class Mascota_M {
             }
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e+" Error en Uno Cliente");
+            JOptionPane.showMessageDialog(null, e+" Error en Mascota Cliente");
         }
         return Tabla;
     }

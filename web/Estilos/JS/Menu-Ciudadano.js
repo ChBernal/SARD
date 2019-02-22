@@ -126,9 +126,16 @@ $(document).ready(function(){
         var Asi = $(".Datos-Mascota").eq(Pos);
         var Doc1= $(".Docu").eq(x);
         var Doc2= (Doc1).val();
-        alert(Doc2);
-        document.getElementById('Documento1').value= Doc2;
         modal.style.display = 'block'; 
+        $.ajax({
+            url: "Servlet_Mascota_Modal",
+            data: {
+              Id: Doc2  
+            },
+            success: function ( result ){
+                $('.Lefth-Postulacion').text(result);
+            }
+        });
     });
 });
 

@@ -43,6 +43,20 @@ public class GS_Mascota {
         this.Nombre = Nombre;
         this.Fecha_Nacimiento = Fecha_Nacimiento;
     }
+
+    public GS_Mascota(int Documento, String Tipo_Mascota, String Nombre, String Fecha_Nacimiento, String Color, String Raza, String Genero) {
+        this.Documento = Documento;
+        this.Tipo_Mascota = Tipo_Mascota;
+        this.Nombre = Nombre;
+        this.Fecha_Nacimiento = Fecha_Nacimiento;
+        this.Color = Color;
+        this.Raza = Raza;
+        this.Genero = Genero;
+    }
+
+    public GS_Mascota(int Documento) {
+        this.Documento = Documento;
+    }
     
     public GS_Mascota() {
     }
