@@ -62,7 +62,7 @@
             <div class="Contenido-Adopcion">
                 <div class="Contenedor-Formulario-Adopcion">
                     <div class="Wrap-Adopcion">
-                        <span class="fa fa-close"></span>
+                        <a href="#"><span class="fa fa-close"></span></a>
                         <h1>Resgistra tu mascota</h1>
                         <form action="Servlet_Mascota" class="Formulario" name="Formulario_Adopcion" method="POST" enctype="multipart/form-data">
                             <div class="Posicion-Adopcion">

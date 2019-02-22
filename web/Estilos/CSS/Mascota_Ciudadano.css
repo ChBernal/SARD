@@ -323,3 +323,15 @@ body {
     font-family: "Nunito";
     color: rgb(39,174,96);
 }
+.Wrap-Adopcion a{
+    float: right;
+    text-decoration: none;
+}
+.Wrap-Adopcion a .fa-close{
+    font-size: 25px;
+    color: rgb(39,174,96);
+}
+.Wrap-Adopcion a .fa-close:hover{
+    font-size: 25px;
+    color: rgba(39,174,96,0.5);
+}

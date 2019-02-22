@@ -113,7 +113,7 @@ $(document).ready(function (){
         $(".Contenido-Adopcion").fadeIn(1000);
         $(".Contenido-Mascotas").hide();
     });
-    $(".Contenido-Adopcion").click(function(){
+    $(".fa-close").click(function(){
         $(".Contenido-Mascotas").fadeIn(1000);
         $(".Contenido-Adopcion").hide();
     });
