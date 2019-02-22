@@ -13,18 +13,18 @@ public class Eventos_M {
     PreparedStatement ps = null;
     ResultSet rs = null;
     
-    public ArrayList<GS_Eventos> Todo_Eventos (){
-        ArrayList<GS_Eventos> Todo_Eventos = new ArrayList<>();
+    public ArrayList<GS_Eventos> Tres_Eventos (){
+        ArrayList<GS_Eventos> Tres_Eventos = new ArrayList<>();
         try {
-            ps = cnn.prepareStatement("Call Todo_Eventos()");
+            ps = cnn.prepareStatement("Call Tres_Eventos()");
             rs = ps.executeQuery();
             while (rs.next()){
                 GS_Eventos GSM = new GS_Eventos(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
-                Todo_Eventos.add(GSM);
+                Tres_Eventos.add(GSM);
             }
         } catch (Exception e) {
         }
-        return Todo_Eventos;
+        return Tres_Eventos;
     }
     
     public void In_Eventos (GS_Eventos GSE){
