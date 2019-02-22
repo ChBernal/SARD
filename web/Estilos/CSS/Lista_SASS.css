@@ -18,7 +18,7 @@ body {
 .Contenedor {
 	width: 100%;
 }
-.Lista_Veterinaria{
+.Lista_SASS{
 	width: 100%;
         height: 100vh;
 	margin: 0x auto;
@@ -28,11 +28,11 @@ body {
         align-items: center;
         justify-content: center;
 }
-.Scroll_Inactivas{
+.Scroll_Ambiente{
     height: 450px;
     overflow: auto;
 }
-.Scroll_Activas{
+.Scroll_Salud{
     height: 450px;
     overflow: auto;
 }
@@ -58,7 +58,7 @@ header {
     color: white;
 }
 
-main .Lista_Veterinaria{    
+main .Lista_SASS{    
     color: rgb(39,174,96);
 }
 main .Cabezera{
@@ -76,10 +76,10 @@ main .Cabezera h1{
         font-family: 'Nunito Sans', sans-serif ;
         font-size: 250%;
 }
-.Opciones_Veterinaria{
+.Opciones_SASS{
     text-align: center;
 }
-.Nombre_Activas{
+.Nombre_Ambiente{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,7 +91,7 @@ main .Cabezera h1{
     max-width: 1000px;
     cursor: pointer;
 }
-.Nombre_Inactivas{
+.Nombre_Salud{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +103,7 @@ main .Cabezera h1{
     max-width: 1000px;
     cursor: pointer;
 }
-.Datos_Activas{
+.Datos_Ambiente{
     width: 100%;
     height: 300px;
     max-width: 1000px;
@@ -116,7 +116,7 @@ main .Cabezera h1{
     background: rgb(255,255,255);
     border-top: 1px solid rgb(39,174,96);
 }
-.Datos_Inactivas{
+.Datos_Salud{
     width: 100%;
     height: 300px;
     max-width: 1000px;
@@ -129,7 +129,7 @@ main .Cabezera h1{
     background: rgb(255,255,255);
     border-top: 1px solid rgb(39,174,96);
 }
-.Left_Veterinaria{
+.Left_SASS{
     width: 40%; 
     padding: 0;
     text-align: center;
@@ -150,7 +150,7 @@ main .Cabezera h1{
     background: transparent;
     width: 0%;
 }
-.Rigth_Veterinaria{
+.Rigth_SASS{
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -158,11 +158,11 @@ main .Cabezera h1{
     width: 60%;
     float: right;
 }
-.Rigth_Veterinaria label {
+.Rigth_SASS label {
     display: block;
     margin-top: 4px;
 }
-.Rigth_Veterinaria input{
+.Rigth_SASS input{
     font-size:16px;
     display: block; 
     background: transparent;
@@ -170,11 +170,11 @@ main .Cabezera h1{
     color: rgb(39,174,96);
     margin-top: 4px;
 }
-.Rigth_Veterinaria .Datos1{
+.Rigth_SASS .Datos1{
     padding-right: 40px;
     font-family: 'Nunito Sans', sans-serif ;
 }
-.Rigth_Veterinaria .Datos2{
+.Rigth_SASS .Datos2{
     padding-left: 40px;
 }
 .Botones{

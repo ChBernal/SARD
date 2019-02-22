@@ -1,5 +1,7 @@
 $(document).ready(function(){
     $(".Datos_Ciudadano").hide();
+   
+    
     
     $(".Nombre").click(function (){
         var Index = $(".Nombre").index(this);
@@ -32,6 +34,7 @@ $(document).ready(function(){
         $(".Datos1 input").css("border-bottom","transparent");
         $(".btn-Cancelar").hide();
         $(".btn-Actualizar").hide();
+        $(".fa-camera").hide();
         $(".btn-Editar").show();
         $(".btn-Eliminar").show();
     });

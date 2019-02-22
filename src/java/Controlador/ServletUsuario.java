@@ -142,6 +142,47 @@ public class ServletUsuario extends HttpServlet {
         response.sendRedirect("Perfil_Ciudadano.jsp");
         }
     
+    protected void Actualizar_Cliente_Admin (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String Documento,Nombre,Direccion,Barrio,Telefono1,Telefono2,Correo, Ocupacion;
+        Documento = request.getParameter("Documento-Ciudadano");
+        Nombre = request.getParameter("Nombre-Ciudadano");
+        Direccion = request.getParameter("Direccion-Ciudadano");
+        Barrio = request.getParameter("Barrio-Ciudadano");
+        Telefono1 = request.getParameter("Telefono-Ciudadano");
+        Telefono2 = request.getParameter("Celular-Ciudadano");
+        Correo = request.getParameter("Correo-Ciudadano");
+        Ocupacion = request.getParameter("Ocupacion-Ciudadano");
+        Part Foto = request.getPart("Foto");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        GS_Ciudadano GSC = new GS_Ciudadano(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
+        Ciudadano_M Cliente = new Ciudadano_M();
+        int Consulta =Cliente.Actualizar_Ciudadano(GSC);
+            if (Consulta>0) {
+                JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+            }
+        response.sendRedirect("Lista_Ciudadano.jsp");
+        }
+    
     protected void Insertar_Ciudadano(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

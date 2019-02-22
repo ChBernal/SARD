@@ -31,6 +31,7 @@
                 <div id="Cabezera" class="Cabezera">
                     <h1>Lista Ciudadanos</h1>
                 </div>
+                 <form action="ServletUsuario" method="POST" enctype="multipart/form-data">
                 <div class="Scroll_Lista">
                  <%
                     ArrayList<GS_Ciudadano> Dato_Ciudadano = new ArrayList<>();
@@ -47,17 +48,18 @@
                 </div>
                 
                 <div class="Datos_Ciudadano">
-                    <form action="" method="" enctype="multipart/form-data" >
                         <div>
                             <div class="Left_Ciudadano">
                                 <div id="Vista_Previa"> <img src="Estilos/Imagenes/Perfil.png"></div>
                                 <label  class="fa fa-camera">
-                                <input  class="Foto" id="Foto" type="file" name="Foto_C"  value="" accept="image/jpg, image/jpeg, image/png">
+                                <input  class="Foto" id="Foto" type="file" name="Foto"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
                             <div class="Rigth_Ciudadano">
                                 <div class="Datos1">
                                     <label><%=Dat_Ciudadano.getDocumento()%><label>
+                                    <input type="hidden" name="Documento-Ciudadano" value="<%=Dat_Ciudadano.getDocumento()%>" >
+                                    <input type="hidden" name="Nombre-Ciudadano" value="<%=Dat_Ciudadano.getNombre()%>" >
                                     <label><%=Dat_Ciudadano.getTipo_Documento()%><label>
                                     <label><%=Dat_Ciudadano.getExpedicion()%><label>
                                     <label><%=Dat_Ciudadano.getGenero()%><label>
@@ -79,11 +81,11 @@
                             <button class="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
                             <button class="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
                         </div>
-                    </form>
                 </div>
                    
                 <%}%>
                 </div>
+                </form>
             </article>
         </main>
     </body>

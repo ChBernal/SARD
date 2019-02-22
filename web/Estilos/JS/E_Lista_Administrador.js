@@ -1,27 +1,12 @@
 $(document).ready(function(){
+    $(".Datos_Administrador").hide();
     
-    $(".Scroll_Activas").hide();
-    $(".Scroll_Inactivas").hide();
-    
-    $(".Activas").click(function (){
-        $(".Scroll_Activas").show();
-        $(".Datos_Activas").hide();
-        $(".Scroll_Inactivas").hide();
-    });
-    $(".Inactivas").click(function (){
-        $(".Scroll_Inactivas").show();
-        $(".Datos_Inactivas").hide();
-        $(".Scroll_Activas").hide();
-    });
-    $(".Nombre_Activas").click(function (){
-        var Index = $(".Nombre_Activas").index(this);
-        var Datos = $(".Datos_Activas").eq(Index);
+    $(".Nombre").click(function (){
+        var Index = $(".Nombre").index(this);
+        var Datos = $(".Datos_Administrador").eq(Index);
+        var Nombre = $(".Nombre").eq(Index);
         Datos.slideToggle();
-    });
-    $(".Nombre_Inactivas").click(function (){
-        var Index = $(".Nombre_Inactivas").index(this);
-        var Datos = $(".Datos_Inactivas").eq(Index);
-        Datos.slideToggle();
+        Nombre.show();
     });
     
     $(".btn-Actualizar").hide();

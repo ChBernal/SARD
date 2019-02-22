@@ -57,10 +57,10 @@ public class Servlet_Administrador extends HttpServlet {
                 response.sendRedirect("Lista_Veterinaria.jsp");
             }
             else if (Lista.equalsIgnoreCase("sass")) {
-                response.sendRedirect("");
+                response.sendRedirect("Lista_SASS.jsp");
             }
             else if (Lista.equalsIgnoreCase("administradores")) {
-                response.sendRedirect("");
+                response.sendRedirect("Lista_Administrador.jsp");
             }
         }
         if (request.getParameter("Actualizar_A") != null){

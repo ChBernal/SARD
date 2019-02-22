@@ -1,4 +1,5 @@
 
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Veterinaria_M"%>
 <%@page import="Modelo.GS_Veterinaria"%>
 <%@page import="Modelo.Ciudadano_M"%>
@@ -34,8 +35,8 @@
                     <h1>Lista Veterinarias</h1>
                 </div>
                 <div class="Opciones_Veterinaria">
-                    <button><span class="fa fa-check"></span> Activas</button>
-                    <button><span class="fa fa-minus"></span> Inactivas</button>
+                    <button class="Activas"><span class="fa fa-check "></span> Activas</button>
+                    <button class="Inactivas"><span class="fa fa-minus "></span> Inactivas</button>
                 </div>
                 <div class="Scroll_Activas">
                  <%
@@ -48,7 +49,7 @@
                         Dat_Activas = Dato_Activas.get(i);
                 %>
                 
-                <div class="Nombre">
+                <div class="Nombre_Activas">
                     <h1><%=Dat_Activas.getNombre()%></h1>
                 </div>
                 
@@ -57,7 +58,7 @@
                             <div class="Left_Veterinaria">
                                 <div id="Vista_Previa"> <img src="<%=Dat_Activas.getFoto()%>"></div>
                                 <label  class="fa fa-camera">
-                                <input  class="Foto" id="Foto" type="file" name="Foto_C"  value="" accept="image/jpg, image/jpeg, image/png">
+                                <input  class="Foto" id="Foto" type="file" name="Foto"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
                             <div class="Rigth_Veterinaria">
@@ -89,23 +90,22 @@
                  <%
                     ArrayList<GS_Veterinaria> Dato_Inactivas = new ArrayList<>();
                     Veterinaria_M M_Inactivas = new Veterinaria_M();
-                    Dato_Activas = M_Inactivas.Todo_cero();
+                    Dato_Inactivas = M_Inactivas.Todo_cero();
                     GS_Veterinaria Dat_Inactivas = new GS_Veterinaria();
-
                     for(int i=0; i<Dato_Inactivas.size(); i++){
                         Dat_Inactivas = Dato_Inactivas.get(i);
                 %>
                 
-                <div class="Nombre">
+                <div class="Nombre_Inactivas">
                     <h1><%=Dat_Inactivas.getNombre()%></h1>
                 </div>
                 
-                <div class="Datos_Activas">
+                <div class="Datos_Inactivas">
                         <div>
                             <div class="Left_Veterinaria">
                                 <div id="Vista_Previa"> <img src="<%=Dat_Inactivas.getFoto()%>"></div>
                                 <label  class="fa fa-camera">
-                                <input  class="Foto" id="Foto" type="file" name="Foto_C"  value="" accept="image/jpg, image/jpeg, image/png">
+                                <input  class="Foto" id="Foto" type="file" name="Foto"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
                             <div class="Rigth_Veterinaria">

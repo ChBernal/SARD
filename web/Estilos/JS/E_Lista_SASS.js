@@ -1,26 +1,26 @@
 $(document).ready(function(){
     
-    $(".Scroll_Activas").hide();
-    $(".Scroll_Inactivas").hide();
+    $(".Scroll_Ambiente").hide();
+    $(".Scroll_Salud").hide();
     
-    $(".Activas").click(function (){
-        $(".Scroll_Activas").show();
-        $(".Datos_Activas").hide();
-        $(".Scroll_Inactivas").hide();
+    $(".Ambiente").click(function (){
+        $(".Scroll_Ambiente").show();
+        $(".Datos_Ambiente").hide();
+        $(".Scroll_Salud").hide();
     });
-    $(".Inactivas").click(function (){
-        $(".Scroll_Inactivas").show();
-        $(".Datos_Inactivas").hide();
-        $(".Scroll_Activas").hide();
+    $(".Salud").click(function (){
+        $(".Scroll_Salud").show();
+        $(".Datos_Salud").hide();
+        $(".Scroll_Ambiente").hide();
     });
-    $(".Nombre_Activas").click(function (){
-        var Index = $(".Nombre_Activas").index(this);
-        var Datos = $(".Datos_Activas").eq(Index);
+    $(".Nombre_Ambiente").click(function (){
+        var Index = $(".Nombre_Ambiente").index(this);
+        var Datos = $(".Datos_Ambiente").eq(Index);
         Datos.slideToggle();
     });
-    $(".Nombre_Inactivas").click(function (){
-        var Index = $(".Nombre_Inactivas").index(this);
-        var Datos = $(".Datos_Inactivas").eq(Index);
+    $(".Nombre_Salud").click(function (){
+        var Index = $(".Nombre_Salud").index(this);
+        var Datos = $(".Datos_Salud").eq(Index);
         Datos.slideToggle();
     });
     

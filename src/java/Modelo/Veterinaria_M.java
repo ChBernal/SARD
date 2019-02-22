@@ -37,11 +37,9 @@ public class Veterinaria_M {
     
     public ArrayList<GS_Veterinaria> Todo_cero (){
         ArrayList<GS_Veterinaria> Tabla=new ArrayList<>();
-        
         try {
-            PreSta= BaseDatos.prepareStatement("call Todo_Veterinaria_cero()");
+            PreSta= BaseDatos.prepareStatement("call Todo_Veterinaria_cero ()");
             Reset= PreSta.executeQuery();
-            
             while (Reset.next()) {   
                 GS_Veterinaria ing=new GS_Veterinaria(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8),Reset.getString(9),Reset.getInt(10), Reset.getString(11));
                 Tabla.add(ing);
