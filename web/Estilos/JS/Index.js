@@ -207,10 +207,6 @@ window.addEventListener('click',function(e){
 
 //Finalizacion de denuncias
 
-//Eventos
-
-//Finaliza Eventos
-
 //Todas las opciones del formulario Contactenos
 
 (function(){
