@@ -171,6 +171,7 @@ public class Servlet_Mascota extends HttpServlet {
         String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno,Documento,Estado;
         int  Codigo ;
         
+        Codigo = Integer.parseInt(request.getParameter("Codigo-Mascota"));
         TipoMascota = request.getParameter("Tipo-Mascota");
         Nombre = request.getParameter("Nombre-Mascota");
         FechaNacimiento = request.getParameter("Nacimiento-Mascota");
@@ -195,7 +196,7 @@ public class Servlet_Mascota extends HttpServlet {
                 sal.write(num);
                 num= file.read();
             }
-            GS_Mascota mas=new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
+            GS_Mascota mas=new GS_Mascota(Codigo, TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
             Mascota_M MM = new Mascota_M();
             int x= MM.Ac_Mascota(mas);
             if (x>0) {
@@ -208,7 +209,7 @@ public class Servlet_Mascota extends HttpServlet {
         }
         else{
             String url2= FotoA;
-            GS_Mascota mas=new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
+            GS_Mascota mas=new GS_Mascota(Codigo, TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
             Mascota_M MM = new Mascota_M();
             int x= MM.Ac_Mascota(mas);
             if (x>0) {
