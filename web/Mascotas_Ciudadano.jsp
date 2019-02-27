@@ -73,7 +73,7 @@
                                                         <img src="<%= Mas.getFoto()%>">
                                                     </div>
                                                     <label class="fa fa-camera">
-                                                        <input type="hidden" name="FotoActual" value="<%= Mas.getFoto()%>"
+                                                        <input type="hidden" name="FotoActual" value="<%= Mas.getFoto()%>">
                                                         <input  class="Foto" id="Foto" type="file" name="Foto-Mascota" accept="image/jpg, image/jpeg, image/png">
                                                     </label>
                                                 </div>
