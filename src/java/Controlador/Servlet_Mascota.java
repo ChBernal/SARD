@@ -9,7 +9,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -33,6 +32,9 @@ public class Servlet_Mascota extends HttpServlet {
         }
          if (request.getParameter("Registro-Mascota-C") != null){
             this.InsertarMascotaC(request, response);
+        }
+         if (request.getParameter("Actualizar-Mascota-C") != null){
+            this.AcyualizarMascotaC(request, response);
         }
     }
     
@@ -160,6 +162,63 @@ public class Servlet_Mascota extends HttpServlet {
             JOptionPane.showMessageDialog(null,"La mascota ya esta registrada");
          }
         response.sendRedirect("Mascotas_Ciudadano.jsp");
+        
+    }
+    protected void AcyualizarMascotaC(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno,Documento,Estado;
+        int  Codigo ;
+        
+        TipoMascota = request.getParameter("Tipo-Mascota");
+        Nombre = request.getParameter("Nombre-Mascota");
+        FechaNacimiento = request.getParameter("Nacimiento-Mascota");
+        Color = request.getParameter("Color-Mascota");
+        Raza = request.getParameter("Raza-Mascota");
+        Sexo = request.getParameter("Genero-Mascota");
+        String FotoA = request.getParameter("FotoActual");
+        Part Foto = request.getPart("Foto-Mascota");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Nombre+"_"+Nombre_F;
+        
+        if (Nombre_F!="") {
+            String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Foto_Name;
+            String url2 = "Uploads\\"+Foto_Name;
+            
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+            
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+            GS_Mascota mas=new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
+            Mascota_M MM = new Mascota_M();
+            int x= MM.Ac_Mascota(mas);
+            if (x>0) {
+                JOptionPane.showMessageDialog(null, "Mascota Actualizada");
+            }else{
+                JOptionPane.showMessageDialog(null, "Error");
+            }
+            
+            response.sendRedirect("Mascotas_Ciudadano.jsp");
+        }
+        else{
+            String url2= FotoA;
+            GS_Mascota mas=new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
+            Mascota_M MM = new Mascota_M();
+            int x= MM.Ac_Mascota(mas);
+            if (x>0) {
+                JOptionPane.showMessageDialog(null, "Mascota Actualizada");
+            }else{
+                JOptionPane.showMessageDialog(null, "Error");
+            }
+            response.sendRedirect("Mascotas_Ciudadano.jsp");
+        } 
+        
         
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

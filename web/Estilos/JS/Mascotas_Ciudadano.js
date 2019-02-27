@@ -1,3 +1,40 @@
+$(document).ready(function(){
+    $(".Modal").hide();
+    $(".Contenido-Adopcion").hide();
+    
+    $(".Mascotas").click(function(){
+        var x = $(".Mascotas").index(this);
+        var modal= $(".Modal").eq(x);
+        modal.show();
+    });
+    $(".fa-close").click(function(){
+        $(".Modal").hide();
+    });
+    
+    $(".btn").click(function(){
+        $(".Contenido-Adopcion").fadeIn(1000);
+        $(".Contenido-Mascotas").hide();
+    });
+    $(".fa-close").click(function(){
+        $(".Contenido-Mascotas").fadeIn(1000);
+        $(".Contenido-Adopcion").hide();
+    });
+    document.getElementById("Foto").onchange = function(e){
+        let Nombre = new FileReader();
+        Nombre.readAsDataURL(e.target.files[0]);
+        Nombre.onload = function(){
+                let Vista_Previa = document.getElementById('Vista_Previa'),
+                image = document.createElement('img');
+
+                image.src =Nombre.result;
+                Vista_Previa.innerHTML ='';
+                Vista_Previa.append(image);
+                $("#Vista_Previa img").css("width","130px");
+        };
+    };
+});
+
+
 //Todo formulario Mascota
 
 (function(){
@@ -5,26 +42,6 @@
 		elementos = formulario.elements;
 
 	//Funciones
-
-	$("#Estado-Mascota").change(function(){
-		var Uno = "Adoptado";
-		var Dos = "Con Propietario";
-		var Tres = "Disponible";
-		var valor =$("#Estado-Mascota").val();
-		if (valor == Dos || valor == Uno){
-			$(".Opcional").css("display", "flex");
-		}else if (valor = "Disponible") {
-			$(".Opcional").css("display", "none");
-			$(".Opcional").css("width", "0px");
-			$(".Opcional").css("height", "0px");
-			$(".Opcional").text("0");
-		}else if (valor = "En Proceso") {
-			$(".Opcional").css("display", "none");
-			$(".Opcional").css("width", "0px");
-			$(".Opcional").css("height", "0px");
-			$(".Opcional").text("1");	
-		}
-	});
 
 	var ValidarInputs = function(){
 		for (var i = 0; i < elementos.length; i++) {
@@ -43,11 +60,11 @@
 	};
 
 	var ValidarRadio = function(){
-		var opciones = document.getElementsByName('Genero-Mascota'),
+		var opciones = document.getElementsByName('Genero-Adopcion'),
 		resultado = false;
 
 		for (var i = 0; i < elementos.length; i++){
-			if (elementos[i].type == "radio" && elementos[i].name == "Genero-Mascota") {
+			if (elementos[i].type == "radio" && elementos[i].name == "Genero-Adopcion") {
 				for (var j = 0; j < opciones.length; j++) {
 					if (opciones[j].checked){
 						resultado = true;
@@ -84,13 +101,13 @@
 	//Funciones blur y focus
 
 	var focusInputs = function(){
-		this.parentElement.children[1].className = "label-Mascota active";
+		this.parentElement.children[1].className = "label-Adopcion active";
 		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
 	};
 
 	var blurInputs = function(){
 		if (this.value <= 0) {
-			this.parentElement.children[1].className = "label-Mascota";
+			this.parentElement.children[1].className = "label-Adopcion";
 			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
 		}
 	};
@@ -106,15 +123,5 @@
 	}
 
 }());
+
 //Finalizacion de Mascota
-$(document).ready(function (){
-    $(".Contenido-Adopcion").hide();
-    $(".btn").click(function(){
-        $(".Contenido-Adopcion").fadeIn(1000);
-        $(".Contenido-Mascotas").hide();
-    });
-    $(".fa-close").click(function(){
-        $(".Contenido-Mascotas").fadeIn(1000);
-        $(".Contenido-Adopcion").hide();
-    });
-});

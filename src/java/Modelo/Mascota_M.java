@@ -80,6 +80,25 @@ public class Mascota_M {
         }
     }
     
+    public int Ac_Mascota (GS_Mascota GSM){
+        int Actualizar=0;
+        try {
+            ps = cnn.prepareStatement("call A_Mascota(?,?,?,?,?,?,?,?)");
+            ps.setInt(1, GSM.getDocumento());
+            ps.setString(2, GSM.getTipo_Mascota());
+            ps.setString(3, GSM.getNombre());
+            ps.setString(4, GSM.getFecha_Nacimiento());
+            ps.setString(5, GSM.getColor());
+            ps.setString(6, GSM.getRaza());
+            ps.setString(7, GSM.getGenero());
+            ps.setString(8, GSM.getFoto());
+            Actualizar= ps.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return Actualizar;
+    }
+    
     public ArrayList<GS_Mascota> Mascota_Disponible() {
         ArrayList<GS_Mascota> Todo_Mascota = new ArrayList<>();
         try {
