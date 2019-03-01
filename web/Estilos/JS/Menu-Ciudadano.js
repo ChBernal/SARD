@@ -133,7 +133,16 @@ $(document).ready(function(){
               Id: Doc2  
             },
             success: function ( result ){
-                $('.Lefth-Postulacion').text(result);
+                
+                var dat= result.split(" ");
+                $("#Da7").val(dat[0]);
+                $("#Da2").val(dat[1]);
+                $("#Da3").val(dat[2]);
+                $("#Da4").val(dat[3]);
+                $("#Da5").val(dat[4]);
+                $("#Da6").val(dat[5]);
+                $("#Da1").val(dat[6]);
+                $("#Da8").val(dat[7]);
             }
         });
     });

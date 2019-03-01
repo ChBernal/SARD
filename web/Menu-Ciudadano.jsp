@@ -174,22 +174,22 @@
                                     <div class="Lefth-Postulacion">
                                         <div class="InfoMascota">
                                             <div class="Imagen-Mascota">
-                                                <img src="">
+                                                <img id="Da8" src="Da8">
                                             </div>
                                             <div class="Datos_Mascota">
-                                                <h2></h2>
-                                                <label class="ca"></label>
-                                                <label></label>
-                                                <label></label>
-                                                <label></label>
-                                                <label></label>
-                                                <label></label>
+                                                <input type="text" id="Da1">
+                                                <input type="text" id="Da2">
+                                                <input type="text" id="Da3">
+                                                <input type="text" id="Da4">
+                                                <input type="text" id="Da5">
+                                                <input type="text" id="Da6">
+                                                <input type="text" id="Da7">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="Rigth-Postulacion">
                                         <div class="Contenedor-Formulario">
-                                            <form action="<!-- Espacio para enviar al servlet -->" class="Formulario" method="POST" name="Formulario_Login">
+                                            <form action="Servlet_Postulacion" class="Formulario" method="POST" name="Formulario_Login">
                                                 <datalist id="Opciones">
                                                     <option>Si</option>
                                                     <option>No</option>
