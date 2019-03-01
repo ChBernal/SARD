@@ -27,7 +27,7 @@ header {
         width: 100%;
         min-width: 350px;
         top: 0;
-        z-index: 1;
+        z-index: 2;
 }
 .Menu {
         width: 90%;
@@ -672,75 +672,52 @@ main article p {
 
 /* Inicio de Eventos */
 
-.Wrap-Eventos {
-    width: 100%;
-    max-width: 1050px;
-    padding: 40px;
-    margin: auto;
-}
-
 .Posicion-Eventos {
-    width: 100%;
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.Posicion-Eventos .CuadroEventos{
+.CuadroEventos {
+    cursor: pointer;
+    display: flex;
     width: 300px;
     height: 300px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
+    border: 1px solid rgb(0,0,0);
+    border-radius: 30px 30px 30px 0;
     box-sizing: border-box;
-    border-radius: 10px;
-    margin: 10px;
+    box-shadow: 10px 10px 10px 0;
+    margin-top: 20px;
 }
 
-.Posicion-Eventos .CuadroEventos .ImagenEvento{
-    object-fit: cover;
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
+.CuadroEventos img {
     position: absolute;
+    lefth: -20;
+    z-index: 0;
+    width: 298px;
+    height: 298px;
+    border-radius: 30px 30px 30px 0;
+    box-sizing: border-box;
 }
 
-.Posicion-Eventos .CuadroEventos .Nombre_Eventos{
-    color: rgb(255,255,255);
-    width: 300px;
+.CuadroEventos label {
+    cursor: pointer;
+    margin-top: 0.3px;
+    width: 298px;
     height: 50px;
-    border-radius: 10px 10px 0 0;
-    position: relative;
-    background: rgba(0,0,0,0.6);
-}
-
-.Posicion-Eventos .CuadroEventos .Datos_Evento{
+    background: rgba(0,0,0,0.3);
+    border-radius: 30px 30px 0 0;
+    padding-left: 30px;
+    position: absolute;
+    z-index: 1;
+    color: rgb(255,255,255);
+    font-size: 2em;
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    color: rgb(255,255,255);
-    font-size: 1em;
-    font-family: "Nunito";
-    margin-top: 150px;
-    width: 300px;
-    height: 200px;
-    border-radius: 0px 0px 10px 10px;
-    position: relative;
-    background: rgba(0,0,0,0.6);
-}
-
-.Posicion-Eventos .CuadroEventos .Datos_Evento a{
-    display: inline-block;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.Posicion-Eventos .VerMasEventos{
-    color: rgb(255,255,255);
-    font-size: 1em;
-    font-family: "Nunito";
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Finaliza Eventos */

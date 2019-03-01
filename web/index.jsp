@@ -183,52 +183,28 @@
                     <div class="Contenedor-Formulario-Eventos">
                         <div class="Wrap-Eventos">
                             <div class="Posicion-Eventos">
-                                <div class="CuadroEventos">
-                                    <%
-                                    Eventos_M EM = new Eventos_M();
-                                    ArrayList<GS_Eventos> Datos_Eventos = new ArrayList<>();
-                                    GS_Eventos GSE = new GS_Eventos();
-                                    Datos_Eventos = EM.Tres_Eventos();
+                                <%
+                                Eventos_M EM = new Eventos_M();
+                                ArrayList<GS_Eventos> Datos_Eventos = new ArrayList<>();
+                                GS_Eventos GSE = new GS_Eventos();
+                                Datos_Eventos = EM.Tres_Eventos();
+
+                                if (Datos_Eventos.size()>0){
+                                    for (int i=0; i < Datos_Eventos.size(); i++){
+                                        GSE = Datos_Eventos.get(i);
                                     
-                                    if (Datos_Eventos.size()>0){
-                                        for (int i=0; i < Datos_Eventos.size(); i++){
-                                            GSE = Datos_Eventos.get(i);
-                                    %>
-                                    <img src="<%= GSE.getImagen() %>" class="ImagenEvento">
-                                    <div class="Nombre_Eventos">
-                                        <h2><%= GSE.getNombre() %></h2>
+                                %>
+                                <div class="CuadroEventos">
+                                    <div>
+                                        <label><%= GSE.getNombre() %></label>
+                                        <img src="Uploads/Denuncia.jpg">
                                     </div>
-                                    <div class="Datos_Evento">
-                                        <label>Fecha: <%= GSE.getFecha() %></label>
-                                        <label>Tipo: <%= GSE.getTipoEvento() %></label>
-                                        <label class="Descripcion"><% 
-                                            if (GSE.getDescripcion().length() > 80){
-                                                
-                                         %>
-                                            <%=GSE.getDescripcion().substring(0,80)%>
-                                            ... <a>Ver mas</a>
-                                        <%
-                                            }else {
-                                        %>
-                                            <%=GSE.getDescripcion()%>
-                                        <%
-                                            }
-                                        %>
-                                        </label>
-                                    </div>
-                                    <%
-                                        }
-                                    %>
                                 </div>
-                                <a class="VerMasEventos">Ver todos los eventos</a>
-                                    <%
-                                    }else {
-                                    %>
+                                <%
+                                    }
+                                }
+                                %>
                                 
-                                    <label>No existen eventos en el momento</label>
-                                    <%
-                                        }
-                                    %>
                             </div>
                         </div>
                     </div>
