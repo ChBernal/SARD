@@ -28,7 +28,7 @@ body {
         justify-content: center;
 }
 .Scroll_Lista{
-    height: 500px;
+    height: 450px;
     overflow: auto;
 }
 header {
@@ -153,6 +153,28 @@ main .Cabezera h1{
     justify-content: center;
 }
 .Botones input, button{
+    color: white;
+    background: rgb(39,174,96);
+    border-radius: 10%;
+    border: transparent;
+    font-size: 110%;
+    padding: 5px 10px;
+    margin: 10px;
+    font-family: 'Nunito Sans', sans-serif arial;
+    cursor: pointer;
+}
+.btn-Editar{
+    color: white;
+    background: rgb(39,174,96);
+    border-radius: 10%;
+    border: transparent;
+    font-size: 110%;
+    padding: 5px 10px;
+    margin: 10px;
+    font-family: 'Nunito Sans', sans-serif arial;
+    cursor: pointer;
+}
+.btn-Cancelar{
     color: white;
     background: rgb(39,174,96);
     border-radius: 10%;

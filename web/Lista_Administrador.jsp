@@ -1,4 +1,5 @@
 
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Administrador_M"%>
 <%@page import="Modelo.GS_Administrador"%>
 <%@page import="Modelo.Ciudadano_M"%>
@@ -37,6 +38,7 @@
                  <%
                     HttpSession Doc2=request.getSession();
                     String Documento=(String)Doc2.getAttribute("DocumentoSession");
+                    JOptionPane.showMessageDialog(null, Documento);
                     ArrayList<GS_Administrador> Dato_Administrador = new ArrayList<>();
                     Administrador_M con = new Administrador_M();
                     GS_Administrador Doc = new GS_Administrador(Documento);
@@ -54,7 +56,7 @@
                 <div class="Datos_Administrador">
                         <div>
                             <div class="Left_Administrador">
-                                <div id="Vista_Previa"> <img src="Estilos/Imagenes/Perfil.png"></div>
+                                <div id="Vista_Previa"> <img src="<%=Dat_Administrador.getDocumento()%>"></div>
                                 <label  class="fa fa-camera">
                                 <input  class="Foto" id="Foto" type="file" name="Foto_C"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
@@ -67,9 +69,9 @@
                                     <label><%=Dat_Administrador.getFecha_Nacimiento()%><label>
                                 </div>
                                 <div class="Datos2">
-                                    <input type="text" id="Direccion-Administrador" name="Direccion-Administrador" value="<%=Dat_Administrador.getDireccion()%>">
-                                    <input type="text" id="Telefono-Administrador" name="Telefono-Administrador" pattern="[0-9]{5,10}" value="<%=Dat_Administrador.getTelefono()%>">
-                                    <input type="text" id="Email-Administrador" name="Email-Administrador"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Administrador.getCorreo()%>">
+                                    <input class="input1" type="text" id="Direccion-Administrador" placeholder="Direccion" name="Direccion-Administrador" value="<%=Dat_Administrador.getDireccion()%>">
+                                    <input class="input2" type="text" id="Telefono-Administrador" placeholder="Telefono" name="Telefono-Administrador" pattern="[0-9]{5,10}" value="<%=Dat_Administrador.getTelefono()%>">
+                                    <input class="input3" type="text" id="Email-Administrador" placeholder="" name="Email-Administrador"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Administrador.getCorreo()%>">
                                 </div>
                             </div>
                         </div>

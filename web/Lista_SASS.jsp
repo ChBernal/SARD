@@ -72,9 +72,9 @@
                                     <label><%=Dat_Ambiente.getFecha_Nacimiento()%><label>
                                 </div>
                                 <div class="Datos2">
-                                    <input type="text" id="Direccion-Ambiente" name="Direccion-Ambiente" value="<%=Dat_Ambiente.getDireccion()%>">
-                                    <input type="text" id="Telefono-Ambiente" name="Telefono-Ambiente" pattern="[0-9]{5,10}" value="<%=Dat_Ambiente.getTelefono()%>">
-                                    <input type="text" id="Email-Ambiente" name="Email-Ambiente"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Ambiente.getCorreo()%>">
+                                    <input class="input1" type="text" id="Direccion-Ambiente" placeholder="Direccion" name="Direccion-Ambiente" value="<%=Dat_Ambiente.getDireccion()%>">
+                                    <input class="input2" type="text" id="Telefono-Ambiente"  placeholder="Telefono" name="Telefono-Ambiente" pattern="[0-9]{5,10}" value="<%=Dat_Ambiente.getTelefono()%>">
+                                    <input class="input3" type="text" id="Email-Ambiente" placeholder="Correo" name="Email-Ambiente"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Ambiente.getCorreo()%>">
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                         <div>
                             <div class="Left_SASS">
                                 <div id="Vista_Previa"> <img src="<%=Dat_Salud.getFoto()%>"></div>
-                                <label  class="fa fa-camera">
+                                <label  class="fa fa-camera" id="fa-camera">
                                 <input  class="Foto" id="Foto" type="file" name="Foto"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
@@ -119,17 +119,17 @@
                                     <label><%=Dat_Salud.getFecha_Nacimiento()%><label>
                                 </div>
                                 <div class="Datos2">
-                                    <input type="text" id="Direccion-Salud" name="Direccion-Salud" value="<%=Dat_Salud.getDireccion()%>">
-                                    <input type="text" id="Telefono-Salud" name="Telefono-Salud" pattern="[0-9]{5,10}" value="<%=Dat_Salud.getDireccion()%>">
-                                    <input type="text" id="Email-Salud" name="Email-Salud"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Salud.getCorreo()%>">
+                                    <input class="input4" type="text" id="Direccion-Salud" placeholder="Direccion" name="Direccion-Salud" value="<%=Dat_Salud.getDireccion()%>">
+                                    <input class="input5" type="text" id="Telefono-Salud" placeholder="Telefono" name="Telefono-Salud" pattern="[0-9]{5,10}" value="<%=Dat_Salud.getDireccion()%>">
+                                    <input class="input6" type="text" id="Email-Salud" placeholder="Correo" name="Email-Salud"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Salud.getCorreo()%>">
                                 </div>
                             </div>
                         </div>
                         <div class="Botones">
-                            <button class="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </button>
-                            <button class="btn-Actualizar" name="btn-Actualizar" ><span class="fa fa-refresh"></span> Actualizar </button>
-                            <button class="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
-                            <button class="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
+                            <button class="btn-Editar" id="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </button>
+                            <button class="btn-Actualizar" id="btn-Actualizar" name="btn-Actualizar" ><span class="fa fa-refresh"></span> Actualizar </button>
+                            <button class="btn-Cancelar" id="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
+                            <button class="btn-Eliminar" id="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
                         </div>
                 </div>
                 <%}%>

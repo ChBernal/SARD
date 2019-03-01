@@ -64,15 +64,15 @@
                             <div class="Rigth_Veterinaria">
                                 <div class="Datos1">
                                     <label><%=Dat_Activas.getNit()%><label>
-                                            <input type="text" id="Representante-Veterinaria" name="Representante-Veterinaria"  pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Activas.getRepresentante()%>">
+                                    <input class="input1" type="text" id="Representante-Veterinaria" name="Representante-Veterinaria"  pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Activas.getRepresentante()%>">
                                     <label><%=Dat_Activas.getTipo_Veterinaria()%><label>
                                     <label><%=Dat_Activas.getFecha_Fundacion()%><label>
                                 </div>
                                 <div class="Datos2">
-                                    <input type="text" id="Direccion-Veterinaria" name="Direccion-Veterinaria" value="<%=Dat_Activas.getDireccion()%>">
-                                    <input type="text" id="Barrio-Veterinaria" name="Barrio-Veterinaria" pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Activas.getBarrio()%>">
-                                    <input type="text" id="Telefono-Veterinaria" name="Telefono-Veterinaria" pattern="[0-9]{5,10}" value="<%=Dat_Activas.getTelefono()%>">
-                                    <input type="text" id="Email-Ciudadano" name="Email-Ciudadano"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Activas.getCorreo()%>">
+                                    <input class="input2" type="text" id="Direccion-Veterinaria" name="Direccion-Veterinaria" value="<%=Dat_Activas.getDireccion()%>">
+                                    <input class="input3" type="text" id="Barrio-Veterinaria" name="Barrio-Veterinaria" pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Activas.getBarrio()%>">
+                                    <input class="input4" type="text" id="Telefono-Veterinaria" name="Telefono-Veterinaria" pattern="[0-9]{5,10}" value="<%=Dat_Activas.getTelefono()%>">
+                                    <input class="input5" type="text" id="Email-Ciudadano" name="Email-Ciudadano"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Activas.getCorreo()%>">
                                 </div>
                             </div>
                         </div>
@@ -104,30 +104,30 @@
                         <div>
                             <div class="Left_Veterinaria">
                                 <div id="Vista_Previa"> <img src="<%=Dat_Inactivas.getFoto()%>"></div>
-                                <label  class="fa fa-camera">
+                                <label  class="fa fa-camera" id="fa-camera">
                                 <input  class="Foto" id="Foto" type="file" name="Foto"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
                             <div class="Rigth_Veterinaria">
                                 <div class="Datos1">
                                     <label><%=Dat_Inactivas.getNit()%><label>
-                                            <input type="text" id="Representante-Veterinaria" name="Representante-Veterinaria"  pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Inactivas.getRepresentante()%>">
+                                    <input class="input6" type="text" id="Representante-Veterinaria" name="Representante-Veterinaria"  pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Inactivas.getRepresentante()%>">
                                     <label><%=Dat_Inactivas.getTipo_Veterinaria()%><label>
                                     <label><%=Dat_Inactivas.getFecha_Fundacion()%><label>
                                 </div>
                                 <div class="Datos2">
-                                    <input type="text" id="Direccion-Veterinaria" name="Direccion-Veterinaria" value="<%=Dat_Inactivas.getDireccion()%>">
-                                    <input type="text" id="Barrio-Veterinaria" name="Barrio-Veterinaria" pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Inactivas.getBarrio()%>">
-                                    <input type="text" id="Telefono-Veterinaria" name="Telefono-Veterinaria" pattern="[0-9]{5,10}" value="<%=Dat_Inactivas.getTelefono()%>">
-                                    <input type="text" id="Email-Ciudadano" name="Email-Ciudadano"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Activas.getCorreo()%>">
+                                    <input class="input7" type="text" id="Direccion-Veterinaria" name="Direccion-Veterinaria" value="<%=Dat_Inactivas.getDireccion()%>">
+                                    <input class="input8" type="text" id="Barrio-Veterinaria" name="Barrio-Veterinaria" pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Inactivas.getBarrio()%>">
+                                    <input class="input9" type="text" id="Telefono-Veterinaria" name="Telefono-Veterinaria" pattern="[0-9]{5,10}" value="<%=Dat_Inactivas.getTelefono()%>">
+                                    <input class="input10" type="text" id="Email-Ciudadano" name="Email-Ciudadano"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Activas.getCorreo()%>">
                                 </div>
                             </div>
                         </div>
                         <div class="Botones">
-                            <button class="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </button>
-                            <button class="btn-Actualizar" name="btn-Actualizar" ><span class="fa fa-refresh"></span> Actualizar </button>
-                            <button class="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
-                            <button class="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
+                            <button class="btn-Editar" id="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </button>
+                            <button class="btn-Actualizar" id="btn-Actualizar" name="btn-Actualizar" ><span class="fa fa-refresh"></span> Actualizar </button>
+                            <button class="btn-Cancelar" id="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
+                            <button class="btn-Eliminar" id="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
                         </div>
                 </div>
                 <%}%>
