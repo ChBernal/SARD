@@ -58,7 +58,7 @@ public class Ciudadano_M {
             PreSta = BaseDatos.prepareStatement("call Todo_Cliente()");
             Reset = PreSta.executeQuery();
             while (Reset.next()){
-                GS_Ciudadano GSCi = new GS_Ciudadano(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10), Reset.getString(11), Reset.getString(12), Reset.getString(13), Reset.getString(14));
+                GS_Ciudadano GSCi = new GS_Ciudadano(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10), Reset.getString(11), Reset.getString(12), Reset.getString(13), Reset.getString(15));
                 Todo_Cliente.add(GSCi);
             }
         } catch (Exception e) {
@@ -85,6 +85,18 @@ public class Ciudadano_M {
             JOptionPane.showMessageDialog(null,e);
     }
         return Actualizar;
+    }
+    
+    public void Eli_Cliente(GS_Ciudadano GS){
+        try{
+            PreSta=BaseDatos.prepareStatement(" call B_Cliente (?)");
+            PreSta.setString(1,GS.getDocumento());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Ciudadano Eliminado");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
     }
     
 }

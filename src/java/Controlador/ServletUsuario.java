@@ -54,6 +54,12 @@ public class ServletUsuario extends HttpServlet {
         if (request.getParameter("Registrarme") != null){
             this.Insertar_Ciudadano(request, response);
         }
+        if (request.getParameter("btn-Actualizar") != null){
+            this.Actualizar_Cliente_Admin(request, response);
+        }
+        if (request.getParameter("btn-Eliminar") != null){
+            this.Eliminar_Cliente_Admin(request, response);
+        }
     }
     
     protected void Insertar_Cliente(HttpServletRequest request, HttpServletResponse response)
@@ -118,27 +124,28 @@ public class ServletUsuario extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
-        String url2 = "Uploads\\"+Name;
-        
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
-        }
-        GS_Ciudadano GSC = new GS_Ciudadano(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
-        Ciudadano_M Cliente = new Ciudadano_M();
-        int Consulta =Cliente.Actualizar_Ciudadano(GSC);
-            if (Consulta>0) {
-                JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+            String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+            String url2 = "Uploads\\"+Name;
+
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
             }
-            else{
-                JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
-            }
+            GS_Ciudadano GSC = new GS_Ciudadano(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
+            Ciudadano_M Cliente = new Ciudadano_M();
+            int Consulta =Cliente.Actualizar_Ciudadano(GSC);
+                if (Consulta>0) {
+                    JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                }
+        
         response.sendRedirect("Perfil_Ciudadano.jsp");
         }
     
@@ -146,19 +153,22 @@ public class ServletUsuario extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String Documento,Nombre,Direccion,Barrio,Telefono1,Telefono2,Correo, Ocupacion;
+        String Documento,Nombre,Direccion,Barrio,Telefono1,Telefono2,Correo, Ocupacion, Foto_Actual;
         Documento = request.getParameter("Documento-Ciudadano");
         Nombre = request.getParameter("Nombre-Ciudadano");
         Direccion = request.getParameter("Direccion-Ciudadano");
         Barrio = request.getParameter("Barrio-Ciudadano");
         Telefono1 = request.getParameter("Telefono-Ciudadano");
         Telefono2 = request.getParameter("Celular-Ciudadano");
-        Correo = request.getParameter("Correo-Ciudadano");
+        Correo = request.getParameter("Email-Ciudadano");
         Ocupacion = request.getParameter("Ocupacion-Ciudadano");
+        Foto_Actual = request.getParameter("Foto_Actual");
         Part Foto = request.getPart("Foto");
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
-        
+        if (Nombre_F!=null) {
+            
+            
         String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
@@ -180,6 +190,19 @@ public class ServletUsuario extends HttpServlet {
             else{
                 JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
             }
+        }else{
+            String url2 = Foto_Actual;
+            
+            GS_Ciudadano GSC = new GS_Ciudadano(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
+            Ciudadano_M Cliente = new Ciudadano_M();
+            int Consulta =Cliente.Actualizar_Ciudadano(GSC);
+                if (Consulta>0) {
+                    JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                }
+        }
         response.sendRedirect("Lista_Ciudadano.jsp");
         }
     
@@ -226,6 +249,19 @@ public class ServletUsuario extends HttpServlet {
         M_LG.Login_Cliente(GSC);
         
          response.sendRedirect("index.jsp");
+        }
+    protected void Eliminar_Cliente_Admin(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento,Tipo,Lugar,Nombre,Apellido,Genero,Fecha,Direccion,Barrio,Telefono1,Telefono2,Correo,Ocupacion;
+        Documento = request.getParameter("Documento-Ciudadano");
+        GS_Ciudadano GSC = new GS_Ciudadano(Documento);
+        Ciudadano_M Ciudadano = new Ciudadano_M();
+        Ciudadano.Eli_Cliente(GSC);
+        
+         response.sendRedirect("Lista_Ciudadano.jsp");
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

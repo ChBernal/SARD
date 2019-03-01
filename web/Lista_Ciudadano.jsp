@@ -51,10 +51,10 @@
                 <div class="Datos_Ciudadano">
                         <div>
                             <div class="Left_Ciudadano">
-                                <div id="Vista_Previa"> <img src="<%=Dat_Ciudadano.getFoto()%>"></div>
-                                <input type="hidden" name="Foto_Antigua" value="<%=Dat_Ciudadano.getFoto()%>">
+                                <div id="Vista_Previa"> <img src="<%= Dat_Ciudadano.getFoto()%> "></div>
+                                <input type="hidden" name="Foto_Actual" value="<%=Dat_Ciudadano.getFoto()%>">
                                 <label  class="fa fa-camera">
-                                    <input  class="Foto" id="Foto" type="file" name="Foto" value=""  accept="image/jpg, image/jpeg, image/png">
+                                    <input  class="Foto" id="Foto" type="file" name="Foto"   accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
                             <div class="Rigth_Ciudadano">
