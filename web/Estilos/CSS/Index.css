@@ -670,6 +670,8 @@ main article p {
 
 /*  Finaliza Adopcion */
 
+/* Inicio de Eventos */
+
 .Wrap-Eventos {
     width: 100%;
     max-width: 1050px;
@@ -740,6 +742,8 @@ main article p {
     font-weight: bold;
     cursor: pointer;
 }
+
+/* Finaliza Eventos */
 
 /*  Formulario Contactenos */
 
