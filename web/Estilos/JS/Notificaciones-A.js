@@ -60,11 +60,11 @@ $(function(){
 
 $(function(){
 	$(".NombreDN").hide();
-	$(".DatosDenunciaA").hide();
-	$(".DatosDenunciaC").hide();
-	$(".DatosPostulados").hide();
 	$(".NombreDC").hide();
 	$(".Postulados").hide();
+	$(".ModalAnonima").hide();
+	$(".DatosDenunciaC").hide();
+	$(".DatosPostulados").hide();
 
 	$(".PostulacionesCiudadano").click(function(){
 		$(".Postulados").slideToggle();
@@ -93,13 +93,18 @@ $(function(){
 		$(".DatosPostulados").hide();
 	});
 
-	$(".NombreDN").click(function(){
+	$(".Prueba-Anonima").click(function(){
 		var Pos = $(".NombreDN").index(this);
-		var asig = $(".DatosDenunciaA").eq(Pos);
+		var asig = $(".ModalAnonima").eq(Pos);
 		asig.slideToggle();
+                asig.css("display","flex");
 		$(".DatosDenunciaC").hide();
 		$(".DatosPostulados").hide();
 	})
+        
+        $(".cerrar_anonima").click(function(){
+            $(".ModalAnonima").hide();
+        });
 
 });
 
