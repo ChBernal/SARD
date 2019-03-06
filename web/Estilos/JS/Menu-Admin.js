@@ -55,8 +55,8 @@ $(".Usuario").click(function (){
 });
 
 //Finalizacion de menu
-
 // Acordeon Denuncias 
+$(".Denuncias").hide();
 $(".Datos_Denuncia_Anonima").hide();
 $(".Datos_Denuncia_Cliente").hide();
 

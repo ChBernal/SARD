@@ -4,6 +4,7 @@
     Author     : User
 --%>
 
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Admin_M"%>
 <%@page import="Modelo.GS_Admin"%>
 <%@page import="Modelo.Login_M"%>
@@ -26,7 +27,7 @@
     </head>
     <body>
         <div class="Barra">
-            <a href="Menu-Ciudadano.jsp"><span class="fa fa-home"></span></a>
+            <a href="Menu-Admin.jsp"><span class="fa fa-home"></span></a>
         </div>
         <div class="Caja-Perfil">
                 <%
@@ -48,6 +49,8 @@
                 <div class="Imagen">
                     <div id="Vista_Previa">
                         <img src="<%= inggs.getFoto()%>">
+                        <% JOptionPane.showMessageDialog(null, "Hola");
+                        %>
                     </div>
                     <label  class="fa fa-camera">
                         <input type="hidden" class="Foto1" value="<%= inggs.getFoto()%>">

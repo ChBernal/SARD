@@ -38,6 +38,7 @@
                  <%
                     HttpSession Doc2=request.getSession();
                     String Documento=(String)Doc2.getAttribute("DocumentoSession");
+                    JOptionPane.showMessageDialog(null, Documento);
                     ArrayList<GS_Administrador> Dato_Administrador = new ArrayList<>();
                     Administrador_M con = new Administrador_M();
                     GS_Administrador Doc = new GS_Administrador(Documento);

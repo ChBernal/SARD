@@ -5,7 +5,6 @@
  */
 package Controlador;
 
-import Modelo.GS_Postulaciones;
 import Modelo.GS_Preguntas_Postulacion;
 import Modelo.Postulacion_M;
 import java.io.IOException;
