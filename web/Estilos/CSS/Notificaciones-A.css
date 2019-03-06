@@ -421,42 +421,88 @@ header {
 /*  */
 
 .Notificaciones {
-	width: 90%;
+	width: 100%;
 	max-width: 1000px;
-	background: black;
-	height: 80px;
 	margin: auto;
+	margin-bottom: 20px;
 	display: flex;
+	justify-content: space-between;
 	flex-wrap: wrap;
-	justify-content: space-around;
 	align-items: center;
 }
 
-.Notificaciones .DenunciasNN,
-.Notificaciones .DenunciasCiudadano,
+.ContarDN {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: rgb(255,255,255);
+	color: rgb(39,174,96);
+	margin: auto;
+	text-align: center;
+	font-size: 14px;
+	font-family: "Nunito";
+}
+
+
 .Notificaciones .PostulacionesCiudadano {
 	width:200px;
 	height: 50px;
-	background: rgb(0,174,174);
+	border: outset;
+	background: rgb(255, 69, 0);
 	border-radius: 10px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
+	cursor: pointer;
+	color: rgb(255,255,255);
+}
+
+.Notificaciones .DenunciasCiudadano {
+	width:200px;
+	height: 50px;
+	border: outset;
+	background: rgb(200, 200, 20);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	cursor: pointer;
+	color: rgb(255,255,255);
+}
+
+.Notificaciones .DenunciasNN {
+	width:200px;
+	height: 50px;
+	border: outset;
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	cursor: pointer;
+	color: rgb(255,255,255);
 }
 
 /*  */
 
+.DatosTodas {
+	max-width: 1000px;
+	margin: auto;
+}
+
 /*  */
 
+.NombreDN, 
+.NombreDC,
 .Postulados {
-	width: 90%;
+	width: 100%;
 	height: 50px;
 	box-sizing: border-box;
 	padding: 10px;
-	background: rgb(39,174,96);
+	background: rgb(255,255,255);
 	display: flex;
 	justify-content: space-between;
-	color: rgb(255,255,255);
+	color: rgb(39,174,96);
 	text-align: center;
 	align-items: center;
 	margin: auto;

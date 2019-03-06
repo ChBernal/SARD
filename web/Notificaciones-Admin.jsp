@@ -1,19 +1,18 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 	<link rel="stylesheet" href="Estilos/CSS/Notificaciones-A.css">
 	<link rel="stylesheet" href="Estilos/Iconos/css/font-awesome.min.css">
 	<link rel="stylesheet" href="Estilos/alertifyjs/css/alertify.css">
-	<script src="../Estilos/alertifyjs/alertify.js"></script>
+	<script src="Estilos/alertifyjs/alertify.js"></script>
 	<title>MAppets</title>
-    </head>
-    <body>
-        
-        <header id="header">
+</head>
+<body>
+
+	<header id="header">
 		<nav class="Menu">
 			<div class="Enlaces">
 				<a href="../Vista/Menu-Admin.php"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
@@ -22,7 +21,7 @@
 				<a href="#" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
 				<div class="Perfil">
 					<a href="#" class="Abrir" id="Abrir"></a>
-					<img src="../Uploads/<?=$_SESSION['Img']?>">
+					<img src="Uploads/">
 				</div>
 				
 			</div>
@@ -32,20 +31,12 @@
 	<div class="Espacio-Perfil">
 		<div class="PerfilUsuario" id="PerfilUsuario">
 			<div class="Enlaces-Perfil">
-				<a href=""><i class="fa fa-user-o"></i>Perfil</a>
+				<a href="Perfil-Admin.jsp"><i class="fa fa-user-o"></i>Perfil</a>
 				<a href="#">
-				<!--	
-                                    <?php 
-					if ($DatosN <= 0){
-						echo "<i class='fa fa-sticky-note'></i>";
-					}else {
-						echo $DatosN;
-					}
-					?>
-                                -->
+					
 					Notificaciones
 				</a>
-				<a href=""><i class="fa fa-lock"></i>Cambio ContraseÃ±a</a>
+				<a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
 				<hr>
 				<a name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</a>
 			</div>
@@ -56,24 +47,24 @@
 		<div class="flex-Contrasena" id="flex-Contrasena">
 			<div class="Contenido-Modal-Contrasena">
 				<div class="Header-Modal-Contrasena flex">
-					<h2>Cambio ContraseÃ±a</h2>	
+					<h2>Cambio Contraseña</h2>	
 				</div>
 				<div class="Body-Modal-Contrasena">
 					<div class="Contenedor-Formulario-Contrasena">
-						<form action="" class="Formulario" method="POST" name="Formulario_Contrasena">
+						<form action="../Controlador/GestionContrasena-C.php" class="Formulario" method="POST" name="Formulario_Contrasena">
 							<div>
 								<input type="hidden" name="Documento" value="<?php echo $_SESSION['Usu'] ?>">
 								<div class="Input-Group-Contrasena">
-									<input type="password" id="ClaveAntigua" name="ClaveAntigua" pattern="[A-Za-z0-9!|Â°Â¬#$%&/()=?Â¡Â¿Â¨+Â´-_.:;,}]{8,20}">
-									<label class="label-Contrasena" for="ClaveAntigua">ContraseÃ±a Actual </label>
+									<input type="password" id="ClaveAntigua" name="ClaveAntigua" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+									<label class="label-Contrasena" for="ClaveAntigua">Contraseña Actual </label>
 								</div>
 								<div class="Input-Group-Contrasena">
-									<input type="password" id="ClaveNueva" name="ClaveNueva" pattern="[A-Za-z0-9!|Â°Â¬#$%&/()=?Â¡Â¿Â¨+Â´-_.:;,}]{8,20}">
-									<label class="label-Contrasena" for="ClaveNueva">Nueva ContraseÃ±a </label>
+									<input type="password" id="ClaveNueva" name="ClaveNueva" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+									<label class="label-Contrasena" for="ClaveNueva">Nueva Contraseña </label>
 								</div>
 								<div class="Input-Group-Contrasena">
-									<input type="password" id="RepetirClave" name="RepetirClave" pattern="[A-Za-z0-9!|Â°Â¬#$%&/()=?Â¡Â¿Â¨+Â´-_.:;,}]{8,20}">
-									<label class="label-Contrasena" for="RepetirClave">Repita la contraseÃ±a </label>
+									<input type="password" id="RepetirClave" name="RepetirClave" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+									<label class="label-Contrasena" for="RepetirClave">Repita la contraseña </label>
 								</div>
 								<input type="submit" class="btn-submit" id="btn-submit" name="CambiarContrasena" value="Cambiar">
 							</div>
@@ -81,7 +72,7 @@
 					</div>
 				</div>
 				<div class="Footer-Modal-Contrasena">
-				<!-- Aca poner la imprecion -->
+				
 				</div>
 			</div>
 		</div>
@@ -90,63 +81,81 @@
 	<main>
 		<article class="Notificaciones">
 			<div class="DenunciasNN">
-				<div>Denuncias Anonimas</div>
+				<div>Denuncias Anonimas </div>
+				<div class="ContarDN">2</div>
 			</div>
+
 			<div class="DenunciasCiudadano">
-				<div>Denuncias Usuarios</div>
+				<div>Denuncias Usuarios </div>
+				<div class="ContarDN">2</div>
 			</div>
+
 			<div class="PostulacionesCiudadano">
-				<div>Postulaciones</div>
+				<div>Postulaciones </div>
+				<div class="ContarDN">2</div>
 			</div>
+
 		</article>
-		<article class="Denuncias">
+	
+		<article class="DatosTodas">
+
 			<div class="Anonimas">
 				
-                                <!-- consulta de las anonimas -->
-                            
-				<div >
-					
+				<div class="NombreDN">
+			
 				</div>
 				<div class="DatosDenunciaA">
-					
+					<div class="Lefth-DenunciaA">
+						<div class="Input-Group">
+							<input type="type" name="Nombre">
+							<label for="" class="label">NOmbre</label>
+						</div>
+					</div>
 				</div>
-				
+			
 			</div>
+
 			<div class="Ciudadano">
+			
+				<div class="NombreDC">
 				
-                                <!-- consulta de ususarios -->
-                            
-				<div >
-					
 				</div>
-				<div class="DatosDenunciaA">
-					
+				<div class="DatosDenunciaC">
+					<div class="Lefth-DenunciaC">
+						<div class="Input-Group">
+							<input type="type" name="Nombre">
+							<label for="" class="label">Nombre</label>
+						</div>
+					</div>
 				</div>
-				
-			</div>
-		</article>
-		<article class="Postulaciones">
-                            
-                        <!-- consulta de Postulaciones -->
-                    
-			<div class="Postulados">
-				
-			</div>
-			<div class="DatosDenunciaA">
 				
 			</div>
 			
+			<div class="Postul">
+
+				<div class="Postulados">
+					
+				</div>
+				<div class="DatosPostulados">
+					
+				</div>
+				
+
+			</div>
+
 		</article>
+
 	</main>
+			
+
 
 	<!-- Importamos Todo JS -->
 
-	<script src="../Estilos/JS/jquery.min.js"></script>
-	<script src="../Estilos/JS/headroom.min.js"></script>
-	<script src="../Estilos/JS/Notificaciones-A.js"></script>
+	<script src="Estilos/JS/jquery.min.js"></script>
+	<script src="Estilos/JS/headroom.min.js"></script>
+	<script src="Estilos/JS/Notificaciones-A.js"></script>
 
 	<!-- Importamos Todo JS -->
 	
-        
-    </body>
+</body>
 </html>
