@@ -76,7 +76,6 @@ public class Veterinaria_M {
             PreSta.setString(2, GS.getNombre());
             PreSta.setString(3, GS.getRepresentante());
             PreSta.setString(4, GS.getTipo_Veterinaria());
-            JOptionPane.showMessageDialog(null, GS.getTipo_Veterinaria());
             PreSta.setString(5, GS.getFecha_Fundacion());
             PreSta.setString(6, GS.getDireccion());
             PreSta.setString(7, GS.getBarrio());

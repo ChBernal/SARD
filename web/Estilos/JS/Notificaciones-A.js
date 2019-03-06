@@ -62,10 +62,10 @@ $(function(){
 	$(".NombreDN").hide();
 	$(".NombreDC").hide();
 	$(".Postulados").hide();
-	$(".ModalAnonima").hide();
 	$(".DatosDenunciaC").hide();
 	$(".DatosPostulados").hide();
-
+	$(".Datos_DCliente").hide();
+        
 	$(".PostulacionesCiudadano").click(function(){
 		$(".Postulados").slideToggle();
 		$(".NombreDN").hide();
@@ -96,7 +96,6 @@ $(function(){
 	$(".Prueba-Anonima").click(function(){
 		var Pos = $(".NombreDN").index(this);
 		var asig = $(".ModalAnonima").eq(Pos);
-		asig.slideToggle();
                 asig.css("display","flex");
 		$(".DatosDenunciaC").hide();
 		$(".DatosPostulados").hide();

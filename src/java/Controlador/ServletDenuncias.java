@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 @MultipartConfig
 @WebServlet(name = "ServletDenuncias", urlPatterns = {"/ServletDenuncias"})
@@ -87,6 +88,7 @@ public class ServletDenuncias extends HttpServlet {
         String Direccion,Descripcion,Correo;
         
         Direccion= request.getParameter("Direccion");
+        JOptionPane.showMessageDialog(null, Direccion);
         Descripcion= request.getParameter("Descripcion");
         Part Evidencia= request.getPart("Evidencia");
         Correo= request.getParameter("Email");
