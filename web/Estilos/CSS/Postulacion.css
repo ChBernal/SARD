@@ -1,0 +1,845 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+h1{
+    font-family: "Nunito";
+    color: rgb(39,174,96);
+    text-align: center;
+}
+body {
+	background: rgb(220,237,200) url("../Imagenes/Fondo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Nunito Sans', sans-serif arial;
+	font-size: 16px;
+}
+.Contenedor-Postulacion{
+        background: rgba(255,249,196,.8);
+        width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+}
+.Barra{
+    background: rgb(39,174,96);
+    width: 100%;
+    height: 50px;
+    min-width: 350px;
+    top: 0;
+}
+.Barra .fa-home{
+    padding: 5px 20px;
+    font-size: 38px;
+    color: white;
+}
+.Barra .fa-home:hover{
+    color: red;
+}
+
+.Wrap-Adopcion {
+	width: 90%;
+	max-width: 1000px;
+	padding: 40px;
+	margin: auto;
+	background: rgb(255,255,255);
+}
+
+.Posicion-Adopcion {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Left-Adopcion, .Rigth-Adopcion{
+	width: 48%;
+}
+
+.Contenedor-Formulario-Adopcion {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+.Contenedor-Formulario-Adopcion .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"],
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"],
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"]:active,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"]:active,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"].error,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"].error,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"].error,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"].error + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"].error + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"].error + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Opcional {
+	display: none;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion label.label-Mascota {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion label.label-Mascota.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: rgb(39,174,96);
+	position: relative;
+	padding: 5px 15px 5px 51px;
+	font-size: 1em;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio label:hover,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox label:hover {
+	background: rgba(220,237,200,1);
+}
+ 
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion span{
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:hover,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:before,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio input[type="radio"],
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio input[type="radio"]:checked + label:before,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox input[type="checkbox"]:checked + label:before {
+	display: none;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio input[type="radio"]:checked + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Checkbox input[type="checkbox"]:checked + label {
+	padding: 5px 15px;
+	background: rgb(39,174,96);
+	border-radius: 2px;
+	color: rgb(255,255,255);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+.Contenido-Mascotas{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+.Contenido-Mascotas .titulo{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.Contenido-Mascotas .titulo label{
+    font-family: "Nunito";
+    font-size: 250%;
+    font-weight: bold;
+    color: rgb(39,174,96);
+}
+.btn{
+    background: transparent;
+    border: transparent;
+    background: rgb(39,174,96);
+    color: white;
+    font-size: 110%;
+    font-weight: bold;
+    padding: 8px 10px;
+    float: right;
+    border-radius: 7%;
+    cursor: pointer;
+}
+.btn:hover{
+    background: rgba(39,174,96,0.7);
+}
+.Contenido-Mascotas .Contenedor-MascotasCli{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Contenido-Mascotas .Contenedor-MascotasCli .Mascotas{
+    width: 350px;
+    height: auto;
+    margin: 20px 20px;
+    border: 1px solid rgb(39,174,96);
+    background: white;
+    cursor: pointer;
+}
+.Contenido-Mascotas .Contenedor-MascotasCli .Mascotas .ImagenM{
+    margin: 10px 20px;
+    float: left;
+    width: auto;
+    height: auto;
+}
+.Contenido-Mascotas .Contenedor-MascotasCli .Mascotas .ImagenM img{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+.Contenido-Mascotas .Contenedor-MascotasCli .Mascotas .DatosM{
+    width: auto;
+    height: 100%;
+}
+.Contenido-Mascotas .Contenedor-MascotasCli .Mascotas .DatosM h2{
+    padding: 15px 0 7px 0;
+    font-family: "Nunito";
+    font-size: 35px;
+    color: rgb(39,174,96);
+}
+.Contenido-Mascotas .Contenedor-MascotasCli .Mascotas .DatosM label{
+    padding-bottom: 5px;
+    display: block;
+    font-family: "Nunito";
+    color: rgb(39,174,96);
+}
+.Wrap-Adopcion a{
+    float: right;
+    text-decoration: none;
+}
+.Contenido-Modal .Header-Modal .fa-close{
+    font-size: 25px;
+    cursor: pointer;
+}
+.Contenido-Modal .Header-Modal .fa-close:hover{
+    color: gray;
+}
+.Wrap-Adopcion a .fa-close{
+    font-size: 25px;
+    color: rgb(39,174,96);
+}
+.Wrap-Adopcion a .fa-close:hover{
+    font-size: 25px;
+    color: rgba(39,174,96,0.5);
+}
+.Imagen{
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#Vista_Previa img{
+    width: 130px;
+    height: 120px;
+    border-radius: 10%;
+}
+.Foto{
+    background: transparent;
+    width: 0%;
+}
+.fa-camera{
+    color: rgb(39,174,96);
+    cursor: pointer;
+}
+.fa-camera:hover{
+    color: rgb(35,200,104);
+}
+/* todo lo de ventana modal */
+
+.flex {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Modal {
+	position: fixed;
+	z-index: 1;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+}
+
+.Contenido-Modal{
+	background: rgb(255,255,255);
+	position: relative;
+	margin: auto;
+	width: 100%;
+	max-width: 1000px;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
+	animation-name: modal;
+	animation-duration: 1s;
+}
+
+/*  Creacion de animacion */
+
+@keyframes modal{
+	from{
+		top: -100%; 
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* Terminamos de crear la animacion */
+
+.close {
+	color: rgb(255,255,255);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.close:hover {
+	color: rgb(117,117,117);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.Header-Modal, .Footer-Modal {
+	padding: 8px 16px;
+	background: rgb(39,174,96);
+	color: rgb(255,255,255);
+}
+
+.Footer-Modal a{
+	cursor: pointer;
+}
+
+.Body-Modal {
+	text-align: justify;
+	padding: 0 16px;
+}
+
+/* Terminamos todo lo relacionado con la ventana modal */
+
+.Wrap-Adopcion {
+	width: 90%;
+	max-width: 1000px;
+	padding: 40px;
+	margin: auto;
+	background: rgb(255,255,255);
+}
+
+.Posicion-Adopcion {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Left-Adopcion, .Rigth-Adopcion{
+	width: 48%;
+}
+
+.Contenedor-Formulario-Adopcion {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"],
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"],
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"]:active,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"]:active,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"]:focus,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"].error,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"].error,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"].error,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="text"].error + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="email"].error + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="password"].error + label,
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion label.label-Adopcion {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion label.label-Adopcion.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: rgb(39,174,96);
+	position: relative;
+	padding: 5px 15px 5px 51px;
+	font-size: 1em;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio label:hover {
+	background: rgba(220,237,200,1);
+}
+ 
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion span{
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label{
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.error label:before{
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio input[type="radio"] {
+	display: none;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio input[type="radio"]:checked + label:before {
+	display: none;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario .Input-Group-Adopcion.Radio input[type="radio"]:checked + label {
+	padding: 5px 15px;
+	background: rgb(39,174,96);
+	border-radius: 2px;
+	color: rgb(255,255,255);
+}
+
+.Contenedor-Formulario-Adopcion .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Adopcion .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+.Wrap-Mascota {
+	width: 90%;
+	max-width: 1000px;
+	padding: 0;
+	margin: auto;
+	background: rgb(255,255,255);
+}
+
+.Posicion-Mascota {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Left-Mascota, .Rigth-Mascota{
+	width: 48%;
+}
+
+.Contenedor-Formulario-Mascota {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contenedor-Formulario-Mascota .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="text"],
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="email"],
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="text"]:focus,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="text"]:active,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="email"]:focus,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="email"]:active,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="password"]:focus,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="date"]:focus,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="text"].error,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="email"].error,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="password"].error,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="text"].error + label,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="email"].error + label,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="password"].error + label,
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota label.label-Mascota {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota label.label-Mascota.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota.Radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: rgb(39,174,96);
+	position: relative;
+	padding: 5px 15px 5px 51px;
+	font-size: 1em;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota.Radio label:hover {
+	background: rgba(220,237,200,1);
+}
+ 
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota.Radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota span{
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota.Radio input[type="radio"] {
+	display: none;
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota.Radio input[type="radio"]:checked + label:before {
+	display: none;
+}
+
+.Contenedor-Formulario-Mascota .Formulario .Input-Group-Mascota.Radio input[type="radio"]:checked + label {
+	padding: 5px 15px;
+	background: rgb(39,174,96);
+	border-radius: 2px;
+	color: rgb(255,255,255);
+}
+
+.Contenedor-Formulario-Mascota .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Mascota .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}

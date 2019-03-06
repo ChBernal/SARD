@@ -15,6 +15,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -47,7 +49,11 @@ public class Servlet_Postulacion extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         String R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15,R16,R17,R18,R19,R20,Docu;
+        int Codi;
         
+        Codi= Integer.parseInt(request.getParameter("Codigo"));
+        HttpSession Datos1 = request.getSession();
+        Datos1.setAttribute("Codigo_M", Codi);
         R1= request.getParameter("Res1");
         R2= request.getParameter("Res2");
         R3= request.getParameter("Res3");
@@ -73,7 +79,7 @@ public class Servlet_Postulacion extends HttpServlet {
         Postulacion_M EM = new Postulacion_M();
         GS_Preguntas_Postulacion GSE = new GS_Preguntas_Postulacion(R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, Docu);
         EM.InsertarPostulacion(GSE);
-        response.sendRedirect("Menu-Ciudadano.jsp");
+        response.sendRedirect("Postulacion.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

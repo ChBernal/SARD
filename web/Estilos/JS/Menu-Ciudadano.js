@@ -70,7 +70,7 @@ $(document).ready(function(){
 		}
 	}
 
-}());
+});
 
 //Finalizacion de formulario login
 
@@ -119,52 +119,17 @@ $(".Usuario").click(function (){
 //Todas las opciones del contenido modal
 
 $(document).ready(function(){
-    $(".Docu");
+    $(".Modal").hide();
     $(".InfoMascota").click(function(){
         var Pos = $(".Imagen_Mascota").index(this);
         var x = $(".InfoMascota").index(this);
         var Asi = $(".Datos-Mascota").eq(Pos);
-        var Doc1= $(".Docu").eq(x);
-        var Doc2= (Doc1).val();
-        modal.style.display = 'block'; 
-        $.ajax({
-            url: "Servlet_Mascota_Modal",
-            data: {
-              Id: Doc2  
-            },
-            success: function ( result ){
-                
-                var dat= result.split(" ");
-                $("#Da7").val(dat[0]);
-                $("#Da2").val(dat[1]);
-                $("#Da3").val(dat[2]);
-                $("#Da4").val(dat[3]);
-                $("#Da5").val(dat[4]);
-                $("#Da6").val(dat[5]);
-                $("#Da1").val(dat[6]);
-                $("#Da8").val(dat[7]);
-            }
-        });
+        var Modal = $(".Modal").eq(x);
+        Modal.show();
     });
-});
-
-let modal = document.getElementById('Modal');
-let flex = document.getElementById('flex');
-let Abrir = document.getElementById('Abrir');
-let Cerrar = document.getElementById('close');
-
-Abrir.addEventListener('click',function(){
-	modal.style.display = 'block';
-});
-
-Cerrar.addEventListener('click',function(){
-	modal.style.display = 'none';
-});
-
-window.addEventListener('click',function(e){
-	if (e.target == flex) {
-		modal.style.display = 'none';
-	}
+    $(".close").click(function(){
+        $(".Modal").hide();
+    });
 });
 
 $(document).ready(function(){

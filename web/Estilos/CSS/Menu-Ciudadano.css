@@ -147,7 +147,6 @@ header {
 }
 
 .Modal {
-	display: none;
 	position: fixed;
 	z-index: 1;
 	overflow: auto;
@@ -411,7 +410,7 @@ main article p {
 	top: -12px;
 	font-size: 12px;
 	line-height: 12px;
-	color: rgb(189,189,189);
+	color: rgb(39,174,96);
 }
 
 .Contenedor-Formulario .Formulario .Input-Group.Checkbox label,
