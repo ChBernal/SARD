@@ -26,6 +26,30 @@ public class GS_Preguntas_Postulacion {
     private String R20;
     private String Docu;
 
+    public GS_Preguntas_Postulacion(String R1, String R2, String R3, String R4, String R5, String R6, String R7, String R8, String R9, String R10, String R11, String R12, String R13, String R14, String R15, String R16, String R17, String R18, String R19, String R20, String Docu) {
+        this.R1 = R1;
+        this.R2 = R2;
+        this.R3 = R3;
+        this.R4 = R4;
+        this.R5 = R5;
+        this.R6 = R6;
+        this.R7 = R7;
+        this.R8 = R8;
+        this.R9 = R9;
+        this.R10 = R10;
+        this.R11 = R11;
+        this.R12 = R12;
+        this.R13 = R13;
+        this.R14 = R14;
+        this.R15 = R15;
+        this.R16 = R16;
+        this.R17 = R17;
+        this.R18 = R18;
+        this.R19 = R19;
+        this.R20 = R20;
+        this.Docu = Docu;
+    }
+
     public GS_Preguntas_Postulacion(int Codigo, String R1, String R2, String R3, String R4, String R5, String R6, String R7, String R8, String R9, String R10, String R11, String R12, String R13, String R14, String R15, String R16, String R17, String R18, String R19, String R20, String Docu) {
         this.Codigo = Codigo;
         this.R1 = R1;

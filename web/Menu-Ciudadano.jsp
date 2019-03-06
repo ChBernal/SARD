@@ -155,6 +155,160 @@
                                         <label><%= GSM.getColor() %></label>
                                     </div>
                                 </div>
+                                <div class="Modal" id="Modal">
+                                    <div class="flex" id="flex">
+                                        <div class="Contenido-Modal">
+                                            <div class="Header-Modal flex">
+                                                <h2>Postulacion</h2>	
+                                                <span class="fa fa-times close" id="close"></span>	
+                                            </div>
+                                            <div class="Body-Modal">
+                                                <div class="Posicion-Postulacion">
+                                                    <div class="Lefth-Postulacion">
+                                                        <img src="<%= GSM.getFoto() %>">
+                                                        <div class="Datos_Mascota">
+                                                            <h2><%= GSM.getNombre()%></h2>
+                                                            <label><%= GSM.getTipo_Mascota()%></label>
+                                                            <label><%= GSM.getGenero()%></label>
+                                                            <label><%= GSM.getFecha_Nacimiento()%></label>
+                                                            <label>0<%= GSM.getDocumento()%></label>
+                                                            <label><%= GSM.getRaza()%></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="Rigth-Postulacion">
+                                                        <div class="Contenedor-Formulario">
+                                                            <form action="Servlet_Postulacion" class="Formulario" method="POST" name="Formulario_Login">
+                                                                <datalist id="Opciones">
+                                                                    <option>Si</option>
+                                                                    <option>No</option>
+                                                                </datalist>
+                                                                <div class="Seccion1">
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res1" name="Res1" list="Opciones">
+                                                                        <label class="label" for="Res1">¿Tienen todos los miembros de la familia conocimiento de la adopcion?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res2" name="Res2" list="Opciones">
+                                                                        <label class="label" for="Res1">¿Ha tenido mascotas anteriormente?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" name="Res3" id="Res3" list="Opciones" ">
+                                                                        <label class="label" for="Res3">¿En la actualidad tiene mascotas?</label>
+                                                                    </div>	
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res4" name="Res4" list="Opciones">
+                                                                        <label class="label" for="Res4">¿Vive en casa propia?</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="Siguiente1">
+                                                                        Siguiente
+                                                                </div>
+                                                                <div class="Seccion2">
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res5" name="Res5" list="Opciones">
+                                                                        <label class="label" for="Res5">¿Su vivienda cuenta con el espacio suficiente para la mascota que desea adoptar?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" name="Res6" id="Res6" list="Opciones">
+                                                                        <label class="label" for="Res6">¿Cuenta con tiempo suficiente a diario para compartir con la mascota?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res7" name="Res7" list="Opciones">
+                                                                        <label class="label" for="Res7">¿En el núcleo familiar alguna persona es alérgica a los animales?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res8" name="Res8" list="Opciones">
+                                                                        <label class="label" for="Res8">¿Reconoce que en caso de mudarse de la propiedad actual, debe llevarse con usted a la mascota?</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="Anterior1">
+                                                                    Anterior
+                                                                </div>
+                                                                <div class="Siguiente2">
+                                                                    Siguiente
+                                                                </div>
+                                                                <div class="Seccion3">
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res9" name="Res9" list="Opciones">
+                                                                        <label class="label" for="Res9">¿Conoce los gastos económicos que implica tener una mascota?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" name="Res10" id="Res10" list="Opciones">
+                                                                        <label class="label" for="Res10">¿Esta dispuesto a recibir capacitación sobre la tenencia responsable de la mascota?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res11" name="Res11" list="Opciones">
+                                                                        <label class="label" for="Res11">¿Comprende que la mascota tiene un periodo de adaptación y debe ser paciente mientras esto ocurre?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res12" name="Res12" list="Opciones">
+                                                                        <label class="label" for="Res12">¿Se compromete a garantizar el bienestar general de la mascota?</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="Anterior2">
+                                                                    Anterior
+                                                                </div>
+                                                                <div class="Siguiente3">
+                                                                    Siguiente
+                                                                </div>
+                                                                <div class="Seccion4">
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res13" name="Res13" list="Opciones">
+                                                                        <label class="label" for="Res13">¿Comprende que al sacar a su mascota a pasear debe recoger las excretas y disponerlas adecuadamente?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" name="Res14" id="Res14" list="Opciones">
+                                                                        <label class="label" for="Res14">¿Se compromete a tener un esquema de vacunación de la mascota actualizado?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res15" name="Res15" list="Opciones">
+                                                                        <label class="label" for="Res15">¿Se compromete a tener un esquema de desparacitacion de la mascota actualizado?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res16" name="Res16" list="Opciones">
+                                                                        <label class="label" for="Res16">¿Comprende que mediante la Ley 1774 de 2016, se puede llegar a sancionar he incluso penalizar el maltrato animal?</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="Anterior3">
+                                                                    Anterior
+                                                                </div>
+                                                                <div class="Siguiente4">
+                                                                    Siguiente
+                                                                </div>
+                                                                <div class="Seccion5">
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res17" name="Res17" list="Opciones">
+                                                                        <label class="label" for="Res17">¿Comprende que la mascota que está despuesto a adoptar es una responsailidad que asume por el resto de la vida del animal?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" name="Res18" id="Res18" list="Opciones" ">
+                                                                        <label class="label" for="Res18">¿En caso de enfermarse la mascota esta dispuesto a brindar atención médica veterinaria y asumir los costos que esta requiera?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res19" name="Res19" list="Opciones">
+                                                                        <label class="label" for="Res19">¿Se compromete a mantener informada a la Secretaria de Ambiente y Desarrollo Agropecuario sobre cualquier novedad que se presente con la mascota?</label>
+                                                                    </div>
+                                                                    <div class="Input-Group">
+                                                                        <input type="text" id="Res20" name="Res20" list="Opciones">
+                                                                        <label class="label" for="Res20">¿Se compromete a brindar amor y respeto a la mascota?'</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="Anterior4">
+                                                                        Anterior
+                                                                </div>
+                                                                <input type="hidden" name="Documento" value="<%= Doc%>"> 
+                                                                <button name="btn-Postulacion" class="btn-Postulacion">Postularme</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="Footer-Modal">
+                                                <!-- Footer basio -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <%
                                 }    
                             %>
@@ -162,164 +316,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="Modal" id="Modal">
-                    <div class="flex" id="flex">
-                        <div class="Contenido-Modal">
-                            <div class="Header-Modal flex">
-                                <h2>Postulacion</h2>	
-                                <span class="fa fa-times close" id="close"></span>	
-                            </div>
-                            <div class="Body-Modal">
-                                <div class="Posicion-Postulacion">
-                                    <div class="Lefth-Postulacion">
-                                        <div class="InfoMascota">
-                                            <div class="Imagen-Mascota">
-                                                <img id="Da8" src="Da8">
-                                            </div>
-                                            <div class="Datos_Mascota">
-                                                <input type="text" id="Da1">
-                                                <input type="text" id="Da2">
-                                                <input type="text" id="Da3">
-                                                <input type="text" id="Da4">
-                                                <input type="text" id="Da5">
-                                                <input type="text" id="Da6">
-                                                <input type="text" id="Da7">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="Rigth-Postulacion">
-                                        <div class="Contenedor-Formulario">
-                                            <form action="Servlet_Postulacion" class="Formulario" method="POST" name="Formulario_Login">
-                                                <datalist id="Opciones">
-                                                    <option>Si</option>
-                                                    <option>No</option>
-                                                </datalist>
-                                                <div class="Seccion1">
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res1" name="Res1" list="Opciones">
-                                                        <label class="label" for="Res1">¿Tienen todos los miembros de la familia conocimiento de la adopcion?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res2" name="Res2" list="Opciones">
-                                                        <label class="label" for="Res1">¿Ha tenido mascotas anteriormente?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" name="Res3" id="Res3" list="Opciones" ">
-                                                        <label class="label" for="Res3">¿En la actualidad tiene mascotas?</label>
-                                                    </div>	
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res4" name="Res4" list="Opciones">
-                                                        <label class="label" for="Res4">¿Vive en casa propia?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="Siguiente1">
-                                                        Siguiente
-                                                </div>
-                                                <div class="Seccion2">
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res5" name="Res5" list="Opciones">
-                                                        <label class="label" for="Res5">¿Su vivienda cuenta con el espacio suficiente para la mascota que desea adoptar?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" name="Res6" id="Res6" list="Opciones" ">
-                                                        <label class="label" for="Res6">¿Cuenta con tiempo suficiente a diario para compartir con la mascota?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res7" name="Res7" list="Opciones">
-                                                        <label class="label" for="Res7">¿En el núcleo familiar alguna persona es alérgica a los animales?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res8" name="Res8" list="Opciones">
-                                                        <label class="label" for="Res8">¿Reconoce que en caso de mudarse de la propiedad actual, debe llevarse con usted a la mascota?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="Anterior1">
-                                                    Anterior
-                                                </div>
-                                                <div class="Siguiente2">
-                                                    Siguiente
-                                                </div>
-                                                <div class="Seccion3">
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res9" name="Res9" list="Opciones">
-                                                        <label class="label" for="Res9">¿Conoce los gastos económicos que implica tener una mascota?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" name="Res10" id="Res10" list="Opciones" ">
-                                                        <label class="label" for="Res10">¿Esta dispuesto a recibir capacitación sobre la tenencia responsable de la mascota?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res11" name="Res11" list="Opciones">
-                                                        <label class="label" for="Res11">¿Comprende que la mascota tiene un periodo de adaptación y debe ser paciente mientras esto ocurre?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res12" name="Res12" list="Opciones">
-                                                        <label class="label" for="Res12">¿Se compromete a garantizar el bienestar general de la mascota?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="Anterior2">
-                                                    Anterior
-                                                </div>
-                                                <div class="Siguiente3">
-                                                    Siguiente
-                                                </div>
-                                                <div class="Seccion4">
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res13" name="Res13" list="Opciones">
-                                                        <label class="label" for="Res13">¿Comprende que al sacar a su mascota a pasear debe recoger las excretas y disponerlas adecuadamente?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" name="Res14" id="Res14" list="Opciones" ">
-                                                        <label class="label" for="Res14">¿Se compromete a tener un esquema de vacunación de la mascota actualizado?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res15" name="Res15" list="Opciones">
-                                                        <label class="label" for="Res15">¿Se compromete a tener un esquema de desparacitacion de la mascota actualizado?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res16" name="Res16" list="Opciones">
-                                                        <label class="label" for="Res16">¿Comprende que mediante la Ley 1774 de 2016, se puede llegar a sancionar he incluso penalizar el maltrato animal?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="Anterior3">
-                                                    Anterior
-                                                </div>
-                                                <div class="Siguiente4">
-                                                    Siguiente
-                                                </div>
-                                                <div class="Seccion5">
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res17" name="Res17" list="Opciones">
-                                                        <label class="label" for="Res17">¿Comprende que la mascota que está despuesto a adoptar es una responsailidad que asume por el resto de la vida del animal?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" name="Res18" id="Res18" list="Opciones" ">
-                                                        <label class="label" for="Res18">¿En caso de enfermarse la mascota esta dispuesto a brindar atención médica veterinaria y asumir los costos que esta requiera?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res19" name="Res19" list="Opciones">
-                                                        <label class="label" for="Res19">¿Se compromete a mantener informada a la Secretaria de Ambiente y Desarrollo Agropecuario sobre cualquier novedad que se presente con la mascota?</label>
-                                                    </div>
-                                                    <div class="Input-Group">
-                                                        <input type="text" id="Res20" name="Res20" list="Opciones">
-                                                        <label class="label" for="Res20">¿Se compromete a brindar amor y respeto a la mascota?'</label>
-                                                    </div>
-                                                </div>
-                                                <div class="Anterior4">
-                                                        Anterior
-                                                </div>
-                                                <button name="btn-Postulacion" class="btn-Postulacion">Postularme</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Footer-Modal">
-                                <!-- Footer basio -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </article>
 
             <article id="Eventos" class="Eventos">
