@@ -1,8 +1,10 @@
 package Controlador;
 
 import Modelo.Admin_M;
+import Modelo.Ambiente_Salud_M;
 import Modelo.Ciudadano_M;
 import Modelo.GS_Admin;
+import Modelo.GS_Ambiente_Salud;
 import Modelo.GS_Ciudadano;
 import Modelo.GS_Login;
 import Modelo.Login_M;
@@ -34,6 +36,8 @@ public class ServletLogin extends HttpServlet {
                     response.sendRedirect("Menu-Admin.jsp");
                     break;
                 case 2:
+                    this.Datos_SA(request, response);
+                    response.sendRedirect("Menu-SA.jsp");
                     break;
                 case 3:
                     break;
@@ -41,6 +45,7 @@ public class ServletLogin extends HttpServlet {
                     break;
                 case 5:
                     this.Datos_Ciudadano(request, response);
+                    response.sendRedirect("Menu-Ciudadano.jsp");
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Datos incorrectos");
@@ -107,7 +112,28 @@ public class ServletLogin extends HttpServlet {
         HttpSession Datos = request.getSession();
         Datos.setAttribute("NombreSession", Nombre);
         Datos.setAttribute("DocumentoSession", Documento);
-        response.sendRedirect("Menu-Ciudadano.jsp");
+    }
+    
+    protected void Datos_SA(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String Documento = request.getParameter("Usuario");
+        String Nombre = null;
+        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento);
+        Ambiente_Salud_M SASS = new Ambiente_Salud_M();
+        ArrayList<GS_Ambiente_Salud> Datos_SASS = new ArrayList<>();
+        Datos_SASS = SASS.Uno_Ambiente(Documento);
+        
+        if (Datos_SASS.size()>0){
+            for (int i = 0; i < Datos_SASS.size(); i++){
+                GSAS = Datos_SASS.get(i);
+                Nombre = GSAS.getNombre();
+            }
+        }
+        HttpSession Datos = request.getSession();
+        Datos.setAttribute("NombreSession", Nombre);
+        Datos.setAttribute("DocumentoSession", Documento);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

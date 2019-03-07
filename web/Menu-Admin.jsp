@@ -41,12 +41,16 @@
             </div>
         </nav>
     </header>
-    <div class="Contenedor-Perfil">
-        <div class="Datos-Usuario">
-            <a href="Perfil_Administrador.jsp"><span class="fa fa-user"></span>Perfil</a>
-            <a href="Notificaciones-Admin.jsp"><span class=""></span>Notificaciones</a>
-            <a href="index.jsp"><span class="fa fa-circle-o"></span>Cerrar Session</a>
-        </div>
+    <div class="Espacio-Perfil">
+        <div class="PerfilUsuario" id="PerfilUsuario">
+            <div class="Enlaces-Perfil">
+                <a href="#"><i class="fa fa-user-o"></i>Perfil</a>
+                <a href="#">Notificaciones</a>
+                <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
+                <hr>
+                <button name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</button>
+            </div>
+        </div>	
     </div>
     <div class="Contenedor">
         <main>
@@ -541,7 +545,7 @@
                 </article>
             </main>
             <div class="Footer-Button">
-                <label>Creado por Christian Bernal &copy 2019 | Todos los derechos reservados</label>
+                <label>Creado por Mappets Software &copy 2019 | Todos los derechos reservados</label>
             </div>
     </div>
     <script src="Estilos/JS/jquery.min.js"></script>

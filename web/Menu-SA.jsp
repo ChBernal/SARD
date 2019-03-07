@@ -45,15 +45,15 @@
     <!-- Espacio del Perfil -->
 
     <div class="Espacio-Perfil">
-            <div class="PerfilUsuario" id="PerfilUsuario">
-                    <div class="Enlaces-Perfil">
-                            <a href="#"><i class="fa fa-user-o"></i>Perfil</a>
-                            <a href="#">Notificaciones</a>
-                            <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
-                            <hr>
-                            <button name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</button>
-                    </div>
-            </div>	
+        <div class="PerfilUsuario" id="PerfilUsuario">
+            <div class="Enlaces-Perfil">
+                <a href="#"><i class="fa fa-user-o"></i>Perfil</a>
+                <a href="#">Notificaciones</a>
+                <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
+                <hr>
+                <button name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</button>
+            </div>
+        </div>	
     </div>
 
     <!-- Finaliza Perfil -->

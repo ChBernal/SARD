@@ -13,6 +13,80 @@ $(document).ready(function(){
 
 //finalizacion efecto parallax
 
+//Validacion Primer Ingreso
+$(function(){
+	var PrimerIngreso = $('#PrimerIngreso').val();
+	let modal = document.getElementById('Modal-Contrasena');
+	if (PrimerIngreso == 1) {		
+		modal.style.display = 'block';
+	}
+});
+
+//Finaliza Primer Ingreso
+
+/*
+Todas la opnciones del formulario de Contraseña
+
+(function(){
+	var formulario = document.Formulario_Contrasena,
+		elementos = formulario.elements;
+
+	//Funciones
+
+	var ValidarInputs = function(){
+		for (var i = 0; i < elementos.length; i++) {
+			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
+				if (elementos[i].value == 0) {
+					console.log('El Campo ' + elementos[i].name + ' esta incompleto');
+					elementos[i].className = elementos[i].className + " error";
+					return false;
+				} else {
+					elementos[i].className = elementos[i].className.replace(" error", "");
+				}
+			}
+		}
+
+		return true;
+	};
+
+	var enviar = function(e){
+		if (!ValidarInputs()) {
+			console.log('Falto validar los Input');
+			e.preventDefault();
+		}else {
+			console.log('Envia correctamente');
+		}
+	};
+
+	//Funciones blur y focus
+
+	var focusInputs = function(){
+		this.parentElement.children[1].className = "label-Contrasena active";
+		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
+	};
+
+	var blurInputs = function(){
+		if (this.value <= 0) {
+			this.parentElement.children[1].className = "label-Contrasena";
+			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
+		}
+	};
+
+	//Eventos
+	formulario.addEventListener("submit", enviar);
+
+	for (var i = 0; i < elementos.length; i++) {
+		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
+			elementos[i].addEventListener("focus", focusInputs);
+			elementos[i].addEventListener("blur", blurInputs);
+		}
+	}
+
+}());
+
+Finalizacion de formulario Contraseña
+*/
+
 //Todas las opciones del menu
 
 $(function(){
@@ -24,16 +98,25 @@ $(function(){
 		enlaces = $('.Enlaces'),
 		btnMenu = $('.btn-menu'),
 		icono = $('.btn-menu .icono');
+		perfil = $('.Perfil');
+		Espacio = $('.Espacio-Perfil');
+
+		Espacio.hide();
 
 	if (ancho < 990) {
 		enlaces.hide();
 		icono.addClass('fa-bars');
+		
 	}
 
 	btnMenu.on('click', function(e){
 		enlaces.slideToggle();
 		icono.toggleClass('fa-bars');
 		icono.toggleClass('fa-times');
+	});
+
+	perfil.on('click',function(e){
+		Espacio.slideToggle();
 	});
 
 	$(window).on('resize', function(){
@@ -49,12 +132,20 @@ $(function(){
 	});
 
 });
-$(".Contenedor-Perfil .Datos-Usuario").hide();
-$(".Usuario").click(function (){
-        $(".Contenedor-Perfil .Datos-Usuario").animate({width:'toggle',opacity:'toggle'});
-});
 
 //Finalizacion de menu
+
+//Inicio de Opciones Perfil
+
+$(function(){
+	var Opci = document.getElementById('PerfilUsuario');
+	var headroom = new Headroom(Opci);
+	headroom.init();
+});
+
+//Finaliza Opciones Perfil
+
+
 // Acordeon Denuncias 
 $(".Denuncias").hide();
 $(".Datos_Denuncia_Anonima").hide();

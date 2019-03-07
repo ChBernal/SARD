@@ -24,8 +24,7 @@ $(function(){
 
 //Finaliza Primer Ingreso
 
-/*
- Todas la opnciones del formulario de Contraseña
+// Todas la opnciones del formulario de Contraseña
 
 (function(){
 	var formulario = document.Formulario_Contrasena,
@@ -86,8 +85,6 @@ $(function(){
 
 //Finalizacion de formulario Contraseña
 
-*/
-
 //Todas las opciones del menu
 
 $(function(){
@@ -135,6 +132,16 @@ $(function(){
 });
 
 //Finalizacion de menu
+
+//Inicio de Opciones Perfil
+
+$(function(){
+	var Opci = document.getElementById('PerfilUsuario');
+	var headroom = new Headroom(Opci);
+	headroom.init();
+});
+
+//Finaliza Opciones Perfil
 
 //Inicio de Opciones Perfil
 
