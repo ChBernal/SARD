@@ -34,10 +34,8 @@ public class Servlet_Tips extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        JOptionPane.showMessageDialog(null, "enta a servlet");
         if (request.getParameter("Registro-Tip")!=null) {
             Insertar_Tips(request, response);
-            JOptionPane.showMessageDialog(null, "enta a btn");
         }
     }
     
@@ -45,7 +43,6 @@ public class Servlet_Tips extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        JOptionPane.showMessageDialog(null, "enta a funcion");
         String Titulo, Descripcion;
         Titulo = request.getParameter("Titulo-Tip");
         Descripcion = request.getParameter("Descripcion-Tip");
