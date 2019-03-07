@@ -48,7 +48,7 @@
                     for(int i=0; i<Dato_Activas.size(); i++){
                         Dat_Activas = Dato_Activas.get(i);
                 %>
-                
+                <form action="Servlet_Veterinaria" method="POST" enctype="multipart/form-data">
                 <div class="Nombre_Activas">
                     <h1><%=Dat_Activas.getNombre()%></h1>
                 </div>
@@ -57,13 +57,16 @@
                         <div>
                             <div class="Left_Veterinaria">
                                 <div id="Vista_Previa"> <img src="<%=Dat_Activas.getFoto()%>"></div>
+                                <input type="hidden" name="Foto-Actual" value="<%=Dat_Activas.getFoto()%>">
                                 <label  class="fa fa-camera">
-                                <input  class="Foto" id="Foto" type="file" name="Foto"  value="" accept="image/jpg, image/jpeg, image/png">
+                                <input  class="Foto" id="Foto" type="file" name="Foto-Veterinaria" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
                             <div class="Rigth_Veterinaria">
                                 <div class="Datos1">
                                     <label><%=Dat_Activas.getNit()%><label>
+                                    <input type="hidden" name="Nit-Veterinaria" value="<%=Dat_Activas.getNit()%>">
+                                    <input type="hidden" name="Nombre-Veterinaria" value="<%=Dat_Activas.getNombre()%>">
                                     <input class="input1" type="text" id="Representante-Veterinaria" name="Representante-Veterinaria"  pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Activas.getRepresentante()%>">
                                     <label><%=Dat_Activas.getTipo_Veterinaria()%><label>
                                     <label><%=Dat_Activas.getFecha_Fundacion()%><label>
@@ -72,16 +75,17 @@
                                     <input class="input2" type="text" id="Direccion-Veterinaria" name="Direccion-Veterinaria" value="<%=Dat_Activas.getDireccion()%>">
                                     <input class="input3" type="text" id="Barrio-Veterinaria" name="Barrio-Veterinaria" pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Activas.getBarrio()%>">
                                     <input class="input4" type="text" id="Telefono-Veterinaria" name="Telefono-Veterinaria" pattern="[0-9]{5,10}" value="<%=Dat_Activas.getTelefono()%>">
-                                    <input class="input5" type="text" id="Email-Ciudadano" name="Email-Ciudadano"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Activas.getCorreo()%>">
+                                    <input class="input5" type="text" id="Email-Ciudadano" name="Email-Veterinaria"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Activas.getCorreo()%>">
                                 </div>
                             </div>
                         </div>
                         <div class="Botones">
-                            <button class="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </button>
-                            <button class="btn-Actualizar" name="btn-Actualizar" ><span class="fa fa-refresh"></span> Actualizar </button>
-                            <button class="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
+                            <label class="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </label>
+                            <button class="btn-Actualizar" name="btn-Actualizar-Activas" ><span class="fa fa-refresh"></span> Actualizar </button>
+                            <label class="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</label>
                             <button class="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
                         </div>
+                    </form>
                 </div>
                 <%}%>
                 </div>
@@ -124,9 +128,9 @@
                             </div>
                         </div>
                         <div class="Botones">
-                            <button class="btn-Editar" id="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </button>
-                            <button class="btn-Actualizar" id="btn-Actualizar" name="btn-Actualizar" ><span class="fa fa-refresh"></span> Actualizar </button>
-                            <button class="btn-Cancelar" id="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
+                            <label class="btn-Editar" id="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </label>
+                            <button class="btn-Actualizar" id="btn-Actualizar" name="btn-Actualizar-inactivas" ><span class="fa fa-refresh"></span> Actualizar </button>
+                            <label class="btn-Cancelar" id="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</label>
                             <button class="btn-Eliminar" id="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
                         </div>
                 </div>

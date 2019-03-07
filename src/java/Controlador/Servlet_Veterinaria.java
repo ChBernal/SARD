@@ -48,13 +48,11 @@ public class Servlet_Veterinaria extends HttpServlet {
             JOptionPane.showMessageDialog(null, "entra boton");
              Insertar_Veterinaria(request, response);
         }
-        if (request.getParameter("R_Veterinaria")!=null) {
-             Insertar_Veterinaria_Login(request, response);
+       
+        if (request.getParameter("btn-Actualizar-Activas")!=null) {
+             Actualizar_Veterinaria_Activa(request, response);
         }
-        if (request.getParameter("Act_Veterinaria")!=null) {
-             Actualizar_Veterinaria(request, response);
-        }
-        if (request.getParameter("Eli_Veterinaria")!=null) {
+        if (request.getParameter("btn-Eliminar")!=null) {
              Eliminar_Veterinaria(request, response);
         }
     }
@@ -141,39 +139,63 @@ public class Servlet_Veterinaria extends HttpServlet {
         
         response.sendRedirect("Login.jsp");
     }
-     protected void Actualizar_Veterinaria (HttpServletRequest request, HttpServletResponse response)
+     protected void Actualizar_Veterinaria_Activa (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String Nit,Nombre,Representante,Tipo,Fecha,Direccion,Barrio,Telefono,Correo;
-        Nit = request.getParameter("Nit");
-        Nombre = request.getParameter("Nombre");
-        Representante= request.getParameter("Representante");
-        Direccion = request.getParameter("Direccion");
-        Barrio = request.getParameter("Barrio");
-        Telefono = request.getParameter("Telefono");
-        Correo = request.getParameter("Correo");
-        Part Foto = request.getPart("Foto"); 
+        String Nit,Nombre,Representante,Direccion,Barrio,Telefono,Correo, RolNombre, Foto_Actual;
+        int Rol=0, Actualizar;
+        Nit = request.getParameter("Nit-Veterinaria");
+        Nombre = request.getParameter("Nombre-Veterinaria");
+        Representante= request.getParameter("Representante-Veterinaria");
+        Direccion = request.getParameter("Direccion-Veterinaria");
+        Barrio = request.getParameter("Barrio-Veterinaria");
+        Telefono = request.getParameter("Telefono-Veterinaria");
+        Correo = request.getParameter("Email-Veterinaria");
+        Foto_Actual = request.getParameter("Foto-Actual");
+        Part Foto = request.getPart("Foto-Veterinaria"); 
+        
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
-        
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
-        String url2 = "Uploads\\"+Name;
-        
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
+        JOptionPane.showMessageDialog(null, Foto_Actual);
+         if (Nombre_F!="") {
+             
+             String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+            String url2 = "Uploads\\"+Name;
+
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+            GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Direccion, Barrio, Telefono, Correo, url2);
+            Veterinaria_M veterinaria = new Veterinaria_M();
+            Actualizar = veterinaria.Act_Veterinaria_Activas(GSC);
+                 if (Actualizar>0) {
+                     JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                 }
+                 else{
+                     JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                 }
+         }
+         else{
+            String url2 = Foto_Actual;
+            GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Direccion, Barrio, Telefono, Correo, url2);
+            Veterinaria_M veterinaria = new Veterinaria_M();
+            Actualizar = veterinaria.Act_Veterinaria_Activas(GSC);
+                 if (Actualizar>0) {
+                     JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                 }
+                 else{
+                     JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                 }         
         }
-        GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Direccion, Barrio, Telefono, Correo, url2);
-        Veterinaria_M veterinaria = new Veterinaria_M();
-        veterinaria.Act_Veterinaria_Cuatro(GSC);
     
-        response.sendRedirect("Registros_Administrador.jsp");
+        response.sendRedirect("Lista_Veterinaria.jsp");
         
     }
      
