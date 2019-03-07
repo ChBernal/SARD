@@ -1190,6 +1190,138 @@ main article p {
 /* Fin de formulario Eventos */
 
 
+/* Formulario Tips*/
+
+.Wrap-Tips {
+	width: 90%;
+	max-width: 1000px;
+	padding: 40px;
+	margin: auto;
+	background: rgb(255,255,255);
+}
+
+.Posicion-Tips{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Lefth-Tips, .Rigth-Tips {
+    width: 50%;
+}
+
+.Contenedor-Formulario-Tips {
+	width: 100%;
+	color: #fff;
+}
+
+.Contenedor-Formulario-Tips .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips {
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"] {
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"]:focus,
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"]:active{
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips label.label-Tip {
+	position: absolute;
+	top: 13px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips label.label-Tip.active {
+	top: -11px;
+	font-size: 11px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips span{
+	cursor: pointer;
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Tips .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Tips .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin de formulario Tips */
+
+
 /* Formulario Ciudadano */
 
 .Wrap-Ciudadanos,

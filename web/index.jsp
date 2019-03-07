@@ -212,6 +212,8 @@
             </article>
 
             <article id="Tips" class="Tips">
+                <h1>Tips</h1>
+                <hr>
                  <div class="Contenido-Tips">
                     <div class="Contenedor-Formulario-Tips">
                         <div class="Wrap-Tips">
@@ -227,11 +229,11 @@
                                 %>
                                 <div class="CuadroTips">
                                     <div class="Nombre_Tips">
-                                        <h2><%= GST.getNombre() %></h2>
+                                        <h2><%= GST.getTitulo()%></h2>
                                     </div>                                   
                                     <div class="Datos_Tips">
                                         <label></label>
-                                        <label>Tipo: <%= GST.getTip() %></label>
+                                        <label>Tipo: <%= GST.getDescripcion()%></label>
                                     </div>
                                 </div>
                                 <%

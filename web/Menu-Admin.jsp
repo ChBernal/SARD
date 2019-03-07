@@ -55,7 +55,7 @@
             </div>
 
                 <article id="Mascotas" class="Adopcion">
-                    <h1>Adopcion</h1>
+                    <h1>Registro de Mascotas</h1>
                     <hr>
                     <div class="Contenido-Adopcion">
                         <div class="Contenedor-Formulario-Adopcion">
@@ -146,7 +146,7 @@
                 </article>
 
                 <article id="Eventos" class="Eventos">
-                    <h1>Eventos</h1>
+                    <h1> Registro de Eventos</h1>
                     <hr>
                     <div class="Contenedor-Formulario-Eventos">
                         <div class="Wrap-Eventos">
@@ -190,7 +190,34 @@
                 </article>
 
                 <article id="Tips" class="Tips">
-
+                    <h1> Registro de Tips</h1>
+                    <hr>
+                    <div class="Contenedor-Formulario-Tips">
+                        <div class="Wrap-Tips">
+                            <form action="Servlet_Tips" class="Formulario" method="POST" name="Formulario_Tips" enctype="multipart/form-data">
+                                <div class="Posicion-Tips">
+                                    <div class="Lefth-Tips">
+                                        <div class="Input-Group-Tips">
+                                            <input type="text" id="TituloTip" name="Titulo-Tip">
+                                            <label for="TituloTip" class="label-Tip">Titulo del Tip</label>
+                                        </div>
+                                        <div class="Input-Group-Tips">
+                                            <input type="text" id="Descripcion-Tip" name="Descripcion-Tip">
+                                            <label for="Descripcion-Tip" class="label-Tip">Descripcion del Tip</label>
+                                        </div>
+                                    </div>
+                                    <div class="Rigth-Tips">
+                                        <div class="Input-Group-Tips">
+                                            <div id="Vista_Previa"> <img src=""></div>
+                                            <input type="file" id="Imagen-Tip" name="Imagen-Tip">
+                                            <label class="label-Tip" for= "Imagen"><span class="fa fa-camera Img-Tips"></span>Imagen</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" name="Registro-Tip" value="Registrar">
+                            </form>
+                        </div>
+                    </div>
                 </article>
 
                 <article id="Usuarios" class="Usuarios">

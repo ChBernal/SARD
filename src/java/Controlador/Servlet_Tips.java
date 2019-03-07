@@ -1,25 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
+import Modelo.GS_Tips;
+import Modelo.Tips_M;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Usuario
- */
-@WebServlet(name = "Servlet_Ciudadano", urlPatterns = {"/Servlet_Ciudadano"})
-public class Servlet_Ciudadano extends HttpServlet {
+@MultipartConfig
+@WebServlet(name = "Servlet_Tips", urlPatterns = {"/Servlet_Tips"})
+public class Servlet_Tips extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,8 +34,42 @@ public class Servlet_Ciudadano extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        JOptionPane.showMessageDialog(null, "enta a servlet");
+        if (request.getParameter("Registro-Tip")!=null) {
+            Insertar_Tips(request, response);
+            JOptionPane.showMessageDialog(null, "enta a btn");
+        }
+    }
+    
+     protected void Insertar_Tips (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        JOptionPane.showMessageDialog(null, "enta a funcion");
+        String Titulo, Descripcion;
+        Titulo = request.getParameter("Titulo-Tip");
+        Descripcion = request.getParameter("Descripcion-Tip");
+        Part Foto = request.getPart("Imagen-Tip");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Titulo+"_"+Nombre_F;
         
-        JOptionPane.showMessageDialog(null,"Esta en el servlet");
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+         GS_Tips  GST= new GS_Tips(Titulo, url2, Descripcion);
+         Tips_M M_Tips = new Tips_M();
+         M_Tips.In_Tips(GST);
+         
+         response.sendRedirect("Menu-Admin.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

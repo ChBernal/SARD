@@ -449,6 +449,86 @@ $(document).ready(function(){
 
 //Finalizacion de Eventos
 
+// Previsualizacion Img Tips 
+$(".Foto").click(function (){
+        var Index = $("Imagen-Tip").index(this);
+        
+        document.getElementById("Imagen-Tip").onchange = function(e){
+            let Nombre = new FileReader();
+            Nombre.readAsDataURL(e.target.files[0]);
+            Nombre.onload = function(){
+                    let Vista_Previa = document.getElementById('Vista_Previa'),
+                    image = document.createElement('img');
+
+                    image.src =Nombre.result;
+                    Vista_Previa.innerHTML ='';
+                    Vista_Previa.append(image);
+            };
+        };
+    });
+
+//Todo formulario Tips
+
+(function(){
+	var formulario = document.Formulario_Tips,
+		elementos = formulario.elements;
+
+	//Funciones
+
+	var ValidarInputs = function(){
+		for (var i = 0; i < elementos.length; i++) {
+			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" || elementos[i].type == "date" ) {
+				if (elementos[i].value == 0) {
+					console.log('El Campo ' + elementos[i].name + ' esta incompleto');
+					elementos[i].className = elementos[i].className + " error";
+					return false;
+				} else {
+					elementos[i].className = elementos[i].className.replace(" error", "");
+				}
+			}
+		}
+
+		return true;
+	};
+
+	var enviar = function(e){
+		if (!ValidarInputs()) {
+			console.log('Falto validar los Input');
+			e.preventDefault();
+		}else {
+			console.log('Envia correctamente');
+			//e.preventDefault();
+		}
+	};
+
+	//Funciones blur y focus
+
+	var focusInputs = function(){
+		this.parentElement.children[1].className = "label-Tip active";
+		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
+	};
+
+	var blurInputs = function(){
+		if (this.value <= 0) {
+			this.parentElement.children[1].className = "label-Tip";
+			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
+		}
+	};
+
+	//Tips
+	formulario.addEventListener("submit", enviar);
+
+	for (var i = 0; i < elementos.length; i++) {
+		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" || elementos[i].type == "date") {
+			elementos[i].addEventListener("focus", focusInputs);
+			elementos[i].addEventListener("blur", blurInputs);
+		}
+	}
+
+}());
+
+//Finalizacion de Tips
+
 //Todo formulario Ciudadano
 
 (function(){
