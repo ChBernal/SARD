@@ -214,7 +214,7 @@
                                         <div class="Input-Group-Tips">
                                             <div id="Vista_Previa"> <img src=""></div>
                                             <input type="file" id="Imagen-Tip" name="Imagen-Tip">
-                                            <label class="label-Tip" for= "Imagen"><span class="fa fa-camera Img-Tips"></span>Imagen</label>
+                                            <label class="label-Tip" for= "Imagen-Tip"><span class="fa fa-camera Img-Tips"></span>Imagen</label>
                                         </div>
                                     </div>
                                 </div>
