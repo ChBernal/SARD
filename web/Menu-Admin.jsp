@@ -44,11 +44,11 @@
     <div class="Espacio-Perfil">
         <div class="PerfilUsuario" id="PerfilUsuario">
             <div class="Enlaces-Perfil">
-                <a href="#"><i class="fa fa-user-o"></i>Perfil</a>
-                <a href="#">Notificaciones</a>
+                <a href="Perfil_Asministrador.jsp"><i class="fa fa-user-o"></i>Perfil</a>
+                <a href="Notificaciones-Admin.jsp">Notificaciones</a>
                 <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
                 <hr>
-                <button name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</button>
+                <a href="index.jsp" name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</a>
             </div>
         </div>	
     </div>
