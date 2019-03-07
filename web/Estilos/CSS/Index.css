@@ -723,7 +723,43 @@ main article p {
 /* Finaliza Eventos */
 
 /* Empieza Tips */
-
+.Wrap-Tips .Posicion-Tips{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+.CuadroTips{
+    width: 390px;
+    height: 500px;
+    border: 1px solid black;
+    background: rgb(255,255,255);
+    text-align: center;
+    box-shadow: rgb(0,0,0,0.3) 10px 10px 10px 0px;
+    margin: 5px 5px;
+}
+.CuadroTips .Nombre_Tips{
+    padding: 3%;
+    color: rgb(39,174,96);
+    font-weight: bold;
+}
+.CuadroTips img{
+    width: 350px;
+    height: 200px;
+}
+.CuadroTips textarea{
+    background: transparent;
+    border: transparent;
+    margin: 10px;
+    width: 340px;
+    max-width: 340px;
+    min-width: 340px;
+    height: 200px;
+    max-height: 200px;
+    min-height: 200px;
+    color: rgb(39,174,96);
+}
 /* Finaliza Tips */
 
 /*  Formulario Contactenos */

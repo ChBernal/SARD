@@ -230,10 +230,13 @@
                                 <div class="CuadroTips">
                                     <div class="Nombre_Tips">
                                         <h2><%= GST.getTitulo()%></h2>
-                                    </div>                                   
+                                    </div>
+                                    <div class="Imagen_Tips">
+                                        <img src="Estilos/Imagenes/Fondo.jpg">
+                                    </div>
                                     <div class="Datos_Tips">
                                         <label></label>
-                                        <label>Tipo: <%= GST.getDescripcion()%></label>
+                                        <textarea> <%= GST.getDescripcion()%></textarea>
                                     </div>
                                 </div>
                                 <%
