@@ -723,6 +723,11 @@ main article p {
 /* Finaliza Eventos */
 
 /* Empieza Tips */
+
+.Contenido-Tips{
+    height: 510px;
+    overflow: auto;
+}
 .Wrap-Tips .Posicion-Tips{
     width: 95%;
     display: flex;

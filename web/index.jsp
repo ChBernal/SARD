@@ -197,7 +197,7 @@
                                 <div class="CuadroEventos">
                                     <div>
                                         <label><%= GSE.getNombre() %></label>
-                                        <img src="Uploads/Denuncia.jpg">
+                                        <img src="<%= GSE.getImagen()%>">
                                     </div>
                                 </div>
                                 <%
@@ -232,7 +232,7 @@
                                         <h2><%= GST.getTitulo()%></h2>
                                     </div>
                                     <div class="Imagen_Tips">
-                                        <img src="Estilos/Imagenes/Fondo.jpg">
+                                        <img src="<%= GST.getImagen()%>">
                                     </div>
                                     <div class="Datos_Tips">
                                         <label></label>

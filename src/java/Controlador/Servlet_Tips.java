@@ -49,7 +49,7 @@ public class Servlet_Tips extends HttpServlet {
         Part Foto = request.getPart("Imagen-Tip");
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Titulo+"_"+Nombre_F;
-        
+        JOptionPane.showMessageDialog(null, Nombre_F);
         String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
