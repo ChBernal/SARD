@@ -54,13 +54,24 @@
             </div>
         </nav>
     </header>
-    <div class="Contenedor-Perfil">
-        <div class="Datos-Usuario">
-            <a href="Perfil_Ciudadano.jsp"><span class="fa fa-user"></span>Perfil</a>
-            <a href="Mascotas_Ciudadano.jsp"><span class="fa fa-paw"></span>Mascotas</a>
-            <a href="index.jsp"><span class="fa fa-times-circle-o"></span>Cerrar Session</a>
-        </div>
-    </div>                    
+                
+    <!-- Espacio Del Perfil -->
+
+    <div class="Espacio-Perfil">
+        <div class="PerfilUsuario" id="PerfilUsuario">
+            <div class="Enlaces-Perfil">
+                <a href="../Vista/Perfil-Ciudadano.php"><i class="fa fa-user-o"></i>Perfil</a>
+                <a href=""><i class="Notifi">2</i>Notificaciones</a>
+                <a href=""><i class="fa fa-paw"></i>Mis Mascotas</a>
+                <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
+                <hr>
+                <a><i class='fa fa-sign-out'></i> Cerrar Sesion</a>
+            </div>
+        </div>	
+    </div>	
+
+    <!-- Fianliza Espacio Del Perfil -->       
+                
     <div class="Contenedor">
         <main>
             <div id="Inicio" class="Inicio">
