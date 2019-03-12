@@ -65,26 +65,7 @@ header {
         background: white;
         margin: auto;
 }
-.Contenedor-Perfil .Datos-Usuario{
-        width: 200px;
-        background: rgb(39,174,96);
-	position: fixed;
-	right: 11.9em;
-        
-        -webkit-box-shadow: 0px 4px 11px -1px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 4px 11px -1px rgba(0,0,0,0.75);
-        box-shadow: 0px 4px 11px -1px rgba(0,0,0,0.75);
-}
-.Contenedor-Perfil .Datos-Usuario a:hover{
-    background: rgb(39,230,130);
-}
-.Contenedor-Perfil .Datos-Usuario a{
-	padding: 15px;
-	display: block;
-	text-decoration: none;
-	color: rgb(255,255,255);
-	text-align: center;
-}
+
 .Menu .Usuario .Abrir:hover {
 	background: rgb(254,249,231); 
 	color: rgb(39,174,96);
@@ -126,7 +107,7 @@ header {
 }
 
 .headroom--unpinned {
-	transform:  translateY(-100%);
+	transform:  translateY(-120%);
 }
 
 .headroom--bottom {
@@ -135,7 +116,95 @@ header {
 
 /* Finalizamos los efectos del menu */
 
+/* Comienzo de Perfil Usuario */
+
+.Espacio-Perfil {
+	position: fixed;
+	margin: -5px auto; 
+	width: 100%;
+	background: none;
+	text-align: right;
+}
+
+.Espacio-Perfil .Fondo{
+	width: 100%;
+	background: rgba(0,0,0,0.6);
+	height: 100vh;
+	position: absolute;
+	top: -50px;
+	z-index: 2;
+}
+
+.PerfilUsuario {
+	float: right;
+	width: 201px;
+	height: 270px;
+	background: rgb(39,174,96);
+	color: rgb(255,255,255);
+	text-align: right;
+	font-size: 1em;
+	font-family: "Nunito";
+	cursor: pointer;
+	margin-right: 15px;
+}
+
+.PerfilUsuario .Enlaces-Perfil {
+	display: flex;
+	flex-direction: column;
+}
+
+.PerfilUsuario .Enlaces-Perfil a{
+	background: none;
+	border: none;
+	padding: 1em;
+	flex-direction: column;
+	text-decoration: none;
+	display: inline-block;
+	color: rgb(255,255,255);
+	font-size: 1em;
+}
+
+.PerfilUsuario .Enlaces-Perfil button{
+	background: none;
+	cursor: pointer;
+	border: none;
+	padding: 1em;
+	text-decoration: none;
+	display: inline-block;
+	color: rgb(255,255,255);
+	font-size: 1em;
+}
+
+.PerfilUsuario .Enlaces-Perfil i{
+	margin-right: 5px;
+}
+
+.PerfilUsuario .Enlaces-Perfil .Notifi{
+	font-size: 1em;
+	padding-left: 5px;
+	padding-right: 7px;
+	height: 30px;
+	color: rgb(39,174,96);
+	background: rgb(254,249,231);
+	border-radius: 50%;
+}
+
+.PerfilUsuario .Enlaces-Perfil a:Hover{
+	background: rgb(254,249,231);
+	flex-direction: column;
+	color: rgb(39,174,96);
+}
+
+.PerfilUsuario .Enlaces-Perfil .Notifi:Hover{
+	background: rgb(39,174,96);
+	flex-direction: column;
+	color: rgb(254,249,231);
+}
+
+/*Finaliza PErfil Usuario */
+
 /* Aca termina todo del menu */
+
 /* todo lo de ventana modal */
 
 .flex {
