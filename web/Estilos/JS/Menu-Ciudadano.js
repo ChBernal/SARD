@@ -13,7 +13,65 @@ $(document).ready(function(){
 
 //finalizacion efecto parallax
 
-// Todas la opnciones del formulario de login
+//Todas las opciones del menu
+
+$(function(){
+	var header = document.getElementById('header');
+	var headroom = new Headroom(header);
+	headroom.init();
+
+	var ancho = $(window).width(),
+		enlaces = $('.Enlaces'),
+		btnMenu = $('.btn-menu'),
+		icono = $('.btn-menu .icono');
+		perfil = $('.Perfil');
+		Espacio = $('.Espacio-Perfil');
+
+		Espacio.hide();
+
+	if (ancho < 990) {
+		enlaces.hide();
+		icono.addClass('fa-bars');
+		
+	}
+
+	btnMenu.on('click', function(e){
+		enlaces.slideToggle();
+		icono.toggleClass('fa-bars');
+		icono.toggleClass('fa-times');
+	});
+
+	perfil.on('click',function(e){
+		Espacio.slideToggle();
+	});
+
+	$(window).on('resize', function(){
+		if($(this).width() > 990){
+			enlaces.show();
+			icono.addClass('fa-times');
+			icono.removeClass('fa-bars');
+		}else {
+			enlaces.hide();
+			icono.addClass('fa-bars');
+			icono.removeClass('fa-times');
+		}
+	});
+
+});
+
+//Finalizacion de menu
+
+//Inicio de Opciones Perfil
+
+$(function(){
+	var Opci = document.getElementById('PerfilUsuario');
+	var headroom = new Headroom(Opci);
+	headroom.init();
+});
+
+//Finaliza Opciones Perfil
+
+// Todas la opciones del formulario de login
 
 (function(){
 	var formulario = document.Formulario_Login,
@@ -73,48 +131,6 @@ $(document).ready(function(){
 });
 
 //Finalizacion de formulario login
-
-//Todas las opciones del menu
-
-$(function(){
-	var header = document.getElementById('header');
-	var headroom = new Headroom(header);
-	headroom.init();
-
-	var ancho = $(window).width(),
-		enlaces = $('.Enlaces'),
-		btnMenu = $('.btn-menu'),
-		icono = $('.btn-menu .icono');
-
-	if (ancho < 990) {
-		enlaces.hide();
-		icono.addClass('fa-bars');
-	}
-
-	btnMenu.on('click', function(e){
-		enlaces.slideToggle();
-		icono.toggleClass('fa-bars');
-		icono.toggleClass('fa-times');
-	});
-
-	$(window).on('resize', function(){
-		if($(this).width() > 990){
-			enlaces.show();
-			icono.addClass('fa-times');
-			icono.removeClass('fa-bars');
-		}else {
-			enlaces.hide();
-			icono.addClass('fa-bars');
-			icono.removeClass('fa-times');
-		}
-	});
-
-});
-$(".Contenedor-Perfil .Datos-Usuario").hide();
-$(".Usuario").click(function (){
-        $(".Contenedor-Perfil .Datos-Usuario").animate({width:'toggle',opacity:'toggle'});
-});
-//Finalizacion de menu
 
 //Todas las opciones del contenido modal
 

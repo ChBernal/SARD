@@ -27,15 +27,15 @@ header {
 	width: 100%;
 	min-width: 350px;
 	top: 0;
+	z-index: 2;
 }
+
 .Menu {
-	width: 90%;
-	max-width: 1000px;
+	width: 100%;
 	margin: auto;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
 }
 
 .Menu .Usuario {
@@ -51,22 +51,31 @@ header {
 	font-size: 1em;
 }
 
-.Menu .Usuario .Abrir {
+.Menu .Usuario .Perfil {
 	color: rgb(255,255,255);
-	text-decoration: none;
-	display: inline-block;
-	padding: 1em;
+	display: flex;
+	justify-content: space-around;
+	width: 200px;
 	text-align: center;
 	font-size: 1em;
-}
-.Contenedor-Perfil{
-        width: 90%;
-	max-width: 1000px;
-        background: white;
-        margin: auto;
+	cursor: pointer;
 }
 
-.Menu .Usuario .Abrir:hover {
+.Menu .Usuario .Perfil .Abrir {
+	text-align: center;
+	font-size: 1em;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.Menu .Usuario .Perfil img {
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.Menu .Usuario .Perfil:hover {
 	background: rgb(254,249,231); 
 	color: rgb(39,174,96);
 }
@@ -115,6 +124,84 @@ header {
 }
 
 /* Finalizamos los efectos del menu */
+
+/* Aca termina todo del menu */
+
+/* todo lo de ventana modal */
+
+.flex {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Modal {
+	position: fixed;
+	z-index: 1;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+}
+
+.Contenido-Modal{
+	background: rgb(255,255,255);
+	position: relative;
+	margin: auto;
+	width: 100%;
+	max-width: 1000px;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
+	animation-name: modal;
+	animation-duration: 1s;
+}
+
+/*  Creacion de animacion */
+
+@keyframes modal{
+	from{
+		top: -100%; 
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* Terminamos de crear la animacion */
+
+.close {
+	color: rgb(255,255,255);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.close:hover {
+	color: rgb(117,117,117);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.Header-Modal, .Footer-Modal {
+	padding: 8px 16px;
+	background: rgb(39,174,96);
+	color: rgb(255,255,255);
+}
+
+.Footer-Modal a{
+	cursor: pointer;
+}
+
+.Body-Modal {
+	text-align: justify;
+	padding: 20px 16px;
+}
+
+/* Terminamos todo lo relacionado con la ventana modal */
 
 /* Comienzo de Perfil Usuario */
 
@@ -202,84 +289,6 @@ header {
 }
 
 /*Finaliza PErfil Usuario */
-
-/* Aca termina todo del menu */
-
-/* todo lo de ventana modal */
-
-.flex {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.Modal {
-	position: fixed;
-	z-index: 1;
-	overflow: auto;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,0.6);
-}
-
-.Contenido-Modal{
-	background: rgb(255,255,255);
-	position: relative;
-	margin: auto;
-	width: 100%;
-	max-width: 1000px;
-	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
-	animation-name: modal;
-	animation-duration: 1s;
-}
-
-/*  Creacion de animacion */
-
-@keyframes modal{
-	from{
-		top: -100%; 
-		opacity: 0;
-	}
-	to {
-		top: 0;
-		opacity: 1;
-	}
-}
-
-/* Terminamos de crear la animacion */
-
-.close {
-	color: rgb(255,255,255);
-	font-size: 30px;
-	font-weight: bold;
-}
-
-.close:hover {
-	color: rgb(117,117,117);
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.Header-Modal, .Footer-Modal {
-	padding: 8px 16px;
-	background: rgb(39,174,96);
-	color: rgb(255,255,255);
-}
-
-.Footer-Modal a{
-	cursor: pointer;
-}
-
-.Body-Modal {
-	text-align: justify;
-	padding: 20px 16px;
-}
-
-/* Terminamos todo lo relacionado con la ventana modal */
 
 /* Aca va lo relacionado con articulos y contenido dentro del body */
 
