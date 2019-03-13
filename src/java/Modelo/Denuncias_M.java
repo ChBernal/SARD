@@ -69,7 +69,7 @@ public class Denuncias_M {
         ArrayList<GS_Denuncias> Tabla=new ArrayList<>();
         
         try {
-            PreSta= BaseDatos.prepareStatement("call Todo_Denuncias ()");
+            PreSta= BaseDatos.prepareStatement("call Inicial_Denuncias()");
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   

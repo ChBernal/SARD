@@ -88,7 +88,6 @@ public class ServletDenuncias extends HttpServlet {
         String Direccion,Descripcion,Correo;
         
         Direccion= request.getParameter("Direccion");
-        JOptionPane.showMessageDialog(null, Direccion);
         Descripcion= request.getParameter("Descripcion");
         Part Evidencia= request.getPart("Evidencia");
         Correo= request.getParameter("Email");
@@ -113,8 +112,16 @@ public class ServletDenuncias extends HttpServlet {
         GS_Denuncias GSD = new GS_Denuncias(Direccion, Descripcion, url2, Correo);
         Denuncias_M  DM = new Denuncias_M();
         DM.InsertarDenuncias(GSD);
-        request.getRequestDispatcher("index.jsp").forward(request, response);    
+        System.out.print("<script>\n" +
+"            window.onload= function() {\n" +
+"               alert('Usuario Registrado Correctamente')" +
+"            };\n" +
+"         </script>");
+        
+        request.getRequestDispatcher("index.jsp").forward(request, response); 
+        
     }
+    
     protected void Ingreso_Denuncias2(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

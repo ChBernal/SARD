@@ -67,30 +67,33 @@ $(function(){
 	$(".Datos_DCliente").hide();
         
 	$(".PostulacionesCiudadano").click(function(){
-		$(".Postulados").slideToggle();
-		$(".NombreDN").hide();
-		$(".NombreDC").hide();
-		$(".DatosDenunciaA").hide();
-		$(".DatosDenunciaC").hide();
-		$(".DatosPostulados").hide();
+            $(".")
+            $(".Postulados").slideToggle();
+            $(".NombreDN").hide();
+            $(".NombreDC").hide();
+            $(".DatosDenunciaA").hide();
+            $(".DatosDenunciaC").hide();
+            $(".DatosPostulados").hide();
 	});
 
 	$(".DenunciasNN").click(function(){
-		$(".NombreDN").slideToggle();
-		$(".Postulados").hide();
-		$(".NombreDC").hide();
-		$(".DatosDenunciaA").hide();
-		$(".DatosDenunciaC").hide();
-		$(".DatosPostulados").hide();
+            $(".Anonimas").css("display","initial");
+            $(".NombreDN").fadeToggle(1000);
+            $(".Postulados").hide();
+            $(".NombreDC").hide();
+            $(".DatosDenunciaA").hide();
+            $(".DatosDenunciaC").hide();
+            $(".DatosPostulados").hide();
 	});
 
 	$(".DenunciasCiudadano").click(function(){
-		$(".NombreDC").slideToggle();
-		$(".Postulados").hide();
-		$(".NombreDN").hide();
-		$(".DatosDenunciaA").hide();
-		$(".DatosDenunciaC").hide();
-		$(".DatosPostulados").hide();
+            $(".Ciudadano").css("display","initial");
+            $(".NombreDC").fadeToggle(1000);
+            $(".Postulados").hide();
+            $(".NombreDN").hide();
+            $(".DatosDenunciaA").hide();
+            $(".DatosDenunciaC").hide();
+            $(".DatosPostulados").hide();
 	});
 
 	$(".Prueba-Anonima").click(function(){
@@ -102,7 +105,21 @@ $(function(){
 	})
         
         $(".cerrar_anonima").click(function(){
-            $(".ModalAnonima").hide();
+            $(".ModalAnonima").css("display","none");
+        });
+        
+        //Ver ciudadano
+        
+        $(".Prueba-Cliente").click(function(){
+		var Pos = $(".NombreDC").index(this);
+		var asig = $(".ModalCiudadano").eq(Pos);
+                asig.css("display","flex");
+		$(".DatosDenunciaC").hide();
+		$(".DatosPostulados").hide();
+	})
+        
+        $(".cerrar_Ciudadano").click(function(){
+            $(".ModalCiudadano").css("display","none");
         });
 
 });

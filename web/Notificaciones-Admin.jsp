@@ -84,6 +84,9 @@
     </div>
 
     <main>
+        
+        <!-- Botones de Notificaciones -->
+        
         <article class="Notificaciones">
             <div class="DenunciasNN">
                 <div>Denuncias Anonimas </div>
@@ -99,9 +102,14 @@
             </div>
         </article>
         
+        <!-- Finaliza botones de notificaciones -->
         
+        <!-- Ver postulaciones y denuncias -->
 
         <article class="DatosTodas">
+            
+            <!-- Datos de denuncias anonimas -->
+            
             <div class="Anonimas">
                 <%
                     ArrayList<GS_Denuncias> Dato_Anonima = new ArrayList<>();
@@ -112,15 +120,15 @@
                     for(int i=0; i<Dato_Anonima.size(); i++){
                         Dat_Anonima = Dato_Anonima.get(i);
                 %>
+                
+                <!-- Info Denuncia anonima -->
+                
                 <div class="NombreDN">
                     <div class="Fecha">
                         <label><%=Dat_Anonima.getFecha()%></label>
                     </div>
                     <div class="Direccion">
                         <label><%=Dat_Anonima.getDireccion()%></label>
-                    </div>
-                    <div class="Evidencia">
-                        <img src="<%=Dat_Anonima.getEvidencia()%>">
                     </div>
                     <div class="Correo">
                         <label><%=Dat_Anonima.getCorreo()%></label>
@@ -129,6 +137,11 @@
                         <label class=" fa fa-eye Prueba-Anonima"></label>
                     </div>
                 </div>
+                    
+                <!-- Finaliza Info Anonima -->
+                    
+                <!-- Ventanda modal con datos de denuncia -->
+                    
                 <div class="ModalAnonima">
                     <div class="Datos_DAnonima2">
                         <div class="HeaderAnonima">
@@ -166,8 +179,14 @@
                     </div>
                 </div>
                   <%}%>
+                  
+                <!-- Finaliza Modal Anonima -->
+                
             </div>
             
+            <!-- Finaliza Denuncia Anonima -->
+            
+            <!-- Incio Denuncia Ciudadano -->
 
             <div class="Ciudadano">
                 <%
@@ -179,6 +198,9 @@
                     for(int i=0; i<Dato_Cliente.size(); i++){
                         Dat_Cliente = Dato_Cliente.get(i);
                 %>
+                
+                <!-- Datos de Denuncia Ciudadano -->
+                
                 <div class="NombreDC">
                     <div class="Fecha">
                         <label><%=Dat_Cliente.getFecha()%></label>
@@ -186,54 +208,69 @@
                     <div class="Direccion">
                         <label><%=Dat_Cliente.getDireccion()%></label>
                     </div>
-                    <div class="Evidencia">
-                        <img src="<%=Dat_Cliente.getEvidencia()%>">
+                    <div class="Documento">
+                        <label><%=Dat_Cliente.getDocumento()%></label>
                     </div>
                     <div class="icono-observar">
                             <label class=" fa fa-eye Prueba-Cliente"></label>
                     </div>
                 </div>
-                <div class="Datos_DCliente">
-                    <div class="Datos_DCliente2">
-                        <label class="fa fa-close cerrar_Cliente"></label>
-                        <h1>Respuesta</h1>
-                        <input type="hidden" class="Codigo_D" value="<%=Dat_Cliente.getCodigo()%>">
-                        <img class="img-Denuncia_C1" src="<%=Dat_Cliente.getEvidencia()%>">
-                            <div class="Datos">
+                    
+                <!-- Finaliza Datos Denuncia Ciudadano -->
+                
+                <!-- Ventanda modal con datos de denuncia Ciudadano -->
+                    
+                <div class="ModalCiudadano">
+                    <div class="Datos_DCiudadano">
+                        <div class="HeaderCiudadano">
+                            <h1>Respuesta</h1>
+                            <label class="fa fa-close cerrar_Ciudadano"></label>
+                        </div>
+                        <div class="BodyCiudadano">
+                            <div class="Img-Ciudadano">
+                                <input type="hidden" class="Codigo_DC" value="<%=Dat_Cliente.getCodigo()%>">
+                                <img class="img-Denuncia_C" src="<%=Dat_Cliente.getEvidencia()%>">
+                            </div>
+                            <div class="DatosDC">
                                 <label class="dat">Fecha:</label>
                                 <label><%=Dat_Cliente.getFecha()%></label>
                                 <label class="dat">Dirección:</label>
                                 <label><%=Dat_Cliente.getDireccion()%></label>
                             </div>  
+                        </div>
+                        <div class="Footer-BodyCiudadano">
                             <div class="Descrip">
                                 <b><label class=""> Descripcion:</label></b>
                                 <label><%=Dat_Cliente.getDescripcion()%></label>
                             </div>
                             <div class="respuestas">
-                                <label><input type="radio" class="btn-Responder" name="Respuesta" value="Respuesta" />
+                                <label><input type="radio" class="btn-ResponderCiudadano" name="Respuesta" value="Respuesta" />
                                 Responder</label>
-                                <label><input type="radio" class="btn-Predeterminada" name="Predeterminada" value="Respuesta" />
+                                <label><input type="radio" class="btn-PredeterminadaC" name="Predeterminada" value="Respuesta" />
                                 Predeterminada</label>
                             </div>
-                            <textarea class="Respuesta_Cliente" name="Respuesta" ></textarea>
-                            <input class="Enviar_Respuesta_Cliente" type="submit" name="Res_Anonima" value="Enviar">
-                    </div>
-                    <div class="img-Denuncia_C2">
-                        <label class="fa fa-close Cerrar_img_Cliente"></label>
-                        <img   src="<%=Dat_Cliente.getEvidencia()%>">
+                            <textarea class="Respuesta" name="Respuesta" ></textarea>
+                        </div>
+                        <input class="Enviar_Respuesta_Ciudadano" type="submit" name="Res_Ciudadano" value="Enviar">
                     </div>
                 </div>
-                <%}%>
-                
-                
+                  <%}%>
+                <!-- Finaliza Modal Ciudadano -->
                 
             </div>
-                <div class="Postul">
-                    <div class="Postulados">
-                    </div>
-                    <div class="DatosPostulados">
-                    </div>
+                
+            <!-- Finaliza Denuncia Ciudadano -->
+                
+                
+            <div class="Postul">
+                <div class="Postulados">
                 </div>
+                <div class="DatosPostulados">
+                </div>
+            </div>
+            
+            
+            
         </article>
     </main>
 			

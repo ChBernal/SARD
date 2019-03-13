@@ -110,6 +110,7 @@
                             </form>
                         </div>	
                     </div>
+                    
                     <div class="Informacion">
                         <div class="Tipo-Maltrato">
                             <h2>5Libertades</h2>
@@ -137,6 +138,8 @@
                     </div>
                 </div>
             </article>
+            
+            
             <article id="Adopcion" class="Adopcion">
                 <h1>Adopcion</h1>
                 <hr>
@@ -197,7 +200,7 @@
                                 <div class="CuadroEventos">
                                     <div>
                                         <label><%= GSE.getNombre() %></label>
-                                        <img src="<%= GSE.getImagen()%>">
+                                        <img src="Uploads/Adopcion.jpg">
                                     </div>
                                 </div>
                                 <%
