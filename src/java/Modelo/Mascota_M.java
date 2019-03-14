@@ -20,9 +20,7 @@ public class Mascota_M {
             ps.setInt(1, GSM.getDocumento());
             rs= ps.executeQuery();
             int zz=GSM.getDocumento();
-              JOptionPane.showMessageDialog(null, "Documento "+zz);
             while (rs.next()) {  
-                JOptionPane.showMessageDialog(null, "Entra While");
                 GS_Mascota ing=new GS_Mascota(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
                 Tabla.add(ing);
             }

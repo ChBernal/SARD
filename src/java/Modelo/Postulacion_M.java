@@ -40,9 +40,24 @@ public class Postulacion_M {
             PreSta.setString(20, GSD.getR20());
             PreSta.setString(21, GSD.getDocu());
             PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Sus datos fueron ingresados");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error en la denuncia"+e);
         }
+    }
+    public int InsertarPostulacionFinal (GS_Postulacion GSD){
+        int x=0;
+        try {
+            PreSta= BaseDatos.prepareStatement("Call In_Postulacion(?,?,?,?,?)");
+            PreSta.setString(1, GSD.getDocumentoC());
+            PreSta.setInt(2, GSD.getCodigoMascota());
+            PreSta.setString(3, GSD.getCedula());
+            PreSta.setString(4, GSD.getRecibo());
+            PreSta.setInt(5, GSD.getEstado());
+            PreSta.executeUpdate();
+            x=1;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error en la denuncia"+e);
+        }
+        return x;
     }
 }

@@ -12,7 +12,8 @@
 <!DOCTYPE html>
 <%
     HttpSession Dat = request.getSession();
-    int Doc=(Integer)Dat.getAttribute("Codigo_M");
+    String Doc=(String)Dat.getAttribute("DocumentoSession");
+    int Cod=(Integer)Dat.getAttribute("Codigo_M");
 %>
 <html lang="en">
     <head>
@@ -29,12 +30,12 @@
         <div class="Barra">
             <a href="Menu-Ciudadano.jsp"><span class="fa fa-home"></span></a>
         </div>
-        <div class="Contenedor-Postulacion">
-            <div class="Contenido-Postulacion">
+        <div class="Container-Postulacion">
+            <div class="Datos">
                 <div class="Titulo"> <h1>Postulacion</h1> </div>
                 <div class="Mascota">
                 <%
-                    GS_Mascota inggs = new GS_Mascota(Doc);
+                    GS_Mascota inggs = new GS_Mascota(Cod);
                     ArrayList<GS_Mascota> datos = new ArrayList<>();
                     Mascota_M con = new Mascota_M();
                     datos = con.Uno_Mascota(inggs);
@@ -57,15 +58,15 @@
                 </div>
                 
                 <div class="Datos-Ciudadano">
-                <form action="Postulacion" method="POST" enctype="multipart/form-data">
+                <form action="Servlet_Postulacion" method="POST" enctype="multipart/form-data">
                     <label>Adjuntar copia de la cedula</label>
                     <input type="file" name="Cedula" required accept="application/pdf">
                     <label>Adjuntar copia de un recibo publico</label>
                     <input type="file" name="Recibo" required accept="application/pdf">
                     <div class="Boton">
-                        <input type="hidden" name="Codi" value="<?= $Codigo?>">
-                        <input type="hidden" name="Docu" value="<?= $Documento?>">
-                        <input type="submit" name="btn-Postulacion" value="Postularme">
+                        <input type="hidden" name="Codi" value="<%= Cod%>">
+                        <input type="hidden" name="Docu" value="<%= Doc%>">
+                        <input type="submit" name="btn-Fin-Postulacion" value="Postularme">
                     </div>
                 </form>
                 </div>

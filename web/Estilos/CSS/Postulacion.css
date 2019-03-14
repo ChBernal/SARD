@@ -35,5 +35,98 @@ body {
     color: white;
 }
 .Barra .fa-home:hover{
-    color: red;
+    color: rgba( 255, 255, 255, 0.2);
+}
+.Container-Postulacion{
+    width: 100%;
+    height: auto;
+    padding-top: 70px;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.Datos{
+	width: 400px;
+	height: auto;
+	background: rgb( 255, 255, 255);
+	border: 1px solid rgb(39,174,96);
+        box-shadow: 0 0 6px 0 rgba(0,0,0,5);
+}
+.Datos .Titulo{
+        margin: 15px 0;
+	width: 100%;
+	font-family: 'Nunito', cursive;
+	font-size: 20px;
+	color: rgb(39,174,96);
+}
+.Datos .Mascota{
+	width: 100%;
+	height: auto;
+	padding: 3px 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.Datos .Mascota .ImagenM{
+	float: left;
+	padding-right: 10px;
+}
+.Datos .Mascota .ImagenM img{
+	width: 170px;
+	height: 170px;
+        border: 1px solid rgb(39,174,96);
+	border-radius: 50%;
+}
+.Datos .Mascota .DatosM{
+	float: right;
+	color: rgb(39,174,96);
+	font-family: 'Nunito', cursive;
+	font-size: 18px;
+	text-align: left;
+}
+.Datos .Mascota .DatosM label{
+	display: block;
+}
+.Datos .Datos-Ciudadano{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	justify-content: center;
+	font-family: 'Nunito', cursive;
+	font-size: 15px;
+	color: rgb(39,174,96);
+}
+.Datos .Datos-Ciudadano input{
+	background: rgb(39,174,96);
+	border-radius: 6px;
+	color: rgb( 255, 255, 255);
+	cursor: pointer;
+}
+.Datos .Datos-Ciudadano label{
+	display: block;
+	margin-top: 10px;
+}
+.Datos .Datos-Ciudadano .Boton{
+	width: 100%;
+}
+.Datos .Datos-Ciudadano .Boton input{
+        margin: 20px 0;
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+}
+.Datos .Datos-Ciudadano .Boton input:hover{
+	background: rgb(35,200,104);
 }
