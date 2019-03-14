@@ -33,7 +33,7 @@ body {
 }
 header {
         height: 55px;
-	background: rgb(39,174,96);
+	background: rgb(0,166,81);
 	position: fixed;
 	width: 100%;
 	min-width: 350px;
@@ -54,7 +54,7 @@ header {
 }
 
 main .Lista_Administrador{    
-    color: rgb(39,174,96);
+    color: rgb(0,166,81);
 }
 main .Cabezera{
 	width: 100%;
@@ -134,7 +134,7 @@ main .Cabezera h1{
     display: block; 
     background: transparent;
     border: transparent;
-    color: rgb(39,174,96);
+    color: rgb(0,166,81);
     margin-top: 4px;
 }
 .Rigth_Administrador .Datos1{
@@ -154,7 +154,7 @@ main .Cabezera h1{
 }
 .Botones input, button{
     color: white;
-    background: rgb(39,174,96);
+    background: rgb(0,166,81);
     border-radius: 10%;
     border: transparent;
     font-size: 110%;
@@ -165,7 +165,7 @@ main .Cabezera h1{
 }
 .Botones label{
     color: white;
-    background: rgb(39,174,96);
+    background: rgb(0,166,81);
     border-radius: 10%;
     border: transparent;
     font-size: 110%;

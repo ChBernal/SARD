@@ -109,7 +109,7 @@
                             <div class="Left_Veterinaria">
                                 <div id="Vista_Previa"> <img src="<%=Dat_Inactivas.getFoto()%>"></div>
                                 <input type="hidden" name="Foto-Actual" value="<%=Dat_Inactivas.getFoto()%>">
-                                <label  class="fa fa-camera" id="fa-camera">
+                                <label  class="fa fa-camera-retro" >
                                 <input  class="Foto" id="Foto" type="file" name="Foto-Veterinaria"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
@@ -127,18 +127,18 @@
                                     <input class="input8" type="text" id="Barrio-Veterinaria" name="Barrio-Veterinaria" pattern="[A-Z,a-z ]{1,50}" value="<%=Dat_Inactivas.getBarrio()%>">
                                     <input class="input9" type="text" id="Telefono-Veterinaria" name="Telefono-Veterinaria" pattern="[0-9]{5,10}" value="<%=Dat_Inactivas.getTelefono()%>">
                                     <input class="input10" type="text" id="Email-Veterinaria" name="Email-Veterinaria"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Inactivas.getCorreo()%>">
-                                    <select name="Estado-Veterinaria">
-                                        <option value="0">Inactiva</option>
-                                        <option value="4">Activa</option>
+                                    <select  name="Estado-Veterinaria">
+                                        <option class="input11" value="0">Inactiva</option>
+                                        <option class="input12" value="4">Activa</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="Botones">
-                            <label class="btn-Editar" id="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </label>
-                            <button class="btn-Actualizar" id="btn-Actualizar" name="btn-Actualizar-Inactivas" ><span class="fa fa-refresh"></span> Actualizar </button>
-                            <label class="btn-Cancelar" id="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</label>
-                            <button class="btn-Eliminar" id="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
+                            <label class="btn-Editar2" id="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </label>
+                            <button class="btn-Actualizar2" id="btn-Actualizar" name="btn-Actualizar-Inactivas" ><span class="fa fa-refresh"></span> Actualizar </button>
+                            <label class="btn-Cancelar2" id="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</label>
+                            <button class="btn-Eliminar2" id="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
                         </div>
                 </form>
                 </div>
