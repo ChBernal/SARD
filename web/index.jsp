@@ -200,7 +200,7 @@
                                 <div class="CuadroEventos">
                                     <div>
                                         <label><%= GSE.getNombre() %></label>
-                                        <img src="Uploads/Adopcion.jpg">
+                                        <img src="<%= GSE.getImagen()%>">
                                     </div>
                                 </div>
                                 <%

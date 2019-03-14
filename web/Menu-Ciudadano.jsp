@@ -1,3 +1,5 @@
+<%@page import="Modelo.GS_Tips"%>
+<%@page import="Modelo.Tips_M"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Ciudadano_M"%>
 <%@page import="Modelo.GS_Ciudadano"%>
@@ -333,39 +335,73 @@
             <article id="Eventos" class="Eventos">
                 <h1>Eventos</h1>
                 <hr>
-                <div class="Posicion-Eventos">
-                    <%
-                        Eventos_M EM = new Eventos_M();
-                        ArrayList<GS_Eventos> Todo_Eventos = new ArrayList<>();    
-                        GS_Eventos GSE = new GS_Eventos();
-                        Todo_Eventos = EM.Todo_Eventos();
+                <div class="Contenido-Eventos">
+                    <div class="Contenedor-Formulario-Eventos">
+                        <div class="Wrap-Eventos">
+                            <div class="Posicion-Eventos">
+                                <%
+                                Eventos_M EM = new Eventos_M();
+                                ArrayList<GS_Eventos> Datos_Eventos = new ArrayList<>();
+                                GS_Eventos GSE = new GS_Eventos();
+                                Datos_Eventos = EM.Tres_Eventos();
 
-                        for (int i = 0; i < Todo_Eventos.size();i++){
-                            GSE = Todo_Eventos.get(i);
-                    %>
-                    <div class="CuadroEventos">
-                        <div class="Nombre_Eventos">
-                            <h2><%= GSE.getNombre() %></h2>
+                                if (Datos_Eventos.size()>0){
+                                    for (int i=0; i < Datos_Eventos.size(); i++){
+                                        GSE = Datos_Eventos.get(i);
+                                    
+                                %>
+                                <div class="CuadroEventos">
+                                    <div>
+                                        <label><%= GSE.getNombre() %></label>
+                                        <img src="<%= GSE.getImagen()%>">
+                                    </div>
+                                </div>
+                                <%
+                                    }
+                                }
+                                %>
+                                
+                            </div>
                         </div>
-                        <div class="Imagen-Eventos">
-                            <img src="<%= GSE.getImagen()%>">
-                        </div> 
                     </div>
-                    <div class="Fondo">
-                        <div class="Datos_Evento">
-                            <label>Fecha: <%= GSE.getFecha() %></label>
-                            <label>Tipo: <%= GSE.getTipoEvento() %></label>
-                            <label class="Descripcion"><%= GSE.getDescripcion()%></label>
-                        </div>
-                    </div>
-                    <%
-                        }
-                    %>
                 </div>
             </article>
 
             <article id="Tips" class="Tips">
+                <h1>Tips</h1>
+                <hr>
+                 <div class="Contenido-Tips">
+                    <div class="Contenedor-Formulario-Tips">
+                        <div class="Wrap-Tips">
+                            <div class="Posicion-Tips">
+                                <%
+                                    Tips_M TM = new Tips_M();
+                                    ArrayList<GS_Tips> Todo_Tips = new ArrayList<>();    
+                                    GS_Tips GST = new GS_Tips();
+                                    Todo_Tips = TM.Todo_Tips();
 
+                                    for (int i = 0; i < Todo_Tips.size();i++){
+                                        GST = Todo_Tips.get(i);
+                                %>
+                                <div class="CuadroTips">
+                                    <div class="Nombre_Tips">
+                                        <h2><%= GST.getTitulo()%></h2>
+                                    </div>
+                                    <div class="Imagen_Tips">
+                                        <img src="<%= GST.getImagen()%>">
+                                    </div>
+                                    <div class="Datos_Tips">
+                                        <label></label>
+                                        <textarea> <%= GST.getDescripcion()%></textarea>
+                                    </div>
+                                </div>
+                                <%
+                                    }
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </article>
 
             <article id="Contactenos" class="Contactenos">
