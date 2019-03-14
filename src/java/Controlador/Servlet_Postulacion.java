@@ -58,31 +58,51 @@ public class Servlet_Postulacion extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         String R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15,R16,R17,R18,R19,R20,Docu;
-        int Codi;
+        int Codi,Cont=0;
         
         Codi= Integer.parseInt(request.getParameter("Codigo"));
         HttpSession Datos1 = request.getSession();
         Datos1.setAttribute("Codigo_M", Codi);
         R1= request.getParameter("Res1");
+        if (R1.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R2= request.getParameter("Res2");
+        if (R2.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R3= request.getParameter("Res3");
+        if (R3.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R4= request.getParameter("Res4");
+        if (R4.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R5= request.getParameter("Res5");
+        if (R5.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R6= request.getParameter("Res6");
+        if (R6.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R7= request.getParameter("Res7");
+        if (R7.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R8= request.getParameter("Res8");
+        if (R8.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R9= request.getParameter("Res9");
+        if (R9.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R10= request.getParameter("Res10");
+        if (R10.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R11= request.getParameter("Res11");
+        if (R11.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R12= request.getParameter("Res12");
+        if (R12.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R13= request.getParameter("Res13");
+        if (R13.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R14= request.getParameter("Res14");
+        if (R14.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R15= request.getParameter("Res15");
+        if (R15.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R16= request.getParameter("Res16");
+        if (R16.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R17= request.getParameter("Res17");
+        if (R17.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R18= request.getParameter("Res18");
+        if (R18.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R19= request.getParameter("Res19");
+        if (R19.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         R20= request.getParameter("Res20");
+        if (R20.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         Docu= request.getParameter("Documento");
         
         Postulacion_M EM = new Postulacion_M();
