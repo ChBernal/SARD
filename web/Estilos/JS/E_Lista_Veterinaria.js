@@ -22,6 +22,7 @@ $(document).ready(function(){
     $(".Datos2 input").attr("readonly","readonly");
     $(".input11").hide();
     $(".input12").hide();
+    
     $(".Nombre_Activas").click(function (){
         var Index = $(".Nombre_Activas").index(this);
         var btn_Editar = $(".btn-Editar").eq(Index);
