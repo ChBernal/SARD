@@ -111,14 +111,21 @@ public class ServletDenuncias extends HttpServlet {
         
         GS_Denuncias GSD = new GS_Denuncias(Direccion, Descripcion, url2, Correo);
         Denuncias_M  DM = new Denuncias_M();
-        DM.InsertarDenuncias(GSD);
-        System.out.print("<script>\n" +
-"            window.onload= function() {\n" +
-"               alert('Usuario Registrado Correctamente')" +
-"            };\n" +
-"         </script>");
-        
-        request.getRequestDispatcher("index.jsp").forward(request, response); 
+        int x;
+        x= DM.InsertarDenuncias(GSD);
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+        out.println("</head>");
+        out.println("<body>");
+        out.print("<script type='text/javascript'> alertify.alert('Hola',function(){"
+                + "window.location.href = 'index.jsp'}); </script>");
+        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+        out.println("</body>");
+        out.println("</html>");
         
     }
     
