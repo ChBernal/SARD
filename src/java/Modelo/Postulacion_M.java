@@ -45,6 +45,18 @@ public class Postulacion_M {
             JOptionPane.showMessageDialog(null, "Error en la denuncia"+e);
         }
     }
+    
+    public void InsertarEstadisticas (GS_Estadistacas GSD){
+        try {
+            PreSta= BaseDatos.prepareStatement("Call In_Estadisticas(?,?)");
+            PreSta.setInt(1, GSD.getEncuesta());
+            PreSta.setString(2, GSD.getDocumento());
+            PreSta.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error en la denuncia"+e);
+        }
+    }
+    
     public int InsertarPostulacionFinal (GS_Postulacion GSD){
         int x=0;
         try {

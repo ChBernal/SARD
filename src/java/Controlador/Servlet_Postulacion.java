@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.GS_Estadistacas;
 import Modelo.GS_Postulacion;
 import Modelo.GS_Preguntas_Postulacion;
 import Modelo.Postulacion_M;
@@ -104,8 +105,9 @@ public class Servlet_Postulacion extends HttpServlet {
         R20= request.getParameter("Res20");
         if (R20.equalsIgnoreCase("Si")){ Cont= Cont+5; }
         Docu= request.getParameter("Documento");
-        
         Postulacion_M EM = new Postulacion_M();
+        GS_Estadistacas GST = new GS_Estadistacas(Cont, Docu);
+        EM.InsertarEstadisticas(GST);
         GS_Preguntas_Postulacion GSE = new GS_Preguntas_Postulacion(R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, Docu);
         EM.InsertarPostulacion(GSE);
         response.sendRedirect("Postulacion.jsp");

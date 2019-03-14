@@ -22,6 +22,11 @@ public class GS_Estadistacas {
         this.Documento = Documento;
     }
 
+    public GS_Estadistacas(int Encuesta, String Documento) {
+        this.Encuesta = Encuesta;
+        this.Documento = Documento;
+    }
+    
     public GS_Estadistacas() {
     }
 
