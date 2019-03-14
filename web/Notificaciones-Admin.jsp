@@ -1,3 +1,5 @@
+<%@page import="Modelo.Postulacion_M"%>
+<%@page import="Modelo.GS_Postulacion"%>
 <%@page import="Modelo.GS_Denuncia_Cliente"%>
 <%@page import="Modelo.Denuncias_M"%>
 <%@page import="Modelo.GS_Denuncias"%>
