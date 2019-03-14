@@ -50,7 +50,7 @@
                     for(int i=0; i<Dato_Ambiente.size(); i++){
                         Dat_Ambiente = Dato_Ambiente.get(i);
                 %>
-                
+                <form action="Servlet_Ambiente_Salud" method="POST" enctype="multipart/form-data">
                 <div class="Nombre_Ambiente">
                     <h1><%=Dat_Ambiente.getNombre()%></h1>
                 </div>
@@ -59,31 +59,34 @@
                         <div>
                             <div class="Left_SASS">
                                 <div id="Vista_Previa"> <img src="<%=Dat_Ambiente.getFoto()%>"></div>
+                                <input type="hidden" name="Foto_Antigua" value="<%=Dat_Ambiente.getFoto()%>">
                                 <label  class="fa fa-camera">
-                                <input  class="Foto" id="Foto" type="file" name="Foto"  value="" accept="image/jpg, image/jpeg, image/png">
+                                <input  class="Foto" id="Foto" type="file" name="Foto-SASS"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
                             <div class="Rigth_SASS">
                                 <div class="Datos1">
                                     <label><%=Dat_Ambiente.getDocumento()%><label>
-                                    <input type="hidden" name="Documento-Ambiente" value="<%=Dat_Ambiente.getDocumento()%>">
+                                    <input type="hidden" name="Documento-SASS" value="<%=Dat_Ambiente.getDocumento()%>">
+                                    <input type="hidden" name="Nombre-SASS" value="<%=Dat_Ambiente.getNombre()%>">
                                     <label><%=Dat_Ambiente.getTipo_Documento()%><label>
                                     <label><%=Dat_Ambiente.getGenero()%><label>
                                     <label><%=Dat_Ambiente.getFecha_Nacimiento()%><label>
                                 </div>
                                 <div class="Datos2">
-                                    <input class="input1" type="text" id="Direccion-Ambiente" placeholder="Direccion" name="Direccion-Ambiente" value="<%=Dat_Ambiente.getDireccion()%>">
-                                    <input class="input2" type="text" id="Telefono-Ambiente"  placeholder="Telefono" name="Telefono-Ambiente" pattern="[0-9]{5,10}" value="<%=Dat_Ambiente.getTelefono()%>">
-                                    <input class="input3" type="text" id="Email-Ambiente" placeholder="Correo" name="Email-Ambiente"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Ambiente.getCorreo()%>">
+                                    <input class="input1" type="text" id="Direccion-Ambiente" placeholder="Direccion" name="Direccion-SASS" value="<%=Dat_Ambiente.getDireccion()%>">
+                                    <input class="input2" type="text" id="Telefono-Ambiente"  placeholder="Telefono" name="Telefono-SASS" pattern="[0-9]{5,10}" value="<%=Dat_Ambiente.getTelefono()%>">
+                                    <input class="input3" type="text" id="Email-Ambiente" placeholder="Correo" name="Email-SASS"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Ambiente.getCorreo()%>">
                                 </div>
                             </div>
                         </div>
                         <div class="Botones">
-                            <button class="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </button>
+                            <label class="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </label>
                             <button class="btn-Actualizar" name="btn-Actualizar" ><span class="fa fa-refresh"></span> Actualizar </button>
-                            <button class="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
+                            <label class="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</label>
                             <button class="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
                         </div>
+                </form>
                 </div>
                 <%}%>
                 </div>
@@ -97,7 +100,7 @@
                     for(int i=0; i<Dato_Salud.size(); i++){
                         Dat_Salud = Dato_Salud.get(i);
                 %>
-                
+                <form action="Servlet_Ambiente_Salud" method="POST" enctype="multipart/form-data">
                 <div class="Nombre_Salud">
                     <h1><%=Dat_Salud.getNombre()%></h1>
                 </div>
@@ -105,32 +108,35 @@
                 <div class="Datos_Salud">
                         <div>
                             <div class="Left_SASS">
-                                <div id="Vista_Previa"> <img src="<%=Dat_Salud.getFoto()%>"></div>
+                                <div id="Vista_Previa"> <img src="<%=Dat_Salud.getFoto()%>"></div>  
+                                <input type="hidden" name="Foto_Antigua" value="<%=Dat_Salud.getFoto()%>">
                                 <label  class="fa fa-camera" id="fa-camera">
-                                <input  class="Foto" id="Foto" type="file" name="Foto"  value="" accept="image/jpg, image/jpeg, image/png">
+                                <input  class="Foto" id="Foto" type="file" name="Foto-SASS"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
                             <div class="Rigth_SASS">
                                 <div class="Datos1">
                                     <label><%=Dat_Salud.getDocumento()%><label>
-                                    <input type="hidden" name="Documento-Salud" value="<%=Dat_Salud.getDocumento()%>">
+                                    <input type="hidden" name="Documento-SASS" value="<%=Dat_Salud.getDocumento()%>">
+                                <input type="hidden" name="Nombre-SASS" value="<%=Dat_Salud.getNombre()%>">
                                     <label><%=Dat_Salud.getTipo_Documento()%><label>
                                     <label><%=Dat_Salud.getGenero()%><label>
                                     <label><%=Dat_Salud.getFecha_Nacimiento()%><label>
                                 </div>
                                 <div class="Datos2">
-                                    <input class="input4" type="text" id="Direccion-Salud" placeholder="Direccion" name="Direccion-Salud" value="<%=Dat_Salud.getDireccion()%>">
-                                    <input class="input5" type="text" id="Telefono-Salud" placeholder="Telefono" name="Telefono-Salud" pattern="[0-9]{5,10}" value="<%=Dat_Salud.getDireccion()%>">
-                                    <input class="input6" type="text" id="Email-Salud" placeholder="Correo" name="Email-Salud"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Salud.getCorreo()%>">
+                                    <input class="input4" type="text" id="Direccion-Salud" placeholder="Direccion" name="Direccion-SASS" value="<%=Dat_Salud.getDireccion()%>">
+                                    <input class="input5" type="text" id="Telefono-Salud" placeholder="Telefono" name="Telefono-SASS" pattern="[0-9]{5,10}" value="<%=Dat_Salud.getTelefono()%>">
+                                    <input class="input6" type="text" id="Email-Salud" placeholder="Correo" name="Email-SASS"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Salud.getCorreo()%>">
                                 </div>
                             </div>
                         </div>
                         <div class="Botones">
-                            <button class="btn-Editar" id="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </button>
+                            <label class="btn-Editar" id="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </label>
                             <button class="btn-Actualizar" id="btn-Actualizar" name="btn-Actualizar" ><span class="fa fa-refresh"></span> Actualizar </button>
-                            <button class="btn-Cancelar" id="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
+                            <label class="btn-Cancelar" id="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</label>
                             <button class="btn-Eliminar" id="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
                         </div>
+                    </form>
                 </div>
                 <%}%>
                 </div>

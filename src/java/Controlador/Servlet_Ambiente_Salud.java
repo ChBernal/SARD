@@ -47,10 +47,10 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         if (request.getParameter("Registro-SASS")!=null) {
             this.Insertar_Ambiente_Salud(request, response);
         }
-        if (request.getParameter("Act_AS")!=null) {
+        if (request.getParameter("btn-Actualizar")!=null) {
             this.Actualizar_Ambiente_Salud(request, response);
         }
-        if (request.getParameter("Eli_AS")!=null) {
+        if (request.getParameter("btn-Eliminar")!=null) {
             this.Eliminar_Ambiente_Salud(request, response);
         }
         
@@ -111,42 +111,61 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String Nombre,Documento,Direccion,Telefono,Correo;
-        Nombre=request.getParameter("Nombre_AS");
-        Documento = request.getParameter("Documento_AS");
-        Direccion = request.getParameter("Direccion_AS");
-        Telefono = request.getParameter("Telefono_AS");
-        Correo = request.getParameter("Correo_AS");
-        Part Foto = request.getPart("Foto_AS");
+        String Nombre,Foto_Antigua,Documento,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento-SASS");
+        Nombre = request.getParameter("Nombre-SASS");
+        Direccion = request.getParameter("Direccion-SASS");
+        Telefono = request.getParameter("Telefono-SASS");
+        Correo = request.getParameter("Email-SASS");
+        Foto_Antigua = request.getParameter("Foto_Antigua");
+        Part Foto = request.getPart("Foto-SASS");
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
-        String url2 = "Uploads\\"+Name;
-        
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
-        }
-        
-        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Direccion, Telefono, Correo, url2);
-         Ambiente_Salud_M AS = new Ambiente_Salud_M();
-        
-        int Consulta;
-        Consulta=AS.Act_Ambiente_Salud(GSAS);
-        if (Consulta>0) {
-            JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
-        }
-        
-        response.sendRedirect("Registros_Administrador.jsp");
+         if (Nombre_F!="") {
+            String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+            String url2 = "Uploads\\"+Name;
+
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+
+            GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Direccion, Telefono, Correo, url2);
+             Ambiente_Salud_M AS = new Ambiente_Salud_M();
+
+            int Consulta;
+            Consulta=AS.Act_Ambiente_Salud(GSAS);
+            if (Consulta>0) {
+                JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+            }
+         }
+         else{
+            
+            String url2 = Foto_Antigua;
+
+            GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Direccion, Telefono, Correo, url2);
+             Ambiente_Salud_M AS = new Ambiente_Salud_M();
+
+            int Consulta;
+            Consulta=AS.Act_Ambiente_Salud(GSAS);
+            if (Consulta>0) {
+                JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+            }
+             
+         }
+        response.sendRedirect("Lista_SASS.jsp");
      }
      
      protected void Eliminar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
@@ -155,12 +174,12 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         String Documento;
-        Documento=request.getParameter("Documento_AS");
+        Documento=request.getParameter("Documento-SASS");
         GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento);
          Ambiente_Salud_M Am_Sa = new Ambiente_Salud_M();
         Am_Sa.Eli_Ambiente_Salud(GSAS);
         
-        response.sendRedirect("Registros_Administrador.jsp");
+        response.sendRedirect("Lista_SASS.jsp");
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

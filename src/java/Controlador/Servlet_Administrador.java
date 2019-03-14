@@ -7,8 +7,10 @@ package Controlador;
 
 import Modelo.Admin_M;
 import Modelo.Administrador_M;
+import Modelo.Ciudadano_M;
 import Modelo.GS_Admin;
 import Modelo.GS_Administrador;
+import Modelo.GS_Ciudadano;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -64,8 +66,15 @@ public class Servlet_Administrador extends HttpServlet {
             }
         }
         if (request.getParameter("Actualizar_A") != null){
+            this.Actualizar_Admin_Perfil(request, response);
+        }
+        if (request.getParameter("btn-Actualizar") != null){
             this.Actualizar_Admin(request, response);
         }
+        if (request.getParameter("btn-Eliminar") != null){
+            this.Eliminar_Administrador(request, response);
+        }
+        
     }
     protected void Insertar_Admin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -108,7 +117,7 @@ public class Servlet_Administrador extends HttpServlet {
         response.sendRedirect("Menu-Admin.jsp");
 
         }
-    protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
+    protected void Actualizar_Admin_Perfil(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -149,6 +158,79 @@ public class Servlet_Administrador extends HttpServlet {
         response.sendRedirect("Perfil_Administrador.jsp");
 
     }
+    
+    protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        
+        String Documento,Nombre,Direccion,Telefono,Correo, Foto_Antigua;
+        Nombre =request.getParameter("Nombre-Administrador");
+        Documento = request.getParameter("Documento-Administrador");
+        Direccion = request.getParameter("Direccion-Administrador");
+        Telefono = request.getParameter("Telefono-Administrador");
+        Correo = request.getParameter("Email-Administrador");
+        Foto_Antigua = request.getParameter("Foto_Antigua");
+        Part Foto = request.getPart("Foto-Administrador");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        if (Nombre_F!="") {
+          
+            String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+            String url2 = "Uploads\\"+Name;
+
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+            GS_Admin GSA = new GS_Admin(Documento, Direccion, Telefono, Correo, url2);
+            Admin_M Admin = new Admin_M();
+            int Consulta;
+            Consulta=Admin.Act_Administrador(GSA);
+            if (Consulta>0) {
+                JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+            }       
+        }
+        else{
+            
+            String url2 = Foto_Antigua;
+            GS_Admin GSA = new GS_Admin(Documento, Direccion, Telefono, Correo, url2);
+            Admin_M Admin = new Admin_M();
+            int Consulta;
+            Consulta=Admin.Act_Administrador(GSA);
+            if (Consulta>0) {
+                JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+            }       
+        }
+        response.sendRedirect("Lista_Administrador.jsp");
+
+    }
+    
+    protected void Eliminar_Administrador(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento;
+        Documento = request.getParameter("Documento-Administrador");
+        GS_Administrador GSA = new GS_Administrador(Documento);
+        Administrador_M Administrador = new Administrador_M();
+        Administrador.Eli_Administrador(GSA);
+        
+         response.sendRedirect("Lista_Administrador.jsp");
+        }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

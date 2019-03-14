@@ -111,6 +111,27 @@ public class Veterinaria_M {
         return Actualizar;
     }
      
+      public int Act_Veterinaria_Inactivas (GS_Veterinaria GS){
+         int Actualizar =0;
+            try{
+                PreSta=BaseDatos.prepareStatement("call A_Veterinaria_0 (?,?,?,?,?,?,?,?,?)");
+                PreSta.setString(1, GS.getNit());   
+                PreSta.setString(2, GS.getNombre());
+                PreSta.setString(3, GS.getRepresentante());
+                PreSta.setString(4, GS.getDireccion());
+                PreSta.setString(5, GS.getBarrio());
+                PreSta.setString(6, GS.getTelefono());
+                PreSta.setString(7, GS.getCorreo());
+                PreSta.setInt(8, GS.getRol());
+                PreSta.setString(9, GS.getFoto());
+                Actualizar=PreSta.executeUpdate();
+            }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return Actualizar;
+    }
+     
      
       public void Login_Veterinaria (GS_Veterinaria GS){
         try{

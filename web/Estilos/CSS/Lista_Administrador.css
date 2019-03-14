@@ -163,3 +163,14 @@ main .Cabezera h1{
     font-family: 'Nunito Sans', sans-serif arial;
     cursor: pointer;
 }
+.Botones label{
+    color: white;
+    background: rgb(39,174,96);
+    border-radius: 10%;
+    border: transparent;
+    font-size: 110%;
+    padding: 5px 10px;
+    margin: 10px;
+    font-family: 'Nunito Sans', sans-serif arial;
+    cursor: pointer;
+}

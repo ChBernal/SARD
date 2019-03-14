@@ -52,6 +52,9 @@ public class Servlet_Veterinaria extends HttpServlet {
         if (request.getParameter("btn-Actualizar-Activas")!=null) {
              Actualizar_Veterinaria_Activa(request, response);
         }
+        if (request.getParameter("btn-Actualizar-Inactivas")!=null) {
+             Actualizar_Veterinaria_Inactivas(request, response);
+        }
         if (request.getParameter("btn-Eliminar")!=null) {
              Eliminar_Veterinaria(request, response);
         }
@@ -199,17 +202,79 @@ public class Servlet_Veterinaria extends HttpServlet {
         
     }
      
+    protected void Actualizar_Veterinaria_Inactivas (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String Nit,Nombre,Representante,Direccion,Barrio,Telefono,Correo, RolNombre, Foto_Actual;
+        int Rol=0, Actualizar;
+        Nit = request.getParameter("Nit-Veterinaria");
+        Nombre = request.getParameter("Nombre-Veterinaria");
+        Representante= request.getParameter("Representante-Veterinaria");
+        Direccion = request.getParameter("Direccion-Veterinaria");
+        Barrio = request.getParameter("Barrio-Veterinaria");
+        Telefono = request.getParameter("Telefono-Veterinaria");
+        Correo = request.getParameter("Email-Veterinaria");
+        JOptionPane.showMessageDialog(null, Correo);
+        Foto_Actual = request.getParameter("Foto-Actual");
+        Part Foto = request.getPart("Foto-Veterinaria"); 
+        Rol= Integer.parseInt(request.getParameter("Estado-Veterinaria"));
+        
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        JOptionPane.showMessageDialog(null, Foto_Actual);
+         if (Nombre_F!="") {
+             
+             String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+            String url2 = "Uploads\\"+Name;
+
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+            GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Direccion, Barrio, Telefono, Correo, Rol, url2);
+            Veterinaria_M veterinaria = new Veterinaria_M();
+            Actualizar = veterinaria.Act_Veterinaria_Inactivas(GSC);
+                 if (Actualizar>0) {
+                     JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                 }
+                 else{
+                     JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                 }
+         }
+         else{
+            String url2 = Foto_Actual;
+            GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Direccion, Barrio, Telefono, Correo, Rol, url2);
+            Veterinaria_M veterinaria = new Veterinaria_M();
+            Actualizar = veterinaria.Act_Veterinaria_Inactivas(GSC);
+                 if (Actualizar>0) {
+                     JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                 }
+                 else{
+                     JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                 }      
+        }
+    
+        response.sendRedirect("Lista_Veterinaria.jsp");
+        
+    }
+     
      protected void Eliminar_Veterinaria (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
         String Documento;
-        Documento=request.getParameter("Nit");
+        Documento=request.getParameter("Nit-Veterinaria");
         GS_Veterinaria GSA = new GS_Veterinaria(Documento);
         Veterinaria_M Vete = new Veterinaria_M();
         Vete.Eli_Veterinaria(GSA);
-        response.sendRedirect("Registros_Administrador.jsp");
+        response.sendRedirect("Lista_Veterinaria.jsp");
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

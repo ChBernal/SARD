@@ -47,7 +47,7 @@
                     for(int i=0; i<Dato_Administrador.size(); i++){
                         Dat_Administrador = Dato_Administrador.get(i);
                 %>
-                
+                <form action="Servlet_Administrador" method="POST" enctype="multipart/form-data">
                 <div class="Nombre">
                     <h1><%=Dat_Administrador.getNombre()+" "+Dat_Administrador.getApellido()%></h1>
                 </div>
@@ -55,13 +55,16 @@
                 <div class="Datos_Administrador">
                         <div>
                             <div class="Left_Administrador">
-                                <div id="Vista_Previa"> <img src="<%=Dat_Administrador.getDocumento()%>"></div>
+                                <div id="Vista_Previa"> <img src="<%=Dat_Administrador.getFoto()%>"></div>
+                                <input type="hidden" name="Foto_Antigua" value="<%=Dat_Administrador.getFoto()%>">
                                 <label  class="fa fa-camera">
-                                <input  class="Foto" id="Foto" type="file" name="Foto_C"  value="" accept="image/jpg, image/jpeg, image/png">
+                                <input  class="Foto" id="Foto" type="file" name="Foto-Administrador"  value="" accept="image/jpg, image/jpeg, image/png">
                                 </label>
                             </div> 
                             <div class="Rigth_Administrador">
                                 <div class="Datos1">
+                                    <input type="hidden" name="Documento-Administrador" value="<%=Dat_Administrador.getDocumento()%>">
+                                    <input type="hidden" name="Nombre-Administrador" value="<%=Dat_Administrador.getNombre()%>">
                                     <label><%=Dat_Administrador.getDocumento()%><label>
                                     <label><%=Dat_Administrador.getTipo_Documento()%><label>
                                     <label><%=Dat_Administrador.getGenero()%><label>
@@ -70,18 +73,18 @@
                                 <div class="Datos2">
                                     <input class="input1" type="text" id="Direccion-Administrador" placeholder="Direccion" name="Direccion-Administrador" value="<%=Dat_Administrador.getDireccion()%>">
                                     <input class="input2" type="text" id="Telefono-Administrador" placeholder="Telefono" name="Telefono-Administrador" pattern="[0-9]{5,10}" value="<%=Dat_Administrador.getTelefono()%>">
-                                    <input class="input3" type="text" id="Email-Administrador" placeholder="" name="Email-Administrador"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Administrador.getCorreo()%>">
+                                    <input class="input3" type="text" id="Email-Administrador" placeholder="Correo" name="Email-Administrador"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%=Dat_Administrador.getCorreo()%>">
                                 </div>
                             </div>
                         </div>
                         <div class="Botones">
-                            <button class="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </button>
+                            <label class="btn-Editar" name="btn-Editar" ><span class="fa fa-pencil"></span> Editar </label>
                             <button class="btn-Actualizar" name="btn-Actualizar" ><span class="fa fa-refresh"></span> Actualizar </button>
-                            <button class="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</button>
+                            <label class="btn-Cancelar" name="btn-Cancelar" ><span class="fa fa-close"></span> Cancelar</label>
                             <button class="btn-Eliminar" name="btn-Eliminar" ><span class="fa fa-trash"></span> Eliminar </button>
                         </div>
+                </form>
                 </div>
-                   
                 <%}%>
                 </div>
             </article>

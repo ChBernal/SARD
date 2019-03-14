@@ -15,6 +15,18 @@ public class GS_Veterinaria {
     private int Rol;
     private String Foto;
 
+    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Direccion, String Barrio, String Telefono, String Correo, int Rol, String Foto) {
+        this.Nit = Nit;
+        this.Nombre = Nombre;
+        this.Representante = Representante;
+        this.Direccion = Direccion;
+        this.Barrio = Barrio;
+        this.Telefono = Telefono;
+        this.Correo = Correo;
+        this.Rol = Rol;
+        this.Foto = Foto;
+    }
+
     public GS_Veterinaria(String Nit, String Nombre, String Representante, String Tipo_Veterinaria, String Fecha_Fundacion, String Direccion, String Barrio, String Telefono, String Correo, int Rol, String Foto) {
         this.Nit = Nit;
         this.Nombre = Nombre;

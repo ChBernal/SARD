@@ -17,7 +17,7 @@ public class Ambiente_Salud_M {
     
     public void In_Ambiente_Salud (GS_Ambiente_Salud GS){
         try{
-            PreSta=BaseDatos.prepareStatement("call In_Cliente_Admin(?,?,?,?,?,?,?,?,?,?,?)");
+            PreSta=BaseDatos.prepareStatement("call In_Ambiente_Salud(?,?,?,?,?,?,?,?,?,?,?)");
             PreSta.setString(1, GS.getDocumento());
             PreSta.setString(2, GS.getTipo_Documento());
             PreSta.setString(3, GS.getNombre());
@@ -41,7 +41,7 @@ public class Ambiente_Salud_M {
      public int Act_Ambiente_Salud (GS_Ambiente_Salud GS){
          int Actualizar=0;
         try{
-            PreSta=BaseDatos.prepareStatement("call A_Cliente_Admin (?,?,?,?,?)");
+            PreSta=BaseDatos.prepareStatement("call A_Ambiente_Salud (?,?,?,?,?)");
             PreSta.setString(1, GS.getDocumento());
             PreSta.setString(2, GS.getDireccion());
             PreSta.setString(3, GS.getTelefono());
@@ -77,7 +77,7 @@ public class Ambiente_Salud_M {
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
-                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10));
+                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(11));
                 Tabla.add(ing);
             }
             
@@ -94,7 +94,7 @@ public class Ambiente_Salud_M {
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
-                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10));
+                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(11));
                 Tabla.add(ing);
             }  
         } catch (Exception e) {
@@ -110,7 +110,7 @@ public class Ambiente_Salud_M {
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
-                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10));
+                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(11));
                 Tabla.add(ing);
             }  
         } catch (Exception e) {
@@ -127,7 +127,7 @@ public class Ambiente_Salud_M {
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
-                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10));
+                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(11));
                 Tabla.add(ing);
             }
             
