@@ -101,15 +101,14 @@ public class Servlet_Postulacion extends HttpServlet {
         Documento= request.getParameter("Docu");
         Codi= Integer.parseInt(request.getParameter("Codi"));
         Part Cedula = request.getPart("Cedula");
-        Part Recibo = request.getPart("Recibo");
         String Nombre_C = Cedula.getSubmittedFileName();
-        String Nombre_R = Recibo.getSubmittedFileName();
-        String Foto_Name_C = Documento+"_"+Nombre_C;
-        String Foto_Name_R = Documento+"_"+Nombre_R;
-        
+        String Foto_Name_C = "PDF101"+"_"+Nombre_C;
         String urlCed = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Foto_Name_C;
         String urlCed2 = "Uploads\\"+Foto_Name_C;
         
+        Part Recibo = request.getPart("Recibo");
+        String Nombre_R = Recibo.getSubmittedFileName();
+        String Foto_Name_R = "PDF102"+"_"+Nombre_R;
         String urlRec = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Foto_Name_R;
         String urlRec2 = "Uploads\\"+Foto_Name_R;
 
@@ -146,7 +145,7 @@ public class Servlet_Postulacion extends HttpServlet {
         out.println("</head>");
         out.println("<body>");
         out.print("<script type='text/javascript'> alertify.alert('Gracias por seguir y completar todos los procesos, dentro de un tiempo te envian una cita de encuentro',function(){"
-                + "window.location.href = 'index.jsp'}); </script>");
+                + "window.location.href = 'Menu-Ciudadano.jsp'}); </script>");
         out.println("<script src='Estilos/JS/jquery.min.js'></script>");
         out.println("</body>");
         out.println("</html>");
