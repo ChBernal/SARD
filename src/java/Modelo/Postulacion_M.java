@@ -5,6 +5,7 @@ import Controlador.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
@@ -60,4 +61,21 @@ public class Postulacion_M {
         }
         return x;
     }
+    
+    public ArrayList<GS_Postulacion> VerPostulaciones (){
+        ArrayList<GS_Postulacion> Datos_Postulacion = new ArrayList<>();
+        try {
+            PreSta = BaseDatos.prepareStatement("Call Postulaciones ()");
+            Reset = PreSta.executeQuery();
+            
+            while (Reset.next()){
+                GS_Postulacion GSP = new GS_Postulacion(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10), Reset.getString(11), Reset.getString(12), Reset.getString(13));
+                Datos_Postulacion.add(GSP);
+            }
+        }catch (Exception e){
+            
+        }
+        return Datos_Postulacion;
+    }
+	
 }

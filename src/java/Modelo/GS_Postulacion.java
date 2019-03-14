@@ -1,6 +1,4 @@
-
 package Modelo;
-
 
 public class GS_Postulacion {
     
@@ -11,6 +9,16 @@ public class GS_Postulacion {
     private String Recibo;
     private String Fecha;
     private int Estado;
+    private String TipoMascota;
+    private String NombreMascota;
+    private String FotoMascota;
+    private String NombreP;
+    private String ApellidoP;
+    private String Telefono1P;
+    private String Telefono2P;
+    private String CorreoP;
+    private String CopiaCC;
+    private String CopiaRP;
 
     public GS_Postulacion(int Codigo, String DocumentoC, int CodigoMascota, String Cedula, String Recibo, String Fecha, int Estado) {
         this.Codigo = Codigo;
@@ -29,12 +37,24 @@ public class GS_Postulacion {
         this.Recibo = Recibo;
         this.Estado = Estado;
     }
-    
+
     public GS_Postulacion() {
     }
 
-    public GS_Postulacion(int Codigo) {
-        this.Codigo = Codigo;
+    public GS_Postulacion(int CodigoMascota, String TipoMascota, String NombreMascota, String FotoMascota, String DocumentoC, String NombreP, String ApellidoP, String Telefono1P, String Telefono2P, String CorreoP, String Fecha, String CopiaCC, String CopiaRP) {
+        this.CodigoMascota = CodigoMascota;
+        this.TipoMascota = TipoMascota;
+        this.NombreMascota = NombreMascota;
+        this.FotoMascota = FotoMascota;
+        this.DocumentoC = DocumentoC;
+        this.NombreP = NombreP;
+        this.ApellidoP = ApellidoP;
+        this.Telefono1P = Telefono1P;
+        this.Telefono2P = Telefono2P;
+        this.CorreoP = CorreoP;
+        this.Fecha = Fecha;
+        this.CopiaCC = CopiaCC;
+        this.CopiaRP = CopiaRP;
     }
 
     public int getCodigo() {
@@ -92,6 +112,86 @@ public class GS_Postulacion {
     public void setEstado(int Estado) {
         this.Estado = Estado;
     }
-    
+
+    public String getTipoMascota() {
+        return TipoMascota;
+    }
+
+    public void setTipoMascota(String TipoMascota) {
+        this.TipoMascota = TipoMascota;
+    }
+
+    public String getNombreMascota() {
+        return NombreMascota;
+    }
+
+    public void setNombreMascota(String NombreMascota) {
+        this.NombreMascota = NombreMascota;
+    }
+
+    public String getFotoMascota() {
+        return FotoMascota;
+    }
+
+    public void setFotoMascota(String FotoMascota) {
+        this.FotoMascota = FotoMascota;
+    }
+
+    public String getNombreP() {
+        return NombreP;
+    }
+
+    public void setNombreP(String NombreP) {
+        this.NombreP = NombreP;
+    }
+
+    public String getApellidoP() {
+        return ApellidoP;
+    }
+
+    public void setApellidoP(String ApellidoP) {
+        this.ApellidoP = ApellidoP;
+    }
+
+    public String getTelefono1P() {
+        return Telefono1P;
+    }
+
+    public void setTelefono1P(String Telefono1P) {
+        this.Telefono1P = Telefono1P;
+    }
+
+    public String getTelefono2P() {
+        return Telefono2P;
+    }
+
+    public void setTelefono2P(String Telefono2P) {
+        this.Telefono2P = Telefono2P;
+    }
+
+    public String getCorreoP() {
+        return CorreoP;
+    }
+
+    public void setCorreoP(String CorreoP) {
+        this.CorreoP = CorreoP;
+    }
+
+    public String getCopiaCC() {
+        return CopiaCC;
+    }
+
+    public void setCopiaCC(String CopiaCC) {
+        this.CopiaCC = CopiaCC;
+    }
+
+    public String getCopiaRP() {
+        return CopiaRP;
+    }
+
+    public void setCopiaRP(String CopiaRP) {
+        this.CopiaRP = CopiaRP;
+    }
     
 }
+

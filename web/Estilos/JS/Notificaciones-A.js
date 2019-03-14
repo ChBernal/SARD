@@ -61,14 +61,14 @@ $(function(){
 $(function(){
 	$(".NombreDN").hide();
 	$(".NombreDC").hide();
-	$(".Postulados").hide();
+	$(".NombreP").hide();
 	$(".DatosDenunciaC").hide();
 	$(".DatosPostulados").hide();
 	$(".Datos_DCliente").hide();
         
 	$(".PostulacionesCiudadano").click(function(){
-            $(".")
-            $(".Postulados").slideToggle();
+            $(".Postul").css("display","initial");
+            $(".NombreP").fadeToggle(1000);
             $(".NombreDN").hide();
             $(".NombreDC").hide();
             $(".DatosDenunciaA").hide();
@@ -125,5 +125,3 @@ $(function(){
 });
 
 //Finaliza Acordeon
-
-

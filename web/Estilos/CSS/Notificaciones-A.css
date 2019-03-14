@@ -500,7 +500,7 @@ header {
 
 .NombreDN, 
 .NombreDC,
-.Postulados {
+.NombreP {
 	width: 100%;
 	height: 50px;
 	box-sizing: border-box;

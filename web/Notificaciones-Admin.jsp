@@ -261,15 +261,80 @@
                 
             <!-- Finaliza Denuncia Ciudadano -->
                 
+            <!-- Inicio Responder Postulaciones -->
                 
             <div class="Postul">
-                <div class="Postulados">
-                </div>
-                <div class="DatosPostulados">
-                </div>
-            </div>
             
-            
+                <%
+                    ArrayList<GS_Postulacion> Dato_Postulacion = new ArrayList<>();
+                    Postulacion_M ConsultaP = new Postulacion_M();
+                    Dato_Postulacion = ConsultaP.VerPostulaciones();
+                    GS_Postulacion GSP = new GS_Postulacion();
+
+                    for(int i=0; i<Dato_Postulacion.size(); i++){
+                        GSP = Dato_Postulacion.get(i);
+                %>
+                
+                <!-- Datos de Denuncia Ciudadano -->
+                
+                <div class="NombreP">
+                    <div class="Fecha">
+                        <label><%=GSP.getFecha()%></label>
+                    </div>
+                    <div class="NombreM">
+                        <label><%=GSP.getNombreMascota()%></label>
+                    </div>
+                    <div class="NombreC">
+                        <label><%=GSP.getNombreP() %></label>
+                    </div>
+                    <div class="ApellidoP">
+                        <label><%=GSP.getApellidoP() %></label>
+                    </div>
+                    <div class="icono-observar">
+                            <label class=" fa fa-eye Prueba-Postulados"></label>
+                    </div>
+                </div>
+                    
+                <!-- Finaliza Datos Denuncia Ciudadano -->
+                
+                <!-- Ventanda modal con datos de denuncia Ciudadano -->
+                    
+                <div class="ModalPostulados">
+                    <div class="Datos_DCiudadano">
+                        <div class="HeaderCiudadano">
+                            <h1>Respuesta</h1>
+                            <label class="fa fa-close cerrar_Ciudadano"></label>
+                        </div>
+                        <div class="BodyCiudadano">
+                            <div class="Img-Ciudadano">
+                                <img class="img-Denuncia_C" src="<%=Dat_Cliente.getEvidencia()%>">
+                            </div>
+                            <div class="DatosDC">
+                                <label class="dat">Fecha:</label>
+                                <label><%=Dat_Cliente.getFecha()%></label>
+                                <label class="dat">Dirección:</label>
+                                <label><%=Dat_Cliente.getDireccion()%></label>
+                            </div>  
+                        </div>
+                        <div class="Footer-BodyCiudadano">
+                            <div class="Descrip">
+                                <b><label class=""> Descripcion:</label></b>
+                                <label><%=Dat_Cliente.getDescripcion()%></label>
+                            </div>
+                            <div class="respuestas">
+                                <label><input type="radio" class="btn-ResponderCiudadano" name="Respuesta" value="Respuesta" />
+                                Responder</label>
+                                <label><input type="radio" class="btn-PredeterminadaC" name="Predeterminada" value="Respuesta" />
+                                Predeterminada</label>
+                            </div>
+                            <textarea class="Respuesta" name="Respuesta" ></textarea>
+                        </div>
+                        <input class="Enviar_Respuesta_Ciudadano" type="submit" name="Res_Ciudadano" value="Enviar">
+                    </div>
+                </div>
+                  <%}%>
+                <!-- Finaliza Modal Ciudadano -->
+            </div>    
             
         </article>
     </main>
