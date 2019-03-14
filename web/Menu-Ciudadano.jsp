@@ -308,7 +308,7 @@
                                                                 </div>
                                                                 <input type="hidden" name="Documento" value="<%= Doc%>"> 
                                                                 <input type="hidden" name="Codigo" value="<%= GSM.getDocumento()%>"> 
-                                                                <button name="btn-Postulacion" class="btn-Postulacion">Postularme</button>
+                                                                <button name="btn-Postulacion" class="btn-Postulacion">Siguiente</button>
                                                             </form>
                                                         </div>
                                                     </div>
