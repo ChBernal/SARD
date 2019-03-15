@@ -45,7 +45,7 @@
                 </a>
                 <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
                 <hr>
-                <a name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</a>
+                <a href="index.jsp" name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</a>
             </div>
         </div>	
     </div>
@@ -116,7 +116,7 @@
                 <%
                     ArrayList<GS_Denuncias> Dato_Anonima = new ArrayList<>();
                     Denuncias_M con = new Denuncias_M();
-                    Dato_Anonima = con.Tabla_Denuncias();
+                    Dato_Anonima = con.Inicial_Denuncias();
                     GS_Denuncias Dat_Anonima = new GS_Denuncias();
 
                     for(int i=0; i<Dato_Anonima.size(); i++){
@@ -194,7 +194,7 @@
                 <%
                     ArrayList<GS_Denuncia_Cliente> Dato_Cliente = new ArrayList<>();
                     Denuncias_M D_Cliente = new Denuncias_M();
-                    Dato_Cliente = D_Cliente.Tabla_Denuncias2();
+                    Dato_Cliente = D_Cliente.Inicial_DenunciasC();
                     GS_Denuncia_Cliente Dat_Cliente = new GS_Denuncia_Cliente();
 
                     for(int i=0; i<Dato_Cliente.size(); i++){

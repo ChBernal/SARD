@@ -13,6 +13,8 @@ public class Denuncias_M {
     PreparedStatement PreSta=null;
     ResultSet Reset=null;
     
+    //Insertar Denuncias
+    
     public int InsertarDenuncias (GS_Denuncias GSD){
         int x=0;
         try {
@@ -40,34 +42,15 @@ public class Denuncias_M {
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Sus datos fueron ingresados");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error Denuncias cliente");
+            JOptionPane.showMessageDialog(null, "Error Denuncias cliente"+e);
         }
     }
-    public void Respuesta_Denuncia_Anonima (GS_Respuesta GS_R){
-        
-        try {
-            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia_Anonima(?,?)");
-            PreSta.setString(1, GS_R.getDescripcion());
-            PreSta.setInt(2, GS_R.getCod_Denuncia());
-            PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e+"Error al enviar denuncia");
-        }
-    }
-    public void Respuesta_Denuncia_Cliente (GS_Respuesta GS_R){
-        
-        try {
-            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia_Cliente(?,?)");
-            PreSta.setString(1, GS_R.getDescripcion());
-            PreSta.setInt(2, GS_R.getCod_Denuncia());
-            PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,e+ "Error al enviar denuncia");
-        }
-    }
-    public ArrayList<GS_Denuncias> Tabla_Denuncias (){
+     
+    //Finaliza Insercion
+     
+    //Ver Denuncias Nuevas
+    
+    public ArrayList<GS_Denuncias> Inicial_Denuncias (){
         ArrayList<GS_Denuncias> Tabla=new ArrayList<>();
         
         try {
@@ -84,38 +67,53 @@ public class Denuncias_M {
         }
         return Tabla;
     }
-     public ArrayList<GS_Denuncias> Uno_Anonima(int Codigo){
-        ArrayList<GS_Denuncias> Uno_Anoninma=new ArrayList<>();
+    
+    public ArrayList<GS_Denuncia_Cliente> Inicial_DenunciasC (){
+        ArrayList<GS_Denuncia_Cliente> Tabla=new ArrayList<>();
         
         try {
-            PreSta= BaseDatos.prepareStatement("call Uno_Denuncia_Anonima ("+Codigo+")");
-            Reset= PreSta.executeQuery();
-            
-            while (Reset.next()) {   
-                GS_Denuncias ing=new GS_Denuncias(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6));
-                Uno_Anoninma.add(ing);
-            }
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e+" Error en Uno Anonima ");
-        }
-        return Uno_Anoninma;
-    }
-    public ArrayList<GS_Denuncia_Cliente> Tabla_Denuncias2 (){
-        ArrayList<GS_Denuncia_Cliente> Tabla2=new ArrayList<>();
-        
-        try {
-            PreSta= BaseDatos.prepareStatement("call Todo_DenunciasC ()");
+            PreSta= BaseDatos.prepareStatement("call Inicial_DenunciaC()");
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
                 GS_Denuncia_Cliente ing=new GS_Denuncia_Cliente(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6));
-                Tabla2.add(ing);
+                Tabla.add(ing);
             }
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e+" Error en Todo Denuncia");
         }
-        return Tabla2;
+        return Tabla;
+    }
+    
+    //Finaliza Ver Denuncias  Nuevas
+
+
+    //Respuestas de Denuncias
+    
+    public void Respuesta_Denuncia_Anonima (GS_Respuesta GS_R){
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia_Anonima(?,?)");
+            PreSta.setString(1, GS_R.getDescripcion());
+            PreSta.setInt(2, GS_R.getCod_Denuncia());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+"Error al enviar denuncia");
+        }
+    }
+    
+    public void Respuesta_Denuncia_Cliente (GS_Respuesta GS_R){
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia_Cliente(?,?)");
+            PreSta.setString(1, GS_R.getDescripcion());
+            PreSta.setInt(2, GS_R.getCod_Denuncia());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e+ "Error al enviar denuncia");
+        }
     }
 }
