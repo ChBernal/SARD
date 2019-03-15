@@ -170,14 +170,13 @@
                                 <label><%=Dat_Anonima.getDescripcion()%></label>
                             </div>
                             <div class="respuestas">
-                                <label><input type="radio" class="btn-Responder" name="Respuesta" value="Respuesta" />
-                                Responder</label>
-                                <label><input type="radio" class="btn-Predeterminada" name="Predeterminada" value="Respuesta" />
-                                Predeterminada</label>
+                                <label class="Resp-Escrita">Responder</label>
+                                <label class="Resp-Predeterminada">Predeterminada</label>
                             </div>
                             <textarea class="Respuesta" name="Respuesta" ></textarea>
                         </div>
-                        <input class="Enviar_Respuesta_Anonima" type="submit" name="Res_Anonima" value="Enviar">
+                        <input class="Enviar_Respuesta_Anonima" type="submit" name="Res_Anonima" value="Responder y Finalizar">
+                        <input class="Enviar_Respuesta_Anonima" type="submit" name="Res_Anonima" value="Responder y Continuar">
                     </div>
                 </div>
                   <%}%>

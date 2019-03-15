@@ -16,8 +16,8 @@ body {
 	padding-top: 55px;
 }
 
-
 /* Aca terminan los estilos generales */
+
 /* aca va todo sobre el menu */
 
 header {
@@ -328,7 +328,7 @@ header {
 }
 
 .Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"]:focus,
-.Contenedor-Formulario-Contrasena-Adopcion .Formulario .Input-Group-Contrasena input[type="text"]:active,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"]:active,
 .Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"]:focus,
 .Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"]:active,
 .Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"]:focus,
@@ -605,4 +605,8 @@ header {
 .Footer-BodyCiudadano {
     width: 100%;
     padding: 40px;
+}
+
+.Respuesta {
+    display: none;
 }

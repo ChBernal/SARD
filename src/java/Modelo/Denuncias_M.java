@@ -94,7 +94,7 @@ public class Denuncias_M {
     public void Respuesta_Denuncia_Anonima (GS_Respuesta GS_R){
         
         try {
-            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia_Anonima(?,?)");
+            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia_Anonima(?,?,?)");
             PreSta.setString(1, GS_R.getDescripcion());
             PreSta.setInt(2, GS_R.getCod_Denuncia());
             PreSta.executeUpdate();
