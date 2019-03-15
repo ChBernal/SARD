@@ -1,0 +1,371 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: rgb(220,237,200) url("../Imagenes/Fondo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Nunito Sans', sans-serif arial;
+	font-size: 16px;
+}
+.Contenedor-Mascotas{
+        background: rgba(255,249,196,.8);
+        width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+}
+.Barra{
+    background: rgb(39,174,96);
+    width: 100%;
+    height: 50px;
+    min-width: 350px;
+    top: 0;
+}
+.Barra .fa-home{
+    padding: 5px 20px;
+    font-size: 38px;
+    color: white;
+}
+.Barra .fa-home:hover{
+    color: red;
+}
+/* Formulario Postulacion */
+.Adopcion{
+    margin-top: 10px;
+}
+.Contenido-Modal{
+	background: rgb(255,255,255);
+	position: relative;
+	margin: auto;
+	width: 100%;
+	max-width: 1000px;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
+	animation-name: modal;
+	animation-duration: 1s;
+}
+
+.Header-Modal, .Footer-Modal {
+	padding: 8px 16px;
+	background: rgb(39,174,96);
+	color: rgb(255,255,255);
+}
+
+.Footer-Modal a{
+	cursor: pointer;
+}
+.Posicion-Postulacion {
+	display: flex;
+	flex-wrap: wrap;
+}
+.Body-Modal {
+	text-align: justify;
+	padding: 0 16px;
+}
+.Lefth-Postulacion {
+	width: 250px;
+	height: 100%;
+	margin: auto;
+	text-align: center;
+}
+.Lefth-Postulacion .Mascota{
+        display: flex;
+}
+.Lefth-Postulacion .Mascota .Datos_Mascota {
+	width: 50%;
+	height: 100%;
+	margin: auto;
+        padding-left: 10px;
+	color: rgb(39,174,96);
+	align-items: baseline;
+	text-align: left;
+}
+
+.Lefth-Postulacion .Mascota .Datos_Mascota label{
+        display: block;
+        margin-top: 6px;
+}
+
+.Lefth-Postulacion .Mascota .Imagen-Mascota  img {
+	width: 160px;
+	height: 160px;
+	margin: auto;
+	border-radius: 50%;
+	border: 1px solid rgb(39,174,96);
+}
+
+.Wrap {
+	width: 90%;
+	max-width: 500px;
+	padding: 40px;
+	margin: auto;
+	background: rgb(255,255,255);
+}
+.Contenedor-Formulario {
+	width: 100%;
+	color: #fff;
+	padding: 20px 10px;
+}
+
+.Contenedor-Formulario .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"],
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"],
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"]:active,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"]:active,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"]:focus,
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"].error,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"].error,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"].error,
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="text"].error + label,
+.Contenedor-Formulario .Formulario .Input-Group input[type="email"].error + label,
+.Contenedor-Formulario .Formulario .Input-Group input[type="password"].error + label,
+.Contenedor-Formulario .Formulario .Input-Group input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group label.label {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group label.label.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label,
+.Contenedor-Formulario .Formulario .Input-Group.Radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: rgb(39,174,96);
+	position: relative;
+	padding: 5px 15px 5px 51px;
+	font-size: 1em;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox label:hover,
+.Contenedor-Formulario .Formulario .Input-Group.Radio label:hover {
+	background: rgba(220,237,200,1);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group input[type="file"]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group span{
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio input[type="radio"],
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio input[type="radio"]:checked + label:before,
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox input[type="checkbox"]:checked + label:before {
+	display: none;
+}
+
+.Contenedor-Formulario .Formulario .Input-Group.Radio input[type="radio"]:checked + label,
+.Contenedor-Formulario .Formulario .Input-Group.Checkbox input[type="checkbox"]:checked + label {
+	padding: 5px 15px;
+	background: rgb(39,174,96);
+	border-radius: 2px;
+	color: rgb(255,255,255);
+}
+
+.Rigth-Postulacion {
+	width: 70%;
+	height: 100%;
+        padding-left: 10px;
+	border-left: 1px solid rgb(39,174,96);
+}
+
+.Siguiente1 {
+	width: 90%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: rgb(255,255,255);
+	border: 2px solid rgb(255,255,255);
+	background: rgb(39,174,96);
+	text-align: center;
+	margin: auto;
+	border-radius: 5px;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Siguiente2,
+.Siguiente3,
+.Siguiente4,
+.btn-Postulacion {
+	width: 90%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: rgb(255,255,255);
+	border: 2px solid rgb(255,255,255);
+	background: rgb(39,174,96);
+	text-align: center;
+	margin: auto;
+	border-radius: 5px;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Anterior1,
+.Anterior2,
+.Anterior3,
+.Anterior4 {
+	width: 90%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: 2px solid rgb(255,255,255);
+	background: rgb(39,174,96);
+	text-align: center;
+	margin: auto;
+	border-radius: 5px;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    color: rgb(255,255,255);
+}
+
+.Siguiente1:hover,
+.Siguiente2:hover,
+.Siguiente3:hover,
+.Siguiente4:hover,
+.btn-Postulacion:hover,
+.Anterior1:hover,
+.Anterior2:hover,
+.Anterior3:hover,
+.Anterior4:hover {
+	background: rgb(35,200,104);
+}
+
+#Doc {
+	font-size: 0px;
+	width: 0px;
+	height: 0px;
+}
+
+.Preguntas {
+	color: rgb(39,174,96);
+	font-size: 16px;
+	font-family: "Nunito";
+}
+
+/* Fin de formulario Postulacion*/
