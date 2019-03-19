@@ -1,3 +1,7 @@
+<%@page import="Modelo.GS_Login"%>
+<%@page import="Modelo.Login_M"%>
+<%@page import="Modelo.GS_Admin"%>
+<%@page import="Modelo.Admin_M"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.GS_Ciudadano"%>
 <%@page import="Modelo.Ciudadano_M"%>
@@ -10,6 +14,7 @@
 <!DOCTYPE html>
 <%
     HttpSession Dat = request.getSession();
+    String Doc=(String)Dat.getAttribute("DocumentoSession");
 %>
 <html lang="en">
 <head>
@@ -36,7 +41,19 @@
                 <a href="" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
                 <div class="Perfil">
                     <a href="#" class="Abrir" id="Abrir"><%=(String)Dat.getAttribute("NombreSession")%></a>
-                    <img src="Uploads/Yefrin_Usuario1.jpg">
+                     <%
+                        Admin_M Admin = new Admin_M();
+                        GS_Admin GS_A = new GS_Admin(Doc);
+                        ArrayList<GS_Admin> datos = new ArrayList<>();
+                        datos = Admin.Uno_Admin(GS_A);
+
+                        for(int i=0; i<datos.size(); i++){
+                            GS_A= datos.get(i);
+                    %>
+                    <img width="40px" height="40px" src="<%= GS_A.getFoto()%>">
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </nav>
@@ -46,7 +63,7 @@
             <div class="Enlaces-Perfil">
                 <a href="Perfil_Administrador.jsp"><i class="fa fa-user-o"></i>Perfil</a>
                 <a href="Notificaciones-Admin.jsp">Notificaciones</a>
-                <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
+                <a class="Cambio-Contraseña" href="#"><i class="fa fa-lock"></i>Cambio Contraseña</a>
                 <hr>
                 <a href="index.jsp" name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</a>
             </div>
@@ -57,7 +74,65 @@
             <div id="Cabezera" class="Cabezera">
                 <h1>Bienvenido Administrador <%=(String)Dat.getAttribute("NombreSession")%></h1>
             </div>
+            
+            
+            <div>
+                <%
+                    Login_M Login = new Login_M();
+                    ArrayList<GS_Login> Estado = new ArrayList<>();
+                    Estado = Login.Uno_Usuario(Doc);
+                    GS_Login GSL = new GS_Login();
 
+                    for(int i=0; i<Estado.size(); i++){
+                        GSL= Estado.get(i);
+                %>
+                <input type="hidden" name="PrimerIngreso" id="PrimerIngreso" value="<%=GSL.getEstado()%>" >    
+                <% 
+                }
+                %>
+            </div>
+            
+            
+            <!-- Ventana Modal Con Formulario de Contraseña -->
+            
+            <div class="Modal-Contrasena" id="Modal-Contrasena">
+		<div class="flex-Contrasena" id="flex-Contrasena">
+                    <div class="Contenido-Modal-Contrasena">
+                        <div class="Header-Modal-Contrasena flex-Con">
+                                <h2>Cambio Contraseña</h2>	
+                        </div>
+                        <div class="Body-Modal-Contrasena">
+                            <div class="Contenedor-Formulario-Contrasena">
+                                <form action="ServletLogin" class="Formulario" method="POST" name="Formulario_Contrasena">
+                                    <div>
+                                        <input type="hidden" name="Documento" value="<%=Doc%>">
+                                        <input type="hidden" name="Rol" value="<%=GSL.getRol()%>">
+                                        <div class="Input-Group-Contrasena">
+                                            <input type="password" id="ClaveAntigua" name="ClaveAntigua" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+                                            <label class="label-Contrasena" for="ClaveAntigua">Contraseña Actual </label>
+                                        </div>
+                                        <div class="Input-Group-Contrasena">
+                                            <input type="password" id="ClaveNueva" name="ClaveNueva" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+                                            <label class="label-Contrasena" for="ClaveNueva">Nueva Contraseña </label>
+                                        </div>
+                                        <div class="Input-Group-Contrasena">
+                                            <input type="password" id="RepetirClave" name="RepetirClave" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+                                            <label class="label-Contrasena" for="RepetirClave">Repita la contraseña </label>
+                                        </div>
+                                        <input type="submit" class="btn-submit" id="btn-submit" name="UsuarioContrasena" value="Cambiar">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="Footer-Modal-Contrasena">
+                        </div>
+                    </div>
+		</div> 
+            </div>
+            	
+            <!-- Finaliza Ventana Modal y Formulario de Contraseña -->
+            
+            
                 <article id="Mascotas" class="Adopcion">
                     <h1>Registro de Mascotas</h1>
                     <hr>

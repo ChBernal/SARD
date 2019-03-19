@@ -13,6 +13,55 @@ $(document).ready(function(){
 
 //finalizacion efecto parallax
 
+
+//Todas las opciones del menu
+
+$(function(){
+	var header = document.getElementById('header');
+	var headroom = new Headroom(header);
+	headroom.init();
+
+	var ancho = $(window).width(),
+		enlaces = $('.Enlaces'),
+		btnMenu = $('.btn-menu'),
+		icono = $('.btn-menu .icono');
+		perfil = $('.Perfil');
+		Espacio = $('.Espacio-Perfil');
+
+		Espacio.hide();
+
+	if (ancho < 990) {
+		enlaces.hide();
+		icono.addClass('fa-bars');
+		
+	}
+
+	btnMenu.on('click', function(e){
+		enlaces.slideToggle();
+		icono.toggleClass('fa-bars');
+		icono.toggleClass('fa-times');
+	});
+
+	perfil.on('click',function(e){
+		Espacio.slideToggle();
+	});
+
+	$(window).on('resize', function(){
+		if($(this).width() > 990){
+			enlaces.show();
+			icono.addClass('fa-times');
+			icono.removeClass('fa-bars');
+		}else {
+			enlaces.hide();
+			icono.addClass('fa-bars');
+			icono.removeClass('fa-times');
+		}
+	});
+
+});
+
+//Finalizacion de menu
+
 //Validacion Primer Ingreso
 $(function(){
 	var PrimerIngreso = $('#PrimerIngreso').val();
@@ -24,8 +73,11 @@ $(function(){
 
 //Finaliza Primer Ingreso
 
-/*
-Todas la opnciones del formulario de Contraseña
+$(".Cambio-Contraseña").click(function (){
+    let modal = document.getElementById('Modal-Contrasena');
+    modal.style.display = 'block';
+});
+// Todas la opnciones del formulario de Contraseña
 
 (function(){
 	var formulario = document.Formulario_Contrasena,
@@ -84,56 +136,8 @@ Todas la opnciones del formulario de Contraseña
 
 }());
 
-Finalizacion de formulario Contraseña
-*/
+//Finalizacion de formulario Contraseña
 
-//Todas las opciones del menu
-
-$(function(){
-	var header = document.getElementById('header');
-	var headroom = new Headroom(header);
-	headroom.init();
-
-	var ancho = $(window).width(),
-		enlaces = $('.Enlaces'),
-		btnMenu = $('.btn-menu'),
-		icono = $('.btn-menu .icono');
-		perfil = $('.Perfil');
-		Espacio = $('.Espacio-Perfil');
-
-		Espacio.hide();
-
-	if (ancho < 990) {
-		enlaces.hide();
-		icono.addClass('fa-bars');
-		
-	}
-
-	btnMenu.on('click', function(e){
-		enlaces.slideToggle();
-		icono.toggleClass('fa-bars');
-		icono.toggleClass('fa-times');
-	});
-
-	perfil.on('click',function(e){
-		Espacio.slideToggle();
-	});
-
-	$(window).on('resize', function(){
-		if($(this).width() > 990){
-			enlaces.show();
-			icono.addClass('fa-times');
-			icono.removeClass('fa-bars');
-		}else {
-			enlaces.hide();
-			icono.addClass('fa-bars');
-			icono.removeClass('fa-times');
-		}
-	});
-
-});
-
-//Finalizacion de menu
 
 //Inicio de Opciones Perfil
 
@@ -144,6 +148,7 @@ $(function(){
 });
 
 //Finaliza Opciones Perfil
+
 
 
 // Acordeon Denuncias 

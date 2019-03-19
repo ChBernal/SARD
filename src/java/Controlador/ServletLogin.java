@@ -63,6 +63,7 @@ public class ServletLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String Usuario,Contraseña_Antigua, Contraseña1,Contraseña2;
+        int Rol = Integer.parseInt(request.getParameter("Rol"));
         Usuario = request.getParameter("Documento");
         Contraseña_Antigua = request.getParameter("ClaveAntigua");
         Contraseña1 = request.getParameter("ClaveNueva");
@@ -101,9 +102,21 @@ public class ServletLogin extends HttpServlet {
             JOptionPane.showMessageDialog(null, "La Contraseña Actual no coincide con la digitada");
         }
        
-        
-        response.sendRedirect("Menu-Ciudadano.jsp");
-        
+        if (Rol==1) {
+          response.sendRedirect("Menu-Admin.jsp");  
+        }
+        if (Rol==2) {
+          response.sendRedirect("Menu-Admin.jsp");  
+        }
+        if (Rol==3) {
+          response.sendRedirect("Menu-SA.jsp");  
+        }
+        if (Rol==4) {
+          response.sendRedirect("");  
+        }
+        if (Rol==5) {
+          response.sendRedirect("Menu-Ciudadano.jsp");  
+        }
     }
     protected int Login(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
