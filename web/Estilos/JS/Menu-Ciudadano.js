@@ -60,6 +60,77 @@ $(function(){
 });
 
 //Finalizacion de menu
+//Validacion Primer Ingreso
+$(function(){
+	var PrimerIngreso = $('#PrimerIngreso').val();
+	let modal = document.getElementById('Modal-Contrasena');
+	if (PrimerIngreso == 1) {		
+		modal.style.display = 'block';
+	}
+});
+
+//Finaliza Primer Ingreso
+
+// Todas la opnciones del formulario de Contraseña
+
+(function(){
+	var formulario = document.Formulario_Contrasena,
+		elementos = formulario.elements;
+
+	//Funciones
+
+	var ValidarInputs = function(){
+		for (var i = 0; i < elementos.length; i++) {
+			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
+				if (elementos[i].value == 0) {
+					console.log('El Campo ' + elementos[i].name + ' esta incompleto');
+					elementos[i].className = elementos[i].className + " error";
+					return false;
+				} else {
+					elementos[i].className = elementos[i].className.replace(" error", "");
+				}
+			}
+		}
+
+		return true;
+	};
+
+	var enviar = function(e){
+		if (!ValidarInputs()) {
+			console.log('Falto validar los Input');
+			e.preventDefault();
+		}else {
+			console.log('Envia correctamente');
+		}
+	};
+
+	//Funciones blur y focus
+
+	var focusInputs = function(){
+		this.parentElement.children[1].className = "label-Contrasena active";
+		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
+	};
+
+	var blurInputs = function(){
+		if (this.value <= 0) {
+			this.parentElement.children[1].className = "label-Contrasena";
+			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
+		}
+	};
+
+	//Eventos
+	formulario.addEventListener("submit", enviar);
+
+	for (var i = 0; i < elementos.length; i++) {
+		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
+			elementos[i].addEventListener("focus", focusInputs);
+			elementos[i].addEventListener("blur", blurInputs);
+		}
+	}
+
+}());
+
+//Finalizacion de formulario Contraseña
 
 //Inicio de Opciones Perfil
 

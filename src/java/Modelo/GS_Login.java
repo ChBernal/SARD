@@ -4,22 +4,27 @@ public class GS_Login {
     private String Usuario;
     private String Clave;
     private int Rol;
+    private int Estado;
 
     public GS_Login() {
     }
-
-    public GS_Login(String Usuario, String Clave, int Rol) {
+    
+    public GS_Login(String Usuario, String Clave, int Rol, int Estado) {
         this.Usuario = Usuario;
         this.Clave = Clave;
         this.Rol = Rol;
-    }
-    
-    public int getRol() {
-        return Rol;
+        this.Estado = Estado;
     }
 
-    public void setRol(int Rol) {
-        this.Rol = Rol;
+    public GS_Login(String Usuario, String Clave, int Estado) {
+        this.Usuario = Usuario;
+        this.Clave = Clave;
+        this.Estado = Estado;
+    }
+
+    public GS_Login(String Usuario, String Clave) {
+        this.Usuario = Usuario;
+        this.Clave = Clave;
     }
 
     public String getUsuario() {
@@ -38,9 +43,24 @@ public class GS_Login {
         this.Clave = Clave;
     }
 
-    public GS_Login(String Usuario, String Clave) {
-        this.Usuario = Usuario;
-        this.Clave = Clave;
+    public int getRol() {
+        return Rol;
     }
+
+    public void setRol(int Rol) {
+        this.Rol = Rol;
+    }
+
+    public int getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(int Estado) {
+        this.Estado = Estado;
+    }
+    
+    
+    
+
     
 }

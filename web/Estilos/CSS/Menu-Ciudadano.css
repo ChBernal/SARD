@@ -203,6 +203,218 @@ header {
 
 /* Terminamos todo lo relacionado con la ventana modal */
 
+/* todo lo de ventana modal de contraseña */
+
+.flex-Contrasena {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Modal-Contrasena {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+}
+
+.Contenido-Modal-Contrasena {
+	background: rgb(255,255,255);
+	position: relative;
+	margin: auto;
+	width: 40%;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
+	animation-name: modal;
+	animation-duration: 1s;
+}
+
+/*  Creacion de animacion */
+
+@keyframes modal{
+	from{
+		top: -100%; 
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* Terminamos de crear la animacion */
+
+.close {
+	color: rgb(255,255,255);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.close:hover {
+	color: rgb(117,117,117);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.Header-Modal-Contrasena, .Footer-Modal-Contrasena {
+	padding: 8px 16px;
+	background: rgb(39,174,96);
+	color: rgb(255,255,255);
+}
+
+.Footer-Modal-Contrasena a{
+	cursor: pointer;
+}
+
+.Body-Modal-Contrasena {
+	text-align: justify;
+	padding: 20px 16px;
+}
+
+/* Terminamos todo lo relacionado con la ventana modal */
+
+/* Inicio Formulario Contrasena */
+
+
+.Contenedor-Formulario-Contrasena {
+	width: 100%;
+	color: #fff;
+	padding: 8px;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"],
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"],
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 16px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"]:focus,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"]:active,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"]:focus,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"]:active,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"]:focus,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"]:focus,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"].error,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"].error,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"].error,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"].error + label,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"].error + label,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"].error + label,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena label.label-Contrasena {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena label.label-Contrasena.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label:hover,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label:before,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 16px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin formulario Contrasena */
+
 /* Comienzo de Perfil Usuario */
 
 .Espacio-Perfil {

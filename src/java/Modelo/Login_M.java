@@ -36,7 +36,7 @@ public class Login_M {
             ps.setString(1, ID);
             rs = ps.executeQuery();
             while (rs.next()){
-                GS_Login Gsl = new GS_Login(rs.getString(1), rs.getString(2), rs.getInt(3));
+                GS_Login Gsl = new GS_Login(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4));
                 Usuario.add(Gsl);
             }
         } catch (Exception e) {
@@ -47,9 +47,10 @@ public class Login_M {
     public int Actualizar_Contraseña(GS_Login GS){
          int Actualizar=0;
         try{
-            ps=cnn.prepareStatement("call A_Login(?,?)");
+            ps=cnn.prepareStatement("call A_Login(?,?,?)");
             ps.setString(1, GS.getUsuario());
             ps.setString(2, GS.getClave());
+            ps.setInt(3, GS.getEstado());
             Actualizar=ps.executeUpdate();
         }
         catch(Exception e){

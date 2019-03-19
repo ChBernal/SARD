@@ -36,7 +36,7 @@
                 <a href="" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
                 <div class="Perfil">
                     <a href="#" class="Abrir" id="Abrir"><%=(String)Dat.getAttribute("NombreSession")%></a>
-                    <img src="">
+                    <img src="Uploads/Yefrin_Usuario1.jpg">
                 </div>
             </div>
         </nav>
@@ -44,7 +44,7 @@
     <div class="Espacio-Perfil">
         <div class="PerfilUsuario" id="PerfilUsuario">
             <div class="Enlaces-Perfil">
-                <a href="Perfil_Asministrador.jsp"><i class="fa fa-user-o"></i>Perfil</a>
+                <a href="Perfil_Administrador.jsp"><i class="fa fa-user-o"></i>Perfil</a>
                 <a href="Notificaciones-Admin.jsp">Notificaciones</a>
                 <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
                 <hr>

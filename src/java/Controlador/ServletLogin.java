@@ -53,6 +53,57 @@ public class ServletLogin extends HttpServlet {
                     
             }
         }
+        if (request.getParameter("UsuarioContrasena")!=null) {
+            Actualizar_Contraseña(request, response);
+        }
+    }
+    
+    protected void Actualizar_Contraseña(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String Usuario,Contraseña_Antigua, Contraseña1,Contraseña2;
+        Usuario = request.getParameter("Documento");
+        Contraseña_Antigua = request.getParameter("ClaveAntigua");
+        Contraseña1 = request.getParameter("ClaveNueva");
+        Contraseña2 = request.getParameter("RepetirClave");
+        
+        /* VALIDAR CONTRASEÑA ANTIGUA*/
+        Login_M Login = new Login_M();
+        ArrayList<GS_Login> Antigua = new ArrayList<>();
+        Antigua = Login.Uno_Usuario(Usuario);
+        GS_Login GSL = new GS_Login();
+
+        for(int i=0; i<Antigua.size(); i++){
+            GSL= Antigua.get(i);
+        }
+        String C_Antigua =GSL.getClave();
+        int Ingreso = GSL.getEstado()+1;
+        
+        if (Contraseña_Antigua.equals(C_Antigua)) {
+            
+             if (Contraseña1.equals(C_Antigua)) {
+                JOptionPane.showMessageDialog(null,"Tu nueva contraseña no puede ser igual a la anterior");
+            }
+            else{
+               if (Contraseña1.equals(Contraseña2)) {
+                    GS_Login GS_C1= new GS_Login(Usuario, Contraseña1, Ingreso);
+                    Login.Actualizar_Contraseña(GS_C1);
+                    JOptionPane.showMessageDialog(null, "Tu contraseña ha sido Actualizada con exito");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "La contraseña Nueva y la confirmación no coinciden");
+                }
+            }
+           
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "La Contraseña Actual no coincide con la digitada");
+        }
+       
+        
+        response.sendRedirect("Menu-Ciudadano.jsp");
+        
     }
     protected int Login(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

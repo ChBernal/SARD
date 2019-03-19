@@ -1,3 +1,5 @@
+<%@page import="Modelo.GS_Login"%>
+<%@page import="Modelo.Login_M"%>
 <%@page import="Modelo.GS_Tips"%>
 <%@page import="Modelo.Tips_M"%>
 <%@page import="javax.swing.JOptionPane"%>
@@ -85,7 +87,64 @@
                     <h1>Bienvenid@ <%=(String)Dat.getAttribute("NombreSession")%></h1>
                 </div>
             </div>
+                
+            <div>
+                <%
+                    Login_M Login = new Login_M();
+                    ArrayList<GS_Login> Estado = new ArrayList<>();
+                    Estado = Login.Uno_Usuario(Doc);
+                    GS_Login GSL = new GS_Login();
 
+                    for(int i=0; i<Estado.size(); i++){
+                        GSL= Estado.get(i);
+                %>
+                <input type="hidden" name="PrimerIngreso" id="PrimerIngreso" value="<%=GSL.getEstado()%>" >    
+                <% 
+                }
+                %>
+            </div>
+            
+            
+            <!-- Ventana Modal Con Formulario de Contraseña -->
+            
+            <div class="Modal-Contrasena" id="Modal-Contrasena">
+		<div class="flex-Contrasena" id="flex-Contrasena">
+                    <div class="Contenido-Modal-Contrasena">
+                        <div class="Header-Modal-Contrasena flex-Con">
+                            <h2>Cambio Contraseña</h2>	
+                        </div>
+                        <div class="Body-Modal-Contrasena">
+                            <div class="Contenedor-Formulario-Contrasena">
+                                <form action="ServletLogin" class="Formulario" method="POST" name="Formulario_Contrasena">
+                                    <div>
+                                        <input type="hidden" name="Documento" value="<%=Doc%>">
+                                        <div class="Input-Group-Contrasena">
+                                            <input type="password" id="ClaveAntigua" name="ClaveAntigua" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+                                            <label class="label-Contrasena" for="ClaveAntigua">Contraseña Actual </label>
+                                        </div>
+                                        <div class="Input-Group-Contrasena">
+                                            <input type="password" id="ClaveNueva" name="ClaveNueva" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+                                            <label class="label-Contrasena" for="ClaveNueva">Nueva Contraseña </label>
+                                        </div>
+                                        <div class="Input-Group-Contrasena">
+                                            <input type="password" id="RepetirClave" name="RepetirClave" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+                                            <label class="label-Contrasena" for="RepetirClave">Repita la contraseña </label>
+                                        </div>
+                                        <input type="hidden" name="Rol" value="5">
+                                        <input type="submit" class="btn-submit" id="btn-submit" name="UsuarioContrasena" value="Cambiar">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="Footer-Modal-Contrasena">
+                        </div>
+                    </div>
+		</div> 
+            </div>
+            	
+            <!-- Finaliza Ventana Modal y Formulario de Contraseña -->
+            
+            
             <article id="Denuncias" class="Denuncias">
                 <h1>Denuncias</h1>
                 <div class="Contenido-Denuncias">
