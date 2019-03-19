@@ -166,7 +166,7 @@ public class Servlet_Postulacion extends HttpServlet {
         out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
         out.println("</head>");
         out.println("<body>");
-        out.print("<script type='text/javascript'> alertify.alert('Gracias por seguir y completar todos los procesos, dentro de un tiempo te envian una cita de encuentro',function(){"
+        out.print("<script type='text/javascript'> alertify.alert('Gracias por seguir y completar todos los procesos, dentro de un tiempo te llegara una cita de encuentro para seguir con el proceso',function(){"
                 + "window.location.href = 'Menu-Ciudadano.jsp'}); </script>");
         out.println("<script src='Estilos/JS/jquery.min.js'></script>");
         out.println("</body>");

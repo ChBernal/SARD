@@ -9,6 +9,9 @@
 <%@page import="Modelo.Mascota_M"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+int Cod=1;
+%>
 <html>
 <head lang="en">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -32,11 +35,11 @@
         </div>
         <div class="Body-Modal">
             <div class="Contenedor-Formulario">
-                <form action="../Controlador/Encuesta-C.php" class="Formulario" method="POST" enctype="multipart/form-data" name="Formulario_Encuesta" >
+                <form action="Servlet_Postulacion" class="Formulario" method="POST" enctype="multipart/form-data" name="Formulario_Encuesta" >
                     <div class="Posicion-Postulacion">
                         <%
                             Mascota_M MM = new Mascota_M();  
-                            GS_Mascota GSM = new GS_Mascota(1);
+                            GS_Mascota GSM = new GS_Mascota(Cod);
                             ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();  
                             Tabla_mascota = MM.Uno_Mascota(GSM);
 
@@ -61,7 +64,7 @@
                             }    
                         %>
                         <!-- Formulario Para realizar Postulacion -->
-
+                        <input type="hidden" name="Codigo" value="<%= Cod%>">
                         <div class="Rigth-Postulacion">
                             <div class="Seccion1">
                                 <label class="Preguntas">¿Tienen todos los miembros de la familia conocimiento de la adopcion?</label>
@@ -245,23 +248,7 @@
                             <div class="Anterior3">
                                     Anterior
                             </div>
-                            <div class="Siguiente4">
-                                    Siguiente
-                            </div>
-                            <div class="Seccion5">
-                                <div class="Input-Group">
-                                    <input type="file" id="Cedula" name="Cedula" accept="application/pdf">
-                                    <label class="label" for= "Cedula"><span class="fa fa-file"></span>Copia de su CC</label>
-                                </div>
-                                <div class="Input-Group">
-                                    <input type="file" id="Recibo" name="Recibo" accept="application/pdf">
-                                    <label class="label" for= "Recibo"><span class="fa fa-file"></span>Copia de Un recibo publico</label>
-                                </div>
-                            </div>
-                            <div class="Anterior4">
-                                    Anterior	
-                            </div>
-                            <button name="btn-Postulacion" class="btn-Postulacion">Postularme</button>
+                            <button name="btn-Postulacion" class="btn-Postulacion">Siguiente</button>
                         </div>
 
                         <!-- Finaliza Formulario Para realizar Postulacion -->

@@ -46,11 +46,8 @@ $(document).ready(function(){
 	$(".Siguiente3").hide();
 	$(".Anterior2").hide();
 	$(".Seccion4").hide();
-	$(".Siguiente4").hide();
 	$(".Anterior3").hide();
-	$(".Seccion5").hide();
 	$(".btn-Postulacion").hide();
-	$(".Anterior4").hide();
 
 	$(".Siguiente1").click(function(){
 		$(".Seccion1").hide(0);
@@ -91,6 +88,7 @@ $(document).ready(function(){
 		$(".Seccion4").slideToggle(0);
 		$(".Siguiente4").slideToggle(0);
 		$(".Anterior3").slideToggle(0);
+                $(".btn-Postulacion").slideToggle(0);
 		$(".Seccion3").hide(0);
 		$(".Siguiente3").hide(0);
 		$(".Anterior2").hide(0);
@@ -101,28 +99,10 @@ $(document).ready(function(){
 		$(".Siguiente3").slideToggle(0);
 		$(".Anterior2").slideToggle(0);
 		$(".Seccion4").hide(0);
+                $(".btn-Postulacion").hide(0);
 		$(".Siguiente4").hide(0);
 		$(".Anterior3").hide(0);
 	});
-
-	$(".Siguiente4").click(function(){
-		$(".Seccion5").slideToggle(0);
-		$(".btn-Postulacion").slideToggle(0);
-		$(".Anterior4").slideToggle(0);
-		$(".Seccion4").hide(0);
-		$(".Siguiente4").hide(0);
-		$(".Anterior3").hide(0);
-	});
-
-	$(".Anterior4").click(function(){
-		$(".Seccion4").slideToggle(0);
-		$(".Siguiente4").slideToggle(0);
-		$(".Anterior3").slideToggle(0);
-		$(".Seccion5").hide(0);
-		$(".btn-Postulacion").hide(0);
-		$(".Anterior4").hide(0);
-	});
-	
 });
 
 //Finalizacion de contenido modal
