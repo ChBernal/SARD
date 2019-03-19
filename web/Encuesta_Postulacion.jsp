@@ -10,7 +10,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-int Cod=1;
+    HttpSession Dat = request.getSession();
+    String Docu=(String)Dat.getAttribute("DocumentoSession");
+    int Cod= Integer.parseInt(request.getParameter("Codigo"));
 %>
 <html>
 <head lang="en">
@@ -65,6 +67,7 @@ int Cod=1;
                         %>
                         <!-- Formulario Para realizar Postulacion -->
                         <input type="hidden" name="Codigo" value="<%= Cod%>">
+                        <input type="hidden" name="Documento" value="<%= Docu%>">
                         <div class="Rigth-Postulacion">
                             <div class="Seccion1">
                                 <label class="Preguntas">¿Tienen todos los miembros de la familia conocimiento de la adopcion?</label>

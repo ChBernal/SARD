@@ -137,7 +137,7 @@ header {
 	align-items: center;
 }
 
-.Modal {
+.Modal2 {
 	position: fixed;
 	z-index: 1;
 	overflow: auto;
@@ -146,59 +146,51 @@ header {
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
 
-.Contenido-Modal{
+.Contendio-Modal2{
 	background: rgb(255,255,255);
-	position: relative;
 	margin: auto;
-	width: 100%;
+	width: 400px;  
 	max-width: 1000px;
+        border-radius: 4px;
+        padding: 15px 20px;
 	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
-	animation-name: modal;
-	animation-duration: 1s;
+        border: 1px solid black;
+        text-align: center;
 }
-
-/*  Creacion de animacion */
-
-@keyframes modal{
-	from{
-		top: -100%; 
-		opacity: 0;
-	}
-	to {
-		top: 0;
-		opacity: 1;
-	}
+.Contendio-Modal2 label{
+    width: 100%;
+    font-family: "Nunito";
+    font-size: 18px;
 }
-
-/* Terminamos de crear la animacion */
-
-.close {
+.Contendio-Modal2 input{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
 	color: rgb(255,255,255);
-	font-size: 30px;
-	font-weight: bold;
-}
-
-.close:hover {
-	color: rgb(117,117,117);
-	text-decoration: none;
 	cursor: pointer;
+	display: inline-block;
+	padding: 10px;
+	width: 50%;
+	font-family: "Nunito";
+	font-size: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
 }
 
-.Header-Modal, .Footer-Modal {
+.Contendio-Modal2 input:hover {
+	background: rgb(35,200,104);
+}
+
+.Footer-Modal {
 	padding: 8px 16px;
 	background: rgb(39,174,96);
 	color: rgb(255,255,255);
-}
-
-.Footer-Modal a{
-	cursor: pointer;
-}
-
-.Body-Modal {
-	text-align: justify;
-	padding: 20px 16px;
 }
 
 /* Terminamos todo lo relacionado con la ventana modal */

@@ -226,6 +226,16 @@
                                         <label><%= GSM.getColor() %></label>
                                     </div>
                                 </div>
+                                    <div class="Modal2">
+                                        <div class="Contendio-Modal2">
+                                            <label>Desea Postularce a <%= GSM.getNombre()%>?</label>
+                                            <form action="Encuesta_Postulacion.jsp" method="post">
+                                                <input type="hidden" name="Codigo" value="<%= GSM.getDocumento()%>">
+                                                <input type="submit" name="btn-" value="Si">
+                                            </form>
+                                                <input type="submit" class="oculta" name="btn--" value="No">
+                                        </div>
+                                    </div>
                             <%
                                 }    
                             %>

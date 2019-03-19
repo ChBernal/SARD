@@ -206,16 +206,14 @@ $(function(){
 //Todas las opciones del contenido modal
 
 $(document).ready(function(){
-    $(".Modal").hide();
+    $(".Modal2").hide();
     $(".InfoMascota").click(function(){
-        var Pos = $(".Imagen_Mascota").index(this);
         var x = $(".InfoMascota").index(this);
-        var Asi = $(".Datos-Mascota").eq(Pos);
-        var Modal = $(".Modal").eq(x);
+        var Modal = $(".Modal2").eq(x);
         Modal.show();
     });
-    $(".close").click(function(){
-        $(".Modal").hide();
+    $(".oculta").click(function(){
+        $(".Modal2").hide();
     });
 });
 
