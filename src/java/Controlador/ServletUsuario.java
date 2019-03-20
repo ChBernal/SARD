@@ -99,7 +99,7 @@ public class ServletUsuario extends HttpServlet {
         }
         
         GS_Ciudadano GSC = new GS_Ciudadano(Documento, Tipo, Lugar, Nombre, Apellido, Genero, Fecha, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
-        Ciudadano_ Ciudadano = new Ciudadano_();
+        Ciudadano_M Ciudadano = new Ciudadano_M();
         Ciudadano.In_Ciudadano(GSC);
         Login_M M_LG =new Login_M();
         M_LG.Login_Cliente(GSC);
@@ -167,7 +167,7 @@ public class ServletUsuario extends HttpServlet {
                 num= file.read();
             }
             GS_Ciudadano GSC = new GS_Ciudadano(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
-            Ciudadano_ Cliente = new Ciudadano_();
+            Ciudadano_M Cliente = new Ciudadano_M();
             int Consulta =Cliente.Actualizar_Ciudadano(GSC);
                 if (Consulta>0) {
                     out.println("<!DOCTYPE html>");
@@ -224,7 +224,7 @@ public class ServletUsuario extends HttpServlet {
             num= file.read();
         }
         GS_Ciudadano GSC = new GS_Ciudadano(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
-        Ciudadano_ Cliente = new Ciudadano_();
+        Ciudadano_M Cliente = new Ciudadano_M();
         int Consulta =Cliente.Actualizar_Ciudadano(GSC);
             if (Consulta>0) {
                 out.println("<!DOCTYPE html>");
@@ -249,7 +249,7 @@ public class ServletUsuario extends HttpServlet {
             String url2 = Foto_Actual;
             
             GS_Ciudadano GSC = new GS_Ciudadano(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
-            Ciudadano_ Cliente = new Ciudadano_();
+            Ciudadano_M Cliente = new Ciudadano_M();
             int Consulta =Cliente.Actualizar_Ciudadano(GSC);
                 if (Consulta>0) {
                     out.println("<!DOCTYPE html>");
@@ -310,7 +310,7 @@ public class ServletUsuario extends HttpServlet {
         }
         
         GS_Ciudadano GSC = new GS_Ciudadano(Documento, Tipo, Lugar, Nombre, Apellido, Genero, Fecha, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
-        Ciudadano_ Ciudadano = new Ciudadano_();
+        Ciudadano_M Ciudadano = new Ciudadano_M();
         Ciudadano.In_Ciudadano(GSC);
         Login_M M_LG =new Login_M();
         M_LG.Login_Cliente(GSC);
@@ -336,7 +336,7 @@ public class ServletUsuario extends HttpServlet {
         String Documento,Tipo,Lugar,Nombre,Apellido,Genero,Fecha,Direccion,Barrio,Telefono1,Telefono2,Correo,Ocupacion;
         Documento = request.getParameter("Documento-Ciudadano");
         GS_Ciudadano GSC = new GS_Ciudadano(Documento);
-        Ciudadano_ Ciudadano = new Ciudadano_();
+        Ciudadano_M Ciudadano = new Ciudadano_M();
         Ciudadano.Eli_Cliente(GSC);
         
          response.sendRedirect("Lista_Ciudadano.jsp");

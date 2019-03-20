@@ -163,7 +163,7 @@ public class ServletLogin extends HttpServlet {
         String Documento = request.getParameter("Usuario");
         String Nombre = null;
         GS_Ciudadano GSC = new GS_Ciudadano(Documento);
-        Ciudadano_ CM = new Ciudadano_();
+        Ciudadano_M CM = new Ciudadano_M();
         ArrayList<GS_Ciudadano> Datos_Ciudadano = new ArrayList<>();
         Datos_Ciudadano = CM.Uno_Ciudadano(GSC);
         
