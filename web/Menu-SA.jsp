@@ -1,3 +1,5 @@
+<%@page import="Modelo.GS_Ambiente_Salud"%>
+<%@page import="Modelo.Ambiente_Salud_M"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.GS_Ciudadano"%>
 <%@page import="Modelo.Ciudadano_M"%>
@@ -10,6 +12,7 @@
 <!DOCTYPE html>
 <%
     HttpSession Dat = request.getSession();
+    String Doc=(String)Dat.getAttribute("DocumentoSession");
 %>
 <html lang="en">
 <head>
@@ -36,7 +39,19 @@
                 <a href="" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
                 <div class="Perfil">
                     <a href="#" class="Abrir" id="Abrir"><%=(String)Dat.getAttribute("NombreSession")%></a>
-                    <img src="">
+                    <%
+                        Ambiente_Salud_M Ambiente = new Ambiente_Salud_M();
+                        GS_Ambiente_Salud GS_SASS = new GS_Ambiente_Salud(Doc);
+                        ArrayList<GS_Ambiente_Salud> datos = new ArrayList<>();
+                        datos = Ambiente.Uno_Ambiente(GS_SASS);
+
+                        for(int i=0; i<datos.size(); i++){
+                            GS_SASS= datos.get(i);
+                    %>
+                    <img width="40px" height="40px" src="<%= GS_SASS.getFoto()%>">
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </nav>
@@ -47,9 +62,9 @@
     <div class="Espacio-Perfil">
         <div class="PerfilUsuario" id="PerfilUsuario">
             <div class="Enlaces-Perfil">
-                <a href="#"><i class="fa fa-user-o"></i>Perfil</a>
+                <a href="Perfil_Ambiente"><i class="fa fa-user-o"></i>Perfil</a>
                 <a href="#">Notificaciones</a>
-                <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
+                <a href="#"><i class="fa fa-lock"></i>Cambio Contraseña</a>
                 <hr>
                 <button name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</button>
             </div>

@@ -118,16 +118,16 @@ public class Ambiente_Salud_M {
         }
         return Tabla;
     }
-    public ArrayList<GS_Ambiente_Salud> Uno_Ambiente (String ID){
+    public ArrayList<GS_Ambiente_Salud> Uno_Ambiente (GS_Ambiente_Salud GS_A){
         ArrayList<GS_Ambiente_Salud> Tabla=new ArrayList<>();
         
         try {
             PreSta= BaseDatos.prepareStatement("call Uno_Ambiente (?)");
-            PreSta.setString(1, ID);
+            PreSta.setString(1, GS_A.getDocumento());
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
-                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(11));
+                GS_Ambiente_Salud ing=new GS_Ambiente_Salud(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10));
                 Tabla.add(ing);
             }
             
