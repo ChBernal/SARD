@@ -129,7 +129,7 @@ public class Servlet_Mascota extends HttpServlet {
         FechaNacimiento = request.getParameter("Nacimiento-Mascota");
         Color = request.getParameter("Color-Mascota");
         Raza = request.getParameter("Raza-Mascota");
-        Sexo = request.getParameter("Genero-Mascota");
+        Sexo = request.getParameter("Genero-Adopcion");
         Documento = request.getParameter("Documento-Duenno");
         Part Foto = request.getPart("Foto-Mascota");
         String Nombre_F = Foto.getSubmittedFileName();
