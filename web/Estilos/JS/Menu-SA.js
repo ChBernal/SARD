@@ -611,17 +611,17 @@ $(".Enviar_Respuesta_Cliente").click(function (){
 //Formulario Listas
 
 (function(){
-	var formulario = document.Formulario_Lista,
+	var formulario = document.Formulario_Listas,
 		elementos = formulario.elements;
 
 	//Funciones
 
 	var ValidarRadio = function(){
-		var opciones = document.getElementsByName("Listar");
-		resultado = false;
+		var opciones = document.getElementsByName("Listas-Usuarios");
+		resultado = false;  
 
 		for (var i = 0; i < elementos.length; i++){
-			if (elementos[i].type == "radio" && elementos[i].name == "Listar") {
+			if (elementos[i].type == "radio" && elementos[i].name == "Listas-Usuarios") {
 				for (var j = 0; j < opciones.length; j++) {
 					if (opciones[j].checked){
 						resultado = true;

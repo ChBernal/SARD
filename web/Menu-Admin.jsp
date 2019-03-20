@@ -1,10 +1,10 @@
+<%@page import="Modelo.Ciudadano_M"%>
 <%@page import="Modelo.GS_Login"%>
 <%@page import="Modelo.Login_M"%>
 <%@page import="Modelo.GS_Admin"%>
 <%@page import="Modelo.Admin_M"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.GS_Ciudadano"%>
-<%@page import="Modelo.Ciudadano_M"%>
 <%@page import="Modelo.GS_Denuncia_Cliente"%>
 <%@page import="Modelo.GS_Denuncias"%>
 <%@page import="Modelo.GS_Denuncias"%>

@@ -36,7 +36,7 @@
                 <a href="#Eventos"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Eventos</a>
                 <a href="#Tips"><i class="fa fa-tag" aria-hidden="true"></i> Tips</a>
                 <a href="#Usuarios"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
-                <a href="#Listas"><i class="fa fa-list-alt" aria-hidden="true"></i> Listas</a>
+                <a href="#listas_container"><i class="fa fa-list-alt" aria-hidden="true"></i> Listas</a>
             </div>
             <div class="Usuario">
                 <a href="" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
@@ -394,15 +394,15 @@
             </div>
         </article>
                                         
-        <article id="listas "class="listas">
-            <h1> </h1>
+        <article id="listas" class="listas">
+            <h1>Listas</h1>
             <hr>
             <div class="Listas">
                 <h2>Lista</h2>
             </div>
             <div class="Contenedor-Formulario-Listas">
                 <div class="Wrap-Listas">
-                    <form action="Servlet_Administrador" class="Formulario" method="POST" name="Formulario_Lista">
+                    <form action="Servlet_Administrador" class="Formulario" method="POST" name="Formulario_Listas">
                         <div class="Input-Group-Listas Radio">
                             <input type="Radio" id="Ciudadanos" name="Listar" value="Ciudadanos">
                             <label for="Ciudadanos">Ciudadanos</label>
