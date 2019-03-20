@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import Modelo.Ciudadano_;
+import Modelo.Ciudadano_M;
 import Modelo.GS_Ciudadano;
 import Modelo.GS_Login;
 import Modelo.Login_M;

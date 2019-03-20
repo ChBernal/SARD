@@ -2,7 +2,7 @@ package Controlador;
 
 import Modelo.Admin_M;
 import Modelo.Ambiente_Salud_M;
-import Modelo.Ciudadano_;
+import Modelo.Ciudadano_M;
 import Modelo.GS_Admin;
 import Modelo.GS_Ambiente_Salud;
 import Modelo.GS_Ciudadano;
