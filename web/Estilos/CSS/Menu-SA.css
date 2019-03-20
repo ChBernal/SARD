@@ -1097,7 +1097,18 @@ main article p {
 /* Fin de formulario Tips */
 
 /* Formulario Ciudadano */
-
+.Ciudadanos {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px auto;
+	background: rgb(255,255,255);
+	color: rgb(39,174,96);
+	width: 100%;
+	height: 50px;
+	border-radius: 10px 0px 0px 0px;
+	max-width: 1000px;
+}
 .Wrap-Ciudadanos {
     width: 100%;
     max-width: 1000px;
