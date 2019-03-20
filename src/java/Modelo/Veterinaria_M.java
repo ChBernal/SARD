@@ -84,7 +84,6 @@ public class Veterinaria_M {
             PreSta.setInt(10, GS.getRol());
             PreSta.setString(11, GS.getFoto());
             PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);

@@ -189,7 +189,6 @@ public class ServletLogin extends HttpServlet {
         ArrayList<GS_Ambiente_Salud> Datos_SASS = new ArrayList<>();
         Datos_SASS = SASS.Uno_Ambiente(GSAS);
         
-        JOptionPane.showMessageDialog(null, GSAS.getDocumento());
         if (Datos_SASS.size()>0){
             for (int i = 0; i < Datos_SASS.size(); i++){
                 GSAS = Datos_SASS.get(i);

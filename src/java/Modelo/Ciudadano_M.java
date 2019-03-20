@@ -31,7 +31,6 @@ public class Ciudadano_M {
             PreSta.setString(13, GS.getOcupacion());
             PreSta.setString(14, GS.getFoto());
             PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);

@@ -72,7 +72,6 @@ public class Mascota_M {
             ps.setString(6, GSM.getGenero());
             ps.setString(7, GSM.getFoto());
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Datos Ingresados Correctamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e);
         }
@@ -117,7 +116,6 @@ public class Mascota_M {
             ps.setString(1,GS_M.getNombre());
             ps.setString(2,GS_M.getRaza());
             ps.setString(3,GS_M.getFecha_Nacimiento());
-            JOptionPane.showMessageDialog(null, GS_M.getRaza());
             rs = ps.executeQuery();
             while(rs.next()){
                 Codigo_Mascota = rs.getInt(1);
@@ -149,7 +147,6 @@ public class Mascota_M {
             ps.setInt(2, GS_EM.getCod_Mascota());
             ps.setString(3, GS_EM.getDoc_Dueño());
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Registro Exitoso");
             Existe=1;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e);

@@ -162,10 +162,34 @@ public class Servlet_Mascota extends HttpServlet {
             GS_Mascota GS_MAS = new GS_Mascota();   
             GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(2,Codigo_Mascota, Documento);
             MM.Registro_Estado(GS_EM);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Tu mascota ah sido registrada',function(){"
+                    + "window.location.href = 'Mascotas_Ciudadano.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
          }else{
-            JOptionPane.showMessageDialog(null,"La mascota ya esta registrada");
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('La mascota ya esta registrada',function(){"
+                    + "window.location.href = 'Mascotas_Ciudadano.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
          }
-        response.sendRedirect("Mascotas_Ciudadano.jsp");
         
     }
     protected void AcyualizarMascotaC(HttpServletRequest request, HttpServletResponse response)
@@ -204,12 +228,24 @@ public class Servlet_Mascota extends HttpServlet {
             Mascota_M MM = new Mascota_M();
             int x= MM.Ac_Mascota(mas);
             if (x>0) {
-                JOptionPane.showMessageDialog(null, "Mascota Actualizada");
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                out.println("</head>");
+                out.println("<body>");
+                out.print("<script type='text/javascript'> alertify.alert('Tu mascota ah sido actualizada',function(){"
+                        + "window.location.href = 'Mascotas_Ciudadano.jsp'}); </script>");
+                out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                out.println("</body>");
+                out.println("</html>");
             }else{
                 JOptionPane.showMessageDialog(null, "Error");
+                response.sendRedirect("Mascotas_Ciudadano.jsp");
             }
             
-            response.sendRedirect("Mascotas_Ciudadano.jsp");
         }
         else{
             String url2= FotoA;
@@ -217,11 +253,23 @@ public class Servlet_Mascota extends HttpServlet {
             Mascota_M MM = new Mascota_M();
             int x= MM.Ac_Mascota(mas);
             if (x>0) {
-                JOptionPane.showMessageDialog(null, "Mascota Actualizada");
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                out.println("</head>");
+                out.println("<body>");
+                out.print("<script type='text/javascript'> alertify.alert('Tu mascota ah sido actualizada',function(){"
+                        + "window.location.href = 'Mascotas_Ciudadano.jsp'}); </script>");
+                out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                out.println("</body>");
+                out.println("</html>");
             }else{
                 JOptionPane.showMessageDialog(null, "Error");
+                response.sendRedirect("Mascotas_Ciudadano.jsp");
             }
-            response.sendRedirect("Mascotas_Ciudadano.jsp");
         } 
         
         

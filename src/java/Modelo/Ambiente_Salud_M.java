@@ -31,7 +31,6 @@ public class Ambiente_Salud_M {
             PreSta.setString(11, GS.getFoto());
             
             PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);

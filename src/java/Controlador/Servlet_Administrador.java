@@ -113,8 +113,20 @@ public class Servlet_Administrador extends HttpServlet {
         GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
         Administrador_M Admin = new Administrador_M();
         Admin.In_Administrador(GSA);
-        Admin.Login_Admin(GSA);        
-        response.sendRedirect("Menu-Admin.jsp");
+        Admin.Login_Admin(GSA);
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+        out.println("</head>");
+        out.println("<body>");
+        out.print("<script type='text/javascript'> alertify.alert('Administrador Registrado',function(){"
+                + "window.location.href = 'Menu-Admin.jsp'}); </script>");
+        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+        out.println("</body>");
+        out.println("</html>");
 
         }
     protected void Actualizar_Admin_Perfil(HttpServletRequest request, HttpServletResponse response)
@@ -150,12 +162,24 @@ public class Servlet_Administrador extends HttpServlet {
         int Consulta;
         Consulta=Admin.Act_Administrador(GSA);
         if (Consulta>0) {
-            JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                    + "window.location.href = 'Perfil_Administrador.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
         }
         else{
-            JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
-        }       
-        response.sendRedirect("Perfil_Administrador.jsp");
+            JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");       
+            response.sendRedirect("Perfil_Administrador.jsp");
+        }
 
     }
     
@@ -194,10 +218,23 @@ public class Servlet_Administrador extends HttpServlet {
             int Consulta;
             Consulta=Admin.Act_Administrador(GSA);
             if (Consulta>0) {
-                JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                out.println("</head>");
+                out.println("<body>");
+                out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                        + "window.location.href = 'Lista_Administrador.jsp'}); </script>");
+                out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                out.println("</body>");
+                out.println("</html>");
             }
             else{
                 JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+                response.sendRedirect("Lista_Administrador.jsp");
             }       
         }
         else{
@@ -208,13 +245,25 @@ public class Servlet_Administrador extends HttpServlet {
             int Consulta;
             Consulta=Admin.Act_Administrador(GSA);
             if (Consulta>0) {
-                JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                out.println("</head>");
+                out.println("<body>");
+                out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                        + "window.location.href = 'Lista_Administrador.jsp'}); </script>");
+                out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                out.println("</body>");
+                out.println("</html>");
             }
             else{
                 JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+                response.sendRedirect("Lista_Administrador.jsp");
             }       
         }
-        response.sendRedirect("Lista_Administrador.jsp");
 
     }
     

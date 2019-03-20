@@ -179,10 +179,23 @@ public class Servlet_Veterinaria extends HttpServlet {
             Veterinaria_M veterinaria = new Veterinaria_M();
             Actualizar = veterinaria.Act_Veterinaria_Activas(GSC);
                  if (Actualizar>0) {
-                     JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                            + "window.location.href = 'Lista_Veterinaria.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                  }
                  else{
                      JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                    response.sendRedirect("Lista_Veterinaria.jsp");
                  }
          }
          else{
@@ -191,14 +204,26 @@ public class Servlet_Veterinaria extends HttpServlet {
             Veterinaria_M veterinaria = new Veterinaria_M();
             Actualizar = veterinaria.Act_Veterinaria_Activas(GSC);
                  if (Actualizar>0) {
-                     JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                            + "window.location.href = 'Lista_Veterinaria.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                  }
                  else{
                      JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                    response.sendRedirect("Lista_Veterinaria.jsp");
                  }         
         }
     
-        response.sendRedirect("Lista_Veterinaria.jsp");
         
     }
      
@@ -241,10 +266,23 @@ public class Servlet_Veterinaria extends HttpServlet {
             Veterinaria_M veterinaria = new Veterinaria_M();
             Actualizar = veterinaria.Act_Veterinaria_Inactivas(GSC);
                  if (Actualizar>0) {
-                     JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                            + "window.location.href = 'Lista_Veterinaria.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                  }
                  else{
                      JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+        response.sendRedirect("Lista_Veterinaria.jsp");
                  }
          }
          else{
@@ -253,14 +291,26 @@ public class Servlet_Veterinaria extends HttpServlet {
             Veterinaria_M veterinaria = new Veterinaria_M();
             Actualizar = veterinaria.Act_Veterinaria_Inactivas(GSC);
                  if (Actualizar>0) {
-                     JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                            + "window.location.href = 'Lista_Veterinaria.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                  }
                  else{
                      JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+        response.sendRedirect("Lista_Veterinaria.jsp");
                  }      
         }
     
-        response.sendRedirect("Lista_Veterinaria.jsp");
         
     }
      

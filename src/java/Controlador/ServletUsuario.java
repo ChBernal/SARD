@@ -106,10 +106,34 @@ public class ServletUsuario extends HttpServlet {
         
         int Rol = Integer.parseInt(request.getParameter("Rol"));
         if (Rol==1) {
-           response.sendRedirect("Menu-Admin.jsp");
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Usuario Registrado',function(){"
+                    + "window.location.href = 'Menu-Admin.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
         }
         if (Rol==2) {
-           response.sendRedirect("Menu-SA.jsp");
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Usuario Registrado',function(){"
+                    + "window.location.href = 'Menu-SA.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
         }
         }
 
@@ -146,13 +170,25 @@ public class ServletUsuario extends HttpServlet {
             Ciudadano_M Cliente = new Ciudadano_M();
             int Consulta =Cliente.Actualizar_Ciudadano(GSC);
                 if (Consulta>0) {
-                    JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                            + "window.location.href = 'Perfil_Ciudadano.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                    JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");       
+                    response.sendRedirect("Perfil_Ciudadano.jsp");
                 }
-        
-        response.sendRedirect("Perfil_Ciudadano.jsp");
+      
         }
     
     protected void Actualizar_Cliente_Admin (HttpServletRequest request, HttpServletResponse response)
@@ -191,10 +227,23 @@ public class ServletUsuario extends HttpServlet {
         Ciudadano_M Cliente = new Ciudadano_M();
         int Consulta =Cliente.Actualizar_Ciudadano(GSC);
             if (Consulta>0) {
-                JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                out.println("</head>");
+                out.println("<body>");
+                out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                        + "window.location.href = 'Lista_Ciudadano.jsp'}); </script>");
+                out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                out.println("</body>");
+                out.println("</html>");
             }
             else{
-                JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");       
+                response.sendRedirect("Lista_Ciudadano.jsp");
             }
         }else{
             String url2 = Foto_Actual;
@@ -203,13 +252,25 @@ public class ServletUsuario extends HttpServlet {
             Ciudadano_M Cliente = new Ciudadano_M();
             int Consulta =Cliente.Actualizar_Ciudadano(GSC);
                 if (Consulta>0) {
-                    JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                            + "window.location.href = 'Lista_Ciudadano.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+                    JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");       
+                    response.sendRedirect("Lista_Ciudadano.jsp");
                 }
         }
-        response.sendRedirect("Lista_Ciudadano.jsp");
         }
     
     protected void Insertar_Ciudadano(HttpServletRequest request, HttpServletResponse response)
@@ -253,8 +314,19 @@ public class ServletUsuario extends HttpServlet {
         Ciudadano.In_Ciudadano(GSC);
         Login_M M_LG =new Login_M();
         M_LG.Login_Cliente(GSC);
-        
-         response.sendRedirect("index.jsp");
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+        out.println("</head>");
+        out.println("<body>");
+        out.print("<script type='text/javascript'> alertify.alert('Datos ingresados ahora puedes iniciar sesion',function(){"
+                + "window.location.href = 'index.jsp'}); </script>");
+        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+        out.println("</body>");
+        out.println("</html>");
         }
     protected void Eliminar_Cliente_Admin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

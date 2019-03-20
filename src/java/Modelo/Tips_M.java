@@ -34,7 +34,6 @@ public class Tips_M {
             ps.setString(2, GS_Tips.getImagen());
             ps.setString(3, GS_Tips.getDescripcion());
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Tip creado correctamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Erro al crear el Tip \n"+e);
         }

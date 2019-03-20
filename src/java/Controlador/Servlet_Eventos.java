@@ -62,10 +62,34 @@ public class Servlet_Eventos extends HttpServlet {
         
         int Rol = Integer.parseInt(request.getParameter("Rol"));
         if (Rol==1) {
-           response.sendRedirect("Menu-Admin.jsp");
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Evento registrado',function(){"
+                    + "window.location.href = 'Menu-Admin.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
         }
         if (Rol==2) {
-           response.sendRedirect("Menu-SA.jsp");
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Evento registrado',function(){"
+                    + "window.location.href = 'Menu-SA.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
         }
         
         

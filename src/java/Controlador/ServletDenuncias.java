@@ -162,7 +162,7 @@ public class ServletDenuncias extends HttpServlet {
         out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
         out.println("</head>");
         out.println("<body>");
-        out.print("<script type='text/javascript'> alertify.alert('Hola',function(){"
+        out.print("<script type='text/javascript'> alertify.alert('Su denuncia ha sido enviada, recuerda que dependiendo el caso, su denuncia sera atendida',function(){"
                 + "window.location.href = 'index.jsp'}); </script>");
         out.println("<script src='Estilos/JS/jquery.min.js'></script>");
         out.println("</body>");
@@ -201,7 +201,19 @@ public class ServletDenuncias extends HttpServlet {
         GS_Denuncia_Cliente GSD=new GS_Denuncia_Cliente(0, Direccion, Descripcion, url2, Documento);
         Denuncias_M  Den= new Denuncias_M();
         Den.InsertarDenunciasC(GSD);
-        request.getRequestDispatcher("Menu-Ciudadano.jsp").forward(request, response);
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+        out.println("</head>");
+        out.println("<body>");
+        out.print("<script type='text/javascript'> alertify.alert('Su denuncia ha sido enviada, recuerda que dependiendo el caso, su denuncia sera atendida',function(){"
+                + "window.location.href = 'Menu-Ciudadano.jsp'}); </script>");
+        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+        out.println("</body>");
+        out.println("</html>");
         
     }
 

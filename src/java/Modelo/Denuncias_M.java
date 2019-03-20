@@ -40,7 +40,6 @@ public class Denuncias_M {
             PreSta.setString(3, GD.getEvidencia());
             PreSta.setString(4, GD.getDocumento());
             PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Sus datos fueron ingresados");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error Denuncias cliente"+e);
         }
@@ -100,7 +99,6 @@ public class Denuncias_M {
             PreSta.executeUpdate();
             int codigo = GS_R.getCod_Denuncia();
             String x = ActualizarEstadoDenuncia(2,codigo);
-            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e+"Error al enviar denuncia");
         }
@@ -115,7 +113,6 @@ public class Denuncias_M {
             PreSta.executeUpdate();
             int codigo = GS_R.getCod_Denuncia();
             String x = ActualizarEstadoDenuncia(3,codigo);
-            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e+"Error al enviar denuncia");
         }
@@ -130,7 +127,6 @@ public class Denuncias_M {
             PreSta.executeUpdate();
             int codigo = GS_R.getCod_Denuncia();
             String x = ActualizarEstadoDenunciaC(2,codigo);
-            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e+"Error al enviar denuncia");
         }
@@ -145,7 +141,6 @@ public class Denuncias_M {
             PreSta.executeUpdate();
             int codigo = GS_R.getCod_Denuncia();
             String x = ActualizarEstadoDenunciaC(3,codigo);
-            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e+"Error al enviar denuncia");
         }

@@ -50,7 +50,6 @@ public class Eventos_M {
             ps.setString(4, GSE.getDescripcion());
             ps.setString(5, GSE.getImagen());
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Evento creado correctamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Erro al crear el evento \n"+e);
         }

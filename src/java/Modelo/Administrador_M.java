@@ -87,7 +87,6 @@ public class Administrador_M {
             PreSta.setString(9, GS.getCorreo());
             PreSta.setString(10, GS.getFoto());
             PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);

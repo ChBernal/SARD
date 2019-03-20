@@ -100,11 +100,36 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         AS.In_Ambiente_Salud(GSAS);
         if(Rol==2){
             AS.Login_Ambiente(GSAS);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Usuario Registrado',function(){"
+                    + "window.location.href = 'Menu-Admin.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
         }
         else{
             AS.Login_Salud(GSAS);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Usuario Registrado',function(){"
+                    + "window.location.href = 'Menu-Admin.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        response.sendRedirect("Menu-Admin.jsp");
      }
      
      protected void Actualizar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
@@ -142,10 +167,23 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             int Consulta;
             Consulta=AS.Act_Ambiente_Salud(GSAS);
             if (Consulta>0) {
-                JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                out.println("</head>");
+                out.println("<body>");
+                out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                        + "window.location.href = 'Lista_SASS.jsp'}); </script>");
+                out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                out.println("</body>");
+                out.println("</html>");
             }
             else{
                 JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+                response.sendRedirect("Lista_SASS.jsp");
             }
          }
          else{
@@ -158,14 +196,26 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             int Consulta;
             Consulta=AS.Act_Ambiente_Salud(GSAS);
             if (Consulta>0) {
-                JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                out.println("</head>");
+                out.println("<body>");
+                out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                        + "window.location.href = 'Lista_SASS.jsp'}); </script>");
+                out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                out.println("</body>");
+                out.println("</html>");
             }
             else{
                 JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+                response.sendRedirect("Lista_SASS.jsp");
             }
              
          }
-        response.sendRedirect("Lista_SASS.jsp");
      }
      
      protected void Eliminar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
