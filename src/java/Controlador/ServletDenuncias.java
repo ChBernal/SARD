@@ -40,30 +40,13 @@ public class ServletDenuncias extends HttpServlet {
             this.Respuesta_Finalizar_Anonima(request, response);
             request.getRequestDispatcher("Notificaciones-Admin.jsp").forward(request, response);
         }
-        if (request.getParameter("Boton").equalsIgnoreCase("Cliente")) {
-            this.Respuesta_Cliente(request, response);
+        if (request.getParameter("PredeterminadaC")!= null || request.getParameter("ContinuacionC")!= null){
+            this.Respuesta_PreCont_Ciudadano(request, response);
+        }else if (request.getParameter("FinalizarC")!= null){
+            this.Respuesta_Finalizar_Ciudadano(request, response);
         }
     }
-    protected void Respuesta_Cliente(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
-        HttpSession datt = request.getSession();
-        
-        String Descripcion;
-        int Codigo ;
-        
-        Descripcion= request.getParameter("Descripcion_RC");
-        if (Descripcion.equalsIgnoreCase("")) {
-            Descripcion="Su denuncia ha sido recibida, en los próximos 15 dias se le estará notificando el estado y los procesos a realizar. ";
-        }
-        Codigo = Integer.parseInt(request.getParameter("Codigo_RC"));
-         GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
-        Denuncias_M  Den= new Denuncias_M();
-        Den.Respuesta_Denuncia_Cliente(GS_R);        
-        
-                
-     }
+    
     protected void Respuesta_PreCont_Anonima(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -98,6 +81,43 @@ public class ServletDenuncias extends HttpServlet {
         GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
         Denuncias_M  Den= new Denuncias_M();
         Den.Respuesta_Finalizar_Anonima(GS_R);
+                
+     }
+    
+    protected void Respuesta_PreCont_Ciudadano(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+        HttpSession datt = request.getSession();
+        
+        String Descripcion;
+        int Codigo ;
+        
+        Descripcion= request.getParameter("Descripcion_RC");
+        if (Descripcion.equalsIgnoreCase("")) {
+            Descripcion="Su denuncia ha sido recibida, en los próximos 15 dias se le estará notificando el estado y los procesos a realizar. ";
+        }
+        Codigo = Integer.parseInt(request.getParameter("Codigo_RC"));
+        GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
+        Denuncias_M  Den= new Denuncias_M();
+        Den.Respuesta_PreCont_Ciudadano(GS_R);
+                
+     }
+    
+    protected void Respuesta_Finalizar_Ciudadano(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+        HttpSession datt = request.getSession();
+        
+        String Descripcion;
+        int Codigo ;
+        
+        Descripcion= request.getParameter("Descripcion_RC");
+        Codigo = Integer.parseInt(request.getParameter("Codigo_RC"));
+        GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
+        Denuncias_M  Den= new Denuncias_M();
+        Den.Respuesta_Finalizar_Ciudadano(GS_R);
                 
      }
     

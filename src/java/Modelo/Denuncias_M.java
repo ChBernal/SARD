@@ -121,6 +121,36 @@ public class Denuncias_M {
         }
     }
     
+    public void Respuesta_PreCont_Ciudadano (GS_Respuesta GS_R){
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call RespuestaC(?,?)");
+            PreSta.setString(1, GS_R.getDescripcion());
+            PreSta.setInt(2, GS_R.getCod_Denuncia());
+            PreSta.executeUpdate();
+            int codigo = GS_R.getCod_Denuncia();
+            String x = ActualizarEstadoDenunciaC(2,codigo);
+            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+"Error al enviar denuncia");
+        }
+    }
+    
+    public void Respuesta_Finalizar_Ciudadano (GS_Respuesta GS_R){
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call RespuestaC(?,?)");
+            PreSta.setString(1, GS_R.getDescripcion());
+            PreSta.setInt(2, GS_R.getCod_Denuncia());
+            PreSta.executeUpdate();
+            int codigo = GS_R.getCod_Denuncia();
+            String x = ActualizarEstadoDenunciaC(3,codigo);
+            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+"Error al enviar denuncia");
+        }
+    }
+    
     public String ActualizarEstadoDenuncia (int Estado,int Codigo){
         String x="";
         try {
@@ -135,16 +165,18 @@ public class Denuncias_M {
         return x;
     }
     
-    public void Respuesta_Denuncia_Cliente (GS_Respuesta GS_R){
-        
+    public String ActualizarEstadoDenunciaC (int Estado,int Codigo){
+        String x="";
         try {
-            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia_Cliente(?,?)");
-            PreSta.setString(1, GS_R.getDescripcion());
-            PreSta.setInt(2, GS_R.getCod_Denuncia());
+            PreSta = BaseDatos.prepareStatement("Call EstadoDenunciaC(?,?)");
+            PreSta.setInt(1, Estado);
+            PreSta.setInt(2, Codigo);
             PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
+            x = ".";
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,e+ "Error al enviar denuncia");
+            
         }
+        return x;
     }
+
 }

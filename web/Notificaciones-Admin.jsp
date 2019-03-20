@@ -185,7 +185,7 @@
                         </form>
                     </div>
                 </div>
-                  <%}%>
+                <%}%>
                   
                 <!-- Finaliza Modal Anonima -->
                 
@@ -193,82 +193,84 @@
             
             <!-- Finaliza Denuncia Anonima -->
             
-            <!-- Incio Denuncia Ciudadano -->
-
+            <!-- Datos de denuncias anonimas -->
+            
             <div class="Ciudadano">
                 <%
-                    ArrayList<GS_Denuncia_Cliente> Dato_Cliente = new ArrayList<>();
-                    Denuncias_M D_Cliente = new Denuncias_M();
-                    Dato_Cliente = D_Cliente.Inicial_DenunciasC();
-                    GS_Denuncia_Cliente Dat_Cliente = new GS_Denuncia_Cliente();
+                    ArrayList<GS_Denuncia_Cliente> Dato_Ciudadano = new ArrayList<>();
+                    Dato_Ciudadano = con.Inicial_DenunciasC();
+                    GS_Denuncia_Cliente Dat_Ciudadano = new GS_Denuncia_Cliente();
 
-                    for(int i=0; i<Dato_Cliente.size(); i++){
-                        Dat_Cliente = Dato_Cliente.get(i);
+                    for(int i=0; i<Dato_Ciudadano.size(); i++){
+                        Dat_Ciudadano = Dato_Ciudadano.get(i);
                 %>
                 
-                <!-- Datos de Denuncia Ciudadano -->
+                <!-- Info Denuncia Ciudadano -->
                 
                 <div class="NombreDC">
                     <div class="Fecha">
-                        <label><%=Dat_Cliente.getFecha()%></label>
+                        <label><%=Dat_Ciudadano.getFecha()%></label>
                     </div>
                     <div class="Direccion">
-                        <label><%=Dat_Cliente.getDireccion()%></label>
+                        <label><%=Dat_Ciudadano.getDireccion()%></label>
                     </div>
-                    <div class="Documento">
-                        <label><%=Dat_Cliente.getDocumento()%></label>
+                    <div class="Correo">
+                        <label><%=Dat_Ciudadano.getDocumento()%></label>
                     </div>
                     <div class="icono-observar">
-                            <label class=" fa fa-eye Prueba-Cliente"></label>
+                        <label class=" fa fa-eye Prueba-Cliente"></label>
                     </div>
                 </div>
                     
-                <!-- Finaliza Datos Denuncia Ciudadano -->
-                
-                <!-- Ventanda modal con datos de denuncia Ciudadano -->
+                <!-- Finaliza Info Anonima -->
+                    
+                <!-- Ventanda modal con datos de denuncia -->
                     
                 <div class="ModalCiudadano">
                     <div class="Datos_DCiudadano">
+                        <div class="HeaderCiudadano">
+                            <h1>Respuesta</h1>
+                            <label class="fa fa-close cerrar_Ciudadano"></label>
+                        </div>
                         <form action="ServletDenuncias" method="Post">
-                            <div class="HeaderCiudadano">
-                                <h1>Respuesta</h1>
-                                <label class="fa fa-close cerrar_Ciudadano"></label>
-                            </div>
                             <div class="BodyCiudadano">
                                 <div class="Img-Ciudadano">
-                                    <input type="hidden" class="Codigo_DC" value="<%=Dat_Cliente.getCodigo()%>">
-                                    <img class="img-Denuncia_C" src="<%=Dat_Cliente.getEvidencia()%>">
+                                    <input type="hidden" name="Codigo_RC" class="Codigo_C" value="<%=Dat_Ciudadano.getCodigo()%>">
+                                    <img class="img-Ciudadano" src="<%=Dat_Ciudadano.getEvidencia()%>">
                                 </div>
                                 <div class="DatosDC">
                                     <label class="dat">Fecha:</label>
-                                    <label><%=Dat_Cliente.getFecha()%></label>
+                                    <label><%=Dat_Ciudadano.getFecha()%></label>
                                     <label class="dat">Dirección:</label>
-                                    <label><%=Dat_Cliente.getDireccion()%></label>
+                                    <label><%=Dat_Ciudadano.getDireccion()%></label>
+                                    <label class="dat">Correo:</label>
+                                    <label><%=Dat_Ciudadano.getDocumento()%></label>
                                 </div>  
                             </div>
                             <div class="Footer-BodyCiudadano">
                                 <div class="Descrip">
                                     <b><label class=""> Descripcion:</label></b>
-                                    <label><%=Dat_Cliente.getDescripcion()%></label>
+                                    <label><%=Dat_Ciudadano.getDescripcion()%></label>
                                 </div>
                                 <div class="respuestas">
                                     <label class="btns-Respuestas EscritaC">Responder</label>
                                     <input type="submit" class="btns-Respuestas" name="PredeterminadaC" value="Predeterminada">
                                 </div>
-                                <textarea class="Respuesta" name="Descripcion_RA" ></textarea>
+                                <textarea class="Respuesta" name="Descripcion_RC" ></textarea>
                                 <div class="btns">
-                                    <input class="btns-Respuestas FinalizarC" type="submit" name="FinalizarC" value="Responder y Finalizar">
-                                    <input class="btns-Respuestas ContinuarC" type="submit" name="ContinuacionC" value="Responder y Continuar">
+                                    <input class="btns-Respuestas FinalizarC" type="submit" name="Finalizar" value="Responder y Finalizar">
+                                    <input class="btns-Respuestas ContinuarC" type="submit" name="Continuacion" value="Responder y Continuar">
                                 </div>
                             </div>
                         </form>
                     </div>
-                      <%}%>
                 </div>
-                <!-- Finaliza Modal Ciudadano -->
+                <%}%>
+                  
+                <!-- Finaliza Modal Ciduadano -->
                 
             </div>
-                
+            
             <!-- Finaliza Denuncia Ciudadano -->
                 
             <!-- Inicio Responder Postulaciones -->
@@ -285,7 +287,7 @@
                         GSP = Dato_Postulacion.get(i);
                 %>
                 
-                <!-- Datos de Denuncia Ciudadano -->
+                <!-- Datos de Postulacion Ciudadano -->
                 
                 <div class="NombreP">
                     <div class="Fecha">
@@ -305,46 +307,13 @@
                     </div>
                 </div>
                     
-                <!-- Finaliza Datos Denuncia Ciudadano -->
-                
-                <!-- Ventanda modal con datos de denuncia Ciudadano -->
+                    <%}%>
                     
-                <div class="ModalPostulados">
-                    <div class="Datos_DCiudadano">
-                        <div class="HeaderCiudadano">
-                            <h1>Respuesta</h1>
-                            <label class="fa fa-close cerrar_Ciudadano"></label>
-                        </div>
-                        <div class="BodyCiudadano">
-                            <div class="Img-Ciudadano">
-                                <img class="img-Denuncia_C" src="<%=Dat_Cliente.getEvidencia()%>">
-                            </div>
-                            <div class="DatosDC">
-                                <label class="dat">Fecha:</label>
-                                <label><%=Dat_Cliente.getFecha()%></label>
-                                <label class="dat">Dirección:</label>
-                                <label><%=Dat_Cliente.getDireccion()%></label>
-                            </div>  
-                        </div>
-                        <div class="Footer-BodyCiudadano">
-                            <div class="Descrip">
-                                <b><label class=""> Descripcion:</label></b>
-                                <label><%=Dat_Cliente.getDescripcion()%></label>
-                            </div>
-                            <div class="respuestas">
-                                <label><input type="radio" class="btn-ResponderCiudadano" name="Respuesta" value="Respuesta" />
-                                Responder</label>
-                                <label><input type="radio" class="btn-PredeterminadaC" name="Predeterminada" value="Respuesta" />
-                                Predeterminada</label>
-                            </div>
-                            <textarea class="Respuesta" name="Respuesta" ></textarea>
-                        </div>
-                        <input class="Enviar_Respuesta_Ciudadano" type="submit" name="Res_Ciudadano" value="Enviar">
-                    </div>
-                </div>
-                  <%}%>
-                <!-- Finaliza Modal Ciudadano -->
-            </div>    
+                <!-- Finaliza Datos Postulacio-->
+                
+            </div>
+                    
+            <!-- finaliza Postulacion -->
             
         </article>
     </main>

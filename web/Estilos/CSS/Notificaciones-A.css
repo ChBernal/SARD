@@ -525,7 +525,8 @@ header {
     border-radius: 50%;
 }
 
-.Prueba-Anonima {
+.Prueba-Anonima, 
+.Prueba-Cliente {
     cursor: pointer;
 }
 
