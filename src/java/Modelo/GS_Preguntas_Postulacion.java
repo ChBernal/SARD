@@ -82,6 +82,10 @@ public class GS_Preguntas_Postulacion {
         this.Codigo = Codigo;
     }
 
+    public GS_Preguntas_Postulacion(String Docu) {
+        this.Docu = Docu;
+    }
+
     public int getCodigo() {
         return Codigo;
     }

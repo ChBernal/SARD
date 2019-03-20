@@ -90,15 +90,19 @@ public class Postulacion_M {
         return Datos_Postulacion;
     }
     
-    public ArrayList<GS_Encuesta> CanEncuesta (){
-        ArrayList<GS_Encuesta> Cantidad = new ArrayList<>();
+    public ArrayList<GS_Preguntas_Postulacion> Uno_Preguntas (GS_Preguntas_Postulacion GSC){
+        ArrayList<GS_Preguntas_Postulacion> Uno_Preguta = new ArrayList<>();
         try {
             PreSta = BaseDatos.prepareStatement("Call Uno_Respuesta(?)");
-            Reset = PreSta.executeQuery(); 
-        } catch (Exception e) {
-            
+            PreSta.setString(1, GSC.getDocu());
+            Reset = PreSta.executeQuery();
+            while (Reset.next()){
+                GS_Preguntas_Postulacion GSCi = new GS_Preguntas_Postulacion(Reset.getString(1));
+                Uno_Preguta.add(GSCi);
+            }
+        } catch (Exception e) {   
         }
-        return Cantidad;
+        return Uno_Preguta;
     }
 	
 }
