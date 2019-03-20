@@ -229,37 +229,42 @@
                     
                 <div class="ModalCiudadano">
                     <div class="Datos_DCiudadano">
-                        <div class="HeaderCiudadano">
-                            <h1>Respuesta</h1>
-                            <label class="fa fa-close cerrar_Ciudadano"></label>
-                        </div>
-                        <div class="BodyCiudadano">
-                            <div class="Img-Ciudadano">
-                                <input type="hidden" class="Codigo_DC" value="<%=Dat_Cliente.getCodigo()%>">
-                                <img class="img-Denuncia_C" src="<%=Dat_Cliente.getEvidencia()%>">
+                        <form action="ServletDenuncias" method="Post">
+                            <div class="HeaderCiudadano">
+                                <h1>Respuesta</h1>
+                                <label class="fa fa-close cerrar_Ciudadano"></label>
                             </div>
-                            <div class="DatosDC">
-                                <label class="dat">Fecha:</label>
-                                <label><%=Dat_Cliente.getFecha()%></label>
-                                <label class="dat">Dirección:</label>
-                                <label><%=Dat_Cliente.getDireccion()%></label>
-                            </div>  
-                        </div>
-                        <div class="Footer-BodyCiudadano">
-                            <div class="Descrip">
-                                <b><label class=""> Descripcion:</label></b>
-                                <label><%=Dat_Cliente.getDescripcion()%></label>
+                            <div class="BodyCiudadano">
+                                <div class="Img-Ciudadano">
+                                    <input type="hidden" class="Codigo_DC" value="<%=Dat_Cliente.getCodigo()%>">
+                                    <img class="img-Denuncia_C" src="<%=Dat_Cliente.getEvidencia()%>">
+                                </div>
+                                <div class="DatosDC">
+                                    <label class="dat">Fecha:</label>
+                                    <label><%=Dat_Cliente.getFecha()%></label>
+                                    <label class="dat">Dirección:</label>
+                                    <label><%=Dat_Cliente.getDireccion()%></label>
+                                </div>  
                             </div>
-                            <div class="respuestas">
-                                <label class="btns-Respuestas EscritaC">Responder</label>
-                                <input type="submit" class="btns-Respuestas" name="PredeterminadaC" value="Predeterminada" />
+                            <div class="Footer-BodyCiudadano">
+                                <div class="Descrip">
+                                    <b><label class=""> Descripcion:</label></b>
+                                    <label><%=Dat_Cliente.getDescripcion()%></label>
+                                </div>
+                                <div class="respuestas">
+                                    <label class="btns-Respuestas EscritaC">Responder</label>
+                                    <input type="submit" class="btns-Respuestas" name="PredeterminadaC" value="Predeterminada">
+                                </div>
+                                <textarea class="Respuesta" name="Descripcion_RA" ></textarea>
+                                <div class="btns">
+                                    <input class="btns-Respuestas FinalizarC" type="submit" name="FinalizarC" value="Responder y Finalizar">
+                                    <input class="btns-Respuestas ContinuarC" type="submit" name="ContinuacionC" value="Responder y Continuar">
+                                </div>
                             </div>
-                            <textarea class="Respuesta" name="Respuesta" ></textarea>
-                        </div>
-                        <input class="btns-Respuestas" type="submit" name="Res_Ciudadano" value="Enviar">
+                        </form>
                     </div>
+                      <%}%>
                 </div>
-                  <%}%>
                 <!-- Finaliza Modal Ciudadano -->
                 
             </div>
