@@ -7,6 +7,8 @@
 <!DOCTYPE html>
 <%
     HttpSession Dat = request.getSession();
+    
+
 %>
 <html lang="en">
 <head>
@@ -150,33 +152,37 @@
                             <h1>Respuesta</h1>
                             <label class="fa fa-close cerrar_anonima"></label>
                         </div>
-                        <div class="BodyAnonima">
-                            <div class="Img-Denuncia">
-                                <input type="hidden" class="Codigo_D" value="<%=Dat_Anonima.getCodigo()%>">
-                                <img class="img-Denuncia_A1" src="<%=Dat_Anonima.getEvidencia()%>">
+                        <form action="ServletDenuncias" method="Post">
+                            <div class="BodyAnonima">
+                                <div class="Img-Denuncia">
+                                    <input type="hidden" name="Codigo_RA" class="Codigo_D" value="<%=Dat_Anonima.getCodigo()%>">
+                                    <img class="img-Denuncia_A1" src="<%=Dat_Anonima.getEvidencia()%>">
+                                </div>
+                                <div class="DatosDA">
+                                    <label class="dat">Fecha:</label>
+                                    <label><%=Dat_Anonima.getFecha()%></label>
+                                    <label class="dat">Dirección:</label>
+                                    <label><%=Dat_Anonima.getDireccion()%></label>
+                                    <label class="dat">Correo:</label>
+                                    <label><%=Dat_Anonima.getCorreo()%></label>
+                                </div>  
                             </div>
-                            <div class="DatosDA">
-                                <label class="dat">Fecha:</label>
-                                <label><%=Dat_Anonima.getFecha()%></label>
-                                <label class="dat">Dirección:</label>
-                                <label><%=Dat_Anonima.getDireccion()%></label>
-                                <label class="dat">Correo:</label>
-                                <label><%=Dat_Anonima.getCorreo()%></label>
-                            </div>  
-                        </div>
-                        <div class="Footer-BodyAnonima">
-                            <div class="Descrip">
-                                <b><label class=""> Descripcion:</label></b>
-                                <label><%=Dat_Anonima.getDescripcion()%></label>
+                            <div class="Footer-BodyAnonima">
+                                <div class="Descrip">
+                                    <b><label class=""> Descripcion:</label></b>
+                                    <label><%=Dat_Anonima.getDescripcion()%></label>
+                                </div>
+                                <div class="respuestas">
+                                    <label class="btns-Respuestas Escrita">Responder</label>
+                                    <input type="submit" class="btns-Respuestas" name="Predeterminada" value="Predeterminada">
+                                </div>
+                                <textarea class="Respuesta" name="Descripcion_RA" ></textarea>
+                                <div class="btns">
+                                    <input class="btns-Respuestas FinalizarA" type="submit" name="Finalizar" value="Responder y Finalizar">
+                                    <input class="btns-Respuestas ContinuarA" type="submit" name="Continuacion" value="Responder y Continuar">
+                                </div>
                             </div>
-                            <div class="respuestas">
-                                <label class="Resp-Escrita">Responder</label>
-                                <label class="Resp-Predeterminada">Predeterminada</label>
-                            </div>
-                            <textarea class="Respuesta" name="Respuesta" ></textarea>
-                        </div>
-                        <input class="Enviar_Respuesta_Anonima" type="submit" name="Res_Anonima" value="Responder y Finalizar">
-                        <input class="Enviar_Respuesta_Anonima" type="submit" name="Res_Anonima" value="Responder y Continuar">
+                        </form>
                     </div>
                 </div>
                   <%}%>
@@ -245,14 +251,12 @@
                                 <label><%=Dat_Cliente.getDescripcion()%></label>
                             </div>
                             <div class="respuestas">
-                                <label><input type="radio" class="btn-ResponderCiudadano" name="Respuesta" value="Respuesta" />
-                                Responder</label>
-                                <label><input type="radio" class="btn-PredeterminadaC" name="Predeterminada" value="Respuesta" />
-                                Predeterminada</label>
+                                <label class="btns-Respuestas EscritaC">Responder</label>
+                                <input type="submit" class="btns-Respuestas" name="PredeterminadaC" value="Predeterminada" />
                             </div>
                             <textarea class="Respuesta" name="Respuesta" ></textarea>
                         </div>
-                        <input class="Enviar_Respuesta_Ciudadano" type="submit" name="Res_Ciudadano" value="Enviar">
+                        <input class="btns-Respuestas" type="submit" name="Res_Ciudadano" value="Enviar">
                     </div>
                 </div>
                   <%}%>

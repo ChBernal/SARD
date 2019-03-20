@@ -97,16 +97,31 @@ $(function(){
 	});
 
 	$(".Prueba-Anonima").click(function(){
-		var Pos = $(".NombreDN").index(this);
-		var asig = $(".ModalAnonima").eq(Pos);
-                asig.css("display","flex");
-		$(".DatosDenunciaC").hide();
-		$(".DatosPostulados").hide();
-	})
+            var Pos = $(".NombreDN").index(this);
+            var asig = $(".ModalAnonima").eq(Pos);
+            asig.css("display","flex");
+            $(".FinalizarA").hide();
+            $(".ContinuarA").hide();
+            $(".DatosDenunciaC").hide();
+            $(".DatosPostulados").hide();
+
+            var esc = $(".Escrita").eq(Pos);
+            
+            $(esc).click(function(){
+                $(".Respuesta").css("display","initial");
+                $(".FinalizarA").fadeToggle();
+                $(".ContinuarA").fadeToggle();
+            });
+
+	});
         
         $(".cerrar_anonima").click(function(){
             $(".ModalAnonima").css("display","none");
+            $(".FinalizarA").fadeOut();
+            $(".ContinuarA").fadeOut();
         });
+        
+        
         
         //Ver ciudadano
         

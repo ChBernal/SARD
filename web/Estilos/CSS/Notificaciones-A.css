@@ -607,6 +607,30 @@ header {
     padding: 40px;
 }
 
+.respuestas,
+.btns {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btns-Respuestas {
+    background: rgb(39,174,96);
+        border-radius: 10px;
+        border: 2px solid rgb(255,255,255);
+        color: rgb(255,255,255);
+        cursor: pointer;
+        display: inline-block;
+        padding: 15px;
+        width: 50%;
+        font-family: "Nunito";
+        font-size: 16px;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
 .Respuesta {
+    width: 100%;
     display: none;
 }
