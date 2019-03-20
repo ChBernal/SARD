@@ -49,7 +49,6 @@ public class Servlet_Tips extends HttpServlet {
         Part Foto = request.getPart("Imagen-Tip");
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Titulo+"_"+Nombre_F;
-        JOptionPane.showMessageDialog(null, Nombre_F);
         String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
@@ -66,7 +65,13 @@ public class Servlet_Tips extends HttpServlet {
          Tips_M M_Tips = new Tips_M();
          M_Tips.In_Tips(GST);
          
-         response.sendRedirect("Menu-Admin.jsp");
+        int Rol = Integer.parseInt(request.getParameter("Rol"));
+        if (Rol==1) {
+           response.sendRedirect("Menu-Admin.jsp");
+        }
+        if (Rol==2) {
+           response.sendRedirect("Menu-SA.jsp");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

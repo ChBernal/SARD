@@ -106,7 +106,7 @@ public class ServletLogin extends HttpServlet {
           response.sendRedirect("Menu-Admin.jsp");  
         }
         if (Rol==2) {
-          response.sendRedirect("Menu-Admin.jsp");  
+          response.sendRedirect("Menu-SA.jsp");  
         }
         if (Rol==3) {
           response.sendRedirect("Menu-SA.jsp");  

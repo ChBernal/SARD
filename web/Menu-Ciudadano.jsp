@@ -87,7 +87,7 @@
                     <h1>Bienvenid@ <%=(String)Dat.getAttribute("NombreSession")%></h1>
                 </div>
             </div>
-                
+            <!-- Validacion primer ingreso -->
             <div>
                 <%
                     Login_M Login = new Login_M();
@@ -104,7 +104,7 @@
                 %>
             </div>
             
-            
+            <!-- termina validacion primer ingreso --!>
             <!-- Ventana Modal Con Formulario de Contraseña -->
             
             <div class="Modal-Contrasena" id="Modal-Contrasena">

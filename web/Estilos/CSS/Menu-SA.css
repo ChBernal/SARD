@@ -204,6 +204,81 @@ header {
 }
 
 /* Terminamos todo lo relacionado con la ventana modal */
+/* todo lo de ventana modal de contraseña */
+
+.flex-Contrasena {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Modal-Contrasena {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+}
+
+.Contenido-Modal-Contrasena {
+	background: rgb(255,255,255);
+	position: relative;
+	margin: auto;
+	width: 40%;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
+	animation-name: modal;
+	animation-duration: 1s;
+}
+
+/*  Creacion de animacion */
+
+@keyframes modal{
+	from{
+		top: -100%; 
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* Terminamos de crear la animacion */
+
+.close {
+	color: rgb(255,255,255);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.close:hover {
+	color: rgb(117,117,117);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.Header-Modal-Contrasena, .Footer-Modal-Contrasena {
+	padding: 8px 16px;
+	background: rgb(39,174,96);
+	color: rgb(255,255,255);
+}
+
+.Footer-Modal-Contrasena a{
+	cursor: pointer;
+}
+
+.Body-Modal-Contrasena {
+	text-align: justify;
+	padding: 20px 16px;
+}
+
+/* Terminamos todo lo relacionado con la ventana modal */
 
 /* Inicio Formulario Contrasena */
 
@@ -487,24 +562,15 @@ main article p {
 	background: rgb(39,174,96);
 	background-attachment: fixed;
 }
-
-.Usuarios .Ciudadanos,
-.Usuarios .Veterinarias,
-.Usuarios .SASS,
-.Usuarios .Administrador,
-.Usuarios .Listas {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 10px auto;
-	background: rgb(255,255,255);
-	color: rgb(39,174,96);
+.Listas {
 	width: 100%;
-	height: 50px;
-	border-radius: 10px 0px 0px 0px;
-	max-width: 1000px;
-	cursor: pointer;
+	height: 100%;
+	margin: 0 auto;
+	background: rgb(39,174,96);
+	background-attachment: fixed;
 }
+
+
 
 .Footer-Button {
 	display: flex;
@@ -898,7 +964,8 @@ main article p {
 
 /* Fin de formulario Eventos */
 
-/* Formulario Tips */
+
+/* Formulario Tips*/
 
 .Wrap-Tips {
 	width: 90%;
@@ -908,7 +975,7 @@ main article p {
 	background: rgb(255,255,255);
 }
 
-.Posicion-Tips {
+.Posicion-Tips{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -933,9 +1000,7 @@ main article p {
 	margin-bottom: 32px;
 }
 
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"],
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="email"],
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="password"] {
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"] {
 	font-family: "Nunito";
 	font-size: 16px;
 	color: rgb(39,174,96);
@@ -947,46 +1012,18 @@ main article p {
 	border-bottom: 2px solid rgb(220,237,200);
 }
 
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="date"]{
-	font-family: "Nunito";
-	font-size: 16px;
-	color: rgba(255,255,255,.9);
-	width: 100%;
-	outline: none;
-	padding: 7px;
-	background: none;
-	border: none;
-	border-bottom: 2px solid rgb(220,237,200);	
-}
-
 .Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"]:focus,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"]:active,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="email"]:focus,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="email"]:active,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="password"]:focus,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="password"]:active {
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"]:active{
 	outline: none;
 	border-bottom: 2px solid rgb(39,174,96);
 }
 
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="date"]:focus,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="date"]:active{
-	color: rgb(39,174,96);
-	outline: none;
-	border-bottom: 2px solid rgb(39,174,96);	
-}
 
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"].error,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="email"].error,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="password"].error,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="date"].error{
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"].error{
 	border-bottom: 2px solid rgb(211,47,47);
 }
 
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"].error + label,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="email"].error + label,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="password"].error + label,
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="date"].error + label {
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips input[type="text"].error + label {
 	color: rgb(211,47,47);
 }
 
@@ -994,7 +1031,7 @@ main article p {
 	color: rgb(39,174,96);
 }
 
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Eventos label.label-Tips {
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips label.label-Tip {
 	position: absolute;
 	top: 13px;
 	left: 0px;
@@ -1006,7 +1043,7 @@ main article p {
     transition: all 0.3s ease;
 }
 
-.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips label.label-Tips.active {
+.Contenedor-Formulario-Tips .Formulario .Input-Group-Tips label.label-Tip.active {
 	top: -11px;
 	font-size: 11px;
 	line-height: 12px;
@@ -1059,14 +1096,9 @@ main article p {
 
 /* Fin de formulario Tips */
 
-
 /* Formulario Ciudadano */
 
-.Wrap-Ciudadanos,
-.Wrap-Veterinaria,
-.Wrap-SASS,
-.Wrap-Administrador,
-.Wrap-Listas {
+.Wrap-Ciudadanos {
     width: 100%;
     max-width: 1000px;
     padding: 20px;
@@ -1271,6 +1303,157 @@ main article p {
 
 /* Fin de formulario Ciudadano */
 
+/* Inicio formulario Listas*/
+
+.Wrap-Listas {
+	width: 90%;
+	max-width: 1000px;
+	padding: 40px;
+	margin: auto;
+        color: rgb(39,174,96);
+	background: rgb(255,255,255);
+}
+
+ .Listas {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px auto;
+	background: rgb(255,255,255);
+	color: rgb(39,174,96);
+	width: 100%;
+	height: 50px;
+	border-radius: 10px 0px 0px 0px;
+	max-width: 1000px;
+}
+
+
+.Contenedor-Formulario-Listas {
+	width: 100%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contenedor-Formulario-Listas .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas label.label {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas label.label.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Checkbox label,
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Radio label {
+	display: inline-block;
+	cursor: pointer;
+	color: rgb(39,174,96);
+	position: relative;
+	padding: 5px 15px 5px 51px;
+	font-size: 1em;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Checkbox label:hover,
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Radio label:hover {
+	background: rgba(220,237,200,1);
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	left: 15px;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas span{
+	color: rgb(39,174,96);
+	padding-right: 15px;
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Radio input[type="radio"],
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Radio input[type="radio"]:checked + label:before,
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Checkbox input[type="checkbox"]:checked + label:before {
+	display: none;
+}
+
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Radio input[type="radio"]:checked + label,
+.Contenedor-Formulario-Listas .Formulario .Input-Group-Listas.Checkbox input[type="checkbox"]:checked + label {
+	padding: 5px 15px;
+	background: rgb(39,174,96);
+	border-radius: 2px;
+	color: rgb(255,255,255);
+}
+
+.Contenedor-Formulario-Listas .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Listas .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+//Fin formulario listas
 
 /* Fin de estilo de formularios*/
 

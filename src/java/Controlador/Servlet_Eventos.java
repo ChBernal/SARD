@@ -27,7 +27,6 @@ public class Servlet_Eventos extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         if (request.getParameter("Registro-Evento") != null){
-            JOptionPane.showMessageDialog(null, "entra al if de boton");
             this.InsertarEvento(request, response);
         }
 
@@ -38,7 +37,6 @@ public class Servlet_Eventos extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String NombreEvento, TipoEvento, FechaEvento, DescripcionEvento;
-        JOptionPane.showMessageDialog(null, "entra al metodo");
         NombreEvento = request.getParameter("NombreEvento");
         TipoEvento = request.getParameter("Tipo_Evento");
         FechaEvento = request.getParameter("Fecha_Evento");
@@ -61,7 +59,15 @@ public class Servlet_Eventos extends HttpServlet {
         Eventos_M EM = new Eventos_M();
         GS_Eventos GSE = new GS_Eventos(NombreEvento, TipoEvento, FechaEvento, DescripcionEvento, url2);
         EM.In_Eventos(GSE);
-        response.sendRedirect("Menu-Admin.jsp");
+        
+        int Rol = Integer.parseInt(request.getParameter("Rol"));
+        if (Rol==1) {
+           response.sendRedirect("Menu-Admin.jsp");
+        }
+        if (Rol==2) {
+           response.sendRedirect("Menu-SA.jsp");
+        }
+        
         
     }
 

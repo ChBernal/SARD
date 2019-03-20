@@ -12,7 +12,6 @@ $(document).ready(function(){
 });
 
 //finalizacion efecto parallax
-
 //Validacion Primer Ingreso
 $(function(){
 	var PrimerIngreso = $('#PrimerIngreso').val();
@@ -278,98 +277,7 @@ $(".Enviar_Respuesta_Cliente").click(function (){
           });
     });
 
-//Opciones de acordeon
 
-$(document).ready(function(){
-	$(".Wrap-Ciudadanos").hide();
-	$(".Wrap-Veterinaria").hide();
-	$(".Wrap-SASS").hide();
-	$(".Wrap-Administrador").hide();
-	$(".Wrap-Listas").hide();
-
-//Acordeon Ciudadano
-
-	$(".Ciudadanos").click(function(){
-		$(".Wrap-Ciudadanos").slideToggle();
-		$(".Wrap-Veterinaria").slideUp();
-		$(".Wrap-SASS").slideUp();
-		$(".Wrap-Administrador").slideUp();
-		$(".Wrap-Listas").slideUp();
-		$(".Veterinarias").slideToggle();
-		$(".SASS").slideToggle();
-		$(".Administrador").slideToggle();
-		$(".Listas").slideToggle();
-	}); 
-
-//Finalza Ciudadano
-
-//Acordeon Veterinaria
-
-	$(".Veterinarias").click(function(){
-		$(".Wrap-Veterinaria").slideToggle();
-		$(".Wrap-Ciudadanos").slideUp();
-		$(".Wrap-SASS").slideUp();
-		$(".Wrap-Administrador").slideUp();
-		$(".Wrap-Listas").slideUp();
-		$(".Ciudadanos").slideToggle();
-		$(".SASS").slideToggle();
-		$(".Administrador").slideToggle();
-		$(".Listas").slideToggle();
-	}); 
-
-//Finalza Veterinaria
-
-//Acordeon SASS
-
-	$(".SASS").click(function(){
-		$(".Wrap-SASS").slideToggle();
-		$(".Wrap-Ciudadanos").slideUp();
-		$(".Wrap-Veterinaria").slideUp();
-		$(".Wrap-Administrador").slideUp();
-		$(".Wrap-Listas").slideUp();
-		$(".Ciudadanos").slideToggle();
-		$(".Veterinarias").slideToggle();
-		$(".Administrador").slideToggle();
-		$(".Listas").slideToggle();
-	}); 
-
-//Finalza SASS
-
-//Acordeon Administrador
-
-	$(".Administrador").click(function(){
-		$(".Wrap-Administrador").slideToggle();
-		$(".Wrap-Ciudadanos").slideUp();
-		$(".Wrap-Veterinaria").slideUp();
-		$(".Wrap-SASS").slideUp();
-		$(".Wrap-Listas").slideUp();
-		$(".Ciudadanos").slideToggle();
-		$(".Veterinarias").slideToggle();
-		$(".SASS").slideToggle();
-		$(".Listas").slideToggle();
-	}); 
-
-//Finalza Administrador
-
-//Acordeon Listas
-
-	$(".Listas").click(function(){
-		$(".Wrap-Listas").slideToggle();
-		$(".Wrap-Ciudadanos").slideUp();
-		$(".Wrap-Veterinaria").slideUp();
-		$(".Wrap-SASS").slideUp();
-		$(".Wrap-Administrador").slideUp();
-		$(".Ciudadanos").slideToggle();
-		$(".Veterinarias").slideToggle();
-		$(".SASS").slideToggle();
-		$(".Administrador").slideToggle();
-	}); 
-
-//Finalza Listas
-
-});
-
-//Finaliza acordeon
 
 //Todos los formularios
 
@@ -546,6 +454,68 @@ $(document).ready(function(){
 
 //Finalizacion de Eventos
 
+//Todo formulario Tips
+
+(function(){
+	var formulario = document.Formulario_Tips,
+		elementos = formulario.elements;
+
+	//Funciones
+
+	var ValidarInputs = function(){
+		for (var i = 0; i < elementos.length; i++) {
+			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" || elementos[i].type == "date" ) {
+				if (elementos[i].value == 0) {
+					console.log('El Campo ' + elementos[i].name + ' esta incompleto');
+					elementos[i].className = elementos[i].className + " error";
+					return false;
+				} else {
+					elementos[i].className = elementos[i].className.replace(" error", "");
+				}
+			}
+		}
+
+		return true;
+	};
+
+	var enviar = function(e){
+		if (!ValidarInputs()) {
+			console.log('Falto validar los Input');
+			e.preventDefault();
+		}else {
+			console.log('Envia correctamente');
+			//e.preventDefault();
+		}
+	};
+
+	//Funciones blur y focus
+
+	var focusInputs = function(){
+		this.parentElement.children[1].className = "label-Tip active";
+		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
+	};
+
+	var blurInputs = function(){
+		if (this.value <= 0) {
+			this.parentElement.children[1].className = "label-Tip";
+			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
+		}
+	};
+
+	//Tips
+	formulario.addEventListener("submit", enviar);
+
+	for (var i = 0; i < elementos.length; i++) {
+		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" || elementos[i].type == "date") {
+			elementos[i].addEventListener("focus", focusInputs);
+			elementos[i].addEventListener("blur", blurInputs);
+		}
+	}
+
+}());
+
+//Finalizacion de Tips
+
 //Todo formulario Ciudadano
 
 (function(){
@@ -636,5 +606,71 @@ $(document).ready(function(){
 }());
 
 //Finalizacion de Ciudadano
+
+
+//Formulario Listas
+
+(function(){
+	var formulario = document.Formulario_Lista,
+		elementos = formulario.elements;
+
+	//Funciones
+
+	var ValidarRadio = function(){
+		var opciones = document.getElementsByName("Listar");
+		resultado = false;
+
+		for (var i = 0; i < elementos.length; i++){
+			if (elementos[i].type == "radio" && elementos[i].name == "Listar") {
+				for (var j = 0; j < opciones.length; j++) {
+					if (opciones[j].checked){
+						resultado = true;
+						break;
+					}
+				}
+
+				if (resultado == false){
+					elementos[i].parentNode.className = elementos[i].parentNode.className + " error";
+					console.log('El campo radio esta incompleto');
+					return false;
+				}else {
+					elementos[i].parentNode.className = elementos[i].parentNode.className.replace (" error", "");
+					return true;
+				}
+			}
+		}
+
+	};
+
+	var enviar = function(e){
+		if (!ValidarRadio()) {
+			console.log('Falto validar los Radio');
+			e.preventDefault();
+		}else {
+			console.log('Envia correctamente');
+			//e.preventDefault();
+		}
+	};
+
+	//Funciones blur y focus
+
+	var focusInputs = function(){
+		this.parentElement.children[1].className = "label-Usuarios active";
+		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
+	};
+
+	var blurInputs = function(){
+		if (this.value <= 0) {
+			this.parentElement.children[1].className = "label-Usuarios";
+			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
+		}
+	};
+
+	//Eventos
+	formulario.addEventListener("submit", enviar);
+
+}());
+
+//Finalizacion de Listas
 
 //Finaliza formularios

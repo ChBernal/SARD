@@ -82,7 +82,6 @@ public class Servlet_Mascota extends HttpServlet {
             GS_Mascota GS_MA = new GS_Mascota(Nombre,FechaNacimiento,Raza);
             Codigo_Mascota = MM.Ultima_Mascota(GS_MA);
             GS_Mascota GS_MAS = new GS_Mascota();   
-             JOptionPane.showMessageDialog(null, Codigo_Mascota);
             int Valor_Estado;
              if(Estado.equalsIgnoreCase("Adoptado")){
                  Valor_Estado=1;
@@ -109,7 +108,13 @@ public class Servlet_Mascota extends HttpServlet {
          }else{
             JOptionPane.showMessageDialog(null,"La mascota ya esta registrada");
          }
-        response.sendRedirect("Menu-Admin.jsp");
+        int Rol = Integer.parseInt(request.getParameter("Rol"));
+        if (Rol==1) {
+           response.sendRedirect("Menu-Admin.jsp");
+        }
+        if (Rol==2) {
+           response.sendRedirect("Menu-SA.jsp");
+        }
         
     }
     protected void InsertarMascotaC(HttpServletRequest request, HttpServletResponse response)
@@ -155,7 +160,6 @@ public class Servlet_Mascota extends HttpServlet {
             GS_Mascota GS_MA = new GS_Mascota(Nombre,FechaNacimiento,Raza);
             Codigo_Mascota = MM.Ultima_Mascota(GS_MA);
             GS_Mascota GS_MAS = new GS_Mascota();   
-             JOptionPane.showMessageDialog(null, Codigo_Mascota);
             GS_Estado_Mascota GS_EM =new GS_Estado_Mascota(2,Codigo_Mascota, Documento);
             MM.Registro_Estado(GS_EM);
          }else{

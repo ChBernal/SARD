@@ -545,23 +545,6 @@ $(document).ready(function(){
 
 //Finalizacion de Eventos
 
-// Previsualizacion Img Tips 
-$(".Foto").click(function (){
-        var Index = $("Imagen-Tip").index(this);
-        
-        document.getElementById("Imagen-Tip").onchange = function(e){
-            let Nombre = new FileReader();
-            Nombre.readAsDataURL(e.target.files[0]);
-            Nombre.onload = function(){
-                    let Vista_Previa = document.getElementById('Vista_Previa'),
-                    image = document.createElement('img');
-
-                    image.src =Nombre.result;
-                    Vista_Previa.innerHTML ='';
-                    Vista_Previa.append(image);
-            };
-        };
-    });
 
 //Todo formulario Tips
 

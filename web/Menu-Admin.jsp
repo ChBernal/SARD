@@ -217,6 +217,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="Rol" value="1">
                                     <input type="submit" name="Registro-Mascota" value="Registrar">
                                 </form>
                             </div>
@@ -262,6 +263,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="Rol" value="1">
                                 <input type="submit" name="Registro-Evento" value="Registrar">
                             </form>
                         </div>
@@ -293,6 +295,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="Rol" value="1">
                                 <input type="submit" name="Registro-Tip" value="Registrar">
                             </form>
                         </div>
@@ -379,6 +382,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="Rol" value="1">
                                 <input type="submit" name="Registro-Ciudadano" value="Registrar">
                             </form>
                         </div>

@@ -1,3 +1,5 @@
+<%@page import="Modelo.GS_Login"%>
+<%@page import="Modelo.Login_M"%>
 <%@page import="Modelo.GS_Ambiente_Salud"%>
 <%@page import="Modelo.Ambiente_Salud_M"%>
 <%@page import="javax.swing.JOptionPane"%>
@@ -34,6 +36,7 @@
                 <a href="#Eventos"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Eventos</a>
                 <a href="#Tips"><i class="fa fa-tag" aria-hidden="true"></i> Tips</a>
                 <a href="#Usuarios"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
+                <a href="#Listas"><i class="fa fa-list-alt" aria-hidden="true"></i> Listas</a>
             </div>
             <div class="Usuario">
                 <a href="" class="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
@@ -77,9 +80,66 @@
         <div id="Cabezera" class="Cabezera">
             <h1>Bienvenid@ <%=(String)Dat.getAttribute("NombreSession")%></h1>
         </div>
+        
+        <!-- Validacion primer ingreso -->
+            <div>
+                <%
+                    Login_M Login = new Login_M();
+                    ArrayList<GS_Login> Estado = new ArrayList<>();
+                    Estado = Login.Uno_Usuario(Doc);
+                    GS_Login GSL = new GS_Login();
 
+                    for(int i=0; i<Estado.size(); i++){
+                        GSL= Estado.get(i);
+                %>
+                <input type="hidden" name="PrimerIngreso" id="PrimerIngreso" value="<%=GSL.getEstado()%>" >    
+                <% 
+                }
+                %>
+            </div>
+            
+            <!-- termina validacion primer ingreso --!>
+            <!-- Ventana Modal Con Formulario de Contraseña -->
+            
+            <div class="Modal-Contrasena" id="Modal-Contrasena">
+		<div class="flex-Contrasena" id="flex-Contrasena">
+                    <div class="Contenido-Modal-Contrasena">
+                        <div class="Header-Modal-Contrasena flex-Con">
+                            <h2>Cambio Contraseña</h2>	
+                        </div>
+                        <div class="Body-Modal-Contrasena">
+                            <div class="Contenedor-Formulario-Contrasena">
+                                <form action="ServletLogin" class="Formulario" method="POST" name="Formulario_Contrasena">
+                                    <div>
+                                        <input type="hidden" name="Documento" value="<%=Doc%>">
+                                        <div class="Input-Group-Contrasena">
+                                            <input type="password" id="ClaveAntigua" name="ClaveAntigua" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+                                            <label class="label-Contrasena" for="ClaveAntigua">Contraseña Actual </label>
+                                        </div>
+                                        <div class="Input-Group-Contrasena">
+                                            <input type="password" id="ClaveNueva" name="ClaveNueva" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+                                            <label class="label-Contrasena" for="ClaveNueva">Nueva Contraseña </label>
+                                        </div>
+                                        <div class="Input-Group-Contrasena">
+                                            <input type="password" id="RepetirClave" name="RepetirClave" pattern="[A-Za-z0-9!|°¬#$%&/()=?¡¿¨+´-_.:;,}]{8,20}">
+                                            <label class="label-Contrasena" for="RepetirClave">Repita la contraseña </label>
+                                        </div>
+                                        <input type="hidden" name="Rol" value="2">
+                                        <input type="submit" class="btn-submit" id="btn-submit" name="UsuarioContrasena" value="Cambiar">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="Footer-Modal-Contrasena">
+                        </div>
+                    </div>
+		</div> 
+            </div>
+            	
+            <!-- Finaliza Ventana Modal y Formulario de Contraseña -->
+            
         <article id="Mascotas" class="Mascotas">
-            <h1>Adopcion</h1>
+            <h1>Registro de Macotas</h1>
             <hr>
             <div class="Contenido-Adopcion">
                 <div class="Contenedor-Formulario-Adopcion">
@@ -162,6 +222,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <input type="hidden" name="Rol" value="2">
                             <input type="submit" name="Registro-Mascota" value="Registrar">
                         </form>
                     </div>
@@ -170,7 +231,7 @@
         </article>
 
         <article id="Eventos" class="Eventos">
-            <h1>Eventos</h1>
+            <h1>Registro de Eventos</h1>
             <hr>
             <div class="Contenedor-Formulario-Eventos">
                 <div class="Wrap-Eventos">
@@ -207,6 +268,7 @@
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" name="Rol" value="2">
                         <input type="submit" name="Registro-Evento" value="Registrar">
                     </form>
                 </div>
@@ -214,33 +276,39 @@
         </article>
 
         <article id="Tips" class="Tips">
-            <h1>Tips</h1>
+            <h1> Registro de Tips</h1>
             <hr>
             <div class="Contenedor-Formulario-Tips">
                 <div class="Wrap-Tips">
-                    <form action="Servlet_Eventos" class="Formulario" method="POST" name="Formulario_Tips" enctype="multipart/form-data">
+                    <form action="Servlet_Tips" class="Formulario" method="POST" name="Formulario_Tips" enctype="multipart/form-data">
                         <div class="Posicion-Tips">
-                            <div class="Input-Group-Tips">
-                                <input type="text" id="NombreTips" name="NombreTips">
-                                <label for="NombreTips" class="label-Tips">Nombre del Evento</label>
+                            <div class="Lefth-Tips">
+                                <div class="Input-Group-Tips">
+                                    <input type="text" id="TituloTip" name="Titulo-Tip">
+                                    <label for="TituloTip" class="label-Tip">Titulo del Tip</label>
+                                </div>
+                                <div class="Input-Group-Tips">
+                                    <input type="text" id="Descripcion-Tip" name="Descripcion-Tip">
+                                    <label for="Descripcion-Tip" class="label-Tip">Descripcion del Tip</label>
+                                </div>
                             </div>
-                            <div class="Input-Group-Tips">
-                                <input type="file" id="Imagen_Tips" name="Imagen_Tips">
-                                <label for="Imagen_Tips" class="label-Eventos">Imagen de la Foto</label>
-                            </div>
-                            <div class="Input-Group-Tips">
-                                <textarea id="Dato-Tip" name="Dato-Tip"></textarea>
-                                <label for="Dato-Tip" class="label-Tips">Dato Informativo</label>
+                            <div class="Rigth-Tips">
+                                <div class="Input-Group-Tips">
+                                    <div id="Vista_Previa"> <img src=""></div>
+                                    <input type="file" id="Imagen-Tip" name="Imagen-Tip">
+                                    <label class="label-Tip" for= "Imagen-Tip"><span class="fa fa-camera Img-Tips"></span>Imagen</label>
+                                </div>
                             </div>
                         </div>
-                        <input type="submit" name="Registro-Evento" value="Registrar">
+                        <input type="hidden" name="Rol" value="2">
+                        <input type="submit" name="Registro-Tip" value="Registrar">
                     </form>
                 </div>
             </div>
         </article>
 
         <article id="Usuarios" class="Usuarios">
-            <h1>Usuarios</h1>
+            <h1>Registro de Ciudadanos</h1>
             <hr>
             <div class="Ciudadanos">
                 <h2>Ciudadano</h2>
@@ -319,11 +387,35 @@
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" name="Rol" value="2">
                         <input type="submit" name="Registro-Ciudadano" value="Registrar">
                     </form>
                 </div>
             </div>
         </article>
+                                        
+        <article id="listas "class="listas">
+            <h1> </h1>
+            <hr>
+            <div class="Listas">
+                <h2>Lista</h2>
+            </div>
+            <div class="Contenedor-Formulario-Listas">
+                <div class="Wrap-Listas">
+                    <form action="Servlet_Administrador" class="Formulario" method="POST" name="Formulario_Lista">
+                        <div class="Input-Group-Listas Radio">
+                            <input type="Radio" id="Ciudadanos" name="Listar" value="Ciudadanos">
+                            <label for="Ciudadanos">Ciudadanos</label>
+                            <input type="Radio" id="Mascotas" name="Listar" value="Mascotas"> 
+                            <label for="Mascotas">Mascotas</label>
+                        </div>
+                        <input type="hidden" name="Rol" value="2">
+                        <input type="submit" name="Consultar" value="Listar">
+                    </form>
+                </div>
+            </div>
+        </article>                                                        
+          
     </main>
                                             
                                             

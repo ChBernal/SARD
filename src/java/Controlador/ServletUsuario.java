@@ -104,7 +104,13 @@ public class ServletUsuario extends HttpServlet {
         Login_M M_LG =new Login_M();
         M_LG.Login_Cliente(GSC);
         
-         response.sendRedirect("Menu-Admin.jsp");
+        int Rol = Integer.parseInt(request.getParameter("Rol"));
+        if (Rol==1) {
+           response.sendRedirect("Menu-Admin.jsp");
+        }
+        if (Rol==2) {
+           response.sendRedirect("Menu-SA.jsp");
+        }
         }
 
     protected void Actualizar_Cliente_Perfil (HttpServletRequest request, HttpServletResponse response)
