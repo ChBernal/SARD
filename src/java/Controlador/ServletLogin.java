@@ -2,7 +2,7 @@ package Controlador;
 
 import Modelo.Admin_M;
 import Modelo.Ambiente_Salud_M;
-import Modelo.Ciudadano_M;
+import Modelo.Ciudadano_;
 import Modelo.GS_Admin;
 import Modelo.GS_Ambiente_Salud;
 import Modelo.GS_Ciudadano;
@@ -163,7 +163,7 @@ public class ServletLogin extends HttpServlet {
         String Documento = request.getParameter("Usuario");
         String Nombre = null;
         GS_Ciudadano GSC = new GS_Ciudadano(Documento);
-        Ciudadano_M CM = new Ciudadano_M();
+        Ciudadano_ CM = new Ciudadano_();
         ArrayList<GS_Ciudadano> Datos_Ciudadano = new ArrayList<>();
         Datos_Ciudadano = CM.Uno_Ciudadano(GSC);
         

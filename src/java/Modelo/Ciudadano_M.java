@@ -1,3 +1,4 @@
+
 package Modelo;
 
 import Controlador.Conexion;
@@ -7,7 +8,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
+
 public class Ciudadano_M {
+ 
     Conexion Conex = new Conexion();
     Connection BaseDatos = Conex.Conectando();
     PreparedStatement PreSta = null;
@@ -97,5 +100,4 @@ public class Ciudadano_M {
             JOptionPane.showMessageDialog(null,e);
         }
     }
-    
 }
