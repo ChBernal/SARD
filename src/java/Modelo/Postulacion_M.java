@@ -89,5 +89,16 @@ public class Postulacion_M {
         }
         return Datos_Postulacion;
     }
+    
+    public ArrayList<GS_Encuesta> CanEncuesta (){
+        ArrayList<GS_Encuesta> Cantidad = new ArrayList<>();
+        try {
+            PreSta = BaseDatos.prepareStatement("Call Uno_Respuesta(?)");
+            Reset = PreSta.executeQuery(); 
+        } catch (Exception e) {
+            
+        }
+        return Cantidad;
+    }
 	
 }
