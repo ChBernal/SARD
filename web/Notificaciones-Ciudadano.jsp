@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.GS_Denuncia_Cliente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.Denuncias_M"%>
@@ -84,11 +85,11 @@
 
     <main>
         <article class="Notificaciones">
-            <div class="MisDenuncias">
+            <div class="DenunciasCiudadano">
                 <div>Mis Denuncias </div>
                 <div class="ContarMD">2</div>
             </div>
-            <div class="MisPostulaciones">
+            <div class="PostulacionesCiudadano">
                 <div>Mis Postulaciones </div>
                 <div class="ContarMP">2</div>
             </div>
@@ -98,6 +99,7 @@
             <div class="Denuncias">
             <%
                 String Doc = (String)Dat.getAttribute("DocumentoSession");
+                JOptionPane.showMessageDialog(null, Doc);
                 Denuncias_M DM = new Denuncias_M();
                 ArrayList<GS_Denuncia_Cliente> Denuncia = new ArrayList<>();    
                 GS_Denuncia_Cliente Mas = new GS_Denuncia_Cliente();
@@ -107,8 +109,9 @@
                     Mas = Denuncia.get(i);
             %>
             </div>
-            <div class="DatosDenuncias">
-                
+            <div class="NombresDC">
+                <input type="text" value="<%=Mas.getDescripcion()%>">
+                <input type="text" value="<%=Mas.getFecha()%>">
             </div>
             
             <div class="Postulados">
@@ -117,6 +120,7 @@
             <div class="DatosPostulados">
                 
             </div>
+            <%}%>
         </article>
     </main>
 			

@@ -175,10 +175,11 @@ public class Denuncias_M {
     }
     
     public ArrayList<GS_Denuncia_Cliente> Ver_DenunciasC (String Doc){
-        ArrayList<GS_Denuncias> Tabla=new ArrayList<>();
+        ArrayList<GS_Denuncia_Cliente> Tabla=new ArrayList<>();
         
         try {
-            PreSta= BaseDatos.prepareStatement("call DenunciasCliente('Doc')");
+            PreSta= BaseDatos.prepareStatement("call DenunciasCliente(?)");
+            PreSta.setString(1, Doc);
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   

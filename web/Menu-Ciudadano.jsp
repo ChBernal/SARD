@@ -65,7 +65,7 @@
         <div class="PerfilUsuario" id="PerfilUsuario">
             <div class="Enlaces-Perfil">
                 <a href="Perfil_Ciudadano.jsp"><i class="fa fa-user-o"></i>Perfil</a>
-                <a href=""><i class="Notifi">2</i>Notificaciones</a>
+                <a href="Notificaciones-Ciudadano.jsp"><i class="Notifi">2</i>Notificaciones</a>
                 <a href="Mascotas_Ciudadano.jsp"><i class="fa fa-paw"></i>Mis Mascotas</a>
                 <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
                 <hr>
