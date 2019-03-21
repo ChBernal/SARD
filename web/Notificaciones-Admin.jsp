@@ -1,3 +1,5 @@
+<%@page import="Modelo.Ambiente_Salud_M"%>
+<%@page import="Modelo.GS_Ambiente_Salud"%>
 <%@page import="Modelo.Postulacion_M"%>
 <%@page import="Modelo.GS_Postulacion"%>
 <%@page import="Modelo.GS_Denuncia_Cliente"%>
@@ -320,7 +322,7 @@
                             <h1>Respuesta</h1>
                             <label class="fa fa-close cerrar_Postulacion"></label>
                         </div>
-                        <form action="ServletPostulacion" method="Post">
+                        <form action="Servlet_Postulacion" method="Post">
                             <div class="BodyPostulacion">
                                 <div class="Img-Mascota">
                                     <img src="<%=GSP.getFotoMascota()%>">
@@ -340,10 +342,26 @@
                             </div>
                             <div class="Footer-BodyPostulacion">
                                 <div class="Descrip">
-                                    <input type="date" name="Fecha_Cita">
                                     <label for="Fecha_Cita">Fecha de la cita</label>
+                                    <input type="date" name="Fecha_Cita">
                                     
-                                    <label for="DescripcionCita">Descripcion</label>
+                                    <label>Encargado</label>
+                                    <select name="Encargado">
+                                        <%
+                                        ArrayList<GS_Ambiente_Salud> Nombre_Ambiente = new ArrayList<>();
+                                        Ambiente_Salud_M SASS=new Ambiente_Salud_M();
+                                        GS_Ambiente_Salud GS_SA=new GS_Ambiente_Salud();
+                                        Nombre_Ambiente= SASS.Todo_Ambiente();
+
+                                           for(int e=0; e<Nombre_Ambiente.size(); e++){
+                                                GS_SA = Nombre_Ambiente.get(e);
+                                        %>
+                                        <option value="<%=GS_SA.getDocumento()%>"><%=GS_SA.getNombre()+""+GS_SA.getApellido()%></option>
+                                        <%
+                                        }
+                                        %>
+                                    </select>
+                                        <input type="hidden" name="Postulante" value="<%=GSP.getDocumentoC()%>">
                                 </div>
                                 <div class="respuestas">
                                     <input type="submit" class="btns-Respuestas" name="AsignarCita" value="Asignar Cita">

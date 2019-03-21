@@ -8,7 +8,9 @@ package Controlador;
 import Modelo.GS_Estadistacas;
 import Modelo.GS_Postulacion;
 import Modelo.GS_Preguntas_Postulacion;
+import Modelo.GS_Visitas;
 import Modelo.Postulacion_M;
+import Modelo.Visitas_M;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -51,7 +53,40 @@ public class Servlet_Postulacion extends HttpServlet {
         if (request.getParameter("btn-Fin-Postulacion") != null) {
             this.Insertar_Postulacion_Final(request, response);
         }
+        if (request.getParameter("AsignarCita") != null) {
+            this.Asignar_Visita(request, response);
+        }
     }
+        
+    protected void Asignar_Visita(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Fecha, Encargado, Postulante;
+        Fecha=request.getParameter("Fecha_Cita");
+        Encargado=request.getParameter("Encargado");
+        Postulante=request.getParameter("Postulante");
+        
+        GS_Visitas GS_V = new GS_Visitas(Fecha, Encargado, Postulante);
+        Visitas_M M_Visita = new Visitas_M();
+        M_Visita.Asignar_Visita(GS_V);
+        
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+        out.println("</head>");
+        out.println("<body>");
+        out.print("<script type='text/javascript'> alertify.alert('Visita Asignada',function(){"
+                + "window.location.href = 'Notificaciones-Admin.jsp'}); </script>");
+        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+        out.println("</body>");
+        out.println("</html>");
+    }
+    
         protected void Insertar_Postulacion_Pre(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

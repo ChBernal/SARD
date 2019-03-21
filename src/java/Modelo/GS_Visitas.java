@@ -21,6 +21,12 @@ public class GS_Visitas {
         this.Postulante = Postulante;
     }
 
+    public GS_Visitas(String Fecha, String Encargado, String Postulante) {
+        this.Fecha = Fecha;
+        this.Encargado = Encargado;
+        this.Postulante = Postulante;
+    }
+    
     public int getId_Visita() {
         return Id_Visita;
     }

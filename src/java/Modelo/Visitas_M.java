@@ -41,4 +41,17 @@ public class Visitas_M {
         }
         return Tabla;
     }
+    
+    public void Asignar_Visita (GS_Visitas GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("call Asignar_Visita (?,?,?)");
+            PreSta.setString(1, GS.getFecha());
+            PreSta.setString(2, GS.getEncargado());
+            PreSta.setString(3, GS.getPostulante());
+            PreSta.executeUpdate();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
 }
