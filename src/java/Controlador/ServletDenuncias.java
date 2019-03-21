@@ -42,8 +42,10 @@ public class ServletDenuncias extends HttpServlet {
         }
         if (request.getParameter("PredeterminadaC")!= null || request.getParameter("ContinuacionC")!= null){
             this.Respuesta_PreCont_Ciudadano(request, response);
+            request.getRequestDispatcher("Notificaciones-Admin.jsp").forward(request, response);
         }else if (request.getParameter("FinalizarC")!= null){
             this.Respuesta_Finalizar_Ciudadano(request, response);
+            request.getRequestDispatcher("Notificaciones-Admin.jsp").forward(request, response);
         }
     }
     
