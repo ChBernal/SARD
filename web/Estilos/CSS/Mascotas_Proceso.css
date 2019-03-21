@@ -1,0 +1,137 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: rgb(220,237,200) url("../Imagenes/Fondo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Nunito Sans', sans-serif arial;
+	font-size: 16px;
+}
+.Barra{
+    background: rgb(39,174,96);
+    width: 100%;
+    height: 50px;
+    min-width: 350px;
+    top: 0;
+}
+.Barra .fa-home{
+    padding: 5px 20px;
+    font-size: 38px;
+    color: white;
+}
+.Barra .fa-home:hover{
+    color: gray;
+}
+.Container-Mascotas{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+.Mascotas-Proceso{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Mascotas-Proceso .Mascotas{
+    width: 390px;
+    height: auto;
+    margin: 20px 20px;
+    border: 1px solid rgb(39,174,96);
+    background: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.Mascotas-Proceso .Mascotas .ImagenM{
+    margin: 10px 20px;
+    float: left;
+    width: auto;
+    height: auto;
+}
+.Mascotas-Proceso .Mascotas .ImagenM img{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 1px solid rgb(39,174,96);
+}
+.Mascotas-Proceso .Mascotas .DatosM{
+    width: auto;
+    height: 100%;
+}
+.Mascotas-Proceso .Mascotas .DatosM h2{
+    padding: 15px 0 7px 0;
+    font-family: "Nunito";
+    font-size: 35px;
+    color: rgb(39,174,96);
+}
+.Mascotas-Proceso .Mascotas .DatosM label{
+    padding-bottom: 5px;
+    display: block;
+    font-family: "Nunito";
+    color: rgb(39,174,96);
+    cursor: pointer;
+}
+.titulo{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    font-family: "Nunito";
+    font-size: 130%;
+    font-weight: bold;
+    color: rgb(39,174,96);
+}
+.Container-Oculto{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    margin: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.Container-Oculto .Oculto{
+    width: auto;
+    height: auto;
+    padding: 20px 40px;
+    border: 1px solid rgb(39,174,96);
+    background: rgb(255,255,255);
+    display: flex;
+    justify-content: center;
+}
+.Container-Oculto .Oculto label{
+    width: 100%;
+    font-family: "Nunito";
+    font-size: 130%;
+    font-weight: bold;
+    color: rgb(39,174,96);
+}
+.Container-Oculto .Oculto .btn{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.Container-Oculto .Oculto .btn .btn-M{
+    background: rgb(39,174,96);
+    border-radius: 10px;
+    border: 2px solid rgb(255,255,255);
+    color: rgb(255,255,255);
+    cursor: pointer;
+    display: inline-block;
+    padding: 9px 30px;
+    font-family: "Nunito";
+    font-size: 16px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}

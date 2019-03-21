@@ -1,3 +1,6 @@
+<%@page import="Modelo.GS_Denuncia_Cliente"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.Denuncias_M"%>
 <!DOCTYPE html>
 <%
     HttpSession Dat = request.getSession();
@@ -94,7 +97,14 @@
         <article class="DatosTodas">            
             <div class="Denuncias">
             <%
-                
+                String Doc = (String)Dat.getAttribute("DocumentoSession");
+                Denuncias_M DM = new Denuncias_M();
+                ArrayList<GS_Denuncia_Cliente> Denuncia = new ArrayList<>();    
+                GS_Denuncia_Cliente Mas = new GS_Denuncia_Cliente();
+                Denuncia = DM.Ver_DenunciasC(Doc);
+
+                for (int i = 0; i < Denuncia.size();i++){
+                    Mas = Denuncia.get(i);
             %>
             </div>
             <div class="DatosDenuncias">

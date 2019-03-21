@@ -173,5 +173,23 @@ public class Denuncias_M {
         }
         return x;
     }
+    
+    public ArrayList<GS_Denuncia_Cliente> Ver_DenunciasC (String Doc){
+        ArrayList<GS_Denuncias> Tabla=new ArrayList<>();
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call DenunciasCliente('Doc')");
+            Reset= PreSta.executeQuery();
+            
+            while (Reset.next()) {   
+                GS_Denuncia_Cliente den = new GS_Denuncia_Cliente(Reset.getString(1), Reset.getString(2));
+                Tabla.add(den);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+" Error en Todo Denuncia");
+        }
+        return Tabla;
+    }
 
 }

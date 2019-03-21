@@ -28,6 +28,11 @@ public class GS_Denuncia_Cliente {
         this.Fecha = Fecha;
     }
 
+    public GS_Denuncia_Cliente(String Descripcion, String Fecha) {
+        this.Descripcion = Descripcion;
+        this.Fecha = Fecha;
+    }
+    
     public GS_Denuncia_Cliente() {
     }
 
