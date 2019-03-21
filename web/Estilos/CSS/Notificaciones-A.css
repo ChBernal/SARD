@@ -604,7 +604,8 @@ header {
 }
 
 .DatosDA,
-.DatosDC {
+.DatosDC,
+.DatosP {
     width: 70%;
     display: flex;
     flex-direction: column;

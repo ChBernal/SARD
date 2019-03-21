@@ -155,14 +155,9 @@ $(function(){
 		var asig = $(".ModalPostulaciones").eq(Pos);
                 var esc = $(".EscritaC").eq(Pos);
                 asig.css("display","flex");
-                $(".FinalizarC").hide();
-                $(".ContinuarC").hide();
-		$(".DatosDenunciaC").hide();
                 
                 $(esc).click(function(){
                 $(".Respuesta").css("display","initial");
-                $(".FinalizarC").fadeIn();
-                $(".ContinuarC").fadeIn();
             });
 	})
         

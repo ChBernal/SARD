@@ -325,19 +325,29 @@
                                 <div class="Img-Mascota">
                                     <img src="<%=GSP.getFotoMascota()%>">
                                 </div>
+                                <div class="DatosP">
+                                    <label class="dat">Telefono1:</label>
+                                    <label><%=GSP.getTelefono1P() %></label>
+                                    <label class="dat">Telefono2:</label>
+                                    <label><%=GSP.getTelefono2P() %></label>
+                                    <label class="dat">Correo:</label>
+                                    <label><%=GSP.getCorreoP() %></label>
+                                    <label class="dat">Puntaje:</label>
+                                    <label><%=GSP.getEncuesta() %></label>
+                                    <a href="<%=GSP.getCopiaCC()%>">Copia de Cedula</a>
+                                    <a href="<%=GSP.getCopiaRP()%>">Copia Recibo Publico</a>
+                                </div>  
                             </div>
                             <div class="Footer-BodyPostulacion">
                                 <div class="Descrip">
+                                    <input type="date" name="Fecha_Cita">
+                                    <label for="Fecha_Cita">Fecha de la cita</label>
                                     
+                                    <label for="DescripcionCita">Descripcion</label>
                                 </div>
                                 <div class="respuestas">
-                                    <label class="btns-Respuestas Escrita">Responder</label>
-                                    <input type="submit" class="btns-Respuestas" name="Predeterminada" value="Predeterminada">
-                                </div>
-                                <textarea class="Respuesta" name="Descripcion_RA" ></textarea>
-                                <div class="btns">
-                                    <input class="btns-Respuestas FinalizarA" type="submit" name="Finalizar" value="Responder y Finalizar">
-                                    <input class="btns-Respuestas ContinuarA" type="submit" name="Continuacion" value="Responder y Continuar">
+                                    <input type="submit" class="btns-Respuestas" name="AsignarCita" value="Asignar Cita">
+                                    <input type="submit" class="btns-Respuestas" name="FinalizarP" value="Finalizar Proceso">
                                 </div>
                             </div>
                         </form>
