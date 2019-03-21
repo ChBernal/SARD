@@ -68,7 +68,7 @@ $(function(){
         
 	$(".PostulacionesCiudadano").click(function(){
             $(".Postul").css("display","initial");
-            $(".NombreP").fadeToggle(1000);
+            $(".NombreP").fadeToggle();
             $(".NombreDN").hide();
             $(".NombreDC").hide();
             $(".DatosDenunciaA").hide();
@@ -79,7 +79,7 @@ $(function(){
 	$(".DenunciasNN").click(function(){
             $(".Anonimas").css("display","initial");
             $(".NombreDN").fadeToggle(1000);
-            $(".Postulados").hide();
+            $(".NombreP").hide();
             $(".NombreDC").hide();
             $(".DatosDenunciaA").hide();
             $(".DatosDenunciaC").hide();
@@ -89,7 +89,7 @@ $(function(){
 	$(".DenunciasCiudadano").click(function(){
             $(".Ciudadano").css("display","initial");
             $(".NombreDC").fadeToggle(1000);
-            $(".Postulados").hide();
+            $(".NombreP").hide();
             $(".NombreDN").hide();
             $(".DatosDenunciaA").hide();
             $(".DatosDenunciaC").hide();
@@ -122,8 +122,6 @@ $(function(){
             $(".ContinuarA").hide();
         });
         
-        
-        
         //Ver ciudadano
         
         $(".Prueba-Cliente").click(function(){
@@ -145,6 +143,31 @@ $(function(){
         
         $(".cerrar_Ciudadano").click(function(){
             $(".ModalCiudadano").css("display","none");
+            $(".Respuesta").css("display","none");
+            $(".FinalizarC").hide();
+            $(".ContinuarC").hide();
+        });
+        
+        //Ver Postulaciones
+        
+        $(".Prueba-Postulados").click(function(){
+		var Pos = $(".NombreP").index(this);
+		var asig = $(".ModalPostulaciones").eq(Pos);
+                var esc = $(".EscritaC").eq(Pos);
+                asig.css("display","flex");
+                $(".FinalizarC").hide();
+                $(".ContinuarC").hide();
+		$(".DatosDenunciaC").hide();
+                
+                $(esc).click(function(){
+                $(".Respuesta").css("display","initial");
+                $(".FinalizarC").fadeIn();
+                $(".ContinuarC").fadeIn();
+            });
+	})
+        
+        $(".cerrar_Postulacion").click(function(){
+            $(".ModalPostulaciones").css("display","none");
             $(".Respuesta").css("display","none");
             $(".FinalizarC").hide();
             $(".ContinuarC").hide();

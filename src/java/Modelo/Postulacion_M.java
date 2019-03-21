@@ -81,7 +81,7 @@ public class Postulacion_M {
             Reset = PreSta.executeQuery();
             
             while (Reset.next()){
-                GS_Postulacion GSP = new GS_Postulacion(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10), Reset.getString(11), Reset.getString(12), Reset.getString(13));
+                GS_Postulacion GSP = new GS_Postulacion(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10), Reset.getString(11), Reset.getString(12), Reset.getString(13), Reset.getInt(14));
                 Datos_Postulacion.add(GSP);
             }
         }catch (Exception e){

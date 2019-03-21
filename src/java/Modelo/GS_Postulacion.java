@@ -19,6 +19,7 @@ public class GS_Postulacion {
     private String CorreoP;
     private String CopiaCC;
     private String CopiaRP;
+    private int Encuesta;
 
     public GS_Postulacion(int Codigo, String DocumentoC, int CodigoMascota, String Cedula, String Recibo, String Fecha, int Estado) {
         this.Codigo = Codigo;
@@ -40,6 +41,8 @@ public class GS_Postulacion {
 
     public GS_Postulacion() {
     }
+    
+    
 
     public GS_Postulacion(int CodigoMascota, String TipoMascota, String NombreMascota, String FotoMascota, String DocumentoC, String NombreP, String ApellidoP, String Telefono1P, String Telefono2P, String CorreoP, String Fecha, String CopiaCC, String CopiaRP) {
         this.CodigoMascota = CodigoMascota;
@@ -56,7 +59,32 @@ public class GS_Postulacion {
         this.CopiaCC = CopiaCC;
         this.CopiaRP = CopiaRP;
     }
+    
+    public GS_Postulacion(int CodigoMascota, String TipoMascota, String NombreMascota, String FotoMascota, String DocumentoC, String NombreP, String ApellidoP, String Telefono1P, String Telefono2P, String CorreoP, String Fecha, String CopiaCC, String CopiaRP, int Encuesta) {
+        this.CodigoMascota = CodigoMascota;
+        this.TipoMascota = TipoMascota;
+        this.NombreMascota = NombreMascota;
+        this.FotoMascota = FotoMascota;
+        this.DocumentoC = DocumentoC;
+        this.NombreP = NombreP;
+        this.ApellidoP = ApellidoP;
+        this.Telefono1P = Telefono1P;
+        this.Telefono2P = Telefono2P;
+        this.CorreoP = CorreoP;
+        this.Fecha = Fecha;
+        this.CopiaCC = CopiaCC;
+        this.CopiaRP = CopiaRP;
+        this.Encuesta = Encuesta;
+    }
 
+    public int getEncuesta() {
+        return Encuesta;
+    }
+
+    public void setEncuesta(int Encuesta) {
+        this.Encuesta = Encuesta;
+    }
+    
     public int getCodigo() {
         return Codigo;
     }

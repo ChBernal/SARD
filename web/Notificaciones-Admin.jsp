@@ -302,14 +302,50 @@
                     <div class="ApellidoP">
                         <label><%=GSP.getApellidoP() %></label>
                     </div>
+                    <div class="Puntaje">
+                        <label><%=GSP.getEncuesta() %></label>
+                    </div>
                     <div class="icono-observar">
                             <label class=" fa fa-eye Prueba-Postulados"></label>
                     </div>
                 </div>
                     
-                    <%}%>
-                    
                 <!-- Finaliza Datos Postulacio-->
+                
+                <!-- Ventanda modal con datos de denuncia -->
+                    
+                <div class="ModalPostulaciones">
+                    <div class="Datos_Postulacion">
+                        <div class="HeaderPostulacion">
+                            <h1>Respuesta</h1>
+                            <label class="fa fa-close cerrar_Postulacion"></label>
+                        </div>
+                        <form action="ServletPostulacion" method="Post">
+                            <div class="BodyPostulacion">
+                                <div class="Img-Mascota">
+                                    <img src="<%=GSP.getFotoMascota()%>">
+                                </div>
+                            </div>
+                            <div class="Footer-BodyPostulacion">
+                                <div class="Descrip">
+                                    
+                                </div>
+                                <div class="respuestas">
+                                    <label class="btns-Respuestas Escrita">Responder</label>
+                                    <input type="submit" class="btns-Respuestas" name="Predeterminada" value="Predeterminada">
+                                </div>
+                                <textarea class="Respuesta" name="Descripcion_RA" ></textarea>
+                                <div class="btns">
+                                    <input class="btns-Respuestas FinalizarA" type="submit" name="Finalizar" value="Responder y Finalizar">
+                                    <input class="btns-Respuestas ContinuarA" type="submit" name="Continuacion" value="Responder y Continuar">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <%}%>
+                  
+                <!-- Finaliza Modal Anonima -->
                 
             </div>
                     

@@ -526,12 +526,14 @@ header {
 }
 
 .Prueba-Anonima, 
-.Prueba-Cliente {
+.Prueba-Cliente,
+.Prueba-Postulados {
     cursor: pointer;
 }
 
 .ModalAnonima,
-.ModalCiudadano {
+.ModalCiudadano,
+.ModalPostulaciones {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -544,7 +546,8 @@ header {
 }
 
 .Datos_DAnonima2,
-.Datos_DCiudadano {
+.Datos_DCiudadano,
+.Datos_Postulacion {
     width: 90%;
     max-width: 1000px;
     min-width: 300px;
@@ -559,7 +562,8 @@ header {
 }
 
 .HeaderAnonima,
-.HeaderCiudadano {
+.HeaderCiudadano,
+.HeaderPostulacion {
     display: flex;
     width: 100%;
     background: rgb(39,174,96);
@@ -570,12 +574,14 @@ header {
 }
 
 .HeaderAnonima .cerrar_anonima,
-.HeaderCiudadano .cerrar_Ciudadano {
+.HeaderCiudadano .cerrar_Ciudadano,
+.HeaderPostulacion .cerrar_Postulacion {
     cursor: pointer;
 }
 
 .BodyAnonima,
-.BodyCiudadano {
+.BodyCiudadano,
+.BodyPostulacion {
     padding: 40px;
     width: 100%;
     display: flex;
@@ -583,12 +589,14 @@ header {
 }
 
 .Img-Denuncia,
-.Img-Ciudadano {
+.Img-Ciudadano,
+.Img-Mascota {
     width: 30%;
 }
 
 .Img-Denuncia img,
-.Img-Ciudadano img {
+.Img-Ciudadano img,
+.Img-Mascota img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -603,7 +611,8 @@ header {
 }
 
 .Footer-BodyAnonima,
-.Footer-BodyCiudadano {
+.Footer-BodyCiudadano,
+.Footer-BodyPostulacion {
     width: 100%;
     padding: 40px;
 }
