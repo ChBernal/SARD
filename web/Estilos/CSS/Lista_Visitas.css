@@ -1,0 +1,128 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: rgb(220,237,200) url("../Imagenes/Fondo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Nunito Sans', sans-serif ;
+	font-size: 16px;
+	padding-top: 55px;
+}
+
+.Contenedor {
+	width: 100%;
+}
+.Lista_Visitas{
+	width: 100%;
+        height: 100vh;
+	margin: 0x auto;
+        padding-bottom: 128px;
+	background: rgba(255,249,196,.8);
+	background-attachment: fixed;
+        align-items: center;
+        justify-content: center;
+}
+.Scroll_Lista{
+    height: 500px;
+    overflow: auto;
+}
+header {
+        height: 55px;
+	background: rgb(0,166,81);
+	position: fixed;
+	width: 100%;
+	min-width: 350px;
+	top: 0;
+}
+.Menu {
+        padding: 5px 0px;
+	max-width: 1250px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.Menu .fa-home{
+    font-size: 38px;
+    color: white;
+}
+
+main .Lista_Visitas{    
+    color: rgb(0,166,81);
+}
+main .Cabezera{
+	width: 100%;
+	height: 150px;
+	display: flex;
+	margin: -50px auto 0px auto;
+	padding-top: 25px;
+	align-items: center;
+	justify-content: center;
+        font-family: 'Nunito Sans', sans-serif ;
+        font-size: 16px;
+}
+main .Cabezera h1{
+        font-family: 'Nunito Sans', sans-serif ;
+        font-size: 250%;
+}
+.Datos_Visita{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    background: rgb(255,255,255);
+    width: 100%;
+    height: 50px;
+    border-radius: 10px 0px 0px 0px;
+    max-width: 1000px;
+    cursor: pointer;
+}
+.Respuesta_Visita{
+    width: 100%;
+    height: 300px;
+    max-width: 1000px;
+    padding: 40px;
+    display: felx;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 20px;
+    margin: -10px auto;
+    background: rgb(255,255,255);
+}
+
+.Botones{
+    width: 60%;
+    height: 100px;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Botones input, button{
+    color: white;
+    background: rgb(0,166,81);
+    border-radius: 10%;
+    border: transparent;
+    font-size: 110%;
+    padding: 5px 10px;
+    margin: 10px;
+    font-family: 'Nunito Sans', sans-serif arial;
+    cursor: pointer;
+}
+.Botones label{
+    color: white;
+    background: rgb(0,166,81);
+    border-radius: 10%;
+    border: transparent;
+    font-size: 110%;
+    padding: 5px 10px;
+    margin: 10px;
+    font-family: 'Nunito Sans', sans-serif arial;
+    cursor: pointer;
+}
