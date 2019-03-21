@@ -76,7 +76,7 @@
                     <input class="Mo" id="Correo" type="email" name="Correo_C" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="<%= inggs.getCorreo()%>" required>
                     <div class="btn-Act">
                         <input class="btn-Actualizar" type="submit" name="Actualizar" value="Actualizar">
-                        <a href="#Mostrar-Cuenta" class="btn-Cambiar">Cambiar Contraseña?</a>
+                        <a class="btn-Cambiar">Cancelar</a>
                     </div>
                 </div>
                 </form>

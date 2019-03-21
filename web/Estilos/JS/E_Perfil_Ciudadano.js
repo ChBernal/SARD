@@ -20,7 +20,14 @@ $(document).ready(function (){
             $(".btn-Actualizar").show();
             $(".btn-Cambiar").show();
             $(".fa-camera").show();
-            $(".Datos .Mo").css("background","rgba( 39, 174, 96, 0.2)");
+            $(".Datos .Mo").css({'border-bottom':'1px solid rgb(39,174,96)'});
+    });
+    $(".btn-Cambiar").click( function (){
+            $(".btn-Actualizar").hide();
+            $(".btn-Cambiar").hide();
+            $(".fa-camera").hide();
+            $(".btn-Editar").show();
+            $(".Datos .Mo").css({'border-bottom':''});
     });
     
     //ACTUALIZAR DATOS CIUDADANO
