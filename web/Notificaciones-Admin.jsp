@@ -44,7 +44,7 @@
     <div class="Espacio-Perfil">
         <div class="PerfilUsuario" id="PerfilUsuario">
             <div class="Enlaces-Perfil">
-                <a href="Perfil-Admin.jsp"><i class="fa fa-user-o"></i>Perfil</a>
+                <a href="Perfil_Administrador.jsp"><i class="fa fa-user-o"></i>Perfil</a>
                 <a href="#">
                     Notificaciones
                 </a>
