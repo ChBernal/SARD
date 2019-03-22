@@ -1,3 +1,4 @@
+<%@page import="Modelo.Notificaciones_M"%>
 <%@page import="Modelo.Ciudadano_M"%>
 <%@page import="Modelo.GS_Login"%>
 <%@page import="Modelo.Login_M"%>
@@ -15,6 +16,8 @@
 <%
     HttpSession Dat = request.getSession();
     String Doc=(String)Dat.getAttribute("DocumentoSession");
+    Notificaciones_M NM = new Notificaciones_M();
+    int Total = NM.CantidadTotalA();
 %>
 <html lang="en">
 <head>
@@ -62,7 +65,7 @@
         <div class="PerfilUsuario" id="PerfilUsuario">
             <div class="Enlaces-Perfil">
                 <a href="Perfil_Administrador.jsp"><i class="fa fa-user-o"></i>Perfil</a>
-                <a href="Notificaciones-Admin.jsp">Notificaciones</a>
+                <a href="Notificaciones-Admin.jsp"><%= Total %> Notificaciones</a>
                 <a class="Cambio-Contraseña" href="#"><i class="fa fa-lock"></i>Cambio Contraseña</a>
                 <hr>
                 <a href="index.jsp" name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</a>

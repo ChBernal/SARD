@@ -21,7 +21,7 @@ public class Notificaciones_M {
             rs= ps.executeQuery();
             
             while (rs.next()) {   
-                rs.getInt(1);
+                Cantidad = rs.getInt(1);
             }
             
         } catch (Exception e) {
@@ -38,7 +38,7 @@ public class Notificaciones_M {
             rs= ps.executeQuery();
             
             while (rs.next()) {   
-                rs.getInt(1);
+               Cantidad = rs.getInt(1);
             }
             
         } catch (Exception e) {
@@ -55,7 +55,7 @@ public class Notificaciones_M {
             rs= ps.executeQuery();
             
             while (rs.next()) {   
-                rs.getInt(1);
+                Cantidad = rs.getInt(1);
             }
             
         } catch (Exception e) {
@@ -72,7 +72,7 @@ public class Notificaciones_M {
             rs= ps.executeQuery();
             
             while (rs.next()) {   
-                rs.getInt(1);
+               Cantidad = rs.getInt(1);
             }
             
         } catch (Exception e) {

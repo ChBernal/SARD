@@ -4,6 +4,7 @@
     Author     : User
 --%>
 
+<%@page import="Modelo.Notificaciones_M"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Admin_M"%>
 <%@page import="Modelo.GS_Admin"%>

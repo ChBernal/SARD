@@ -1,3 +1,4 @@
+<%@page import="Modelo.Notificaciones_M"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Ambiente_Salud_M"%>
 <%@page import="Modelo.GS_Ambiente_Salud"%>
@@ -10,7 +11,11 @@
 <!DOCTYPE html>
 <%
     HttpSession Dat = request.getSession();
-    
+    Notificaciones_M NM = new Notificaciones_M();
+    int Total = NM.CantidadTotalA();
+    int CantidadAnonimas = NM.DenunciasA();
+    int CantidadCiudadano = NM.DenunciasC();
+    int CantidadPostulaciones = NM.Postulaciones();
 
 %>
 <html lang="en">
@@ -45,8 +50,7 @@
         <div class="PerfilUsuario" id="PerfilUsuario">
             <div class="Enlaces-Perfil">
                 <a href="Perfil_Administrador.jsp"><i class="fa fa-user-o"></i>Perfil</a>
-                <a href="#">
-                    Notificaciones
+                <a href="#"> <%=Total%> Notificaciones
                 </a>
                 <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
                 <hr>
@@ -97,15 +101,15 @@
         <article class="Notificaciones">
             <div class="DenunciasNN">
                 <div>Denuncias Anonimas </div>
-                <div class="ContarDN">2</div>
+                <div class="ContarDN"><%= CantidadAnonimas %></div>
             </div>
             <div class="DenunciasCiudadano">
                 <div>Denuncias Usuarios </div>
-                <div class="ContarDN">2</div>
+                <div class="ContarDN"><%= CantidadCiudadano %></div>
             </div>
             <div class="PostulacionesCiudadano">
                 <div>Postulaciones </div>
-                <div class="ContarDN">2</div>
+                <div class="ContarDN"><%= CantidadPostulaciones %></div>
             </div>
         </article>
         
