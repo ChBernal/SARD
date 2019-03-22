@@ -1,4 +1,3 @@
-
 package Modelo;
 
 import Controlador.Conexion;
@@ -104,6 +103,24 @@ public class Postulacion_M {
         } catch (Exception e) {   
         }
         return Uno_Preguta;
+    }
+    
+    public ArrayList<GS_Postulacion> VerCitacion (String Doc){
+        ArrayList<GS_Postulacion> Datos_Postulacion = new ArrayList<>();
+        try {
+            PreSta = BaseDatos.prepareStatement("Call VisitaProgramada(?)");
+            PreSta.setString(1, Doc);
+            Reset = PreSta.executeQuery();
+            
+            while (Reset.next()){
+                GS_Postulacion GS_P=new GS_Postulacion(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8));
+                Datos_Postulacion.add(GS_P);
+            }
+        }
+        catch (Exception e){
+            
+        }
+        return Datos_Postulacion;
     }
 	
 }

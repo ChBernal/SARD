@@ -41,8 +41,17 @@ public class GS_Postulacion {
 
     public GS_Postulacion() {
     }
-    
-    
+
+    public GS_Postulacion(String DocumentoC, String Cedula, String Recibo, String Fecha, String TipoMascota, String NombreMascota, String FotoMascota, String NombreP) {
+        this.DocumentoC = DocumentoC;
+        this.Cedula = Cedula;
+        this.Recibo = Recibo;
+        this.Fecha = Fecha;
+        this.TipoMascota = TipoMascota;
+        this.NombreMascota = NombreMascota;
+        this.FotoMascota = FotoMascota;
+        this.NombreP = NombreP;
+    }
 
     public GS_Postulacion(int CodigoMascota, String TipoMascota, String NombreMascota, String FotoMascota, String DocumentoC, String NombreP, String ApellidoP, String Telefono1P, String Telefono2P, String CorreoP, String Fecha, String CopiaCC, String CopiaRP) {
         this.CodigoMascota = CodigoMascota;

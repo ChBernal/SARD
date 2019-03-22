@@ -81,4 +81,21 @@ public class Notificaciones_M {
         return Cantidad;
     }
     
+    public int CantidadTotalC (){
+        int Cantidad = 0;
+        
+        try {
+            ps= Cnn.prepareStatement("call CantidadNotificacionesC()");
+            rs= ps.executeQuery();
+            
+            while (rs.next()) {   
+                Cantidad = rs.getInt(1);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+" Error en Todo Denuncia");
+        }
+        return Cantidad;
+    }
+    
 }

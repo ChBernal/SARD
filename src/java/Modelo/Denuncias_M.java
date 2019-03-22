@@ -183,7 +183,7 @@ public class Denuncias_M {
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
-                GS_Denuncia_Cliente den = new GS_Denuncia_Cliente(Reset.getString(1), Reset.getString(2));
+                GS_Denuncia_Cliente den = new GS_Denuncia_Cliente(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5));
                 Tabla.add(den);
             }
             

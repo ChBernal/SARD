@@ -1,0 +1,474 @@
+/* Estilos para todo */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: rgb(220,237,200) url("../Imagenes/Fondo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Nunito Sans', sans-serif arial;
+	font-size: 16px;
+	padding-top: 55px;
+}
+
+/* Aca terminan los estilos generales */
+
+/* aca va todo sobre el menu */
+
+header {
+	background: rgb(39,174,96);
+	position: fixed;
+	width: 100%;
+	min-width: 350px;
+	top: 0;
+	z-index: 1;
+}
+
+.Menu {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.Menu .btn-menu{
+	display: none;
+	color: rgb(255,255,255);
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.Menu .Usuario {
+	margin-right: 1em;
+}
+
+.Menu .Usuario .Perfil {
+	color: rgb(255,255,255);
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	width: 200px;
+	text-align: center;
+	font-size: 1em;
+	padding: 0.3em;
+    cursor: pointer;
+}
+
+.Menu .Usuario .Perfil a{
+	padding: .6em ;
+	display: inline-block;
+	text-decoration: none;
+	color: rgb(255,255,255);
+	text-align: center;
+	margin: auto;
+}
+
+.Menu .Usuario .Perfil img{
+	margin: auto;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	border: 1px solid rgb(255,255,255);
+}
+
+.Menu .Usuario .Perfil:hover {
+	background: rgb(39,230,130);
+}
+
+.Menu .Enlaces {
+	background: rgb(39,174,96);
+	display: inline-block;
+	text-align: left;
+}
+
+.Menu .Enlaces a {
+	color: rgb(255,255,255);
+	text-decoration: none;
+	display: inline-block;
+	padding: 1em;
+	text-align: left;
+	font-size: 1em;
+}
+
+.Menu .Enlaces i {
+	margin-right: 5px;
+}
+
+.Menu .Enlaces a:hover {
+	background: rgb(254,249,231);
+	color: rgb(39,174,96);
+	border-right: 1px solid rgb(39,174,96);
+}
+
+/* Efectos del menu */
+
+.headroom {
+	transition: transform .3s ease;
+}
+
+.headroom--pinned {
+	transform: translateY(0%);
+}
+
+.headroom--unpinned {
+	transform:  translateY(-130%);
+}
+
+.headroom--bottom {
+	transform: translateY(0%);
+}
+
+/* Finalizamos los efectos del menu */
+
+/* Comienzo de Perfil Usuario */
+
+.Espacio-Perfil {
+	position: fixed;
+	margin: -5px auto; 
+	width: 100%;
+	background: none;
+	text-align: right;
+}
+
+.PerfilUsuario {
+	float: right;
+	width: 201px;
+	height: 218px;
+	background: rgb(39,174,96);
+	color: rgb(255,255,255);
+	text-align: right;
+	font-size: 1em;
+	font-family: "Nunito";
+	cursor: pointer;
+	margin-right: 15px;
+}
+
+.PerfilUsuario .Enlaces-Perfil {
+	display: flex;
+	flex-direction: column;
+}
+
+.PerfilUsuario .Enlaces-Perfil a{
+	background: none;
+	border: none;
+	padding: 1em;
+	flex-direction: column;
+	text-decoration: none;
+	display: inline-block;
+	color: rgb(255,255,255);
+	font-size: 1em;
+}
+
+.PerfilUsuario .Enlaces-Perfil button{
+	background: none;
+	cursor: pointer;
+	border: none;
+	padding: 1em;
+	text-decoration: none;
+	display: inline-block;
+	color: rgb(255,255,255);
+	font-size: 1em;
+}
+
+.PerfilUsuario .Enlaces-Perfil i{
+	margin-right: 5px;
+}
+
+.PerfilUsuario .Enlaces-Perfil .Notifi{
+	font-size: 1em;
+	padding-left: 5px;
+	padding-right: 7px;
+	height: 30px;
+	color: rgb(39,174,96);
+	background: rgb(254,249,231);
+	border-radius: 50%;
+}
+
+.PerfilUsuario .Enlaces-Perfil a:Hover{
+	background: rgb(254,249,231);
+	flex-direction: column;
+	color: rgb(39,174,96);
+}
+
+.PerfilUsuario .Enlaces-Perfil .Notifi:Hover{
+	background: rgb(39,174,96);
+	flex-direction: column;
+	color: rgb(254,249,231);
+}
+
+/*Finaliza Perfil Usuario */
+
+/* Aca termina todo del menu */
+
+/* todo lo de ventana modal */
+
+.flex-Contrasena {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Modal-Contrasena {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+}
+
+.Contenido-Modal-Contrasena {
+	background: rgb(255,255,255);
+	position: relative;
+	margin: auto;
+	width: 40%;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
+	animation-name: modal;
+	animation-duration: 1s;
+}
+
+/*  Creacion de animacion */
+
+@keyframes modal{
+	from{
+		top: -100%; 
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* Terminamos de crear la animacion */
+
+.close {
+	color: rgb(255,255,255);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.close:hover {
+	color: rgb(117,117,117);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.Header-Modal-Contrasena, .Footer-Modal-Contrasena {
+	padding: 8px 16px;
+	background: rgb(39,174,96);
+	color: rgb(255,255,255);
+}
+
+.Footer-Modal-Contrasena a{
+	cursor: pointer;
+}
+
+.Body-Modal-Contrasena {
+	text-align: justify;
+	padding: 20px 16px;
+}
+
+/* Terminamos todo lo relacionado con la ventana modal */
+
+/* Inicio Formulario Contrasena */
+
+
+.Contenedor-Formulario-Contrasena {
+	width: 100%;
+	color: #fff;
+	padding: 8px;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario{
+	width: 100%;
+	margin: auto;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena{
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"],
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"],
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgb(39,174,96);
+	width: 100%;
+	outline: none;
+	padding: 16px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"]{
+	font-family: "Nunito";
+	font-size: 16px;
+	color: rgba(255,255,255,.9);
+	width: 100%;
+	outline: none;
+	padding: 7px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgb(220,237,200);	
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"]:focus,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"]:active,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"]:focus,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"]:active,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"]:focus,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"]:active {
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"]:focus,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"]:active{
+	color: rgb(39,174,96);
+	outline: none;
+	border-bottom: 2px solid rgb(39,174,96);	
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"].error,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"].error,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"].error,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"].error{
+	border-bottom: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="text"].error + label,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="email"].error + label,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="password"].error + label,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena input[type="date"].error + label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena label {
+	color: rgb(39,174,96);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena label.label-Contrasena {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	font-size: 16px;
+	line-height: 16px;
+	margin-left: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena label.label-Contrasena.active {
+	top: -12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: rgb(189,189,189);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label {
+	color: rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label:hover,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label:hover {
+	background: rgba(211,47,47,.2);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label:before,
+.Contenedor-Formulario-Contrasena .Formulario .Input-Group-Contrasena.error label:before {
+	border: 2px solid rgb(211,47,47);
+}
+
+.Contenedor-Formulario-Contrasena .Formulario input[type="Submit"]{
+	background: rgb(39,174,96);
+	border-radius: 10px;
+	border: 2px solid rgb(255,255,255);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	display: inline-block;
+	padding: 16px;
+	width: 100%;
+	font-family: "Nunito";
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.Contenedor-Formulario-Contrasena .Formulario input[type="Submit"]:hover {
+	background: rgb(35,200,104);
+}
+
+/* Fin formulario Contrasena */
+
+.DatosTodas {
+	max-width: 1000px;
+	margin: auto;
+}
+
+/*  */
+
+
+.RespuestaDenuncia {
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background: rgb(255,255,255);
+    display: flex;
+    flex-direction: column;
+    color: rgb(39,174,96);
+    margin: 5px auto;
+    font-size: 16px;
+    font-family: "Nunito"; 
+    border-radius: 10px 0 10px 0;
+}
+
+.DatosRespuesta {
+    display: flex;
+    justify-content: space-around;
+}
+
+.imgRespuesta {
+    width: 20%;
+}
+
+.imgRespuesta img {
+    border: 2px solid rgb(0,0,0);
+    width: 100%;
+    height: 100%;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.NombresDC {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px){
+    .DatosRespuesta {
+        display: flex;
+        flex-direction: column;
+    }
+}

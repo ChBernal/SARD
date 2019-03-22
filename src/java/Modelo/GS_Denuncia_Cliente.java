@@ -7,9 +7,11 @@ public class GS_Denuncia_Cliente {
     private int Codigo;
     private String Direccion;
     private String Descripcion;
+    private String DescripcionR;
     private String Evidencia;
     private String Documento;
     private String Fecha;
+    private String FechaR;
 
     public GS_Denuncia_Cliente(int Codigo, String Direccion, String Descripcion, String Evidencia, String Documento) {
         this.Codigo = Codigo;
@@ -28,13 +30,34 @@ public class GS_Denuncia_Cliente {
         this.Fecha = Fecha;
     }
 
-    public GS_Denuncia_Cliente(String Descripcion, String Fecha) {
+    public GS_Denuncia_Cliente(String Descripcion, String DescripcionR, String Evidencia, String Fecha, String FechaR) {
         this.Descripcion = Descripcion;
+        this.DescripcionR = DescripcionR;
+        this.Evidencia = Evidencia;
         this.Fecha = Fecha;
+        this.FechaR = FechaR;
     }
     
     public GS_Denuncia_Cliente() {
     }
+
+    public String getDescripcionR() {
+        return DescripcionR;
+    }
+
+    public void setDescripcionR(String DescripcionR) {
+        this.DescripcionR = DescripcionR;
+    }
+
+    public String getFechaR() {
+        return FechaR;
+    }
+
+    public void setFechaR(String FechaR) {
+        this.FechaR = FechaR;
+    }
+    
+    
 
     public GS_Denuncia_Cliente(int Codigo) {
         this.Codigo = Codigo;

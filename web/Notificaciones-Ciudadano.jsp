@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="Estilos/CSS/Notificaciones-A.css">
+    <link rel="stylesheet" href="Estilos/CSS/Notificaciones-C.css">
     <link rel="stylesheet" href="Estilos/Iconos/css/font-awesome.min.css">
     <link rel="stylesheet" href="Estilos/alertifyjs/css/alertify.css">
     <script src="Estilos/alertifyjs/alertify.js"></script>
@@ -37,13 +37,12 @@
     <div class="Espacio-Perfil">
         <div class="PerfilUsuario" id="PerfilUsuario">
             <div class="Enlaces-Perfil">
-                <a href="Perfil-Ciudadano.jsp"><i class="fa fa-user-o"></i>Perfil</a>
-                <a href="#">
-                    Notificaciones
-                </a>
+                <a href="Perfil_Ciudadano.jsp"><i class="fa fa-user-o"></i>Perfil</a>
+                <a href="Notificaciones-Ciudadano.jsp"><i class="Notifi">2</i>Notificaciones</a>
+                <a href="Mascotas_Ciudadano.jsp"><i class="fa fa-paw"></i>Mis Mascotas</a>
                 <a href=""><i class="fa fa-lock"></i>Cambio Contraseña</a>
                 <hr>
-                <a href="index.jsp" name="CerrarSesion"><i class='fa fa-sign-out'></i> Cerrar Sesion</a>
+                <a href="index.jsp"><i class='fa fa-sign-out'></i> Cerrar Sesion</a>
             </div>
         </div>	
     </div>
@@ -83,23 +82,11 @@
         </div>
     </div>
 
-    <main>
-        <article class="Notificaciones">
-            <div class="DenunciasCiudadano">
-                <div>Mis Denuncias </div>
-                <div class="ContarMD">2</div>
-            </div>
-            <div class="PostulacionesCiudadano">
-                <div>Mis Postulaciones </div>
-                <div class="ContarMP">2</div>
-            </div>
-        </article>
-        
+    <main>        
         <article class="DatosTodas">            
             <div class="Denuncias">
             <%
                 String Doc = (String)Dat.getAttribute("DocumentoSession");
-                JOptionPane.showMessageDialog(null, Doc);
                 Denuncias_M DM = new Denuncias_M();
                 ArrayList<GS_Denuncia_Cliente> Denuncia = new ArrayList<>();    
                 GS_Denuncia_Cliente Mas = new GS_Denuncia_Cliente();
@@ -109,18 +96,29 @@
                     Mas = Denuncia.get(i);
             %>
             </div>
-            <div class="NombresDC">
-                <input type="text" value="<%=Mas.getDescripcion()%>">
-                <input type="text" value="<%=Mas.getFecha()%>">
+            <div class="RespuestaDenuncia">
+                <h2>Señor@ <%=(String)Dat.getAttribute("NombreSession")%></h2>
+                <div class="DatosRespuesta">
+                    <div class="imgRespuesta">
+                        <img src="<%= Mas.getEvidencia() %>">
+                    </div>
+                    <div class="NombresDC">
+                        <label>Con respescto a su denuncia:</label>
+                        <label><%=Mas.getDescripcion()%> Generada el dia <%=Mas.getFecha()%></label>
+                        <label>Se a generado la siguiente respuesta:</label>
+                        <label><%=Mas.getDescripcionR()%></label>
+                        <label>el dia <%=Mas.getFechaR()%></label>
+                    </div>
+                </div>
             </div>
-            
+            <%}%>
             <div class="Postulados">
                 
             </div>
             <div class="DatosPostulados">
                 
             </div>
-            <%}%>
+            
         </article>
     </main>
 			
@@ -130,7 +128,7 @@
 
     <script src="Estilos/JS/jquery.min.js"></script>
     <script src="Estilos/JS/headroom.min.js"></script>
-    <script src="Estilos/JS/Notificaciones-A.js"></script>
+    <script src="Estilos/JS/Notificaciones-C.js"></script>
 
     <!-- Importamos Todo JS -->
 	
