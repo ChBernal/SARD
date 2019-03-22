@@ -35,7 +35,6 @@ public class ServletDenuncias extends HttpServlet {
         }
         if (request.getParameter("Predeterminada")!=null || request.getParameter("Continuacion")!=null){
             this.Respuesta_PreCont_Anonima(request, response);
-            request.getRequestDispatcher("Notificaciones-Admin.jsp").forward(request, response);
         }else if (request.getParameter("Finalizar")!=null){
             this.Respuesta_Finalizar_Anonima(request, response);
             request.getRequestDispatcher("Notificaciones-Admin.jsp").forward(request, response);
@@ -65,7 +64,21 @@ public class ServletDenuncias extends HttpServlet {
         Codigo = Integer.parseInt(request.getParameter("Codigo_RA"));
         GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
         Denuncias_M  Den= new Denuncias_M();
-        Den.Respuesta_PreCont_Anonima(GS_R);        
+        Den.Respuesta_PreCont_Anonima(GS_R);
+        
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+        out.println("</head>");
+        out.println("<body>");
+        out.print("<script type='text/javascript'> alertify.alert('Respuesta enviada',function(){"
+                + "window.location.href = 'Notificaciones-Admin.jsp'}); </script>");
+        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+        out.println("</body>");
+        out.println("</html>");
                 
      }
     
@@ -103,7 +116,20 @@ public class ServletDenuncias extends HttpServlet {
         GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
         Denuncias_M  Den= new Denuncias_M();
         Den.Respuesta_PreCont_Ciudadano(GS_R);
-                
+        
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+        out.println("</head>");
+        out.println("<body>");
+        out.print("<script type='text/javascript'> alertify.alert('Respuesta enviada',function(){"
+                + "window.location.href = 'Notificaciones-Admin.jsp'}); </script>");
+        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+        out.println("</body>");
+        out.println("</html>");
      }
     
     protected void Respuesta_Finalizar_Ciudadano(HttpServletRequest request, HttpServletResponse response)
