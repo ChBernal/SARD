@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Ambiente_Salud_M"%>
 <%@page import="Modelo.GS_Ambiente_Salud"%>
 <%@page import="Modelo.Postulacion_M"%>
@@ -284,7 +285,7 @@
                     Postulacion_M ConsultaP = new Postulacion_M();
                     Dato_Postulacion = ConsultaP.VerPostulaciones();
                     GS_Postulacion GSP = new GS_Postulacion();
-
+                    JOptionPane.showMessageDialog(null, Dato_Postulacion.size());
                     for(int i=0; i<Dato_Postulacion.size(); i++){
                         GSP = Dato_Postulacion.get(i);
                 %>

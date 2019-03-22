@@ -77,14 +77,19 @@ public class Postulacion_M {
     public ArrayList<GS_Postulacion> VerPostulaciones (){
         ArrayList<GS_Postulacion> Datos_Postulacion = new ArrayList<>();
         try {
-            PreSta = BaseDatos.prepareStatement("Call Postulaciones ()");
+            JOptionPane.showMessageDialog(null, "Enttra al try");
+            PreSta = BaseDatos.prepareStatement("Call Postulaciones()");
             Reset = PreSta.executeQuery();
             
             while (Reset.next()){
-                GS_Postulacion GSP = new GS_Postulacion(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10), Reset.getString(11), Reset.getString(12), Reset.getString(13), Reset.getInt(14));
-                Datos_Postulacion.add(GSP);
+                JOptionPane.showMessageDialog(null, "entra al while");
+                GS_Postulacion GS_P=new GS_Postulacion(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10), Reset.getString(11), Reset.getString(12), Reset.getString(13), Reset.getInt(14));
+                JOptionPane.showMessageDialog(null, "LLENA GS");
+                Datos_Postulacion.add(GS_P);
+                JOptionPane.showMessageDialog(null, "llena arreglo");
             }
-        }catch (Exception e){
+        }
+        catch (Exception e){
             
         }
         return Datos_Postulacion;

@@ -16,7 +16,9 @@ body {
 	padding-top: 55px;
 }
 
-
+h1{
+  font-size: 30px;  
+}
 /* Aca terminan los estilos generales */
 
  /* aca va todo sobre el menu */
