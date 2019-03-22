@@ -104,7 +104,7 @@ public class Servlet_Veterinaria extends HttpServlet {
         out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
         out.println("</head>");
         out.println("<body>");
-        out.print("<script type='text/javascript'> alertify.alert('',function(){"
+        out.print("<script type='text/javascript'> alertify.alert('Recuerde que debe Autenticar la veterinaria llevando los papeles correspondientes a la alcaldia',function(){"
                 + "window.location.href = 'Registro_Veterinaria.jsp.jsp'}); </script>");
         out.println("<script src='Estilos/JS/jquery.min.js'></script>");
         out.println("</body>");
@@ -290,14 +290,12 @@ public class Servlet_Veterinaria extends HttpServlet {
         Barrio = request.getParameter("Barrio-Veterinaria");
         Telefono = request.getParameter("Telefono-Veterinaria");
         Correo = request.getParameter("Email-Veterinaria");
-        JOptionPane.showMessageDialog(null, Correo);
         Foto_Actual = request.getParameter("Foto-Actual");
         Part Foto = request.getPart("Foto-Veterinaria"); 
         Rol= Integer.parseInt(request.getParameter("Estado-Veterinaria"));
         
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
-        JOptionPane.showMessageDialog(null, Foto_Actual);
          if (Nombre_F!="") {
              
              String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
