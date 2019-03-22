@@ -89,6 +89,28 @@ public class Veterinaria_M {
             JOptionPane.showMessageDialog(null,e);
     }
     }
+    
+      public int In_Veterinaria_Inactivas (GS_Veterinaria GS){
+         int Actualizar =0;
+            try{
+                PreSta=BaseDatos.prepareStatement("call In_Veterinaria_Inactiva (?,?,?,?,?,?,?,?,?,?)");
+                PreSta.setString(1, GS.getNit());   
+                PreSta.setString(2, GS.getNombre());
+                PreSta.setString(3, GS.getRepresentante());
+                PreSta.setString(4, GS.getTipo_Veterinaria());
+                PreSta.setString(5, GS.getFecha_Fundacion());
+                PreSta.setString(6, GS.getDireccion());
+                PreSta.setString(7, GS.getBarrio());
+                PreSta.setString(8, GS.getTelefono());
+                PreSta.setString(9, GS.getCorreo());
+                PreSta.setString(10, GS.getFoto());
+                Actualizar=PreSta.executeUpdate();
+            }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return Actualizar;
+    }
      
      public int Act_Veterinaria_Activas (GS_Veterinaria GS){
          int Actualizar =0;
@@ -132,26 +154,13 @@ public class Veterinaria_M {
     }
      
      
-      public void Login_Veterinaria (GS_Veterinaria GS){
-        try{
-            PreSta=BaseDatos.prepareStatement("call In_Login(?,?,?)");
-            PreSta.setString(1, GS.getNit());
-            PreSta.setString(2, GS.getNit());
-            PreSta.setInt(3, 4);
-            PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-        }
-    }
+    
      
      public void Eli_Veterinaria(GS_Veterinaria GS){
         try{
             PreSta=BaseDatos.prepareStatement("call B_Veterinaria(?)");
             PreSta.setString(1,GS.getNit());
             PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Datos Borrados");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);

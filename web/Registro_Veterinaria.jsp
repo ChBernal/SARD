@@ -114,24 +114,14 @@
                                 <input type="text" id="Email-Veterinaria" name="Email-Veterinaria"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                                 <label for="Email-Veterinaria" class="label-Usuarios">Email</label>
                             </div>
-                            <div class="Input-Group-Usuarios">
-                                <input type="text" name="Estado-Veterinaria" list="Veterinaria-Estado">
-                                <label for="Estado-Veterinaria" class="label-Usuarios">Estado de Veterinaria</label>
-                                <datalist id="Veterinaria-Estado">
-                                        <select>
-                                                <option value="Activo">Activo</option>
-                                                <option value="Inactivo">Inactivo</option>
-                                        </select>
-                                </datalist>
-                            </div>
+                            
                             <div class="Input-Group-Usuarios">
                                 <input type="file" id="Foto-Veterinaria" name="Foto-Veterinaria">
                                 <label class="label-Usuarios" for= "Foto-Veterinaria"><span class="fa fa-camera Img-Ciudadano"></span>Foto</label>
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" name="Rol_Insercion" value="0">
-                    <input type="submit" name="Registro-Veterinaria" value="Registrar">
+                    <input type="submit" name="Registro-Veterinaria_Index" value="Registrar">
                 </form>
             </div>
         </div>

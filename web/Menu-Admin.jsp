@@ -306,7 +306,7 @@
                 </article>
 
                 <article id="Usuarios" class="Usuarios">
-                    <h1>Usuarios</h1>
+                    <h1>Registros y Listas</h1>
                     <hr>
                     <div class="Ciudadanos">
                         <h2>Ciudadano</h2>
@@ -460,6 +460,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="Rol_Insercion" value="5">
                                 <input type="submit" name="Registro-Veterinaria" value="Registrar">
                             </form>
                         </div>

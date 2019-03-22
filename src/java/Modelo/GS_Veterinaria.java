@@ -26,7 +26,7 @@ public class GS_Veterinaria {
         this.Rol = Rol;
         this.Foto = Foto;
     }
-
+    
     public GS_Veterinaria(String Nit, String Nombre, String Representante, String Tipo_Veterinaria, String Fecha_Fundacion, String Direccion, String Barrio, String Telefono, String Correo, int Rol, String Foto) {
         this.Nit = Nit;
         this.Nombre = Nombre;

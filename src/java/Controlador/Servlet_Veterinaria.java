@@ -45,10 +45,11 @@ public class Servlet_Veterinaria extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         if (request.getParameter("Registro-Veterinaria")!=null) {
-            JOptionPane.showMessageDialog(null, "entra boton");
              Insertar_Veterinaria(request, response);
         }
-       
+       if (request.getParameter("Registro-Veterinaria_Index")!=null) {
+             Insertar_Veterinaria_Index(request, response);
+        }
         if (request.getParameter("btn-Actualizar-Activas")!=null) {
              Actualizar_Veterinaria_Activa(request, response);
         }
@@ -60,6 +61,57 @@ public class Servlet_Veterinaria extends HttpServlet {
         }
     }
     
+     protected void Insertar_Veterinaria_Index (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String Nit,Nombre,Representante,Tipo,Fecha,Direccion,Barrio,Telefono,Correo,RolNombre;
+        Nit = request.getParameter("Nit");
+        Nombre = request.getParameter("Nombre-Veterinaria");
+        Representante= request.getParameter("Representante-Veterinaria");
+        Tipo= request.getParameter("Tipo-Veterinaria");
+        Fecha = request.getParameter("Fecha-Fundacion");
+        Direccion = request.getParameter("Direccion-Veterinaria");
+        Barrio = request.getParameter("Barrio-Veterinaria");
+        Telefono = request.getParameter("Telefono-Veterinaria");
+        Correo = request.getParameter("Email-Veterinaria");
+       
+        Part Foto = request.getPart("Foto-Veterinaria"); 
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+         GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Tipo, Fecha, Direccion, Barrio, Telefono, Correo,url2);
+         Veterinaria_M veterinaria = new Veterinaria_M();
+        veterinaria.In_Veterinaria_Inactivas(GSC);
+        
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+        out.println("</head>");
+        out.println("<body>");
+        out.print("<script type='text/javascript'> alertify.alert('',function(){"
+                + "window.location.href = 'Registro_Veterinaria.jsp.jsp'}); </script>");
+        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+        out.println("</body>");
+        out.println("</html>");
+        
+        
+    }
      protected void Insertar_Veterinaria (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -102,53 +154,23 @@ public class Servlet_Veterinaria extends HttpServlet {
          Veterinaria_M veterinaria = new Veterinaria_M();
         veterinaria.In_Veterinaria_Admin(GSC);    ;
         
-        int Rol_Insercion = Integer.parseInt(request.getParameter("Rol_Insercion"));
-         if (Rol_Insercion==0) {
-            response.sendRedirect("Registro_Veterinaria.jsp");
-         }
-         if (Rol_Insercion==5) {
-            response.sendRedirect("Menu-Admin.jsp");
-         }
+        
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+        out.println("</head>");
+        out.println("<body>");
+        out.print("<script type='text/javascript'> alertify.alert('Veterinaria Registrada',function(){"
+                + "window.location.href = 'Menu-Admin.jsp.jsp'}); </script>");
+        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+        out.println("</body>");
+        out.println("</html>");
         
     }
      
-    protected void Insertar_Veterinaria_Login (HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        int Rol;
-        String Nit,Nombre,Representante,Tipo,Fecha,Direccion,Barrio,Telefono,Correo;
-        Nit = request.getParameter("Nit");
-        Nombre = request.getParameter("Nombre");
-        Representante= request.getParameter("Representante");
-        Tipo= request.getParameter("Tipo");
-        Fecha = request.getParameter("Fecha_Fundacion");
-        Direccion = request.getParameter("Direccion");
-        Barrio = request.getParameter("Barrio");
-        Telefono = request.getParameter("Telefono");
-        Correo = request.getParameter("Correo");
-        Part Foto = request.getPart("Foto"); 
-        String Nombre_F = Foto.getSubmittedFileName();
-        String Name = Nombre+"_"+Nombre_F;
-        
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
-        String url2 = "Uploads\\"+Name;
-        
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
-        }
-        GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Tipo, Fecha, Direccion, Barrio, Telefono, Correo, url2);
-        Veterinaria_M veterinaria = new Veterinaria_M();
-        veterinaria.In_Veterinaria_Admin(GSC);    ;
-        
-        response.sendRedirect("Login.jsp");
-    }
      protected void Actualizar_Veterinaria_Activa (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -167,7 +189,6 @@ public class Servlet_Veterinaria extends HttpServlet {
         
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
-        JOptionPane.showMessageDialog(null, Foto_Actual);
          if (Nombre_F!="") {
              
              String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
@@ -201,8 +222,19 @@ public class Servlet_Veterinaria extends HttpServlet {
                     out.println("</html>");
                  }
                  else{
-                     JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
-                    response.sendRedirect("Lista_Veterinaria.jsp");
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Error al Actualizar los datos',function(){"
+                            + "window.location.href = 'Lista_Veterinaria.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                  }
          }
          else{
@@ -226,8 +258,19 @@ public class Servlet_Veterinaria extends HttpServlet {
                     out.println("</html>");
                  }
                  else{
-                     JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
-                    response.sendRedirect("Lista_Veterinaria.jsp");
+                     out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Error al actualizar los datos',function(){"
+                            + "window.location.href = 'Lista_Veterinaria.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                  }         
         }
     
@@ -288,8 +331,19 @@ public class Servlet_Veterinaria extends HttpServlet {
                     out.println("</html>");
                  }
                  else{
-                     JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
-        response.sendRedirect("Lista_Veterinaria.jsp");
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Error al Actualizar los datos',function(){"
+                            + "window.location.href = 'Lista_Veterinaria.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                  }
          }
          else{
@@ -313,8 +367,19 @@ public class Servlet_Veterinaria extends HttpServlet {
                     out.println("</html>");
                  }
                  else{
-                     JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
-        response.sendRedirect("Lista_Veterinaria.jsp");
+                     out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                    out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                    out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.print("<script type='text/javascript'> alertify.alert('Error al Actualizar los datos',function(){"
+                            + "window.location.href = 'Lista_Veterinaria.jsp'}); </script>");
+                    out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                    out.println("</body>");
+                    out.println("</html>");
                  }      
         }
     
