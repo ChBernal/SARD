@@ -63,9 +63,7 @@
         </div>
 
         
-        <div class="Veterinarias">
-            <h2>Veterinaria</h2>
-        </div>
+        
         <div class="Contenedor-Formulario-Usuarios">
             <div class="Wrap-Veterinaria">
                 <form action="Servlet_Veterinaria" class="Formulario" method="POST" name="Formulario_Veterinaria" enctype="multipart/form-data">
@@ -132,6 +130,7 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" name="Rol_Insercion" value="0">
                     <input type="submit" name="Registro-Veterinaria" value="Registrar">
                 </form>
             </div>

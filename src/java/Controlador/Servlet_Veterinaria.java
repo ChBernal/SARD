@@ -102,7 +102,14 @@ public class Servlet_Veterinaria extends HttpServlet {
          Veterinaria_M veterinaria = new Veterinaria_M();
         veterinaria.In_Veterinaria_Admin(GSC);    ;
         
-        response.sendRedirect("Menu-Admin.jsp");
+        int Rol_Insercion = Integer.parseInt(request.getParameter("Rol_Insercion"));
+         if (Rol_Insercion==0) {
+            response.sendRedirect("Registro_Veterinaria.jsp");
+         }
+         if (Rol_Insercion==5) {
+            response.sendRedirect("Menu-Admin.jsp");
+         }
+        
     }
      
     protected void Insertar_Veterinaria_Login (HttpServletRequest request, HttpServletResponse response)
