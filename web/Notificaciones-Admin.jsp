@@ -366,6 +366,8 @@
                                         %>
                                     </select>
                                         <input type="hidden" name="Postulante" value="<%=GSP.getDocumentoC()%>">
+                                        <input type="hidden" name="Postulacion" value="<%=GSP.getCodigo()%>">
+                                        
                                 </div>
                                 <div class="respuestas">
                                     <input type="submit" class="btns-Respuestas" name="AsignarCita" value="Asignar Cita">

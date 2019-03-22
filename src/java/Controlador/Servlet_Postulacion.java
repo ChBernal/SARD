@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -67,9 +68,10 @@ public class Servlet_Postulacion extends HttpServlet {
         Fecha=request.getParameter("Fecha_Cita");
         Encargado=request.getParameter("Encargado");
         Postulante=request.getParameter("Postulante");
-        int Postulacion = Integer.parseInt(request.getParameter(""));
+        int Postulacion = Integer.parseInt(request.getParameter("Postulacion"));
         
-        GS_Visitas GS_V = new GS_Visitas(Fecha, Encargado, Postulante);
+        JOptionPane.showMessageDialog(null, Postulacion);
+        GS_Visitas GS_V = new GS_Visitas(Fecha, Encargado, Postulante, Postulacion);
         Visitas_M M_Visita = new Visitas_M();
         M_Visita.Asignar_Visita(GS_V);
         

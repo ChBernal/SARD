@@ -16,6 +16,7 @@ public class GS_Postulacion {
     private String ApellidoP;
     private String Telefono1P;
     private String Telefono2P;
+    private int Codigo_Postulacion;
     private String CorreoP;
     private String CopiaCC;
     private String CopiaRP;
@@ -68,8 +69,11 @@ public class GS_Postulacion {
         this.CopiaCC = CopiaCC;
         this.CopiaRP = CopiaRP;
     }
-    
-    public GS_Postulacion(int CodigoMascota, String TipoMascota, String NombreMascota, String FotoMascota, String DocumentoC, String NombreP, String ApellidoP, String Telefono1P, String Telefono2P, String CorreoP, String Fecha, String CopiaCC, String CopiaRP, int Encuesta) {
+
+  
+   
+    public GS_Postulacion(int Codigo,int CodigoMascota, String TipoMascota, String NombreMascota, String FotoMascota, String DocumentoC, String NombreP, String ApellidoP, String Telefono1P, String Telefono2P, String CorreoP, String Fecha, String CopiaCC, String CopiaRP, int Encuesta) {
+        this.Codigo = Codigo;
         this.CodigoMascota = CodigoMascota;
         this.TipoMascota = TipoMascota;
         this.NombreMascota = NombreMascota;

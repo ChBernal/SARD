@@ -44,10 +44,11 @@ public class Visitas_M {
     
     public void Asignar_Visita (GS_Visitas GS){
         try{
-            PreSta=BaseDatos.prepareStatement("call Asignar_Visita (?,?,?)");
+            PreSta=BaseDatos.prepareStatement("call Asignar_Visita (?,?,?,?)");
             PreSta.setString(1, GS.getFecha());
             PreSta.setString(2, GS.getEncargado());
             PreSta.setString(3, GS.getPostulante());
+            PreSta.setInt(4, GS.getPostulacion());
             PreSta.executeUpdate();
         }
         catch(Exception e){

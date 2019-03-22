@@ -10,6 +10,7 @@ public class GS_Visitas {
       private String Fecha;
       private String Encargado;
       private String Postulante;
+      private int Postulacion;
 
     public GS_Visitas() {
     }
@@ -21,11 +22,22 @@ public class GS_Visitas {
         this.Postulante = Postulante;
     }
 
-    public GS_Visitas(String Fecha, String Encargado, String Postulante) {
+    public GS_Visitas(String Fecha, String Encargado, String Postulante, int Postulacion) {
         this.Fecha = Fecha;
         this.Encargado = Encargado;
         this.Postulante = Postulante;
+        this.Postulacion = Postulacion;
     }
+
+    public int getPostulacion() {
+        return Postulacion;
+    }
+
+    public void setPostulacion(int Postulacion) {
+        this.Postulacion = Postulacion;
+    }
+
+    
     
     public int getId_Visita() {
         return Id_Visita;
