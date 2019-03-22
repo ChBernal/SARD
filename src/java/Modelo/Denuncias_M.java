@@ -178,7 +178,7 @@ public class Denuncias_M {
         ArrayList<GS_Denuncia_Cliente> Tabla=new ArrayList<>();
         
         try {
-            PreSta= BaseDatos.prepareStatement("call DenunciasCliente(?)");
+            PreSta= BaseDatos.prepareStatement("call VerRespuestasC(?)");
             PreSta.setString(1, Doc);
             Reset= PreSta.executeQuery();
             
