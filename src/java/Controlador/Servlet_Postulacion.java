@@ -67,6 +67,7 @@ public class Servlet_Postulacion extends HttpServlet {
         Fecha=request.getParameter("Fecha_Cita");
         Encargado=request.getParameter("Encargado");
         Postulante=request.getParameter("Postulante");
+        int Postulacion = Integer.parseInt(request.getParameter(""));
         
         GS_Visitas GS_V = new GS_Visitas(Fecha, Encargado, Postulante);
         Visitas_M M_Visita = new Visitas_M();
