@@ -135,50 +135,80 @@ public class Servlet_Administrador extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         
-        String Documento,Nombre,Direccion,Telefono,Correo;
+        String Documento,Nombre,Direccion,Telefono,Correo, Foto_Actual;
         Nombre =request.getParameter("Nombre_A");
         Documento = request.getParameter("Documento_A");
         Direccion = request.getParameter("Direccion_A");
         Telefono = request.getParameter("Telefono2_A");
         Correo = request.getParameter("Correo_A");
+        Foto_Actual = request.getParameter("Foto_Actual");
         Part Foto = request.getPart("Foto_A");
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
-        String url2 = "Uploads\\"+Name;
-        
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
-        }
-        GS_Admin GSA = new GS_Admin(Documento, Direccion, Telefono, Correo, url2);
-        Admin_M Admin = new Admin_M();
-        int Consulta;
-        Consulta=Admin.Act_Administrador(GSA);
-        if (Consulta>0) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
-            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
-            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
-            out.println("</head>");
-            out.println("<body>");
-            out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
-                    + "window.location.href = 'Perfil_Administrador.jsp'}); </script>");
-            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
-            out.println("</body>");
-            out.println("</html>");
+        if (Nombre_F!="") {
+            String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+            String url2 = "Uploads\\"+Name;
+
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+            GS_Admin GSA = new GS_Admin(Documento, Direccion, Telefono, Correo, url2);
+            Admin_M Admin = new Admin_M();
+            int Consulta;
+            Consulta=Admin.Act_Administrador(GSA);
+            if (Consulta>0) {
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                out.println("</head>");
+                out.println("<body>");
+                out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                        + "window.location.href = 'Perfil_Administrador.jsp'}); </script>");
+                out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                out.println("</body>");
+                out.println("</html>");
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");       
+                response.sendRedirect("Perfil_Administrador.jsp");
+            }
         }
         else{
-            JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");       
-            response.sendRedirect("Perfil_Administrador.jsp");
+            String url2 = Foto_Actual;   
+            
+            GS_Admin GSA = new GS_Admin(Documento, Direccion, Telefono, Correo, url2);
+            Admin_M Admin = new Admin_M();
+            int Consulta;
+            Consulta=Admin.Act_Administrador(GSA);
+            if (Consulta>0) {
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+                out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+                out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+                out.println("</head>");
+                out.println("<body>");
+                out.print("<script type='text/javascript'> alertify.alert('Datos actualizados',function(){"
+                        + "window.location.href = 'Perfil_Administrador.jsp'}); </script>");
+                out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+                out.println("</body>");
+                out.println("</html>");
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");       
+                response.sendRedirect("Perfil_Administrador.jsp");
+            }
         }
 
     }

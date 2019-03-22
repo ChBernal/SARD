@@ -160,6 +160,7 @@
                                     <label class="label-Denuncia" for="Descripcion">Describa brevemente el maltrato evidenciado</label>
                                 </div>
                                 <div class="Input-Group-Denuncia">
+                                    <input type="hidden" name="Predeterminada" value="Uploads/Predeterminada_Denuncia.jpg">
                                     <input type="file" id="Evidencia" name="Evidencia" accept="image/jpeg, image/png, image/gif">
                                     <label class="label-Denuncia" for="Evidencia"><span class="fa fa-camera Evidencia-Denuncia"></span> Adjunte evidencia (en caso de poseerla)</label>
                                 </div>

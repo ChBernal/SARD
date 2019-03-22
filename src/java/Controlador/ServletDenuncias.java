@@ -179,48 +179,70 @@ public class ServletDenuncias extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Direccion,Descripcion,Correo;
+        String Direccion,Descripcion,Correo, predeterminada;
         
         Direccion= request.getParameter("Direccion");
         Descripcion= request.getParameter("Descripcion");
         Part Evidencia= request.getPart("Evidencia");
         Correo= request.getParameter("Email");
+        predeterminada= request.getParameter("Predeterminada");
         String NameFoto= Evidencia.getSubmittedFileName();
         int i = NameFoto.lastIndexOf("\\");
         String nuevo_nom = NameFoto.substring(i+1);
         String Name= Direccion+"_"+nuevo_nom;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
-        String url2= "Uploads/"+Name;
-        
-        InputStream file= Evidencia.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
+        if (NameFoto!="") {
+            String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+            String url2= "Uploads/"+Name;
+
+            InputStream file= Evidencia.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+
+            GS_Denuncias GSD = new GS_Denuncias(Direccion, Descripcion, url2, Correo);
+            Denuncias_M  DM = new Denuncias_M();
+            int x;
+            x= DM.InsertarDenuncias(GSD);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Su denuncia ha sido enviada, recuerda que dependiendo el caso, su denuncia sera atendida',function(){"
+                    + "window.location.href = 'index.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        
-        GS_Denuncias GSD = new GS_Denuncias(Direccion, Descripcion, url2, Correo);
-        Denuncias_M  DM = new Denuncias_M();
-        int x;
-        x= DM.InsertarDenuncias(GSD);
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
-        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
-        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
-        out.println("</head>");
-        out.println("<body>");
-        out.print("<script type='text/javascript'> alertify.alert('Su denuncia ha sido enviada, recuerda que dependiendo el caso, su denuncia sera atendida',function(){"
-                + "window.location.href = 'index.jsp'}); </script>");
-        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
-        out.println("</body>");
-        out.println("</html>");
-        
+        else{
+            String url2 = predeterminada;
+            GS_Denuncias GSD = new GS_Denuncias(Direccion, Descripcion, url2, Correo);
+            Denuncias_M  DM = new Denuncias_M();
+            int x;
+            x= DM.InsertarDenuncias(GSD);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Su denuncia ha sido enviada, recuerda que dependiendo el caso, su denuncia sera atendida',function(){"
+                    + "window.location.href = 'index.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
     
     protected void Ingreso_Denuncias2(HttpServletRequest request, HttpServletResponse response)
@@ -228,46 +250,68 @@ public class ServletDenuncias extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Direccion,Documento,Fecha,Descripcion;
+        String Direccion,Documento,Fecha,Descripcion,predeterminada;
         
         Direccion= request.getParameter("Direccion");
         Descripcion= request.getParameter("Descripcion");
         Part Evidencia= request.getPart("Evidencia");
         Documento= request.getParameter("Documento");
+        predeterminada= request.getParameter("Predeterminada");
         String NameFoto= Evidencia.getSubmittedFileName();
         int i = NameFoto.lastIndexOf("\\");
         String nuevo_nom = NameFoto.substring(i+1);
         String Name= Direccion+"_"+nuevo_nom;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
-        String url2= "Uploads/"+Name;
-        InputStream file= Evidencia.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
+        if (NameFoto!="") {
+          
+            String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\MAppets\\web\\Uploads\\"+Name;
+            String url2= "Uploads/"+Name;
+            InputStream file= Evidencia.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+
+            GS_Denuncia_Cliente GSD=new GS_Denuncia_Cliente(0, Direccion, Descripcion, url2, Documento);
+            Denuncias_M  Den= new Denuncias_M();
+            Den.InsertarDenunciasC(GSD);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Su denuncia ha sido enviada, recuerda que dependiendo el caso, su denuncia sera atendida',function(){"
+                    + "window.location.href = 'Menu-Ciudadano.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        
-        GS_Denuncia_Cliente GSD=new GS_Denuncia_Cliente(0, Direccion, Descripcion, url2, Documento);
-        Denuncias_M  Den= new Denuncias_M();
-        Den.InsertarDenunciasC(GSD);
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
-        out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
-        out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
-        out.println("</head>");
-        out.println("<body>");
-        out.print("<script type='text/javascript'> alertify.alert('Su denuncia ha sido enviada, recuerda que dependiendo el caso, su denuncia sera atendida',function(){"
-                + "window.location.href = 'Menu-Ciudadano.jsp'}); </script>");
-        out.println("<script src='Estilos/JS/jquery.min.js'></script>");
-        out.println("</body>");
-        out.println("</html>");
-        
+        else{
+            String url2 = predeterminada;
+            GS_Denuncia_Cliente GSD=new GS_Denuncia_Cliente(0, Direccion, Descripcion, url2, Documento);
+            Denuncias_M  Den= new Denuncias_M();
+            Den.InsertarDenunciasC(GSD);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link rel='stylesheet' href='Estilos/alertifyjs/css/alertify.css'>");
+            out.println("<link rel='stylesheet' href='Estilos/CSS/EsttilosBody.css'>");
+            out.println("<script src='Estilos/alertifyjs/alertify.js'></script>");
+            out.println("</head>");
+            out.println("<body>");
+            out.print("<script type='text/javascript'> alertify.alert('Su denuncia ha sido enviada, recuerda que dependiendo el caso, su denuncia sera atendida',function(){"
+                    + "window.location.href = 'Menu-Ciudadano.jsp'}); </script>");
+            out.println("<script src='Estilos/JS/jquery.min.js'></script>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
