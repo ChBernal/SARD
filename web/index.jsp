@@ -69,6 +69,8 @@
                     <a>Olvide la contraseña</a>
                     <BR>
                     <a href="Registro_Ciudadano.jsp">Registrate</a>
+                    <br>
+                    <label>Para registrar tu veterinaria has <a href="Registro_Veterinaria.jsp">click aqui</a></label>
                 </div>
             </div>
         </div>
