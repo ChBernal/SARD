@@ -1,3 +1,5 @@
+<%@page import="Modelo.GS_Postulacion"%>
+<%@page import="Modelo.Postulacion_M"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.GS_Denuncia_Cliente"%>
 <%@page import="java.util.ArrayList"%>
@@ -113,12 +115,24 @@
             </div>
             <%}%>
             <div class="Postulados">
-                
+            <%
+                Postulacion_M PM = new Postulacion_M();
+                ArrayList<GS_Postulacion> Postulacion = new ArrayList<>();    
+                GS_Postulacion GSP = new GS_Postulacion();
+                Postulacion = PM.VerCitacion(Doc);
+
+                for (int i = 0; i < Postulacion.size();i++){
+                    GSP = Postulacion.get(i);
+            %>
             </div>
             <div class="DatosPostulados">
-                
+                <label>Señor@<%=(String)Dat.getAttribute("NombreSession")%>, se le informa que el colaborador <%=GSP.getCedula()%> <%=GSP.getRecibo()%> 
+                ira el dia <%=GSP.getDocumentoC()%> para confirmar datos con respecto a su postulacion por la mascota <%=GSP.getFotoMascota()%>.
+                Cualquier novedad se podra comunicar con nuestro colaborador por los siguiente medios</label>
+                <label>Telefono: <%=GSP.getFecha()%></label>
+                <label>Correo: <%=GSP.getTipoMascota()%></label>
             </div>
-            
+            <%}%>
         </article>
     </main>
 			
